@@ -1,0 +1,5 @@
+export { tejesHomeSections, tejesWhyPrinciples } from './home.js'
+export { tejesPages } from './pages.js'
+export { tejesProcess } from './process.js'
+export { tejesProjects } from './projects.js'
+export { tejesServices } from './services.js'

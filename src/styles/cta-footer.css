@@ -1,0 +1,186 @@
+/* Phase 4 Step 12 final CTA and footer composition. */
+
+.final-cta {
+  border-block: 1px solid var(--brand-border);
+}
+
+.final-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-lg);
+  margin-top: var(--space-2xl);
+}
+
+.final-cta__primary {
+  margin: 0;
+}
+
+.final-cta__secondary {
+  white-space: nowrap;
+}
+
+.final-cta--spoorthi {
+  background-color: var(--spoorthi-bg-secondary, var(--brand-bg-secondary));
+  background-image:
+    linear-gradient(to right, var(--brand-border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--brand-border) 1px, transparent 1px);
+  background-size: 25% 100%, 100% 100%;
+}
+
+.final-cta--spoorthi .section-heading__title {
+  max-width: 18ch;
+  font-family: var(--brand-font-technical);
+  font-size: var(--brand-type-h2);
+  text-transform: uppercase;
+}
+
+.final-cta--tejes {
+  background: var(--tejes-surface, var(--brand-surface));
+}
+
+.final-cta--tejes .section-heading {
+  max-width: 48rem;
+  margin-inline: auto;
+  text-align: center;
+  justify-items: center;
+}
+
+.final-cta--tejes .section-heading__title {
+  max-width: 18ch;
+}
+
+.final-cta--tejes .final-cta__actions {
+  justify-content: center;
+}
+
+.brand-footer {
+  color: var(--brand-text-primary);
+}
+
+.brand-footer__intro {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: var(--space-xl);
+  padding-bottom: var(--space-3xl);
+  border-bottom: 1px solid var(--brand-border);
+}
+
+.brand-footer__intro p {
+  margin: 0;
+}
+
+.brand-footer__intro .type-body-large {
+  margin-top: var(--space-sm);
+}
+
+.brand-footer__grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding-block: var(--space-3xl);
+}
+
+.brand-footer__grid nav {
+  align-content: start;
+  gap: var(--space-sm);
+}
+
+.brand-footer__grid nav .type-label {
+  margin: 0 0 var(--space-sm);
+  color: var(--brand-text-muted);
+}
+
+.brand-footer__grid nav a {
+  width: fit-content;
+  min-height: 2.25rem;
+  padding-block: var(--space-xs);
+}
+
+.brand-footer__grid nav a:hover,
+.brand-footer__grid nav a[aria-current='page'] {
+  color: var(--brand-accent);
+}
+
+.brand-footer--spoorthi {
+  background: var(--spoorthi-bg-dark, var(--brand-bg-secondary));
+  color: var(--spoorthi-text-on-dark, var(--brand-text-primary));
+}
+
+.brand-footer--spoorthi .brand-footer__intro,
+.brand-footer--spoorthi .brand-footer__bottom {
+  border-color: var(--spoorthi-border-on-dark, var(--brand-border));
+}
+
+.brand-footer--spoorthi .brand-footer__grid nav a {
+  color: var(--spoorthi-text-on-dark, var(--brand-text-primary));
+}
+
+.brand-footer--spoorthi .brand-footer__grid nav a:hover,
+.brand-footer--spoorthi .brand-footer__grid nav a[aria-current='page'] {
+  color: var(--spoorthi-accent-soft, var(--brand-accent));
+}
+
+.brand-footer--spoorthi .ui-button--secondary {
+  border-color: var(--spoorthi-border-on-dark, var(--brand-border));
+  color: var(--spoorthi-text-on-dark, var(--brand-text-primary));
+}
+
+.brand-footer--spoorthi .ui-button--secondary:hover {
+  border-color: var(--spoorthi-accent-soft, var(--brand-accent));
+  background: var(--spoorthi-surface-dark, var(--brand-surface-hover));
+}
+
+.brand-footer--tejes {
+  background: var(--tejes-bg-secondary, var(--brand-bg-secondary));
+}
+
+.brand-footer--tejes .brand-footer__grid {
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+}
+
+.brand-footer--tejes .brand-footer__intro {
+  padding-bottom: var(--space-4xl);
+}
+
+@media (max-width: 768px) {
+  .final-cta--spoorthi {
+    background-size: 50% 100%, 100% 100%;
+  }
+
+  .brand-footer__intro {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .brand-footer__grid,
+  .brand-footer--tejes .brand-footer__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .final-cta__actions {
+    align-items: start;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .final-cta__primary .ui-button {
+    width: 100%;
+  }
+
+  .brand-footer__intro {
+    padding-bottom: var(--space-2xl);
+  }
+
+  .brand-footer__grid {
+    padding-block: var(--space-2xl);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .final-cta__secondary,
+  .brand-footer a {
+    transition: none;
+  }
+}

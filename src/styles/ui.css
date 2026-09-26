@@ -1,0 +1,285 @@
+/* Shared UI primitives. Components consume semantic brand variables only. */
+
+:root {
+  --ui-transition: var(--brand-motion-transition-interactive, 180ms ease);
+  --brand-radius-control: 2px;
+  --brand-focus: #4e402e;
+  --brand-text-on-accent: #ffffff;
+  --brand-surface-hover: #e7e7e2;
+  --brand-border-hover: #8f8b82;
+  --brand-state-error: #7d4747;
+}
+
+.ui-button,
+.ui-icon-button,
+.ui-link {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ui-button,
+.ui-icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: var(--brand-radius-control);
+  cursor: pointer;
+  font-family: var(--brand-font-technical, var(--font-family-primary));
+  font-size: var(--brand-type-button, 0.8rem);
+  font-weight: var(--brand-weight-label, 600);
+  letter-spacing: var(--brand-tracking-label, 0.12em);
+  line-height: var(--brand-leading-label, 1.2);
+  text-transform: uppercase;
+  transition:
+    background-color var(--ui-transition),
+    border-color var(--ui-transition),
+    color var(--ui-transition),
+    opacity var(--ui-transition),
+    transform var(--ui-transition);
+}
+
+.ui-button {
+  min-height: 2.75rem;
+  padding: 0.75rem 1.25rem;
+}
+
+.ui-button--primary {
+  border-color: var(--brand-accent);
+  background: var(--brand-accent);
+  color: var(--brand-text-on-accent);
+}
+
+.ui-button--secondary {
+  border-color: var(--brand-border);
+  background: transparent;
+  color: var(--brand-text-primary);
+}
+
+.ui-button--text {
+  min-height: 2.5rem;
+  padding-inline: 0;
+  border-color: transparent;
+  background: transparent;
+  color: var(--brand-text-primary);
+}
+
+.ui-button:hover:not(:disabled),
+.ui-button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.ui-button--primary:hover:not(:disabled),
+.ui-button--primary:active:not(:disabled) {
+  border-color: var(--brand-accent-hover);
+  background: var(--brand-accent-hover);
+}
+
+.ui-button--secondary:hover:not(:disabled),
+.ui-button--secondary:active:not(:disabled) {
+  border-color: var(--brand-border-hover);
+  background: var(--brand-surface-hover);
+}
+
+.ui-button--text:hover:not(:disabled),
+.ui-button--text:active:not(:disabled) {
+  color: var(--brand-accent);
+}
+
+.ui-button:disabled,
+.ui-icon-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.ui-button--loading {
+  cursor: wait;
+}
+
+.ui-button:focus-visible,
+.ui-icon-button:focus-visible,
+.ui-link:focus-visible,
+.ui-field__control:focus-visible {
+  outline: 2px solid var(--brand-focus);
+  outline-offset: 3px;
+}
+
+.ui-icon-button {
+  width: 2.75rem;
+  min-width: 2.75rem;
+  height: 2.75rem;
+  padding: 0.65rem;
+  background: transparent;
+  color: var(--brand-text-primary);
+}
+
+.ui-icon-button:hover:not(:disabled),
+.ui-icon-button:active:not(:disabled) {
+  border-color: var(--brand-border-hover);
+  background: var(--brand-surface-hover);
+}
+
+.ui-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--brand-text-primary);
+  font-family: var(--brand-font-body, var(--font-family-primary));
+  text-decoration: none;
+  transition:
+    color var(--ui-transition),
+    opacity var(--ui-transition),
+    transform var(--ui-transition);
+}
+
+.ui-link:hover {
+  color: var(--brand-accent);
+}
+
+.ui-link:visited {
+  color: inherit;
+}
+
+.ui-link--navigation,
+.ui-link--arrow {
+  font-family: var(--brand-font-technical, var(--font-family-primary));
+  font-size: var(--brand-type-navigation, 0.875rem);
+  font-weight: var(--brand-weight-label, 600);
+  letter-spacing: var(--brand-tracking-navigation, 0.04em);
+  text-transform: uppercase;
+}
+
+.ui-link--navigation[aria-current='page'] {
+  color: var(--brand-accent);
+}
+
+.ui-link__arrow {
+  transition: transform var(--ui-transition);
+}
+
+.ui-link--arrow:hover .ui-link__arrow {
+  transform: translate(0.2rem, -0.2rem);
+}
+
+.ui-label {
+  display: inline-flex;
+  align-items: center;
+  color: var(--brand-text-muted);
+  font-family: var(--brand-font-technical, var(--font-family-primary));
+  font-size: var(--brand-type-label, 0.75rem);
+  font-weight: var(--brand-weight-label, 600);
+  letter-spacing: var(--brand-tracking-label, 0.12em);
+  line-height: var(--brand-leading-label, 1.2);
+  text-transform: uppercase;
+}
+
+.ui-label--accent {
+  color: var(--brand-accent);
+}
+
+.ui-divider {
+  display: block;
+  flex: none;
+  background: var(--brand-border);
+}
+
+.ui-divider--horizontal {
+  width: 100%;
+  height: 1px;
+}
+
+.ui-divider--vertical {
+  width: 1px;
+  min-height: 1rem;
+}
+
+.ui-field {
+  display: grid;
+  gap: 0.5rem;
+  max-width: var(--type-max-description, 45ch);
+}
+
+.ui-field__label {
+  color: var(--brand-text-primary);
+  font-family: var(--brand-font-technical, var(--font-family-primary));
+  font-size: var(--brand-type-label, 0.75rem);
+  font-weight: var(--brand-weight-label, 600);
+  letter-spacing: var(--brand-tracking-label, 0.12em);
+  line-height: var(--brand-leading-label, 1.2);
+  text-transform: uppercase;
+}
+
+.ui-field__control {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--brand-border);
+  border-radius: var(--brand-radius-control);
+  background: var(--brand-surface);
+  color: var(--brand-text-primary);
+  font: inherit;
+  transition:
+    border-color var(--ui-transition),
+    background-color var(--ui-transition);
+}
+
+textarea.ui-field__control {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.ui-field__control:hover:not(:disabled) {
+  border-color: var(--brand-border-hover);
+}
+
+.ui-field__control:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.ui-field--error .ui-field__control {
+  border-color: var(--brand-state-error);
+}
+
+.ui-field--success .ui-field__control {
+  border-color: var(--brand-state-success);
+}
+
+.ui-field__hint,
+.ui-field__error,
+.ui-field__success {
+  font-size: var(--brand-type-body-small, 0.9rem);
+}
+
+.ui-field__hint {
+  color: var(--brand-text-muted);
+}
+
+.ui-field__error {
+  color: var(--brand-state-error);
+}
+
+.ui-field__success {
+  color: var(--brand-state-success);
+}
+
+@media (max-width: 600px) {
+  .ui-button {
+    min-height: 2.875rem;
+  }
+
+  .ui-icon-button {
+    width: 2.875rem;
+    min-width: 2.875rem;
+    height: 2.875rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ui-button,
+  .ui-icon-button,
+  .ui-link,
+  .ui-link__arrow,
+  .ui-field__control {
+    transition: none;
+  }
+}

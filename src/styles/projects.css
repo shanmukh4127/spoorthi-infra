@@ -1,0 +1,98 @@
+/* Phase 4 Step 9 Projects composition. Empty content remains explicit until real projects exist. */
+
+.projects-section__list {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--brand-grid-gap);
+  margin-top: var(--space-3xl);
+}
+
+.project-preview {
+  grid-column: span 4;
+  min-width: 0;
+  border-top: 1px solid var(--brand-border);
+}
+
+.project-preview--featured {
+  grid-column: span 8;
+}
+
+.project-preview .media {
+  margin-top: var(--space-lg);
+}
+
+.project-preview__content {
+  display: grid;
+  gap: var(--space-sm);
+  padding-block: var(--space-lg) var(--space-xl);
+}
+
+.project-preview__title,
+.project-preview__metadata,
+.project-preview__description {
+  margin: 0;
+}
+
+.project-preview__metadata {
+  color: var(--brand-text-muted);
+}
+
+.project-preview__description {
+  color: var(--brand-text-secondary);
+}
+
+.projects-section__empty {
+  max-width: var(--type-max-section);
+  margin-top: var(--space-3xl);
+  padding-block: var(--space-2xl);
+  border-top: 1px solid var(--brand-border);
+  border-bottom: 1px solid var(--brand-border);
+}
+
+.projects-section--spoorthi .project-preview__title {
+  font-family: var(--brand-font-technical);
+  font-size: var(--brand-type-h3);
+  text-transform: uppercase;
+}
+
+.projects-section--tejes .project-preview {
+  grid-column: span 6;
+}
+
+.projects-section--tejes .project-preview--featured {
+  grid-column: span 8;
+}
+
+.projects-section--tejes .project-preview__title {
+  font-size: var(--brand-type-h2);
+}
+
+@media (max-width: 1024px) {
+  .projects-section--tejes .project-preview__title {
+    font-size: var(--brand-type-h3);
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-section__list {
+    grid-template-columns: 1fr;
+    margin-top: var(--space-2xl);
+  }
+
+  .project-preview,
+  .project-preview--featured,
+  .projects-section--tejes .project-preview,
+  .projects-section--tejes .project-preview--featured {
+    grid-column: 1;
+  }
+
+  .projects-section__empty {
+    margin-top: var(--space-2xl);
+  }
+}
+
+@media (max-width: 600px) {
+  .project-preview__content {
+    padding-block: var(--space-md) var(--space-lg);
+  }
+}

@@ -1,0 +1,161 @@
+/* Phase 4 Step 7 Final Output composition. Real result media can replace the visual slot later. */
+
+.final-output-section__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: clamp(var(--space-2xl), 7vw, var(--space-5xl));
+}
+
+.final-output-section__copy {
+  display: grid;
+  align-content: center;
+  gap: var(--space-xl);
+  min-width: 0;
+}
+
+.final-output-section__supporting {
+  margin: 0;
+  color: var(--brand-text-muted);
+}
+
+.final-output-visual {
+  min-width: 0;
+  margin: 0;
+}
+
+.final-output-visual__frame {
+  position: relative;
+  min-height: clamp(24rem, 48vw, 43rem);
+  overflow: hidden;
+  border: 1px solid var(--brand-border);
+  background: var(--brand-bg-secondary);
+  isolation: isolate;
+}
+
+.final-output-visual__field,
+.final-output-visual__result {
+  position: absolute;
+  pointer-events: none;
+}
+
+.final-output-visual__field {
+  inset: 0;
+  background: linear-gradient(135deg, var(--brand-bg-secondary), var(--brand-surface));
+}
+
+.final-output-visual__result {
+  inset: 14% 9% 12% 16%;
+  border: 1px solid var(--brand-accent);
+  box-shadow: 1.5rem 1.5rem 0 var(--brand-accent-soft);
+}
+
+.final-output-visual__label {
+  position: absolute;
+  right: var(--space-lg);
+  bottom: var(--space-lg);
+  z-index: 1;
+  max-width: 18rem;
+  color: var(--brand-text-muted);
+  font-family: var(--brand-font-technical);
+  font-size: var(--brand-type-caption);
+  letter-spacing: var(--brand-tracking-label);
+  line-height: var(--brand-leading-label);
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.final-output-section--spoorthi .final-output-section__layout {
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+}
+
+.final-output-section--spoorthi .final-output-visual {
+  order: -1;
+}
+
+.final-output-section--spoorthi .final-output-visual__frame {
+  background: var(--spoorthi-bg-dark, var(--brand-bg-secondary));
+}
+
+.final-output-section--spoorthi .final-output-visual__field {
+  background:
+    linear-gradient(to right, var(--spoorthi-border-on-dark, var(--brand-border)) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--spoorthi-border-on-dark, var(--brand-border)) 1px, transparent 1px),
+    var(--spoorthi-bg-dark, var(--brand-bg-secondary));
+  background-size: clamp(3rem, 8vw, 6rem) clamp(3rem, 8vw, 6rem), clamp(3rem, 8vw, 6rem) clamp(3rem, 8vw, 6rem), auto;
+  opacity: 0.95;
+}
+
+.final-output-section--spoorthi .final-output-visual__result {
+  border-color: var(--spoorthi-accent-soft, var(--brand-accent));
+  box-shadow: 1.5rem 1.5rem 0 var(--spoorthi-surface-dark, var(--brand-accent-soft));
+  transform: skewY(-4deg);
+}
+
+.final-output-section--spoorthi .final-output-visual__label {
+  color: var(--spoorthi-text-on-dark, var(--brand-text-muted));
+}
+
+.final-output-section--tejes .final-output-section__layout {
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+}
+
+.final-output-section--tejes .final-output-visual__frame {
+  background: var(--tejes-surface, var(--brand-surface));
+}
+
+.final-output-section--tejes .final-output-visual__field {
+  background: linear-gradient(135deg, var(--tejes-bg-secondary, var(--brand-bg-secondary)), var(--tejes-surface, var(--brand-surface)));
+}
+
+.final-output-section--tejes .final-output-visual__result {
+  inset: 11% 15% 15% 18%;
+  border-color: var(--tejes-accent, var(--brand-accent));
+  border-radius: 50% 50% 0 0;
+  box-shadow: 1.25rem 1.25rem 0 var(--tejes-accent-soft, var(--brand-accent-soft));
+}
+
+@media (max-width: 1024px) {
+  .final-output-section__layout,
+  .final-output-section--spoorthi .final-output-section__layout,
+  .final-output-section--tejes .final-output-section__layout {
+    gap: var(--space-2xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .final-output-section__layout,
+  .final-output-section--spoorthi .final-output-section__layout,
+  .final-output-section--tejes .final-output-section__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .final-output-section--spoorthi .final-output-visual {
+    order: initial;
+  }
+
+  .final-output-visual__frame {
+    min-height: clamp(19rem, 70vw, 32rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .final-output-section__copy {
+    gap: var(--space-lg);
+  }
+
+  .final-output-visual__frame {
+    min-height: clamp(17rem, 84vw, 26rem);
+  }
+
+  .final-output-visual__label {
+    right: var(--space-md);
+    bottom: var(--space-md);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .final-output-section--spoorthi .final-output-visual__result {
+    transform: none;
+  }
+}

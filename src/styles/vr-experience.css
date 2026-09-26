@@ -1,0 +1,180 @@
+/* Phase 4 Step 8 VR presentation composition. This is not an immersive runtime. */
+
+.vr-experience-section__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: clamp(var(--space-2xl), 7vw, var(--space-5xl));
+}
+
+.vr-experience-section__copy {
+  display: grid;
+  align-content: center;
+  gap: var(--space-xl);
+  min-width: 0;
+}
+
+.vr-experience-section__supporting {
+  margin: 0;
+  color: var(--brand-text-muted);
+}
+
+.vr-experience-section__link {
+  justify-self: start;
+}
+
+.vr-experience-visual {
+  min-width: 0;
+  margin: 0;
+}
+
+.vr-experience-visual__frame {
+  position: relative;
+  min-height: clamp(24rem, 48vw, 43rem);
+  overflow: hidden;
+  border: 1px solid var(--brand-border);
+  background: var(--brand-bg-secondary);
+  isolation: isolate;
+}
+
+.vr-experience-visual__field,
+.vr-experience-visual__depth {
+  position: absolute;
+  pointer-events: none;
+}
+
+.vr-experience-visual__field {
+  inset: 0;
+  background: radial-gradient(circle at 50% 42%, var(--brand-accent-soft), var(--brand-bg-secondary) 52%, var(--brand-bg-primary));
+  opacity: 0.8;
+}
+
+.vr-experience-visual__depth {
+  inset: 13% 12% 14% 12%;
+  border: 1px solid var(--brand-accent);
+  box-shadow: 2rem 2rem 0 -1rem var(--brand-accent-soft);
+  transform: perspective(42rem) rotateX(7deg) rotateY(-8deg);
+}
+
+.vr-experience-visual__depth::before,
+.vr-experience-visual__depth::after {
+  position: absolute;
+  content: '';
+  pointer-events: none;
+}
+
+.vr-experience-visual__depth::before {
+  inset: 14% 18% 16% 18%;
+  border: 1px solid var(--brand-border);
+}
+
+.vr-experience-visual__depth::after {
+  inset: 50% 0 auto;
+  border-top: 1px solid var(--brand-border);
+}
+
+.vr-experience-visual__label {
+  position: absolute;
+  right: var(--space-lg);
+  bottom: var(--space-lg);
+  z-index: 1;
+  max-width: 18rem;
+  color: var(--brand-text-muted);
+  font-family: var(--brand-font-technical);
+  font-size: var(--brand-type-caption);
+  letter-spacing: var(--brand-tracking-label);
+  line-height: var(--brand-leading-label);
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.vr-experience-section--spoorthi .vr-experience-visual__frame {
+  background: var(--spoorthi-bg-dark, var(--brand-bg-secondary));
+}
+
+.vr-experience-section--spoorthi .vr-experience-visual__field {
+  background:
+    radial-gradient(circle at 50% 42%, var(--spoorthi-surface-dark, var(--brand-accent-soft)), var(--spoorthi-bg-dark, var(--brand-bg-secondary)) 55%),
+    var(--spoorthi-bg-dark, var(--brand-bg-secondary));
+}
+
+.vr-experience-section--spoorthi .vr-experience-visual__depth {
+  border-color: var(--spoorthi-accent-soft, var(--brand-accent));
+  box-shadow: 2rem 2rem 0 -1rem var(--spoorthi-surface-dark, var(--brand-accent-soft));
+}
+
+.vr-experience-section--spoorthi .vr-experience-visual__label {
+  color: var(--spoorthi-text-on-dark, var(--brand-text-muted));
+}
+
+.vr-experience-section--tejes .vr-experience-section__layout {
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+}
+
+.vr-experience-section--tejes .vr-experience-visual {
+  order: -1;
+}
+
+.vr-experience-section--tejes .vr-experience-visual__frame {
+  background: var(--tejes-surface, var(--brand-surface));
+}
+
+.vr-experience-section--tejes .vr-experience-visual__field {
+  background: radial-gradient(circle at 50% 38%, var(--tejes-accent-soft, var(--brand-accent-soft)), var(--tejes-surface, var(--brand-surface)) 58%);
+}
+
+.vr-experience-section--tejes .vr-experience-visual__depth {
+  inset: 11% 19% 13% 19%;
+  border-color: var(--tejes-accent, var(--brand-accent));
+  border-radius: 50% 50% 0 0;
+  box-shadow: 1.5rem 1.5rem 0 -1rem var(--tejes-accent-soft, var(--brand-accent-soft));
+  transform: none;
+}
+
+.vr-experience-section--tejes .vr-experience-visual__depth::before {
+  border-color: var(--tejes-border, var(--brand-border));
+  border-radius: 50% 50% 0 0;
+}
+
+@media (max-width: 1024px) {
+  .vr-experience-section__layout,
+  .vr-experience-section--tejes .vr-experience-section__layout {
+    gap: var(--space-2xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .vr-experience-section__layout,
+  .vr-experience-section--tejes .vr-experience-section__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .vr-experience-section--tejes .vr-experience-visual {
+    order: initial;
+  }
+
+  .vr-experience-visual__frame {
+    min-height: clamp(19rem, 70vw, 32rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .vr-experience-section__copy {
+    gap: var(--space-lg);
+  }
+
+  .vr-experience-visual__frame {
+    min-height: clamp(17rem, 84vw, 26rem);
+  }
+
+  .vr-experience-visual__label {
+    right: var(--space-md);
+    bottom: var(--space-md);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vr-experience-visual__depth {
+    transform: none;
+  }
+}

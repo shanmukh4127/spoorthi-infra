@@ -1,0 +1,168 @@
+/* Phase 4 Step 6 3D Design composition. Visuals remain intentional placeholders until real media exists. */
+
+.three-d-section__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  align-items: center;
+  gap: clamp(var(--space-2xl), 7vw, var(--space-5xl));
+}
+
+.three-d-section__copy {
+  display: grid;
+  align-content: center;
+  gap: var(--space-xl);
+  min-width: 0;
+}
+
+.three-d-section__supporting {
+  margin: 0;
+  color: var(--brand-text-muted);
+}
+
+.three-d-section__link {
+  justify-self: start;
+}
+
+.three-d-visual {
+  min-width: 0;
+  margin: 0;
+}
+
+.three-d-visual__frame {
+  position: relative;
+  min-height: clamp(23rem, 45vw, 40rem);
+  overflow: hidden;
+  border: 1px solid var(--brand-border);
+  background: var(--brand-bg-secondary);
+  isolation: isolate;
+}
+
+.three-d-visual__depth,
+.three-d-visual__plane {
+  position: absolute;
+  pointer-events: none;
+}
+
+.three-d-visual__depth {
+  inset: 0;
+  background: linear-gradient(135deg, transparent 44%, var(--brand-border) 44.1%, transparent 44.3%);
+  opacity: 0.55;
+}
+
+.three-d-visual__plane {
+  border: 1px solid var(--brand-accent);
+  opacity: 0.8;
+}
+
+.three-d-visual__plane--one {
+  inset: 14% 16% 22% 10%;
+  transform: skewY(-9deg);
+}
+
+.three-d-visual__plane--two {
+  inset: 27% 10% 14% 24%;
+  transform: skewY(9deg);
+}
+
+.three-d-visual__label {
+  position: absolute;
+  right: var(--space-lg);
+  bottom: var(--space-lg);
+  z-index: 1;
+  max-width: 17rem;
+  color: var(--brand-text-muted);
+  font-family: var(--brand-font-technical);
+  font-size: var(--brand-type-caption);
+  letter-spacing: var(--brand-tracking-label);
+  line-height: var(--brand-leading-label);
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.three-d-visual--spoorthi .three-d-visual__frame {
+  background: var(--spoorthi-bg-dark, var(--brand-bg-secondary));
+}
+
+.three-d-visual--spoorthi .three-d-visual__depth {
+  background:
+    linear-gradient(to right, var(--spoorthi-border-on-dark, var(--brand-border)) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--spoorthi-border-on-dark, var(--brand-border)) 1px, transparent 1px);
+  background-size: clamp(3rem, 8vw, 6rem) clamp(3rem, 8vw, 6rem);
+  opacity: 0.28;
+}
+
+.three-d-visual--spoorthi .three-d-visual__plane {
+  border-color: var(--spoorthi-accent-soft, var(--brand-accent));
+}
+
+.three-d-visual--spoorthi .three-d-visual__label {
+  color: var(--spoorthi-text-on-dark, var(--brand-text-muted));
+}
+
+.three-d-visual--tejes .three-d-visual__frame {
+  background: var(--tejes-surface, var(--brand-surface));
+}
+
+.three-d-visual--tejes .three-d-visual__depth {
+  background:
+    linear-gradient(90deg, transparent 49.5%, var(--brand-border) 49.5%, var(--brand-border) 50.5%, transparent 50.5%),
+    linear-gradient(to bottom, transparent 68%, var(--brand-border) 68%, var(--brand-border) calc(68% + 1px), transparent calc(68% + 1px));
+  opacity: 0.38;
+}
+
+.three-d-visual--tejes .three-d-visual__plane {
+  border-color: var(--tejes-accent, var(--brand-accent));
+  border-radius: 50% 50% 0 0;
+}
+
+.three-d-visual--tejes .three-d-visual__plane--one {
+  inset: 12% 21% 20% 21%;
+  transform: none;
+}
+
+.three-d-visual--tejes .three-d-visual__plane--two {
+  inset: 24% 14% 11% 28%;
+  transform: none;
+  opacity: 0.52;
+}
+
+@media (max-width: 1024px) {
+  .three-d-section__layout {
+    gap: var(--space-2xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .three-d-section__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .three-d-section__copy {
+    order: 2;
+  }
+
+  .three-d-visual__frame {
+    min-height: clamp(18rem, 68vw, 31rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .three-d-section__copy {
+    gap: var(--space-lg);
+  }
+
+  .three-d-visual__frame {
+    min-height: clamp(16rem, 82vw, 25rem);
+  }
+
+  .three-d-visual__label {
+    right: var(--space-md);
+    bottom: var(--space-md);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .three-d-visual__plane {
+    transform: none;
+  }
+}

@@ -1,0 +1,5 @@
+export { spoorthiHomeSections, spoorthiWhyPrinciples } from './home.js'
+export { spoorthiPages } from './pages.js'
+export { spoorthiProcess } from './process.js'
+export { spoorthiProjects } from './projects.js'
+export { spoorthiServices } from './services.js'

@@ -1,0 +1,158 @@
+/* Shared architectural layout foundation. Component-specific composition stays local. */
+
+:root {
+  --space-unit: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+  --space-5xl: 8rem;
+
+  --layout-container-max: 90rem;
+  --layout-container-wide: 110rem;
+  --layout-page-gutter: clamp(1rem, 3vw, 3rem);
+  --layout-grid-columns: 12;
+  --layout-grid-gap: clamp(1rem, 2vw, 2rem);
+
+  --layout-section-compact: clamp(3rem, 6vw, 6rem);
+  --layout-section-standard: clamp(5rem, 10vw, 10rem);
+  --layout-section-editorial: clamp(7rem, 14vw, 14rem);
+  --layout-section-hero: clamp(6rem, 18vw, 16rem);
+  --layout-content-padding: clamp(1.5rem, 5vw, 5rem);
+
+  --rhythm-label-heading: var(--space-sm);
+  --rhythm-heading-description: var(--space-lg);
+  --rhythm-description-content: var(--space-2xl);
+  --rhythm-content-cta: var(--space-xl);
+
+  --brand-page-gutter: var(--layout-page-gutter);
+  --brand-grid-columns: var(--layout-grid-columns);
+  --brand-grid-gap: var(--layout-grid-gap);
+  --brand-section-compact: var(--layout-section-compact);
+  --brand-section-standard: var(--layout-section-standard);
+  --brand-section-editorial: var(--layout-section-editorial);
+  --brand-section-hero: var(--layout-section-hero);
+  --brand-content-padding: var(--layout-content-padding);
+}
+
+[data-brand='spoorthi'] {
+  --spoorthi-page-gutter: clamp(1rem, 3vw, 3rem);
+  --spoorthi-grid-gap: clamp(1rem, 1.8vw, 1.75rem);
+  --spoorthi-section-standard: clamp(5rem, 10vw, 10rem);
+  --spoorthi-section-editorial: clamp(6rem, 12vw, 12rem);
+  --brand-page-gutter: var(--spoorthi-page-gutter);
+  --brand-grid-gap: var(--spoorthi-grid-gap);
+  --brand-section-standard: var(--spoorthi-section-standard);
+  --brand-section-editorial: var(--spoorthi-section-editorial);
+}
+
+[data-brand='tejes'] {
+  --tejes-page-gutter: clamp(1.25rem, 4vw, 3.5rem);
+  --tejes-grid-gap: clamp(1.25rem, 2.5vw, 2.25rem);
+  --tejes-section-standard: clamp(6rem, 12vw, 12rem);
+  --tejes-section-editorial: clamp(8rem, 16vw, 16rem);
+  --brand-page-gutter: var(--tejes-page-gutter);
+  --brand-grid-gap: var(--tejes-grid-gap);
+  --brand-section-standard: var(--tejes-section-standard);
+  --brand-section-editorial: var(--tejes-section-editorial);
+}
+
+.layout-container {
+  width: min(100%, var(--layout-container-max));
+  margin-inline: auto;
+  padding-inline: var(--brand-page-gutter);
+}
+
+.layout-container--wide {
+  width: min(100%, var(--layout-container-wide));
+  max-width: var(--layout-container-wide);
+}
+
+.layout-container--bleed {
+  width: 100%;
+  max-width: none;
+  padding-inline: 0;
+}
+
+.layout-grid {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: repeat(var(--brand-grid-columns), minmax(0, 1fr));
+  gap: var(--brand-grid-gap);
+}
+
+.layout-grid > *,
+.layout-grid__item {
+  grid-column: span var(--layout-column-span, var(--brand-grid-columns));
+  min-width: 0;
+}
+
+.layout-section {
+  padding-block: var(--brand-section-standard);
+}
+
+.layout-section--compact {
+  padding-block: var(--brand-section-compact);
+}
+
+.layout-section--editorial {
+  padding-block: var(--brand-section-editorial);
+}
+
+.layout-section--hero {
+  padding-block: var(--brand-section-hero);
+}
+
+.layout-flow > * + * {
+  margin-block-start: var(--layout-flow-space, var(--space-md));
+}
+
+.layout-flow--section > * + * {
+  margin-block-start: var(--rhythm-heading-description);
+}
+
+.layout-flow--content > * + * {
+  margin-block-start: var(--rhythm-description-content);
+}
+
+.layout-flow--cta > * + * {
+  margin-block-start: var(--rhythm-content-cta);
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --layout-page-gutter: clamp(2.5rem, 4vw, 5rem);
+    --layout-grid-gap: clamp(1.5rem, 2vw, 2.5rem);
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  :root {
+    --layout-grid-columns: 8;
+    --layout-page-gutter: clamp(1.25rem, 4vw, 2.5rem);
+    --layout-grid-gap: clamp(1rem, 2vw, 1.5rem);
+    --layout-section-hero: clamp(5rem, 14vw, 10rem);
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --layout-grid-columns: 4;
+    --layout-page-gutter: 1.25rem;
+    --layout-grid-gap: 1rem;
+    --layout-section-compact: 2.5rem;
+    --layout-section-standard: clamp(3.5rem, 12vw, 5rem);
+    --layout-section-editorial: clamp(5rem, 16vw, 7rem);
+    --layout-section-hero: clamp(4.5rem, 18vw, 7rem);
+    --layout-content-padding: 1.25rem;
+  }
+
+  .layout-grid > *,
+  .layout-grid__item {
+    grid-column: 1 / -1;
+  }
+}

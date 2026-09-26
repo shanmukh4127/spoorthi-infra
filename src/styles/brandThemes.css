@@ -1,0 +1,112 @@
+/* Brand color tokens. Apply data-brand to a future brand page root. */
+
+:root {
+  --brand-bg-primary: #f2f2ef;
+  --brand-bg-secondary: #e7e7e2;
+  --brand-surface: #ffffff;
+  --brand-text-primary: #171717;
+  --brand-text-secondary: #454545;
+  --brand-text-muted: #666666;
+  --brand-border: rgba(23, 23, 23, 0.2);
+  --brand-accent: #4e402e;
+  --brand-accent-hover: #3d3224;
+  --brand-accent-soft: #e7e0d5;
+  --brand-overlay: rgba(23, 23, 23, 0.55);
+  --brand-focus: #3d3224;
+  --brand-text-on-accent: #ffffff;
+  --brand-surface-hover: #e7e7e2;
+  --brand-border-hover: #8f8b82;
+  --brand-state-success: #4e6756;
+  --brand-state-warning: #795d32;
+  --brand-state-error: #7d4747;
+  --brand-state-info: #4f6875;
+  --brand-radius-control: 2px;
+}
+
+[data-brand='spoorthi'] {
+  --spoorthi-bg-primary: #f4f1eb;
+  --spoorthi-bg-secondary: #e6e3dc;
+  --spoorthi-surface: #ffffff;
+  --spoorthi-text-primary: #1a1a18;
+  --spoorthi-text-secondary: #454540;
+  --spoorthi-text-muted: #6f6c65;
+  --spoorthi-border: #b9b5ac;
+  --spoorthi-accent: #63513a;
+  --spoorthi-accent-hover: #4e402e;
+  --spoorthi-accent-soft: #e3d9c8;
+  --spoorthi-overlay: rgba(26, 26, 24, 0.58);
+  --spoorthi-focus: #4e402e;
+  --spoorthi-bg-dark: #1a1a18;
+  --spoorthi-surface-dark: #2b2b28;
+  --spoorthi-text-on-dark: #f4f1eb;
+  --spoorthi-border-on-dark: #5a5952;
+  --spoorthi-state-success: #4e6756;
+  --spoorthi-state-warning: #795d32;
+  --spoorthi-state-error: #7d4747;
+  --spoorthi-state-info: #4f6875;
+
+  --brand-bg-primary: var(--spoorthi-bg-primary);
+  --brand-bg-secondary: var(--spoorthi-bg-secondary);
+  --brand-surface: var(--spoorthi-surface);
+  --brand-text-primary: var(--spoorthi-text-primary);
+  --brand-text-secondary: var(--spoorthi-text-secondary);
+  --brand-text-muted: var(--spoorthi-text-muted);
+  --brand-border: var(--spoorthi-border);
+  --brand-accent: var(--spoorthi-accent);
+  --brand-accent-hover: var(--spoorthi-accent-hover);
+  --brand-accent-soft: var(--spoorthi-accent-soft);
+  --brand-overlay: var(--spoorthi-overlay);
+  --brand-focus: var(--spoorthi-focus);
+  --brand-text-on-accent: #ffffff;
+  --brand-surface-hover: #e6e3dc;
+  --brand-border-hover: #8f8b82;
+  --brand-state-success: var(--spoorthi-state-success);
+  --brand-state-warning: var(--spoorthi-state-warning);
+  --brand-state-error: var(--spoorthi-state-error);
+  --brand-state-info: var(--spoorthi-state-info);
+  --brand-radius-control: 2px;
+}
+
+[data-brand='tejes'] {
+  --tejes-bg-primary: #f6f2eb;
+  --tejes-bg-secondary: #ebe4db;
+  --tejes-surface: #fcfaf6;
+  --tejes-text-primary: #242320;
+  --tejes-text-secondary: #4d4842;
+  --tejes-text-muted: #756d66;
+  --tejes-border: #c9c0b6;
+  --tejes-accent: #765d4e;
+  --tejes-accent-hover: #624b3e;
+  --tejes-accent-soft: #e7dcd4;
+  --tejes-overlay: rgba(36, 35, 32, 0.5);
+  --tejes-focus: #624b3e;
+  --tejes-bg-dark: #242320;
+  --tejes-surface-dark: #35322f;
+  --tejes-text-on-dark: #f6f2eb;
+  --tejes-border-on-dark: #625b54;
+  --tejes-state-success: #58705f;
+  --tejes-state-warning: #80663e;
+  --tejes-state-error: #80504b;
+  --tejes-state-info: #5b6f78;
+
+  --brand-bg-primary: var(--tejes-bg-primary);
+  --brand-bg-secondary: var(--tejes-bg-secondary);
+  --brand-surface: var(--tejes-surface);
+  --brand-text-primary: var(--tejes-text-primary);
+  --brand-text-secondary: var(--tejes-text-secondary);
+  --brand-text-muted: var(--tejes-text-muted);
+  --brand-border: var(--tejes-border);
+  --brand-accent: var(--tejes-accent);
+  --brand-accent-hover: var(--tejes-accent-hover);
+  --brand-accent-soft: var(--tejes-accent-soft);
+  --brand-overlay: var(--tejes-overlay);
+  --brand-focus: var(--tejes-focus);
+  --brand-text-on-accent: #ffffff;
+  --brand-surface-hover: #ebe4db;
+  --brand-border-hover: #9d9389;
+  --brand-state-success: var(--tejes-state-success);
+  --brand-state-warning: var(--tejes-state-warning);
+  --brand-state-error: var(--tejes-state-error);
+  --brand-state-info: var(--tejes-state-info);
+  --brand-radius-control: 4px;
+}

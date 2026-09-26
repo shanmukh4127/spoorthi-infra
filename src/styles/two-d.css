@@ -1,0 +1,177 @@
+/* Phase 4 Step 5 2D Design composition. Visuals remain intentional placeholders until real media exists. */
+
+.two-d-section__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: clamp(var(--space-2xl), 7vw, var(--space-5xl));
+}
+
+.two-d-section__copy {
+  display: grid;
+  align-content: center;
+  gap: var(--space-xl);
+  min-width: 0;
+}
+
+.two-d-section__supporting {
+  margin: 0;
+  color: var(--brand-text-muted);
+}
+
+.two-d-section__link {
+  justify-self: start;
+}
+
+.two-d-visual {
+  min-width: 0;
+  margin: 0;
+}
+
+.two-d-visual__frame {
+  position: relative;
+  min-height: clamp(22rem, 43vw, 38rem);
+  overflow: hidden;
+  border: 1px solid var(--brand-border);
+  background: var(--brand-bg-secondary);
+  isolation: isolate;
+}
+
+.two-d-visual__grid,
+.two-d-visual__drawing {
+  position: absolute;
+  pointer-events: none;
+}
+
+.two-d-visual__grid {
+  inset: 0;
+  background-image:
+    linear-gradient(to right, var(--brand-border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--brand-border) 1px, transparent 1px);
+  background-size: clamp(3rem, 8vw, 6rem) clamp(3rem, 8vw, 6rem);
+  opacity: 0.42;
+}
+
+.two-d-visual__drawing {
+  inset: 13% 11% 15% 15%;
+  border: 1px solid var(--brand-accent);
+  opacity: 0.78;
+}
+
+.two-d-visual__drawing::before,
+.two-d-visual__drawing::after {
+  position: absolute;
+  content: '';
+  pointer-events: none;
+}
+
+.two-d-visual__drawing::before {
+  inset: 22% 15% 22% 15%;
+  border: 1px solid var(--brand-accent);
+}
+
+.two-d-visual__drawing::after {
+  inset: 50% 0 auto;
+  border-top: 1px solid var(--brand-accent);
+}
+
+.two-d-visual__label {
+  position: absolute;
+  right: var(--space-lg);
+  bottom: var(--space-lg);
+  z-index: 1;
+  max-width: 17rem;
+  color: var(--brand-text-muted);
+  font-family: var(--brand-font-technical);
+  font-size: var(--brand-type-caption);
+  letter-spacing: var(--brand-tracking-label);
+  line-height: var(--brand-leading-label);
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.two-d-visual--spoorthi .two-d-visual__frame {
+  background: var(--spoorthi-bg-dark, var(--brand-bg-secondary));
+}
+
+.two-d-visual--spoorthi .two-d-visual__grid {
+  background-image:
+    linear-gradient(to right, var(--spoorthi-border-on-dark, var(--brand-border)) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--spoorthi-border-on-dark, var(--brand-border)) 1px, transparent 1px);
+  opacity: 0.3;
+}
+
+.two-d-visual--spoorthi .two-d-visual__drawing,
+.two-d-visual--spoorthi .two-d-visual__drawing::before,
+.two-d-visual--spoorthi .two-d-visual__drawing::after {
+  border-color: var(--spoorthi-accent-soft, var(--brand-accent));
+}
+
+.two-d-visual--spoorthi .two-d-visual__label {
+  color: var(--spoorthi-text-on-dark, var(--brand-text-muted));
+}
+
+.two-d-visual--tejes .two-d-visual__frame {
+  background: var(--tejes-surface, var(--brand-surface));
+}
+
+.two-d-visual--tejes .two-d-visual__grid {
+  inset: 9%;
+  background-image: linear-gradient(90deg, transparent 49.5%, var(--brand-border) 49.5%, var(--brand-border) 50.5%, transparent 50.5%);
+  opacity: 0.38;
+}
+
+.two-d-visual--tejes .two-d-visual__drawing {
+  inset: 12% 17% 12% 17%;
+  border-color: var(--tejes-accent, var(--brand-accent));
+  border-radius: 50% 50% 0 0;
+}
+
+.two-d-visual--tejes .two-d-visual__drawing::before {
+  inset: 20% 18% 0;
+  border-color: var(--tejes-accent, var(--brand-accent));
+  border-bottom: 0;
+  border-radius: 50% 50% 0 0;
+}
+
+.two-d-visual--tejes .two-d-visual__drawing::after {
+  border-color: var(--tejes-accent, var(--brand-accent));
+  opacity: 0.65;
+}
+
+@media (max-width: 1024px) {
+  .two-d-section__layout {
+    gap: var(--space-2xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .two-d-section__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .two-d-visual__frame {
+    min-height: clamp(18rem, 66vw, 30rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .two-d-section__copy {
+    gap: var(--space-lg);
+  }
+
+  .two-d-visual__frame {
+    min-height: clamp(16rem, 80vw, 24rem);
+  }
+
+  .two-d-visual__label {
+    right: var(--space-md);
+    bottom: var(--space-md);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .two-d-visual__drawing {
+    transform: none;
+  }
+}

@@ -1,0 +1,170 @@
+/* Shared motion foundation. Motion is opt-in except for existing interactions. */
+
+:root {
+  --motion-duration-fast: 180ms;
+  --motion-duration-normal: 350ms;
+  --motion-duration-slow: 550ms;
+  --motion-duration-cinematic: 900ms;
+  --motion-ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-ease-enter: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-ease-transition: cubic-bezier(0.65, 0, 0.35, 1);
+  --motion-distance-small: 0.25rem;
+  --motion-distance-medium: 0.75rem;
+  --motion-distance-large: 1.25rem;
+  --motion-scale-subtle: 1.025;
+  --motion-stagger: 70ms;
+
+  --brand-motion-duration-fast: var(--motion-duration-fast);
+  --brand-motion-duration-normal: var(--motion-duration-normal);
+  --brand-motion-duration-slow: var(--motion-duration-slow);
+  --brand-motion-duration-cinematic: var(--motion-duration-cinematic);
+  --brand-motion-ease-standard: var(--motion-ease-standard);
+  --brand-motion-ease-enter: var(--motion-ease-enter);
+  --brand-motion-ease-transition: var(--motion-ease-transition);
+  --brand-motion-distance-small: var(--motion-distance-small);
+  --brand-motion-distance-medium: var(--motion-distance-medium);
+  --brand-motion-distance-large: var(--motion-distance-large);
+  --brand-motion-scale-subtle: var(--motion-scale-subtle);
+  --brand-motion-stagger: var(--motion-stagger);
+  --brand-motion-transition-interactive: var(--brand-motion-duration-fast)
+    var(--brand-motion-ease-standard);
+  --brand-motion-transition-reveal: var(--brand-motion-duration-slow)
+    var(--brand-motion-ease-enter);
+}
+
+[data-brand='spoorthi'] {
+  --spoorthi-motion-fast: 180ms;
+  --spoorthi-motion-normal: 350ms;
+  --spoorthi-motion-slow: 550ms;
+  --spoorthi-motion-cinematic: 750ms;
+  --spoorthi-motion-ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --spoorthi-motion-ease-enter: cubic-bezier(0.16, 1, 0.3, 1);
+  --spoorthi-motion-ease-transition: cubic-bezier(0.65, 0, 0.35, 1);
+  --spoorthi-motion-distance-small: 0.25rem;
+  --spoorthi-motion-distance-medium: 0.75rem;
+  --spoorthi-motion-distance-large: 1.25rem;
+  --spoorthi-motion-scale-subtle: 1.025;
+  --spoorthi-motion-stagger: 70ms;
+  --brand-motion-duration-fast: var(--spoorthi-motion-fast);
+  --brand-motion-duration-normal: var(--spoorthi-motion-normal);
+  --brand-motion-duration-slow: var(--spoorthi-motion-slow);
+  --brand-motion-duration-cinematic: var(--spoorthi-motion-cinematic);
+  --brand-motion-ease-standard: var(--spoorthi-motion-ease-standard);
+  --brand-motion-ease-enter: var(--spoorthi-motion-ease-enter);
+  --brand-motion-ease-transition: var(--spoorthi-motion-ease-transition);
+  --brand-motion-distance-small: var(--spoorthi-motion-distance-small);
+  --brand-motion-distance-medium: var(--spoorthi-motion-distance-medium);
+  --brand-motion-distance-large: var(--spoorthi-motion-distance-large);
+  --brand-motion-scale-subtle: var(--spoorthi-motion-scale-subtle);
+  --brand-motion-stagger: var(--spoorthi-motion-stagger);
+}
+
+[data-brand='tejes'] {
+  --tejes-motion-fast: 200ms;
+  --tejes-motion-normal: 400ms;
+  --tejes-motion-slow: 650ms;
+  --tejes-motion-cinematic: 1000ms;
+  --tejes-motion-ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+  --tejes-motion-ease-enter: cubic-bezier(0.16, 1, 0.3, 1);
+  --tejes-motion-ease-transition: cubic-bezier(0.76, 0, 0.24, 1);
+  --tejes-motion-distance-small: 0.2rem;
+  --tejes-motion-distance-medium: 0.5rem;
+  --tejes-motion-distance-large: 1rem;
+  --tejes-motion-scale-subtle: 1.02;
+  --tejes-motion-stagger: 90ms;
+  --brand-motion-duration-fast: var(--tejes-motion-fast);
+  --brand-motion-duration-normal: var(--tejes-motion-normal);
+  --brand-motion-duration-slow: var(--tejes-motion-slow);
+  --brand-motion-duration-cinematic: var(--tejes-motion-cinematic);
+  --brand-motion-ease-standard: var(--tejes-motion-ease-standard);
+  --brand-motion-ease-enter: var(--tejes-motion-ease-enter);
+  --brand-motion-ease-transition: var(--tejes-motion-ease-transition);
+  --brand-motion-distance-small: var(--tejes-motion-distance-small);
+  --brand-motion-distance-medium: var(--tejes-motion-distance-medium);
+  --brand-motion-distance-large: var(--tejes-motion-distance-large);
+  --brand-motion-scale-subtle: var(--tejes-motion-scale-subtle);
+  --brand-motion-stagger: var(--tejes-motion-stagger);
+}
+
+.motion-enter,
+.motion-fade-up {
+  animation: motion-fade-up var(--brand-motion-duration-cinematic)
+    var(--brand-motion-ease-enter) both;
+}
+
+.motion-fade {
+  animation: motion-fade var(--brand-motion-duration-normal)
+    var(--brand-motion-ease-enter) both;
+}
+
+.motion-slide-in {
+  animation: motion-slide-in var(--brand-motion-duration-slow)
+    var(--brand-motion-ease-enter) both;
+}
+
+.motion-delay-1 {
+  animation-delay: var(--brand-motion-stagger);
+}
+
+.motion-delay-2 {
+  animation-delay: calc(var(--brand-motion-stagger) * 2);
+}
+
+.motion-interactive {
+  transition: transform var(--brand-motion-transition-interactive),
+    opacity var(--brand-motion-transition-interactive);
+}
+
+@keyframes motion-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(var(--brand-motion-distance-medium));
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes motion-fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes motion-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(var(--brand-motion-distance-medium));
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .motion-enter,
+  .motion-fade-up,
+  .motion-fade,
+  .motion-slide-in {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

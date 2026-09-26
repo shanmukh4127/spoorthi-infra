@@ -1,0 +1,280 @@
+/* Shared semantic typography foundation with brand-scoped references. */
+
+:root {
+  --font-family-primary: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-editorial: Georgia, 'Times New Roman', serif;
+  --font-family-technical: ui-monospace, Consolas, monospace;
+
+  --type-display: clamp(3.25rem, 8vw, 8rem);
+  --type-h1: clamp(2.5rem, 5vw, 5rem);
+  --type-h2: clamp(2rem, 3.5vw, 3.5rem);
+  --type-h3: clamp(1.5rem, 2.5vw, 2.25rem);
+  --type-h4: clamp(1.25rem, 1.8vw, 1.5rem);
+  --type-body-large: clamp(1.125rem, 1.4vw, 1.35rem);
+  --type-body: 1rem;
+  --type-body-small: 0.9rem;
+  --type-label: 0.75rem;
+  --type-caption: 0.7rem;
+  --type-navigation: 0.875rem;
+  --type-button: 0.8rem;
+
+  --type-weight-regular: 400;
+  --type-weight-medium: 500;
+  --type-weight-semibold: 600;
+  --type-weight-bold: 700;
+
+  --type-leading-display: 0.95;
+  --type-leading-heading: 1.1;
+  --type-leading-body: 1.55;
+  --type-leading-label: 1.2;
+
+  --type-tracking-display: -0.04em;
+  --type-tracking-heading: -0.02em;
+  --type-tracking-body: 0;
+  --type-tracking-label: 0.12em;
+  --type-tracking-navigation: 0.04em;
+
+  --type-max-body: 65ch;
+  --type-max-description: 45ch;
+  --type-max-hero: 32ch;
+  --type-max-section: 55ch;
+
+  --brand-font-body: var(--font-family-primary);
+  --brand-font-display: var(--font-family-primary);
+  --brand-font-technical: var(--font-family-technical);
+  --brand-type-display: var(--type-display);
+  --brand-type-h1: var(--type-h1);
+  --brand-type-h2: var(--type-h2);
+  --brand-type-h3: var(--type-h3);
+  --brand-type-h4: var(--type-h4);
+  --brand-type-body-large: var(--type-body-large);
+  --brand-type-body: var(--type-body);
+  --brand-type-body-small: var(--type-body-small);
+  --brand-type-label: var(--type-label);
+  --brand-type-caption: var(--type-caption);
+  --brand-type-navigation: var(--type-navigation);
+  --brand-type-button: var(--type-button);
+  --brand-weight-display: var(--type-weight-medium);
+  --brand-weight-heading: var(--type-weight-semibold);
+  --brand-weight-body: var(--type-weight-regular);
+  --brand-weight-label: var(--type-weight-semibold);
+  --brand-leading-display: var(--type-leading-display);
+  --brand-leading-heading: var(--type-leading-heading);
+  --brand-leading-body: var(--type-leading-body);
+  --brand-leading-label: var(--type-leading-label);
+  --brand-tracking-display: var(--type-tracking-display);
+  --brand-tracking-heading: var(--type-tracking-heading);
+  --brand-tracking-body: var(--type-tracking-body);
+  --brand-tracking-label: var(--type-tracking-label);
+  --brand-tracking-navigation: var(--type-tracking-navigation);
+}
+
+[data-brand='spoorthi'] {
+  --spoorthi-font-primary: var(--font-family-primary);
+  --spoorthi-font-display: var(--font-family-primary);
+  --spoorthi-font-technical: var(--font-family-technical);
+  --spoorthi-type-display: var(--type-display);
+  --spoorthi-type-h1: var(--type-h1);
+  --spoorthi-type-h2: var(--type-h2);
+  --spoorthi-type-h3: var(--type-h3);
+  --spoorthi-type-h4: var(--type-h4);
+  --spoorthi-type-body-large: var(--type-body-large);
+  --spoorthi-type-body: var(--type-body);
+  --spoorthi-type-body-small: var(--type-body-small);
+  --spoorthi-type-label: var(--type-label);
+  --spoorthi-type-caption: var(--type-caption);
+  --spoorthi-type-navigation: var(--type-navigation);
+  --spoorthi-type-button: var(--type-button);
+  --spoorthi-leading-display: var(--type-leading-display);
+  --spoorthi-leading-heading: var(--type-leading-heading);
+  --spoorthi-leading-body: var(--type-leading-body);
+  --spoorthi-leading-label: var(--type-leading-label);
+  --spoorthi-tracking-display: var(--type-tracking-display);
+  --spoorthi-tracking-heading: var(--type-tracking-heading);
+  --spoorthi-tracking-body: var(--type-tracking-body);
+  --spoorthi-tracking-label: var(--type-tracking-label);
+  --spoorthi-tracking-navigation: var(--type-tracking-navigation);
+
+  --brand-font-body: var(--spoorthi-font-primary);
+  --brand-font-display: var(--spoorthi-font-display);
+  --brand-font-technical: var(--spoorthi-font-technical);
+  --brand-type-display: var(--spoorthi-type-display);
+  --brand-type-h1: var(--spoorthi-type-h1);
+  --brand-type-h2: var(--spoorthi-type-h2);
+  --brand-type-h3: var(--spoorthi-type-h3);
+  --brand-type-h4: var(--spoorthi-type-h4);
+  --brand-type-body-large: var(--spoorthi-type-body-large);
+  --brand-type-body: var(--spoorthi-type-body);
+  --brand-type-body-small: var(--spoorthi-type-body-small);
+  --brand-type-label: var(--spoorthi-type-label);
+  --brand-type-caption: var(--spoorthi-type-caption);
+  --brand-type-navigation: var(--spoorthi-type-navigation);
+  --brand-type-button: var(--spoorthi-type-button);
+  --brand-leading-display: var(--spoorthi-leading-display);
+  --brand-leading-heading: var(--spoorthi-leading-heading);
+  --brand-leading-body: var(--spoorthi-leading-body);
+  --brand-leading-label: var(--spoorthi-leading-label);
+  --brand-tracking-display: var(--spoorthi-tracking-display);
+  --brand-tracking-heading: var(--spoorthi-tracking-heading);
+  --brand-tracking-body: var(--spoorthi-tracking-body);
+  --brand-tracking-label: var(--spoorthi-tracking-label);
+  --brand-tracking-navigation: var(--spoorthi-tracking-navigation);
+}
+
+[data-brand='tejes'] {
+  --tejes-font-primary: var(--font-family-primary);
+  --tejes-font-display: var(--font-family-editorial);
+  --tejes-font-metadata: var(--font-family-technical);
+  --tejes-type-display: var(--type-display);
+  --tejes-type-h1: var(--type-h1);
+  --tejes-type-h2: var(--type-h2);
+  --tejes-type-h3: var(--type-h3);
+  --tejes-type-h4: var(--type-h4);
+  --tejes-type-body-large: var(--type-body-large);
+  --tejes-type-body: var(--type-body);
+  --tejes-type-body-small: var(--type-body-small);
+  --tejes-type-label: var(--type-label);
+  --tejes-type-caption: var(--type-caption);
+  --tejes-type-navigation: var(--type-navigation);
+  --tejes-type-button: var(--type-button);
+  --tejes-leading-display: var(--type-leading-display);
+  --tejes-leading-heading: var(--type-leading-heading);
+  --tejes-leading-body: var(--type-leading-body);
+  --tejes-leading-label: var(--type-leading-label);
+  --tejes-tracking-display: var(--type-tracking-display);
+  --tejes-tracking-heading: var(--type-tracking-heading);
+  --tejes-tracking-body: var(--type-tracking-body);
+  --tejes-tracking-label: var(--type-tracking-label);
+  --tejes-tracking-navigation: var(--type-tracking-navigation);
+
+  --brand-font-body: var(--tejes-font-primary);
+  --brand-font-display: var(--tejes-font-display);
+  --brand-font-technical: var(--tejes-font-metadata);
+  --brand-type-display: var(--tejes-type-display);
+  --brand-type-h1: var(--tejes-type-h1);
+  --brand-type-h2: var(--tejes-type-h2);
+  --brand-type-h3: var(--tejes-type-h3);
+  --brand-type-h4: var(--tejes-type-h4);
+  --brand-type-body-large: var(--tejes-type-body-large);
+  --brand-type-body: var(--tejes-type-body);
+  --brand-type-body-small: var(--tejes-type-body-small);
+  --brand-type-label: var(--tejes-type-label);
+  --brand-type-caption: var(--tejes-type-caption);
+  --brand-type-navigation: var(--tejes-type-navigation);
+  --brand-type-button: var(--tejes-type-button);
+  --brand-leading-display: var(--tejes-leading-display);
+  --brand-leading-heading: var(--tejes-leading-heading);
+  --brand-leading-body: var(--tejes-leading-body);
+  --brand-leading-label: var(--tejes-leading-label);
+  --brand-tracking-display: var(--tejes-tracking-display);
+  --brand-tracking-heading: var(--tejes-tracking-heading);
+  --brand-tracking-body: var(--tejes-tracking-body);
+  --brand-tracking-label: var(--tejes-tracking-label);
+  --brand-tracking-navigation: var(--tejes-tracking-navigation);
+}
+
+body {
+  font-family: var(--brand-font-body);
+  font-size: var(--brand-type-body);
+  line-height: var(--brand-leading-body);
+}
+
+.type-display,
+.type-h1,
+.type-h2,
+.type-h3,
+.type-h4 {
+  font-family: var(--brand-font-display);
+  font-weight: var(--brand-weight-heading);
+}
+
+.type-display {
+  max-width: var(--type-max-hero);
+  font-size: var(--brand-type-display);
+  font-weight: var(--brand-weight-display);
+  letter-spacing: var(--brand-tracking-display);
+  line-height: var(--brand-leading-display);
+}
+
+.type-h1 {
+  font-size: var(--brand-type-h1);
+  letter-spacing: var(--brand-tracking-heading);
+  line-height: var(--brand-leading-heading);
+}
+
+.type-h2 {
+  font-size: var(--brand-type-h2);
+  letter-spacing: var(--brand-tracking-heading);
+  line-height: var(--brand-leading-heading);
+}
+
+.type-h3 {
+  font-size: var(--brand-type-h3);
+  line-height: var(--brand-leading-heading);
+}
+
+.type-h4 {
+  font-size: var(--brand-type-h4);
+  line-height: var(--brand-leading-heading);
+}
+
+.type-body-large,
+.type-body,
+.type-body-small {
+  font-family: var(--brand-font-body);
+  font-weight: var(--type-weight-regular);
+  letter-spacing: var(--brand-tracking-body);
+}
+
+.type-body-large {
+  max-width: var(--type-max-description);
+  font-size: var(--brand-type-body-large);
+}
+
+.type-body {
+  max-width: var(--type-max-body);
+  font-size: var(--brand-type-body);
+}
+
+.type-body-small {
+  max-width: var(--type-max-body);
+  font-size: var(--brand-type-body-small);
+}
+
+.type-label,
+.type-caption,
+.type-navigation,
+.type-button {
+  font-family: var(--brand-font-technical);
+  font-weight: var(--brand-weight-label);
+  letter-spacing: var(--brand-tracking-label);
+  line-height: var(--brand-leading-label);
+  text-transform: uppercase;
+}
+
+.type-label {
+  font-size: var(--brand-type-label);
+}
+
+.type-caption {
+  font-size: var(--brand-type-caption);
+}
+
+.type-navigation {
+  font-size: var(--brand-type-navigation);
+  letter-spacing: var(--brand-tracking-navigation);
+}
+
+.type-button {
+  font-size: var(--brand-type-button);
+}
+
+@media (max-width: 600px) {
+  :root {
+    --type-display: clamp(2.5rem, 13vw, 4.5rem);
+    --type-h1: clamp(2.25rem, 10vw, 3.5rem);
+    --type-h2: clamp(1.8rem, 8vw, 2.75rem);
+    --type-h3: clamp(1.4rem, 6vw, 2rem);
+    --type-body-large: 1.1rem;
+  }
+}

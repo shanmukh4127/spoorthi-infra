@@ -1,0 +1,35 @@
+/* Phase 4 Step 13 responsive and UX pass. Scoped to overflow and focus refinements. */
+
+.brand-header__identity:focus-visible,
+.mobile-navigation__panel a:focus-visible,
+.brand-footer a:focus-visible {
+  outline: 2px solid var(--brand-focus);
+  outline-offset: 3px;
+}
+
+.mobile-navigation__panel {
+  width: min(15rem, calc(100vw - (2 * var(--brand-page-gutter))));
+  min-width: 0;
+  max-height: calc(100svh - 6rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.brand-footer__grid nav a,
+.final-cta__secondary {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+  .mobile-navigation__panel {
+    max-height: calc(100svh - 5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-navigation__panel,
+  .brand-header__identity,
+  .brand-footer a {
+    transition: none;
+  }
+}

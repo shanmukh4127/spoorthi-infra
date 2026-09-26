@@ -1,0 +1,138 @@
+/* Phase 4 Step 4 Services composition. Service detail remains data-led and concise. */
+
+.services-section__list {
+  margin-top: var(--space-3xl);
+  border-top: 1px solid var(--brand-border);
+}
+
+.service-item {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr) auto;
+  align-items: start;
+  gap: var(--space-lg);
+  min-width: 0;
+  padding-block: var(--space-xl);
+  border-bottom: 1px solid var(--brand-border);
+}
+
+.service-item__number,
+.service-item__title,
+.service-item__description {
+  margin: 0;
+}
+
+.service-item__number {
+  color: var(--brand-accent);
+}
+
+.service-item__content {
+  display: grid;
+  gap: var(--space-sm);
+  min-width: 0;
+}
+
+.service-item__title {
+  margin: 0;
+}
+
+.service-item__description {
+  color: var(--brand-text-secondary);
+}
+
+.service-item__link {
+  align-self: center;
+  justify-self: end;
+  white-space: nowrap;
+}
+
+.services-section--spoorthi .service-item {
+  grid-template-columns: 4rem minmax(0, 1fr) minmax(0, 12rem);
+}
+
+.services-section--spoorthi .service-item__title {
+  font-family: var(--brand-font-technical);
+  font-size: var(--brand-type-h3);
+  letter-spacing: var(--brand-tracking-heading);
+  text-transform: uppercase;
+}
+
+.services-section--tejes .services-section__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 var(--brand-grid-gap);
+  border-top: 0;
+}
+
+.services-section--tejes .service-item {
+  grid-template-columns: 3rem minmax(0, 1fr);
+  gap: var(--space-md);
+  min-height: 12rem;
+  padding-block: var(--space-xl) var(--space-2xl);
+  border-top: 1px solid var(--brand-border);
+  border-bottom: 0;
+}
+
+.services-section--tejes .service-item__link {
+  grid-column: 2;
+  justify-self: start;
+  align-self: end;
+}
+
+.services-section--tejes .service-item__title {
+  font-size: var(--brand-type-h2);
+  font-weight: var(--brand-weight-heading);
+}
+
+@media (max-width: 1024px) {
+  .services-section--tejes .service-item__title {
+    font-size: var(--brand-type-h3);
+  }
+}
+
+@media (max-width: 768px) {
+  .services-section__list {
+    margin-top: var(--space-2xl);
+  }
+
+  .services-section--spoorthi .service-item {
+    grid-template-columns: 3rem minmax(0, 1fr) auto;
+  }
+
+  .services-section--tejes .services-section__list {
+    grid-template-columns: 1fr;
+  }
+
+  .services-section--tejes .service-item {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .service-item {
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    gap: var(--space-md);
+    padding-block: var(--space-lg);
+  }
+
+  .services-section--spoorthi .service-item {
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+  }
+
+  .service-item__link,
+  .services-section--tejes .service-item__link {
+    grid-column: 2;
+    justify-self: start;
+    align-self: start;
+  }
+
+  .services-section--tejes .service-item__title,
+  .services-section--spoorthi .service-item__title {
+    font-size: var(--brand-type-h3);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-item__link .ui-link__arrow {
+    transition: none;
+  }
+}
