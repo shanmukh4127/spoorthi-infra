@@ -1,0 +1,51 @@
+/* The open line: Contact-only styles, using existing Spoorthi tokens. */
+.spoorthi-contact-page .layout-container { max-width: 90rem; padding-inline: clamp(1.25rem,5vw,5rem); }
+.spoorthi-contact-page .layout-section { padding-block: clamp(1.5rem,3vw,3rem); }
+.spoorthi-contact-page .section-heading { align-content: start; gap: .65rem; }
+.spoorthi-contact-page .section-heading__title { font-size: clamp(1.75rem,2.7vw,2.5rem); font-weight: var(--type-weight-regular); line-height: 1.15; letter-spacing: -.025em; max-width: 26ch; }
+.spoorthi-contact-page .section-heading__description { font-size: .9375rem; line-height: 1.6; max-width: 62ch; }
+.spoorthi-contact-page .type-label { font-size: .6875rem; line-height: 1.6; color: var(--brand-accent); }
+.spoorthi-contact-page p { line-height: 1.6; }
+.contact-intro__layout { display: grid; grid-template-columns: minmax(0,2fr) minmax(0,1fr); gap: 2rem; align-items: end; padding-block: .5rem 2rem; border-bottom: 1px solid var(--brand-border); }
+.spoorthi-contact-page .contact-intro h1 { font-size: clamp(2.75rem,4.5vw,4.25rem); text-transform: uppercase; max-width: 16ch; }
+.contact-intro .section-heading__description { max-width: 47ch; }
+.contact-intro__annotation { border-left: 1px solid var(--brand-border); padding-left: 1.5rem; }
+.contact-intro__annotation p { font-size: .8rem; max-width: 25ch; }
+.contact-intro__mark { display: block; color: var(--brand-accent); font-size: 2rem; font-weight: 200; margin-top: 1rem; }
+.contact-conversation__layout { display: grid; grid-template-columns: minmax(0,4fr) minmax(0,7fr); gap: clamp(2rem,7vw,7rem); }
+.contact-information h2 { font-size: clamp(1.75rem,2.5vw,2.5rem); font-weight: 400; margin: 1rem 0; }
+.contact-information > p:not(.type-label) { font-size: .9375rem; max-width: 33ch; color: var(--brand-text-secondary); }
+.contact-information__pending { border-top: 1px solid var(--brand-border); margin-top: 2rem; padding-top: 1rem; }
+.contact-information__line { margin-top: 3rem; max-width: 30ch; }
+.contact-information dl { font-size: .9375rem; }
+.contact-information dd { margin: .3rem 0 1rem; overflow-wrap: anywhere; }
+.contact-enquiry { min-width: 0; }
+.contact-enquiry h2 { font-size: 1.25rem; font-weight: 500; margin: 0; }
+.contact-enquiry__notice, .contact-enquiry__context { font-size: .8125rem; color: var(--brand-text-secondary); }
+.contact-enquiry .ui-field { margin-block: 1.2rem; }
+.spoorthi-contact-page .ui-field__label { font-family: var(--brand-font-technical); font-size: .6875rem; letter-spacing: .08em; text-transform: uppercase; }
+.spoorthi-contact-page .ui-field__control { min-width: 0; width: 100%; min-height: 48px; border: 0; border-bottom: 1px solid var(--brand-border); border-radius: 0; background: transparent; padding: .7rem .25rem; color: var(--brand-text-primary); font-size: 1rem; }
+.spoorthi-contact-page textarea.ui-field__control { resize: vertical; min-height: 100px; }
+.spoorthi-contact-page .ui-field__control:focus-visible { outline: 2px solid var(--brand-focus); outline-offset: 3px; }
+.spoorthi-contact-page .ui-field__hint { font-size: .75rem; }
+.spoorthi-contact-page .ui-button, .spoorthi-contact-page .ui-link { min-height: 44px; font-size: .75rem; gap: 1rem; }
+.spoorthi-contact-page .ui-button { white-space: normal; text-align: left; }
+.contact-enquiry__status { font-size: .875rem; min-height: 1.5rem; }
+.contact-project-info .layout-container { border-block: 1px solid var(--brand-border); padding-block: 1.5rem; }
+.contact-project-info ol { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); list-style: none; gap: 2rem; padding: 0; margin: 1.5rem 0 0; }
+.contact-project-info li { border-left: 1px solid var(--brand-border); padding-left: 1rem; }
+.contact-project-info h3 { font-size: 1.125rem; font-weight: 500; margin: .5rem 0; }
+.contact-project-info li p { font-size: .875rem; max-width: 34ch; margin: 0; color: var(--brand-text-secondary); }
+.contact-estimator { display: grid; grid-template-columns: minmax(0,7fr) minmax(0,5fr); gap: 2rem; margin-top: 2rem; }
+.contact-estimator__steps { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.5rem; margin-bottom: 1.5rem; }
+.contact-estimator__result { padding: 1.5rem; border-left: 1px solid var(--brand-border); background: var(--brand-bg-secondary); }
+.contact-estimator__result h3 { font-size: clamp(1.5rem,2.2vw,2rem); font-weight: 400; margin: .75rem 0; overflow-wrap: anywhere; }
+.contact-estimator__result p { font-size: .8125rem; }
+.contact-estimator__disclaimer { border-top: 1px solid var(--brand-border); padding-top: 1rem; margin-top: 1.5rem; }
+.contact-estimator__result .ui-button { margin-top: .5rem; }
+.contact-closing__layout { display: flex; align-items: center; justify-content: space-between; gap: 2rem; border-top: 1px solid var(--brand-border); padding-top: 1.5rem; }
+.contact-closing nav { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; }
+@media (max-width:1024px) { .contact-conversation__layout { grid-template-columns: minmax(0,1fr) minmax(0,1.7fr); gap: 2rem; } .contact-estimator { grid-template-columns: minmax(0,1fr); } .contact-estimator__result { border-left: 0; border-top: 1px solid var(--brand-border); } }
+@media (max-width:768px) { .contact-intro__layout, .contact-conversation__layout { grid-template-columns: minmax(0,1fr); } .contact-intro__annotation { display: flex; gap: 1rem; align-items: center; } .contact-intro__mark { margin: 0 0 0 auto; } .contact-information__line { margin-top: 1rem; max-width: none; } .contact-information > p:not(.type-label) { max-width: 55ch; } .contact-closing__layout { align-items: flex-start; flex-direction: column; } }
+@media (max-width:600px) { .contact-estimator__steps, .contact-project-info ol { grid-template-columns: minmax(0,1fr); } .contact-project-info ol { gap: 1.25rem; } .contact-intro__annotation { flex-wrap: wrap; } .contact-estimator__result { padding: 1.25rem; } .contact-closing nav { flex-direction: column; align-items: flex-start; } }
+@media (prefers-reduced-motion:reduce) { .spoorthi-contact-page *, .spoorthi-contact-page *::before { animation: none !important; transition: none !important; scroll-behavior: auto !important; } .spoorthi-contact-page .ui-link:hover .ui-link__arrow { transform: none; } }

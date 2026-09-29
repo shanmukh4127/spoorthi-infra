@@ -4,6 +4,7 @@ export const routePaths = Object.freeze({
     home: '/spoorthi',
     civilConstruction: '/spoorthi/civil-construction',
     projects: '/spoorthi/projects',
+    projectDetail: (projectId = ':projectId') => `/spoorthi/projects/${projectId}`,
     design3d: '/spoorthi/design-3d',
     vr: '/spoorthi/vr',
     contact: '/spoorthi/contact',

@@ -93,21 +93,29 @@ export const spoorthiWhyPrinciples = Object.freeze([
   {
     id: 'structured-thinking',
     title: 'Structured thinking',
-    description: 'Questions, constraints, and priorities are made visible before the work moves forward.',
+    description: 'Questions, constraints, and priorities are made visible before the work moves forward, giving each later decision a clear point of reference.',
   },
   {
     id: 'design-clarity',
     title: 'Design clarity',
-    description: 'Plans and visual references connect technical intent with a shared understanding of the outcome.',
+    description: 'Plans, layouts, and visual references connect technical intent with a shared understanding of the outcome before execution begins.',
   },
   {
     id: 'technical-precision',
     title: 'Technical precision',
-    description: 'Proportion, detail, and clear information support decisions made with care.',
+    description: 'Proportion, detail, and clear information support measured decisions across 2D planning, 3D development, and construction.',
   },
   {
     id: 'integrated-perspective',
     title: 'Integrated perspective',
-    description: '2D planning, 3D visualization, final output, and VR remain connected as one design journey.',
+    description: '2D planning, 3D visualization, construction, final output, and VR remain connected as one integrated project journey.',
   },
+])
+
+export const spoorthiProjectExperience = Object.freeze([
+  { number: '01', title: 'Plan', label: '2D' },
+  { number: '02', title: 'Develop', label: '3D' },
+  { number: '03', title: 'Visualize', label: 'Visualization' },
+  { number: '04', title: 'Construct', label: 'Built outcome' },
+  { number: '05', title: 'Experience', label: 'VR' },
 ])
