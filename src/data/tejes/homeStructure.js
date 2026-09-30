@@ -1,0 +1,67 @@
+import { routePaths } from '../routePaths.js'
+
+export const tejesHomeStructure = Object.freeze({
+  rooms: Object.freeze([
+    ['living-rooms', 'Living Rooms', 'Relax, reconnect, and make space for everyday life.'],
+    ['bedrooms', 'Bedrooms', 'Rest, recharge, and shape a more personal retreat.'],
+    ['kitchens', 'Kitchens', 'Plan, gather, and make daily routines work beautifully.'],
+    ['dining-spaces', 'Dining Spaces', 'Share meals and conversations in considered surroundings.'],
+    ['bathrooms', 'Bathrooms', 'Refresh, reset, and bring calm to the everyday.'],
+    ['home-offices', 'Home Offices', 'Support focus with a clear and comfortable setting.'],
+    ['entertainment-spaces', 'Entertainment Spaces', 'Create room for connection, play, and pause.'],
+    ['custom-spaces', 'Custom Spaces', 'Develop the right response for the space and its brief.'],
+    ['entryways-foyers', 'Entryways + Foyers', 'Shape the first transition into the home.'],
+    ['study-reading-spaces', 'Study + Reading Spaces', 'Create room for focus, reflection, and quiet.'],
+  ]),
+  services: Object.freeze([
+    ['01', 'Consultation', 'Understand your requirements, space, and priorities.'],
+    ['02', 'Space Planning', 'Establish layouts, circulation, and relationships.'],
+    ['03', 'Interior Design', 'Shape the concept, atmosphere, and visual direction.'],
+    ['04', '2D Development', 'Make the plan, detail, and decisions legible.'],
+    ['05', '3D Development', 'Explore form, proportion, materials, and light.'],
+    ['06', 'Visualization', 'See the intended interior before it is built.'],
+    ['07', 'Materials & Finishes', 'Coordinate surfaces, textures, fixtures, and details.'],
+    ['08', 'Execution', 'Carry the considered design toward the finished space.'],
+  ]),
+  process: Object.freeze([
+    ['01', 'Understand', 'Client requirements and the character of the space.'],
+    ['02', 'Plan', 'Layout, circulation, and spatial organization.'],
+    ['03', 'Design', 'Concept, materials, and visual direction.'],
+    ['04', 'Develop', '2D, 3D, and visualization for clearer decisions.'],
+    ['05', 'Realize', 'Execution toward the intended finished interior.'],
+  ]),
+  quality: Object.freeze([
+    ['Material quality', 'Selection follows the intended design, application, and everyday use.'],
+    ['Craftsmanship', 'Construction and finishing details are considered as part of the design.'],
+    ['Detail control', 'Surfaces, furniture, lighting, and finishes are kept visually consistent.'],
+    ['Execution quality', 'The developed design remains connected to the finished interior.'],
+    ['Finishing', 'Edges, joints, alignment, surfaces, and final detailing receive attention.'],
+  ]),
+  inspiration: Object.freeze(['Modern Living', 'Luxury Bedroom', 'Contemporary Kitchen', 'Elegant Dining', 'Spa-Inspired Bathroom', 'Home Office', 'Entertainment Space', 'Custom Interiors']),
+  materials: Object.freeze(['Wood', 'Stone', 'Marble', 'Glass', 'Metal', 'Fabrics', 'Lighting', 'Surface Finishes']),
+  development: Object.freeze([
+    ['01', '2D Plan', 'Understand the layout and spatial relationships.'],
+    ['02', '3D Development', 'Understand form, proportion, and movement.'],
+    ['03', 'Visualization', 'Understand the intended appearance and atmosphere.'],
+    ['04', 'VR Experience', 'Explore the proposed space more immersively.'],
+  ]),
+  why: Object.freeze([
+    ['Personalized design', 'Spaces develop around the individual project and its brief.'],
+    ['Function + beauty', 'Everyday usability and visual character are considered together.'],
+    ['Design development', 'The concept is carried into detailed spatial development.'],
+    ['Material consideration', 'Materials and finishes contribute to the overall experience.'],
+    ['Attention to detail', 'Small decisions shape the finished interior.'],
+    ['End-to-end thinking', 'Design and execution remain connected stages of the work.'],
+  ]),
+  projects: Object.freeze([
+    { number: '01', name: 'Project content ready', type: 'Interior project', description: 'Approved project information and imagery can be inserted here.', id: null },
+    { number: '02', name: 'Project content ready', type: 'Spatial project', description: 'A second verified project record can be added without changing the layout.', id: null },
+    { number: '03', name: 'Project content ready', type: 'Interior project', description: 'A third verified project record can be added when approved.', id: null },
+  ]),
+  reviews: Object.freeze([
+    { quote: null, client: null, project: null, location: null },
+    { quote: null, client: null, project: null, location: null },
+    { quote: null, client: null, project: null, location: null },
+  ]),
+  links: Object.freeze({ projects: routePaths.tejes.projects, services: routePaths.tejes.interiorDesign, development: routePaths.tejes.design3d, contact: routePaths.tejes.contact }),
+})
