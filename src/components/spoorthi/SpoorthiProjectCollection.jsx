@@ -1,8 +1,10 @@
+import { useState } from 'react'
 import { PageContainer, SectionWrapper } from '../layout/index.js'
 import EmptyState from '../states/EmptyState.jsx'
 import SpoorthiProjectEntry from './SpoorthiProjectEntry.jsx'
 
 function SpoorthiProjectCollection({ projects = [], approvedIds = [], presentationById = {}, content }) {
+  const [category, setCategory] = useState('All studies')
   const approved = new Set(approvedIds)
   const seen = new Set()
   const published = projects.filter((project) => {
@@ -11,37 +13,28 @@ function SpoorthiProjectCollection({ projects = [], approvedIds = [], presentati
     seen.add(project.id)
     return true
   })
-  const anchorFor = (project) => `spoorthi-project-${encodeURIComponent(project.id)}`
-  const hasDemo = published.some((project) => project.isDemo === true)
-
-  if (!published.length) {
-    return (
-      <SectionWrapper as="div" className="spoorthi-project-collection">
-        <PageContainer>
-          <div className="spoorthi-project-collection__empty-layout">
-            <p className="type-label">{content.label}</p>
-            <EmptyState className="spoorthi-project-collection__empty" title={content.emptyTitle} description={content.emptyDescription} />
-          </div>
-        </PageContainer>
-      </SectionWrapper>
-    )
-  }
+  const categories = ['All studies', ...new Set(published.map((project) => project.category).filter(Boolean))]
+  const visible = category === 'All studies' ? published : published.filter((project) => project.category === category)
 
   return (
     <SectionWrapper className="spoorthi-project-collection">
       <PageContainer>
         <header className="spoorthi-project-collection__heading">
-          <h2 className="type-h3">{hasDemo ? 'Selected Demonstration Projects' : content.title}</h2>
-          {hasDemo && <p className="type-body-small">Development previews only. Fictional content, not completed Spoorthi work.</p>}
+          <div>
+            <p className="type-label">{content.label}</p>
+            <h2>{content.title}</h2>
+          </div>
+          <p>{content.description}</p>
         </header>
-        <div className="spoorthi-project-collection__previews">
-          {published.map((project, index) => <SpoorthiProjectEntry key={project.id} preview number={index + 1} project={project} anchorId={anchorFor(project)} presentation={presentationById[project.id]} />)}
-        </div>
-        <details className="spoorthi-project-collection__entries">
-          <summary>Read {hasDemo ? 'demonstration' : 'project'} notes</summary>
-          <h2 className="type-h3">{hasDemo ? 'Demonstration project notes' : 'Project information'}</h2>
-          {published.map((project) => <SpoorthiProjectEntry key={project.id} project={project} anchorId={anchorFor(project)} presentation={presentationById[project.id]} />)}
-        </details>
+        {published.length > 0 && <div className="spoorthi-project-collection__toolbar">
+          <div className="spoorthi-project-collection__filters" role="group" aria-label="Filter concept studies by category">
+            {categories.map((item) => <button type="button" key={item} aria-pressed={category === item} onClick={() => setCategory(item)}>{item}</button>)}
+          </div>
+          <p role="status">{visible.length} {visible.length === 1 ? 'study' : 'studies'}</p>
+        </div>}
+        {visible.length ? <div className="spoorthi-project-collection__previews">
+          {visible.map((project) => <SpoorthiProjectEntry key={project.id} number={published.indexOf(project) + 1} project={project} presentation={presentationById[project.id]} />)}
+        </div> : <EmptyState className="spoorthi-project-collection__empty" title={content.emptyTitle} description={content.emptyDescription} />}
       </PageContainer>
     </SectionWrapper>
   )

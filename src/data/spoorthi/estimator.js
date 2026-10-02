@@ -10,16 +10,16 @@ export const pricingConfig = {
   rates: Object.fromEntries(projectTypes.map(type => [type.value, Object.fromEntries(scopes.map(scope => [scope.value, { base: null }]))])),
 }
 export const estimateCopy = {
-  eyebrow: '05 / Project estimate', title: 'Start with a direction. Get an early cost range.',
-  introduction: 'A preliminary planning estimate, not a final quotation. Select a project type, scope, and approximate area to outline your enquiry.',
-  pending: 'Pricing configuration pending', pendingDescription: 'Preliminary pricing will appear here once approved rates are added.',
+  eyebrow: 'Project planner', title: 'Define the scope. Take the next step.',
+  introduction: 'Put a few key details together before your project conversation. Add your plan to the enquiry above when you are ready.',
+  pending: 'Your project plan is ready.', pendingDescription: 'A cost quotation needs a review of your brief, specifications, and site. Add these details to your enquiry to take the conversation forward.',
   disclaimer: 'This estimate is intended for early planning only. Final project costs depend on design, specifications, materials, site conditions and project scope.',
 }
 export function calculateEstimate(config, { type, scope, area, level = '' }) {
   if (!config.projectTypes.some(item => item.value === type) || !config.scopes.some(item => item.value === scope)) return { status: 'incomplete' }
   if (config.levels.length && !config.levels.some(item => item.value === level)) return { status: 'incomplete' }
   const size = Number(area)
-  if (String(area).trim() === '' || !Number.isFinite(size) || size <= 0) return { status: 'invalid-area' }
+  if (String(area).trim() === '' || !Number.isFinite(size) || size < 0.01 || size > Number.MAX_SAFE_INTEGER) return { status: 'invalid-area' }
   const rate = config.rates?.[type]?.[scope]?.[config.levels.length ? level : 'base']
   if (!rate || !Number.isFinite(rate.min) || !Number.isFinite(rate.max) || rate.min <= 0 || rate.max < rate.min) return { status: 'pending' }
   const min = size * rate.min

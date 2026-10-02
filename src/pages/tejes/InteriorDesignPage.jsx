@@ -1,5 +1,6 @@
-import BrandRoutePage from '../shared/BrandRoutePage.jsx'
+import TejesServicePage from '../../components/tejes/TejesServicePage.jsx'
+import { tejesServicePages } from '../../data/tejes/studio.js'
 
-function InteriorDesignPage() { return <BrandRoutePage /> }
+function InteriorDesignPage() { return <TejesServicePage content={tejesServicePages.interiors} /> }
 
 export default InteriorDesignPage

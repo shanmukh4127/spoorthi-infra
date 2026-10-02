@@ -2,3 +2,23 @@
 @media(max-width:768px){.civil-editorial-hero__grid,.civil-editorial-practice__grid,.civil-editorial-approach__intro,.civil-editorial-development__heading,.civil-editorial-closing__grid,.civil-editorial-work__list article,.civil-editorial-work__list article:nth-child(even){grid-template-columns:1fr}.civil-editorial-hero__media,.civil-editorial-practice__grid .spoorthi-editorial-media,.civil-editorial-work__list article:nth-child(even) .spoorthi-editorial-media,.civil-editorial-closing__grid .spoorthi-editorial-media{grid-column:auto;grid-row:auto;order:0;transform:none}.civil-editorial-hero__note{position:static;writing-mode:horizontal-tb;border-left:0;border-top:1px solid var(--brand-accent);padding:.6rem 0 0}.civil-editorial-practice__grid .spoorthi-editorial-media{grid-column:auto}.civil-editorial-connections__sequence,.civil-editorial-development> .layout-container>ol{grid-template-columns:repeat(2,1fr);margin-top:2.5rem}.civil-editorial-connections__sequence li:nth-child(2),.civil-editorial-development> .layout-container>ol li:nth-child(2){border-right:0}.civil-editorial-connections__sequence li:nth-child(n+3),.civil-editorial-development> .layout-container>ol li:nth-child(n+3){border-top:1px solid var(--civil-rule)}.civil-editorial-connections__arrow,.civil-editorial-development b{display:none}.civil-editorial-approach li{grid-template-columns:3rem 1fr}.civil-editorial-approach p{grid-column:2}.civil-editorial-work__intro{align-items:start;flex-direction:column}}
 @media(max-width:600px){.civil-construction-page .layout-section{padding-block:3rem}.civil-editorial-hero h1{font-size:clamp(3.2rem,16vw,5rem)}.civil-editorial-connections__sequence,.civil-editorial-development> .layout-container>ol{grid-template-columns:1fr}.civil-editorial-connections__sequence li,.civil-editorial-connections__sequence li:nth-child(2),.civil-editorial-development> .layout-container>ol li,.civil-editorial-development> .layout-container>ol li:nth-child(2){border-right:0;border-top:1px solid var(--civil-rule);min-height:auto;padding:.9rem 0}.civil-editorial-connections__sequence li:first-child,.civil-editorial-development> .layout-container>ol li:first-child{border-top:0}.civil-editorial-connections__sequence strong{margin-top:.5rem}.civil-editorial-approach li{grid-template-columns:2.5rem 1fr}.civil-editorial-approach p{font-size:.9rem}.civil-editorial-work__list{margin-top:2.5rem;gap:3rem}}
 @media(prefers-reduced-motion:reduce){.civil-construction-page *{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+.civil-editorial-hero h1 { text-transform: none; font-size: clamp(3.4rem, 6.3vw, 6.5rem); line-height: 1.02; letter-spacing: -.055em; }
+.civil-editorial-hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 2rem; }
+.civil-editorial-hero__media .media__frame { aspect-ratio: 4 / 5; }
+.civil-editorial-hero__media .media__image { object-position: 58% center; }
+.civil-editorial-practice__grid > .media { min-width: 0; }
+.civil-editorial-work__cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 3rem; border-top: 1px solid var(--civil-rule); }
+.civil-editorial-work__cards article { display: flex; flex-direction: column; align-items: start; padding: 2rem; min-width: 0; border-right: 1px solid var(--civil-rule); }
+.civil-editorial-work__cards article:first-child { padding-left: 0; }
+.civil-editorial-work__cards article:last-child { padding-right: 0; border-right: 0; }
+.civil-editorial-work__cards h3 { font-size: clamp(1.5rem, 2.2vw, 2.2rem); text-transform: none; }
+.civil-editorial-work__cards .ui-link { margin-top: auto; padding-top: 1rem; min-height: 44px; }
+.civil-construction-page .civil-editorial-closing { background: var(--spoorthi-bg-dark); color: var(--spoorthi-text-on-dark); --brand-focus: var(--spoorthi-text-on-dark); }
+.civil-editorial-closing h2 em, .civil-editorial-closing .type-label, .civil-editorial-closing .ui-link, .civil-editorial-closing .media__caption { color: var(--spoorthi-text-on-dark); }
+@media (max-width:768px) {
+  .civil-editorial-hero__media .media__frame { aspect-ratio: 4 / 3; }
+  .civil-editorial-work__cards { grid-template-columns: minmax(0, 1fr); }
+  .civil-editorial-work__cards article { padding: 1.5rem 0; border-right: 0; border-bottom: 1px solid var(--civil-rule); }
+  .civil-editorial-work__cards p { max-width: 60ch; }
+}

@@ -5,17 +5,47 @@ export const projectTypes = [
   { value: 'residential', label: 'Residential' },
   { value: 'commercial', label: 'Commercial' },
   { value: 'interior', label: 'Interior' },
+  { value: 'infrastructure', label: 'Infrastructure' },
 ]
+
+export const emptyEnquiry = { name: '', email: '', type: '', area: '', message: '' }
+
+export function validateEnquiry(draft) {
+  const errors = {}
+  if (!draft.name.trim()) errors.name = 'Please enter your name.'
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(draft.email.trim())) errors.email = 'Please enter a valid email address.'
+  if (!projectTypes.some(item => item.value === draft.type)) errors.type = 'Please select a project type.'
+  if (draft.area.trim() && (!Number.isFinite(Number(draft.area)) || Number(draft.area) < 0.01 || Number(draft.area) > Number.MAX_SAFE_INTEGER)) errors.area = 'Enter an area of at least 0.01 sq.ft, or leave this blank.'
+  if (!draft.message.trim()) errors.message = 'Please tell us a little about your project.'
+  return errors
+}
+
+export function createEnquiryBrief(draft, context = '') {
+  const type = projectTypes.find(item => item.value === draft.type)?.label || 'To be discussed'
+  return [
+    'SPOORTHI INFRA — PROJECT ENQUIRY',
+    '',
+    `Name: ${draft.name.trim()}`,
+    `Email: ${draft.email.trim()}`,
+    `Project type: ${type}`,
+    `Approximate area: ${draft.area.trim() ? `${draft.area.trim()} sq.ft` : 'To be discussed'}`,
+    ...(context ? [`Project scope: ${context}`] : []),
+    '',
+    'PROJECT BRIEF',
+    draft.message.trim(),
+  ].join('\n')
+}
+
 export const contactPage = {
-  intro: { eyebrow: 'Spoorthi Infra / 05', title: 'Let’s build the next space.', description: 'Start with an idea, a requirement, or a question. Give the next space a clear starting point.' },
-  disciplines: ['Civil Construction', 'Infrastructure', 'Design'],
+  intro: { eyebrow: 'Contact / Spoorthi Infra', title: 'Great spaces begin with a conversation.', description: 'A new home, a commercial space, or an idea taking shape. Tell us what you are planning and prepare a clear brief for the next step.' },
+  disciplines: ['Construction', 'Infrastructure', 'Design'],
   details: contactPlaceholder,
-  enquiry: { title: 'An open line.', description: 'Tell us what you have in mind and where you are in the planning process.', unavailable: 'Online submission is not connected yet. You can prepare and validate your enquiry here; nothing is sent or saved.', checked: 'Your enquiry is ready, but online submission is unavailable. Nothing has been sent or saved. Keep this page open to retain your draft.' },
-  projectInformation: { title: 'A little context goes a long way.', items: [
-    { title: 'The intention', text: 'Describe the space and what you would like it to do.' },
-    { title: 'The starting point', text: 'Mention any drawings, approximate area, or requirements you already have.' },
-    { title: 'The scope', text: 'Identify the kind of support you would like to discuss.' },
+  enquiry: { title: 'Tell us about your next project.', description: 'Start with what you know. The location, approximate size, and the way you want to use the space help bring your idea into focus.', unavailable: 'Open an email draft addressed to Spoorthi Infra and send it from your email app. You can also prepare your enquiry here to copy or download it first.', checked: 'Your email draft is ready. Review and send it from your email app. You can also copy or download the enquiry below.' },
+  projectInformation: { title: 'A few details make a better beginning.', items: [
+    { title: 'Your vision', text: 'Tell us what you want to build and how the space should support you.' },
+    { title: 'Your starting point', text: 'Share the location, approximate area, and any drawings or references you have.' },
+    { title: 'Your priorities', text: 'Mention the support you need, your preferred timeline, and what matters most.' },
   ] },
   services: spoorthiServices,
-  closing: { title: 'From idea. To drawing. To space.' },
+  closing: { title: 'Give your next space a clear starting point.' },
 }

@@ -1,51 +1,119 @@
-/* The open line: Contact-only styles, using existing Spoorthi tokens. */
-.spoorthi-contact-page .layout-container { max-width: 90rem; padding-inline: clamp(1.25rem,5vw,5rem); }
-.spoorthi-contact-page .layout-section { padding-block: clamp(1.5rem,3vw,3rem); }
-.spoorthi-contact-page .section-heading { align-content: start; gap: .65rem; }
-.spoorthi-contact-page .section-heading__title { font-size: clamp(1.75rem,2.7vw,2.5rem); font-weight: var(--type-weight-regular); line-height: 1.15; letter-spacing: -.025em; max-width: 26ch; }
-.spoorthi-contact-page .section-heading__description { font-size: .9375rem; line-height: 1.6; max-width: 62ch; }
-.spoorthi-contact-page .type-label { font-size: .6875rem; line-height: 1.6; color: var(--brand-accent); }
-.spoorthi-contact-page p { line-height: 1.6; }
-.contact-intro__layout { display: grid; grid-template-columns: minmax(0,2fr) minmax(0,1fr); gap: 2rem; align-items: end; padding-block: .5rem 2rem; border-bottom: 1px solid var(--brand-border); }
-.spoorthi-contact-page .contact-intro h1 { font-size: clamp(2.75rem,4.5vw,4.25rem); text-transform: uppercase; max-width: 16ch; }
-.contact-intro .section-heading__description { max-width: 47ch; }
-.contact-intro__annotation { border-left: 1px solid var(--brand-border); padding-left: 1.5rem; }
-.contact-intro__annotation p { font-size: .8rem; max-width: 25ch; }
-.contact-intro__mark { display: block; color: var(--brand-accent); font-size: 2rem; font-weight: 200; margin-top: 1rem; }
-.contact-conversation__layout { display: grid; grid-template-columns: minmax(0,4fr) minmax(0,7fr); gap: clamp(2rem,7vw,7rem); }
-.contact-information h2 { font-size: clamp(1.75rem,2.5vw,2.5rem); font-weight: 400; margin: 1rem 0; }
-.contact-information > p:not(.type-label) { font-size: .9375rem; max-width: 33ch; color: var(--brand-text-secondary); }
-.contact-information__pending { border-top: 1px solid var(--brand-border); margin-top: 2rem; padding-top: 1rem; }
-.contact-information__line { margin-top: 3rem; max-width: 30ch; }
-.contact-information dl { font-size: .9375rem; }
+/* A calm, useful project conversation. */
+.spoorthi-contact-page .layout-container { max-width: 86rem; padding-inline: clamp(1.25rem, 5vw, 4.75rem); }
+.spoorthi-contact-page .layout-section { padding-block: clamp(3rem, 6vw, 5.5rem); }
+.spoorthi-contact-page .section-heading { align-content: start; gap: .9rem; }
+.spoorthi-contact-page .section-heading__title { font-size: clamp(2rem, 3.1vw, 3rem); font-weight: 400; line-height: 1.13; letter-spacing: -.04em; max-width: 22ch; }
+.spoorthi-contact-page .section-heading__description { font-size: 1rem; line-height: 1.75; max-width: 58ch; color: var(--brand-text-secondary); }
+.spoorthi-contact-page .type-label { font-size: .6875rem; line-height: 1.6; letter-spacing: .13em; color: var(--brand-accent); }
+.spoorthi-contact-page p { line-height: 1.7; }
+.spoorthi-contact-page #enquiry, .spoorthi-contact-page #project-planner { scroll-margin-top: 6.5rem; }
+.contact-intro { position: relative; overflow: hidden; background: linear-gradient(115deg, var(--brand-bg-primary) 35%, var(--brand-accent-soft)); border-bottom: 1px solid var(--brand-border); }
+.contact-intro::before { position: absolute; width: 30rem; height: 30rem; right: -12rem; top: -13rem; border: 1px solid color-mix(in srgb, var(--brand-accent) 18%, transparent); border-radius: 50%; content: ''; }
+.contact-intro__layout { position: relative; display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: clamp(2rem, 7vw, 7rem); align-items: center; }
+.spoorthi-contact-page .contact-intro h1 { font-size: clamp(3rem, 5.2vw, 5rem); font-weight: 400; text-transform: none; max-width: 15ch; line-height: 1.04; letter-spacing: -.055em; }
+.contact-intro .section-heading__description { max-width: 47ch; margin-top: .6rem; }
+.contact-intro .ui-link { margin-top: 1.75rem; border-bottom: 1px solid var(--brand-accent); padding-bottom: .4rem; }
+.contact-intro__annotation { padding: 1.75rem 0 1.75rem 2rem; border-left: 1px solid var(--brand-border); }
+.contact-intro__annotation p { font-size: .8125rem; color: var(--brand-text-secondary); }
+.contact-intro__symbol { padding-block: 1.5rem; color: var(--brand-accent); }
+.contact-intro__planner-link { display: inline-flex; align-items: center; gap: .8rem; min-height: 44px; font-size: .8125rem; color: var(--brand-text-primary); text-decoration: none; }
+.contact-intro__planner-link:hover { color: var(--brand-accent); }
+.contact-conversation__layout { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; }
+.contact-information { padding-block: 1rem; }
+.contact-information h2 { font-size: clamp(2rem, 2.8vw, 2.75rem); font-weight: 400; line-height: 1.12; letter-spacing: -.035em; margin: 1rem 0 1.5rem; max-width: 16ch; }
+.contact-information > p:not(.type-label) { font-size: .9375rem; max-width: 38ch; color: var(--brand-text-secondary); }
+.contact-information__guide { display: flex; gap: 1rem; margin: 2rem 0; padding-block: 1.5rem; border-block: 1px solid var(--brand-border); }
+.contact-information__guide > svg { flex-shrink: 0; color: var(--brand-accent); margin-top: .3rem; }
+.contact-information__guide h3 { font-size: 1rem; font-weight: 500; margin: 0 0 .45rem; }
+.contact-information__guide p { font-size: .875rem; color: var(--brand-text-secondary); margin: 0; max-width: 30ch; }
+.contact-information__pending { margin: 1.5rem 0; }
+.contact-information dl { font-size: .9375rem; margin-top: 2rem; }
+.contact-information dt { font-size: .75rem; color: var(--brand-text-muted); }
 .contact-information dd { margin: .3rem 0 1rem; overflow-wrap: anywhere; }
-.contact-enquiry { min-width: 0; }
-.contact-enquiry h2 { font-size: 1.25rem; font-weight: 500; margin: 0; }
-.contact-enquiry__notice, .contact-enquiry__context { font-size: .8125rem; color: var(--brand-text-secondary); }
-.contact-enquiry .ui-field { margin-block: 1.2rem; }
-.spoorthi-contact-page .ui-field__label { font-family: var(--brand-font-technical); font-size: .6875rem; letter-spacing: .08em; text-transform: uppercase; }
-.spoorthi-contact-page .ui-field__control { min-width: 0; width: 100%; min-height: 48px; border: 0; border-bottom: 1px solid var(--brand-border); border-radius: 0; background: transparent; padding: .7rem .25rem; color: var(--brand-text-primary); font-size: 1rem; }
-.spoorthi-contact-page textarea.ui-field__control { resize: vertical; min-height: 100px; }
-.spoorthi-contact-page .ui-field__control:focus-visible { outline: 2px solid var(--brand-focus); outline-offset: 3px; }
-.spoorthi-contact-page .ui-field__hint { font-size: .75rem; }
-.spoorthi-contact-page .ui-button, .spoorthi-contact-page .ui-link { min-height: 44px; font-size: .75rem; gap: 1rem; }
-.spoorthi-contact-page .ui-button { white-space: normal; text-align: left; }
-.contact-enquiry__status { font-size: .875rem; min-height: 1.5rem; }
-.contact-project-info .layout-container { border-block: 1px solid var(--brand-border); padding-block: 1.5rem; }
-.contact-project-info ol { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); list-style: none; gap: 2rem; padding: 0; margin: 1.5rem 0 0; }
-.contact-project-info li { border-left: 1px solid var(--brand-border); padding-left: 1rem; }
-.contact-project-info h3 { font-size: 1.125rem; font-weight: 500; margin: .5rem 0; }
-.contact-project-info li p { font-size: .875rem; max-width: 34ch; margin: 0; color: var(--brand-text-secondary); }
-.contact-estimator { display: grid; grid-template-columns: minmax(0,7fr) minmax(0,5fr); gap: 2rem; margin-top: 2rem; }
-.contact-estimator__steps { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.5rem; margin-bottom: 1.5rem; }
-.contact-estimator__result { padding: 1.5rem; border-left: 1px solid var(--brand-border); background: var(--brand-bg-secondary); }
-.contact-estimator__result h3 { font-size: clamp(1.5rem,2.2vw,2rem); font-weight: 400; margin: .75rem 0; overflow-wrap: anywhere; }
-.contact-estimator__result p { font-size: .8125rem; }
+.contact-enquiry { min-width: 0; background: var(--brand-surface); border: 1px solid color-mix(in srgb, var(--brand-border) 60%, transparent); border-radius: 8px; padding: clamp(1.25rem, 3vw, 2.5rem); box-shadow: 0 12px 40px rgba(40, 32, 24, .035); }
+.contact-enquiry__heading { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.contact-enquiry__heading .type-label { margin: 0 0 .5rem; }
+.contact-enquiry__heading > svg { color: var(--brand-accent); flex-shrink: 0; }
+.contact-enquiry h2 { font-size: clamp(1.6rem, 2.2vw, 2.1rem); letter-spacing: -.03em; font-weight: 400; margin: 0; }
+.contact-enquiry__notice { font-size: .8125rem; color: var(--brand-text-secondary); margin: 1.1rem 0 1.75rem; }
+.contact-enquiry__context { display: flex; align-items: flex-start; gap: .6rem; font-size: .8125rem; color: var(--brand-state-success); padding: .8rem 1rem; background: color-mix(in srgb, var(--brand-state-success) 7%, white); border: 1px solid color-mix(in srgb, var(--brand-state-success) 20%, transparent); border-radius: 4px; }
+.contact-enquiry__context > svg { flex-shrink: 0; margin-top: .25rem; }
+.contact-enquiry__fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.35rem 1.15rem; }
+.spoorthi-contact-page .ui-field { max-width: none; min-width: 0; }
+.contact-enquiry__message { grid-column: 1 / -1; }
+.spoorthi-contact-page .ui-field__label { font-size: .65rem; letter-spacing: .07em; line-height: 1.6; }
+.spoorthi-contact-page .ui-field__control { min-width: 0; width: 100%; min-height: 49px; border: 1px solid color-mix(in srgb, var(--brand-border) 70%, transparent); border-radius: 4px; background: color-mix(in srgb, var(--brand-bg-primary) 45%, white); padding: .75rem .9rem; color: var(--brand-text-primary); font-size: .9375rem; }
+.spoorthi-contact-page .ui-field__control:hover { border-color: var(--brand-border-hover); }
+.spoorthi-contact-page .ui-field__control:focus-visible { outline: 2px solid var(--brand-focus); outline-offset: 2px; background: white; }
+.spoorthi-contact-page .ui-field__control::placeholder { color: var(--brand-text-muted); opacity: 1; }
+.spoorthi-contact-page textarea.ui-field__control { resize: vertical; min-height: 145px; line-height: 1.65; }
+.spoorthi-contact-page .ui-field__hint, .spoorthi-contact-page .ui-field__error { font-size: .75rem; letter-spacing: 0; line-height: 1.5; }
+.spoorthi-contact-page .ui-field__control[aria-invalid='true'] { border-color: var(--brand-state-error); }
+.spoorthi-contact-page .ui-button, .spoorthi-contact-page .ui-link { min-height: 44px; font-size: .7rem; gap: .7rem; }
+.spoorthi-contact-page .ui-button { white-space: normal; line-height: 1.5; text-align: left; }
+.contact-enquiry__actions { display: flex; align-items: center; flex-wrap: wrap; gap: .75rem 1.4rem; margin-top: 1.5rem; }
+.contact-enquiry__privacy { font-size: .75rem; color: var(--brand-text-muted); margin: 1rem 0 0; }
+.contact-enquiry__status { font-size: .8125rem; min-height: 1.5rem; color: var(--brand-text-secondary); margin: .75rem 0 0; }
+.contact-enquiry__prepared { border-top: 1px solid var(--brand-border); margin-top: 1.5rem; padding-top: 1.5rem; }
+.contact-enquiry__prepared-title { display: flex; gap: .6rem; align-items: center; color: var(--brand-state-success); margin-bottom: 1rem; }
+.contact-enquiry__prepared-title h3 { font-size: 1.125rem; font-weight: 500; margin: 0; }
+.contact-enquiry__brief { display: block; width: 100%; resize: vertical; margin-top: .6rem; background: var(--brand-bg-primary); border: 1px solid var(--brand-border); border-radius: 4px; padding: 1rem; font-size: .8125rem; line-height: 1.7; color: var(--brand-text-primary); }
+.contact-enquiry__brief:focus-visible { outline: 2px solid var(--brand-focus); outline-offset: 3px; }
+.contact-project-info { background: var(--brand-bg-secondary); }
+.contact-project-info .section-heading__title { max-width: 25ch; }
+.contact-project-info ol { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); list-style: none; gap: clamp(1.5rem, 4vw, 4rem); padding: 0; margin: 2.75rem 0 0; }
+.contact-project-info li { border-top: 1px solid var(--brand-border); padding-top: 1.25rem; }
+.contact-project-info__number { font-family: var(--brand-font-technical); font-size: .75rem; color: var(--brand-accent); }
+.contact-project-info h3 { font-size: 1.25rem; font-weight: 500; letter-spacing: -.02em; margin: 1rem 0 .75rem; }
+.contact-project-info li p { font-size: .875rem; max-width: 36ch; margin: 0; color: var(--brand-text-secondary); }
+.contact-estimator { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(1.5rem, 4vw, 4rem); margin-top: 2.5rem; align-items: start; }
+.contact-estimator > form { padding-top: .5rem; }
+.contact-estimator__steps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin-bottom: 1.75rem; }
+.contact-estimator__result { padding: clamp(1.5rem, 3vw, 2.5rem); border: 1px solid var(--brand-border); border-radius: 6px; background: var(--brand-bg-secondary); }
+.contact-estimator__result--ready { background: var(--brand-accent-soft); }
+.contact-estimator__result-heading { display: flex; align-items: center; justify-content: space-between; gap: 1rem; color: var(--brand-accent); }
+.contact-estimator__result-heading p { margin: 0; }
+.contact-estimator__result h3 { font-size: clamp(1.65rem, 2.4vw, 2.4rem); font-weight: 400; line-height: 1.15; letter-spacing: -.035em; margin: 1.4rem 0 1rem; overflow-wrap: anywhere; }
+.contact-estimator__result p { font-size: .875rem; color: var(--brand-text-secondary); }
+.contact-estimator__summary { display: grid; gap: .65rem; border-block: 1px solid var(--brand-border); padding-block: 1rem; margin: 1.5rem 0; }
+.contact-estimator__summary > div { display: flex; justify-content: space-between; gap: 1rem; font-size: .8125rem; }
+.contact-estimator__summary dt { color: var(--brand-text-muted); }
+.contact-estimator__summary dd { margin: 0; text-align: right; overflow-wrap: anywhere; }
 .contact-estimator__disclaimer { border-top: 1px solid var(--brand-border); padding-top: 1rem; margin-top: 1.5rem; }
 .contact-estimator__result .ui-button { margin-top: .5rem; }
-.contact-closing__layout { display: flex; align-items: center; justify-content: space-between; gap: 2rem; border-top: 1px solid var(--brand-border); padding-top: 1.5rem; }
-.contact-closing nav { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; }
-@media (max-width:1024px) { .contact-conversation__layout { grid-template-columns: minmax(0,1fr) minmax(0,1.7fr); gap: 2rem; } .contact-estimator { grid-template-columns: minmax(0,1fr); } .contact-estimator__result { border-left: 0; border-top: 1px solid var(--brand-border); } }
-@media (max-width:768px) { .contact-intro__layout, .contact-conversation__layout { grid-template-columns: minmax(0,1fr); } .contact-intro__annotation { display: flex; gap: 1rem; align-items: center; } .contact-intro__mark { margin: 0 0 0 auto; } .contact-information__line { margin-top: 1rem; max-width: none; } .contact-information > p:not(.type-label) { max-width: 55ch; } .contact-closing__layout { align-items: flex-start; flex-direction: column; } }
-@media (max-width:600px) { .contact-estimator__steps, .contact-project-info ol { grid-template-columns: minmax(0,1fr); } .contact-project-info ol { gap: 1.25rem; } .contact-intro__annotation { flex-wrap: wrap; } .contact-estimator__result { padding: 1.25rem; } .contact-closing nav { flex-direction: column; align-items: flex-start; } }
-@media (prefers-reduced-motion:reduce) { .spoorthi-contact-page *, .spoorthi-contact-page *::before { animation: none !important; transition: none !important; scroll-behavior: auto !important; } .spoorthi-contact-page .ui-link:hover .ui-link__arrow { transform: none; } }
+.contact-closing { border-top: 1px solid var(--brand-border); }
+.contact-closing__layout { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+.contact-closing__layout > div { display: grid; gap: 1.25rem; }
+.contact-closing__layout > div > svg { color: var(--brand-accent); }
+.contact-closing nav { display: grid; gap: .75rem; flex-shrink: 0; }
+.contact-closing__arrow { color: var(--brand-accent); flex-shrink: 0; }
+@media (max-width: 1024px) {
+  .contact-conversation__layout { grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 2rem; }
+  .contact-enquiry__fields { grid-template-columns: minmax(0, 1fr); }
+  .contact-estimator { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
+  .contact-estimator__steps { grid-template-columns: minmax(0, 1fr); }
+  .contact-closing__arrow { display: none; }
+}
+@media (max-width: 768px) {
+  .contact-intro__layout, .contact-conversation__layout, .contact-estimator { grid-template-columns: minmax(0, 1fr); }
+  .contact-intro__annotation { padding: 1.25rem 0 0; border-left: 0; border-top: 1px solid var(--brand-border); }
+  .contact-intro__symbol { display: none; }
+  .contact-intro__annotation p { margin: .5rem 0; }
+  .contact-conversation__layout { gap: 2rem; }
+  .contact-information h2 { max-width: 22ch; }
+  .contact-information > p:not(.type-label) { max-width: 55ch; }
+  .contact-information__guide p { max-width: 50ch; }
+  .contact-enquiry__fields, .contact-estimator__steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .contact-closing__layout { align-items: flex-start; flex-direction: column; }
+}
+@media (max-width: 520px) {
+  .contact-enquiry__fields, .contact-estimator__steps, .contact-project-info ol { grid-template-columns: minmax(0, 1fr); }
+  .contact-project-info ol { gap: 1.75rem; margin-top: 2rem; }
+  .contact-enquiry__actions { gap: .6rem 1rem; }
+  .contact-enquiry__actions .ui-button--primary { width: 100%; justify-content: space-between; }
+  .spoorthi-contact-page .contact-intro h1 { font-size: clamp(2.8rem, 10.5vw, 3.8rem); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .spoorthi-contact-page *, .spoorthi-contact-page *::before { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .spoorthi-contact-page .ui-link:hover .ui-link__arrow { transform: none; }
+}

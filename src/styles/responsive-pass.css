@@ -20,6 +20,16 @@
   overflow-wrap: anywhere;
 }
 
+@media (max-width: 900px) {
+  .brand-header__inner { min-height: 4rem; }
+  .brand-header__navigation { gap: var(--space-md); }
+}
+
+@media (max-width: 600px) {
+  .brand-header { backdrop-filter: blur(10px); }
+  .ui-button, .ui-link { min-height: 2.875rem; }
+}
+
 @media (max-width: 600px) {
   .mobile-navigation__panel {
     max-height: calc(100svh - 5rem);

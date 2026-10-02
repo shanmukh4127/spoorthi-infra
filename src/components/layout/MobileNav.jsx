@@ -10,6 +10,7 @@ function MobileNav({ brandName, items = [], cta }) {
   const menuRef = useRef(null)
   const closeMenu = () => setIsOpen(false)
 
+
   useEffect(() => {
     if (!isOpen) return undefined
     menuRef.current?.querySelector('a')?.focus()
@@ -20,7 +21,14 @@ function MobileNav({ brandName, items = [], cta }) {
       }
     }
     document.addEventListener('keydown', onKeyDown)
-    return () => document.removeEventListener('keydown', onKeyDown)
+    const onPointerDown = (event) => {
+      if (!menuRef.current?.contains(event.target) && !triggerRef.current?.contains(event.target)) closeMenu()
+    }
+    document.addEventListener('pointerdown', onPointerDown)
+    return () => {
+      document.removeEventListener('keydown', onKeyDown)
+      document.removeEventListener('pointerdown', onPointerDown)
+    }
   }, [isOpen])
 
   return (

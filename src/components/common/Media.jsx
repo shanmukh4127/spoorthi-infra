@@ -27,6 +27,7 @@ function Media({
     fullWidth ? 'media--full-width' : '',
     contained && !fullWidth ? 'media--contained' : '',
     hover ? 'media--hover' : '',
+    'media--motion',
     overlay ? `media--overlay-${overlay === true ? 'dark' : overlay}` : '',
     overlayOnHover ? 'media--overlay-hover' : '',
     `media--${status}`,

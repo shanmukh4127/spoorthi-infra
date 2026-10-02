@@ -1,161 +1,82 @@
-/* Architectural project dossier. Scoped to the individual project route. */
-.spoorthi-project-detail .layout-container { width: 100%; max-width: 100rem; box-sizing: border-box; padding-inline: clamp(1.25rem, 5vw, 5rem); }
-.spoorthi-project-detail .layout-section { padding-block: clamp(2.25rem, 5vw, 5rem); }
-.spoorthi-project-detail h1, .spoorthi-project-detail h2 { margin: 0; font-weight: var(--type-weight-regular); letter-spacing: -0.04em; }
-.spoorthi-project-detail h1 { max-width: 12ch; font-size: clamp(2.8rem, 5.2vw, 5.5rem); line-height: .98; }
-.spoorthi-project-detail h2 { font-size: clamp(1.75rem, 3vw, 3.2rem); line-height: 1; }
-.spoorthi-project-detail p { line-height: 1.55; }
-.spoorthi-project-detail .type-label { color: var(--brand-accent); }
-.spoorthi-project-detail__opening { padding-top: clamp(2.5rem, 6vw, 6rem) !important; border-bottom: 1px solid var(--brand-border); }
-.spoorthi-project-detail__opening-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(1rem, 3vw, 3rem); align-items: end; }
-.spoorthi-project-detail__opening-grid > :first-child { grid-column: 1 / span 5; padding-bottom: 1rem; }
-.spoorthi-project-detail__opening-grid > .spoorthi-project-gallery { grid-column: 7 / -1; max-width: 44rem; justify-self: end; width: 100%; }
-.spoorthi-project-detail__opening h1 { margin-block: .7rem 1.2rem; }
-.spoorthi-project-detail__opening .type-body-large { max-width: 38ch; margin-bottom: 0; color: var(--brand-text-secondary); }
-.spoorthi-project-detail__metadata { display: flex; flex-wrap: wrap; gap: 1.4rem; margin: 1.8rem 0 0; }
-.spoorthi-project-detail__metadata div { min-width: 6rem; }
-.spoorthi-project-detail__metadata dt { font: .6rem var(--brand-font-technical); letter-spacing: .08em; text-transform: uppercase; color: var(--brand-text-secondary); }
-.spoorthi-project-detail__metadata dd { margin: .25rem 0 0; }
-.spoorthi-project-detail__index { grid-column: 1 / -1; display: flex; gap: 1.5rem; border-top: 1px solid var(--brand-border); padding-top: .75rem; }
-.spoorthi-project-detail__index a { display: flex; gap: .45rem; color: inherit; text-decoration: none; font: .62rem var(--brand-font-technical); letter-spacing: .08em; text-transform: uppercase; }
-.spoorthi-project-detail__index a span:first-child { color: var(--brand-accent); }
-.spoorthi-project-detail__index a:focus-visible, .spoorthi-project-detail a:focus-visible, .spoorthi-project-gallery button:focus-visible { outline: 2px solid var(--brand-focus); outline-offset: 3px; }
-.spoorthi-project-detail__overview { padding-block: clamp(2rem, 4vw, 4rem) !important; background: var(--brand-bg-secondary); }
-.spoorthi-project-detail__overview-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 2rem; }
-.spoorthi-project-detail__overview-grid > :first-child { grid-column: 1 / span 4; }
-.spoorthi-project-detail__overview-grid > p { grid-column: 7 / span 5; max-width: 42ch; margin: .15rem 0 0; color: var(--brand-text-secondary); }
-.spoorthi-project-detail__section { border-bottom: 1px solid var(--brand-border); scroll-margin-top: 1rem; }
-.spoorthi-project-detail__section-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(1rem, 3vw, 3rem); align-items: center; min-height: 22rem; }
-.spoorthi-project-detail__section-heading { grid-column: 1 / span 3; align-self: start; padding-top: 1rem; }
-.spoorthi-project-detail__section-heading h2 { margin: .65rem 0 .8rem; }
-.spoorthi-project-detail__section-heading > p:last-child { max-width: 28ch; margin: 0; color: var(--brand-text-secondary); }
-.spoorthi-project-detail__section-grid > .spoorthi-project-gallery { grid-column: 5 / -1; }
-.spoorthi-project-detail__section--design2D .spoorthi-project-gallery { grid-column: 6 / span 5; max-width: 32rem; }
-.spoorthi-project-detail__section--design2D .spoorthi-project-detail__section-heading { padding-top: 3rem; }
-.spoorthi-project-detail__section--development3D .spoorthi-project-detail__section-grid { min-height: 28rem; }
-.spoorthi-project-detail__section--development3D .spoorthi-project-gallery { grid-column: 4 / -1; }
-.spoorthi-project-detail__section--visualization .spoorthi-project-gallery { grid-column: 3 / -1; }
-.spoorthi-project-detail__section--visualization .spoorthi-project-detail__section-heading { grid-column: 1 / span 2; }
-.spoorthi-project-detail__section--vr { background: var(--brand-bg-inverse, #172331); color: var(--brand-text-inverse, #f5f1e9); }
-.spoorthi-project-detail__section--vr .type-label, .spoorthi-project-detail__section--vr .spoorthi-project-detail__section-heading > p:last-child { color: inherit; opacity: .78; }
-.spoorthi-project-detail__section--vr .spoorthi-project-gallery { grid-column: 7 / span 4; }
-.spoorthi-project-detail__section--vr .spoorthi-project-detail__section-heading { grid-column: 2 / span 4; }
-.spoorthi-project-detail__journey { padding-block: 2rem !important; }
-.spoorthi-project-detail__journey ol { display: flex; gap: 0; margin: 1rem 0 0; padding: 0; list-style: none; border-top: 1px solid var(--brand-border); }
-.spoorthi-project-detail__journey li { flex: 1; display: flex; align-items: baseline; gap: .75rem; padding: .8rem 1rem .1rem 0; border-right: 1px solid var(--brand-border); }
-.spoorthi-project-detail__journey li + li { padding-left: 1rem; }
-.spoorthi-project-detail__journey li:last-child { border-right: 0; }
-.spoorthi-project-detail__journey span { font: .65rem var(--brand-font-technical); color: var(--brand-accent); }
-.spoorthi-project-detail__journey strong { font-weight: 500; font-size: .85rem; }
-.spoorthi-project-detail__closing { border-top: 1px solid var(--brand-border); padding-block: 1.5rem !important; }
-.spoorthi-project-detail__closing-grid { display: flex; justify-content: space-between; gap: 1rem; }
-.spoorthi-project-detail__placeholder { position: relative; display: grid; place-items: end start; min-height: clamp(12rem, 23vw, 21rem); margin: 0; padding: .85rem; overflow: hidden; background: var(--brand-bg-secondary); border: 1px solid var(--brand-border); }
-.spoorthi-project-detail__section--design2D .spoorthi-project-detail__placeholder { min-height: 16rem; }
-.spoorthi-project-detail__section--development3D .spoorthi-project-detail__placeholder { min-height: 21rem; }
-.spoorthi-project-detail__section--visualization .spoorthi-project-detail__placeholder { min-height: 19rem; }
-.spoorthi-project-detail__section--vr .spoorthi-project-detail__placeholder { min-height: 14rem; background: transparent; border-color: rgba(255,255,255,.35); }
-.spoorthi-project-detail__placeholder-grid { position: absolute; inset: 0; opacity: .55; background-image: linear-gradient(90deg, transparent 49.7%, var(--brand-border) 50%, transparent 50.3%), linear-gradient(0deg, transparent 49.7%, var(--brand-border) 50%, transparent 50.3%); background-size: 33.333% 33.333%; }
-.spoorthi-project-detail__placeholder i { position: absolute; top: .75rem; right: .75rem; font-style: normal; }
-.spoorthi-project-detail__placeholder .type-label { position: relative; margin: 0; font-size: .6rem; }
-.spoorthi-project-gallery .media { margin: 0; }
-.spoorthi-project-gallery__controls, .spoorthi-project-gallery__thumbs { display: flex; align-items: center; gap: .65rem; margin-top: .6rem; }
-.spoorthi-project-gallery__controls { justify-content: space-between; font: .6rem var(--brand-font-technical); text-transform: uppercase; letter-spacing: .06em; }
-.spoorthi-project-gallery button { min-height: 40px; padding: .4rem .65rem; border: 1px solid var(--brand-border); background: transparent; color: inherit; cursor: pointer; font: inherit; }
-.spoorthi-project-gallery__thumbs button { min-width: 2.2rem; }
-.spoorthi-project-gallery__thumbs button.is-active { background: var(--brand-accent); color: var(--brand-bg-primary); }
-@media (max-width: 1024px) {
-  .spoorthi-project-detail__opening-grid > :first-child { grid-column: 1 / span 6; }
-  .spoorthi-project-detail__opening-grid > .spoorthi-project-gallery { grid-column: 7 / -1; }
-  .spoorthi-project-detail__section-heading { grid-column: 1 / span 4; }
-  .spoorthi-project-detail__section-grid > .spoorthi-project-gallery, .spoorthi-project-detail__section--design2D .spoorthi-project-gallery, .spoorthi-project-detail__section--visualization .spoorthi-project-gallery { grid-column: 6 / -1; }
-  .spoorthi-project-detail__section--vr .spoorthi-project-gallery { grid-column: 7 / -1; }
-}
+/* Concept studies share the Spoorthi palette and render only available material. */
+.spoorthi-project-detail { background: var(--brand-bg-primary); color: var(--brand-text-primary); }
+.spoorthi-project-detail .layout-container { max-width: 88rem; }
+.spoorthi-project-detail .layout-section { padding-block: clamp(3rem, 6vw, 6rem); }
+.spoorthi-project-detail h1, .spoorthi-project-detail h2, .spoorthi-project-detail h3 { font-weight: 450; letter-spacing: -.045em; }
+.spoorthi-project-detail h1 { max-width: 12ch; margin: 1rem 0 0; font-size: clamp(3.1rem, 6.4vw, 6rem); line-height: 1.05; }
+.spoorthi-project-detail h2 { max-width: 18ch; margin: 1rem 0 0; font-size: clamp(2rem, 3.8vw, 3.6rem); line-height: 1.15; }
+.spoorthi-project-detail p { line-height: 1.7; }
+.spoorthi-project-detail .type-label { color: var(--brand-accent); font-size: .7rem; }
+.spoorthi-project-detail .ui-link { min-height: 44px; font-size: .8rem; }
+.spoorthi-project-detail__back { margin-bottom: 2.5rem; color: var(--brand-text-secondary); }
+.spoorthi-project-detail__opening-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(2rem, 6vw, 6rem); align-items: end; margin-bottom: 2.5rem; }
+.spoorthi-project-detail__opening-copy > p { max-width: 40ch; margin: 0; color: var(--brand-text-secondary); font-size: clamp(1.05rem, 1.4vw, 1.25rem); }
+.spoorthi-project-detail__metadata { display: flex; flex-wrap: wrap; gap: 1.5rem 2.5rem; margin: 2rem 0 0; }
+.spoorthi-project-detail__metadata dt { font: .65rem var(--brand-font-technical); text-transform: uppercase; letter-spacing: .08em; color: var(--brand-text-muted); }
+.spoorthi-project-detail__metadata dd { margin: .5rem 0 0; font-size: .85rem; }
+.spoorthi-project-detail__hero .media__frame { border: 0; box-shadow: none; aspect-ratio: 16 / 8; }
+.spoorthi-project-detail__hero .media__caption { font-size: .75rem; color: var(--brand-text-secondary); margin-top: 1rem; line-height: 1.65; }
+.spoorthi-project-detail__index { display: flex; flex-wrap: wrap; gap: 1rem 2.5rem; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--brand-border); }
+.spoorthi-project-detail__index a { display: inline-flex; align-items: center; gap: .65rem; min-height: 44px; color: var(--brand-text-primary); text-decoration: none; font-size: .8rem; }
+.spoorthi-project-detail__index a span { color: var(--brand-accent); font: .7rem var(--brand-font-technical); }
+.spoorthi-project-detail__index a:hover { color: var(--brand-accent); }
+.spoorthi-project-detail__overview, .spoorthi-project-detail__visuals, .spoorthi-project-detail__contact { scroll-margin-top: 6rem; }
+.spoorthi-project-detail__overview { background: color-mix(in srgb, var(--brand-bg-secondary) 65%, var(--brand-bg-primary)); }
+.spoorthi-project-detail__overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 6rem); }
+.spoorthi-project-detail__overview-copy > p { max-width: 53ch; margin: .6rem 0 1.5rem; color: var(--brand-text-secondary); font-size: 1.05rem; }
+.spoorthi-project-detail__principles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; padding: 0; margin: 3.5rem 0 0; list-style: none; }
+.spoorthi-project-detail__principles li { padding-top: 1.25rem; border-top: 1px solid var(--brand-border); }
+.spoorthi-project-detail__principles h3 { font-size: 1.35rem; margin: 1rem 0 .75rem; line-height: 1.25; }
+.spoorthi-project-detail__principles p { margin: 0; color: var(--brand-text-secondary); font-size: .9rem; }
+.spoorthi-project-detail__visuals { --brand-bg-secondary: #262821; --brand-border: rgba(244,241,235,.28); --brand-text-muted: #d3cec3; --brand-focus: #d0baa0; background: var(--spoorthi-bg-dark, #1a1a18); color: var(--spoorthi-text-on-dark, #f4f1eb); }
+.spoorthi-project-detail__visuals .type-label { color: #d0baa0; }
+.spoorthi-project-detail__visual-heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: 2.5rem; }
+.spoorthi-project-detail__visual-heading > p { max-width: 39ch; margin: 0; color: rgba(244,241,235,.74); font-size: .95rem; }
+.spoorthi-project-gallery { min-width: 0; }
+.spoorthi-project-gallery .media__frame { border: 0; box-shadow: none; aspect-ratio: 16 / 9; }
+.spoorthi-project-gallery .media__caption { font-size: .75rem; color: inherit; opacity: .8; line-height: 1.6; margin-top: 1rem; min-height: 1.6em; }
+.spoorthi-project-gallery__controls { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1.5rem; }
+.spoorthi-project-gallery button { display: inline-flex; align-items: center; justify-content: center; gap: .7rem; min-height: 44px; padding: .6rem 1rem; border: 1px solid var(--brand-border); background: transparent; color: inherit; font: inherit; font-size: .8rem; cursor: pointer; }
+.spoorthi-project-gallery button:hover { background: rgba(244,241,235,.1); }
+.spoorthi-project-gallery__count { font: .75rem var(--brand-font-technical); }
+.spoorthi-project-gallery__thumbs { display: flex; justify-content: center; gap: .5rem; margin-top: 1rem; }
+.spoorthi-project-gallery__thumbs button { min-width: 44px; }
+.spoorthi-project-gallery__thumbs button[aria-pressed='true'] { background: #d0baa0; color: #1a1a18; border-color: #d0baa0; }
+.spoorthi-project-detail__contact > .layout-container { display: flex; align-items: end; justify-content: space-between; gap: 3rem; }
+.spoorthi-project-detail__contact h2 { max-width: 19ch; }
+.spoorthi-project-detail__contact p:not(.type-label) { max-width: 48ch; margin: 1.25rem 0 0; color: var(--brand-text-secondary); }
+.spoorthi-project-detail__contact .ui-link { flex-shrink: 0; padding-block: .75rem; border-bottom: 1px solid var(--brand-border); }
+.spoorthi-project-detail__next { border-top: 1px solid var(--brand-border); }
+.spoorthi-project-detail__next-link { display: grid; grid-template-columns: 1fr 1.1fr; align-items: center; gap: clamp(2rem, 5vw, 5rem); color: inherit; text-decoration: none; }
+.spoorthi-project-detail__next-link > .media { width: 100%; }
+.spoorthi-project-detail__next-link .media__frame { box-shadow: none; border: 0; }
+.spoorthi-project-detail__next-link h2 { max-width: 15ch; margin: .75rem 0 1rem; }
+.spoorthi-project-detail__next-link p:not(.type-label) { color: var(--brand-text-secondary); margin: 0; }
+.spoorthi-project-detail__next-label { display: inline-flex; align-items: center; gap: .75rem; min-height: 44px; margin-top: 1rem; font-size: .8rem; }
+.spoorthi-project-detail__next-link:hover .spoorthi-project-detail__next-label { color: var(--brand-accent); }
+.spoorthi-project-detail a:focus-visible, .spoorthi-project-gallery:focus-visible, .spoorthi-project-gallery button:focus-visible { outline: 2px solid var(--brand-focus); outline-offset: 5px; }
+.spoorthi-project-detail--not-found { min-height: 65vh; }
+.spoorthi-project-detail--not-found .section-heading { margin-bottom: 2rem; }
 @media (max-width: 768px) {
-  .spoorthi-project-detail .layout-container { padding-inline: 1.5rem; }
-  .spoorthi-project-detail__opening-grid > :first-child, .spoorthi-project-detail__opening-grid > .spoorthi-project-gallery, .spoorthi-project-detail__section-heading, .spoorthi-project-detail__section-grid > .spoorthi-project-gallery, .spoorthi-project-detail__section--vr .spoorthi-project-detail__section-heading, .spoorthi-project-detail__section--vr .spoorthi-project-gallery { grid-column: 1 / -1; }
-  .spoorthi-project-detail__opening-grid > .spoorthi-project-gallery { max-width: none; }
-  .spoorthi-project-detail__section-grid { min-height: 0; gap: 1.25rem; }
-  .spoorthi-project-detail__section-heading, .spoorthi-project-detail__section--design2D .spoorthi-project-detail__section-heading { padding-top: 0; }
-  .spoorthi-project-detail__section--design2D .spoorthi-project-detail__placeholder, .spoorthi-project-detail__section--development3D .spoorthi-project-detail__placeholder, .spoorthi-project-detail__section--visualization .spoorthi-project-detail__placeholder { min-height: 15rem; }
-  .spoorthi-project-detail__overview-grid > :first-child, .spoorthi-project-detail__overview-grid > p { grid-column: 1 / -1; }
+  .spoorthi-project-detail__opening-grid, .spoorthi-project-detail__overview-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .spoorthi-project-detail__opening-copy > p { max-width: 50ch; }
+  .spoorthi-project-detail__hero .media__frame { aspect-ratio: 4 / 3; }
+  .spoorthi-project-detail__principles { gap: 1.25rem; }
+  .spoorthi-project-detail__visual-heading, .spoorthi-project-detail__contact > .layout-container { flex-direction: column; align-items: start; gap: 1.5rem; }
+  .spoorthi-project-detail__next-link { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .spoorthi-project-detail__next-link h2 { font-size: 2rem; }
 }
 @media (max-width: 600px) {
-  .spoorthi-project-detail .layout-container { padding-inline: 1.25rem; }
-  .spoorthi-project-detail .layout-section { padding-block: 2rem; }
-  .spoorthi-project-detail h1 { font-size: 2.7rem; }
-  .spoorthi-project-detail__index { gap: .8rem; justify-content: space-between; }
-  .spoorthi-project-detail__index a { font-size: .56rem; }
-  .spoorthi-project-detail__journey ol { display: grid; grid-template-columns: repeat(2, 1fr); }
-  .spoorthi-project-detail__journey li { min-height: 2.8rem; border-bottom: 1px solid var(--brand-border); border-right: 1px solid var(--brand-border); }
-  .spoorthi-project-detail__journey li:nth-child(even) { padding-left: .75rem; border-right: 0; }
-  .spoorthi-project-detail__journey li:nth-last-child(-n + 2) { border-bottom: 0; }
-  .spoorthi-project-detail__closing-grid { align-items: flex-start; flex-direction: column; }
+  .spoorthi-project-detail__back { margin-bottom: 1.75rem; }
+  .spoorthi-project-detail__principles { grid-template-columns: 1fr; gap: 2rem; margin-top: 2.5rem; }
+  .spoorthi-project-detail__index { gap: .5rem 1.25rem; }
+  .spoorthi-project-detail__index a { font-size: .75rem; }
+  .spoorthi-project-gallery .media__frame { aspect-ratio: 4 / 3; }
+  .spoorthi-project-gallery__controls { gap: .5rem; }
+  .spoorthi-project-gallery__controls button { padding-inline: .75rem; gap: .45rem; font-size: .75rem; }
+  .spoorthi-project-detail__next-link { grid-template-columns: 1fr; }
+  .spoorthi-project-detail__next-link > .media { max-width: none; }
 }
-@media (prefers-reduced-motion: reduce) { .spoorthi-project-detail * { scroll-behavior: auto; transition: none !important; } }
-
-/* Cinematic dossier treatment, isolated to this route. */
-.spoorthi-project-detail { --dossier-bg: #111313; --dossier-surface: #191b1b; --dossier-line: rgba(239,235,226,.2); --dossier-text: #eeeae1; --dossier-muted: rgba(238,234,225,.7); background: var(--dossier-bg); color: var(--dossier-text); overflow-x: clip; }
-.brand-layout--spoorthi:has(.spoorthi-project-detail) .brand-header, .brand-layout--spoorthi:has(.spoorthi-project-detail) .brand-footer { background: var(--dossier-bg); color: var(--dossier-text); border-color: var(--dossier-line); }
-.brand-layout--spoorthi:has(.spoorthi-project-detail) .brand-header { position: relative; }
-.brand-layout--spoorthi:has(.spoorthi-project-detail) .brand-header a, .brand-layout--spoorthi:has(.spoorthi-project-detail) .brand-header button { color: var(--dossier-text); }
-.spoorthi-project-detail .layout-section, .spoorthi-project-detail__opening, .spoorthi-project-detail__section, .spoorthi-project-detail__closing { border-color: var(--dossier-line); }
-.spoorthi-project-detail .type-label, .spoorthi-project-detail__journey span, .spoorthi-project-detail__index a span:first-child { color: #c6ad8f; }
-.spoorthi-project-detail__opening .type-body-large, .spoorthi-project-detail__section-heading > p:last-child, .spoorthi-project-detail__overview-grid > p { color: var(--dossier-muted); }
-.spoorthi-project-detail__overview { background: var(--dossier-surface); }
-.spoorthi-project-detail__overview-grid > .spoorthi-project-gallery { grid-column: 9 / -1; max-width: 20rem; justify-self: end; }
-.spoorthi-project-detail__overview-grid > *, .spoorthi-project-detail__section-grid > * { min-width: 0; }
-.spoorthi-project-detail__placeholder { background: #1c1e1e; border-color: var(--dossier-line); aspect-ratio: 16 / 9; min-height: 0 !important; }
-.spoorthi-project-detail__section--design2D .spoorthi-project-detail__placeholder, .spoorthi-project-detail__section--development3D .spoorthi-project-detail__placeholder { aspect-ratio: 4 / 3; }
-.spoorthi-project-detail__section--visualization .spoorthi-project-detail__placeholder, .spoorthi-project-detail__section--vr .spoorthi-project-detail__placeholder { aspect-ratio: 16 / 9; }
-.spoorthi-project-detail__placeholder-grid { opacity: .28; background-image: linear-gradient(90deg, transparent 49.7%, var(--dossier-line) 50%, transparent 50.3%), linear-gradient(0deg, transparent 49.7%, var(--dossier-line) 50%, transparent 50.3%); }
-.spoorthi-project-detail__section--vr { background: #0d1a27; color: var(--dossier-text); }
-.spoorthi-project-detail__section--vr .spoorthi-project-detail__placeholder { background: #142331; border-color: var(--dossier-line); }
-.spoorthi-project-detail__section--vr .spoorthi-project-detail__section-heading > p:last-child { color: var(--dossier-muted); }
-.spoorthi-project-detail__disabled-cta { display: inline-flex; min-height: 44px; align-items: center; margin-top: 1.1rem; padding: .65rem .9rem; border: 1px solid var(--dossier-line); color: var(--dossier-muted); font: .62rem var(--brand-font-technical); letter-spacing: .08em; text-transform: uppercase; }
-.spoorthi-project-detail__closing { background: var(--dossier-bg); }
-.spoorthi-project-detail__journey { background: var(--dossier-bg); }
-.spoorthi-project-detail__journey ol, .spoorthi-project-detail__journey li { border-color: var(--dossier-line); }
-.spoorthi-project-detail__index { border-color: var(--dossier-line); }
-.spoorthi-project-detail__index a, .spoorthi-project-detail__closing a { color: var(--dossier-text); }
-.spoorthi-project-detail .spoorthi-project-gallery__controls, .spoorthi-project-detail .spoorthi-project-gallery__thumbs { color: var(--dossier-muted); }
-.spoorthi-project-detail .spoorthi-project-gallery button { border-color: var(--dossier-line); color: var(--dossier-text); }
-.spoorthi-project-detail__statement { padding-block: 2.5rem !important; border-top: 1px solid var(--dossier-line); }
-.spoorthi-project-detail__statement > .layout-container { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); }
-.spoorthi-project-detail__statement > .layout-container > div { grid-column: 3 / span 7; }
-.spoorthi-project-detail__statement-copy { max-width: 34ch; margin: .75rem 0 0; font-size: clamp(1.35rem, 2.2vw, 2.2rem); line-height: 1.2 !important; letter-spacing: -.02em; color: var(--dossier-text); }
-.spoorthi-project-detail__next { padding-block: 3rem !important; border-top: 1px solid var(--dossier-line); }
-.spoorthi-project-detail__next-link { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(16rem, 35%); gap: clamp(1.5rem, 4vw, 4rem); align-items: center; color: var(--dossier-text); text-decoration: none; }
-.spoorthi-project-detail__next-link > div { padding-left: 1rem; border-left: 1px solid var(--dossier-line); }
-.spoorthi-project-detail__next-link h2 { margin: .6rem 0 .75rem; }
-.spoorthi-project-detail__next-link p:last-child { margin: 0; color: var(--dossier-muted); }
-.spoorthi-project-detail__next-link > .spoorthi-project-gallery { width: 100%; }
-.spoorthi-project-detail__next-arrow { position: absolute; top: 0; right: 0; font-size: 1.5rem; color: #c6ad8f; }
-.spoorthi-project-detail__archive-end { display: flex; align-items: center; justify-content: space-between; gap: 2rem; border-top: 1px solid var(--dossier-line); padding-top: 1.5rem; }
-.spoorthi-project-detail__archive-end h2 { margin: .5rem 0 0; }
-.spoorthi-project-detail__contact { padding-block: 2.5rem !important; border-top: 1px solid var(--dossier-line); background: #0d1a27; }
-.spoorthi-project-detail__contact > .layout-container { display: flex; align-items: end; justify-content: space-between; gap: 2rem; }
-.spoorthi-project-detail__contact h2 { margin: .6rem 0 .5rem; font-size: clamp(1.6rem, 2.8vw, 2.8rem); }
-.spoorthi-project-detail__contact p:not(.type-label) { margin: 0; color: var(--dossier-muted); }
-.spoorthi-project-detail__contact .ui-link { flex-shrink: 0; }
-.brand-layout--spoorthi:has(.spoorthi-project-detail) .brand-footer { background: #090d12; border-top: 1px solid rgba(239,235,226,.24); color: var(--dossier-text); }
-.brand-layout--spoorthi:has(.spoorthi-project-detail) .brand-footer .type-label { color: #c6ad8f; }
-.brand-layout--spoorthi:has(.spoorthi-project-detail) .brand-footer p, .brand-layout--spoorthi:has(.spoorthi-project-detail) .brand-footer span { color: rgba(238,234,225,.78); }
-.brand-layout--spoorthi:has(.spoorthi-project-detail) .brand-footer a { color: var(--dossier-text); transition: color .2s ease; }
-.brand-layout--spoorthi:has(.spoorthi-project-detail) .brand-footer a:hover, .brand-layout--spoorthi:has(.spoorthi-project-detail) .brand-footer a:focus-visible { color: #c6ad8f; }
-.brand-layout--spoorthi:has(.spoorthi-project-detail) .brand-footer__intro, .brand-layout--spoorthi:has(.spoorthi-project-detail) .brand-footer__grid, .brand-layout--spoorthi:has(.spoorthi-project-detail) .brand-footer__bottom { border-color: rgba(239,235,226,.24); }
-@media (max-width: 768px) { .spoorthi-project-detail__overview-grid > .spoorthi-project-gallery { grid-column: 1 / -1; max-width: none; justify-self: stretch; } .spoorthi-project-detail__overview-grid .section-heading { width: 100%; box-sizing: border-box; } }
-@media (max-width: 768px) {
-  .spoorthi-project-detail__statement > .layout-container > div { grid-column: 1 / -1; }
-  .spoorthi-project-detail__next-link { grid-template-columns: 1fr; gap: 1.25rem; }
-  .spoorthi-project-detail__next-link > .spoorthi-project-gallery { max-width: 28rem; }
-  .spoorthi-project-detail__contact > .layout-container { align-items: flex-start; flex-direction: column; }
-}
-@media (max-width: 600px) {
-  .spoorthi-project-detail__journey ol { grid-template-columns: repeat(2, 1fr); }
-  .spoorthi-project-detail__journey li:nth-last-child(-n + 2) { border-bottom: 1px solid var(--dossier-line); }
-  .spoorthi-project-detail__journey li:last-child { border-bottom: 0; }
-  .spoorthi-project-detail__archive-end { align-items: flex-start; flex-direction: column; }
-  .spoorthi-project-detail__journey ol { display: block; }
-  .spoorthi-project-detail__journey li, .spoorthi-project-detail__journey li:nth-child(even), .spoorthi-project-detail__journey li:nth-last-child(-n + 2) { min-height: 0; border-right: 0; border-bottom: 1px solid var(--dossier-line); padding: .8rem 0; }
-  .spoorthi-project-detail__journey li:last-child { border-bottom: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .spoorthi-project-detail * { scroll-behavior: auto; transition: none !important; }
 }

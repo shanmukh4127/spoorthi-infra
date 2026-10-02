@@ -21,6 +21,7 @@ import './styles/process.css'
 import './styles/why-choose-us.css'
 import './styles/cta-footer.css'
 import './styles/responsive-pass.css'
+import './styles/spoorthi-shell.css'
 import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(

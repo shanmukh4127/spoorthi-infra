@@ -17,7 +17,7 @@ function VrPage() {
           <div className="vr-intro__elevation"><VrDrawing variant="elevation" /></div>
         </div>
       </PageContainer></SectionWrapper>
-      <SectionWrapper className="vr-portal-section"><PageContainer>
+      <SectionWrapper id="spatial-explorer" className="vr-portal-section"><PageContainer>
         <h2 className="sr-only">{portal.title}</h2>
         <SpatialPortal content={portal} />
       </PageContainer></SectionWrapper>
@@ -32,12 +32,12 @@ function VrPage() {
         </div>
       </PageContainer></SectionWrapper>
       <SectionWrapper className="vr-sequence"><PageContainer>
-        <SectionHeading eyebrow="04 / A connected perspective" title={sequence.title} />
+        <SectionHeading eyebrow="03 / A connected perspective" title={sequence.title} />
         <ol className="vr-sequence__steps">{sequence.steps.map(step => <li key={step.id}>
           <div className="vr-sequence__copy"><span className="type-label">{step.number}</span><h3>{step.title}</h3><p>{step.description}</p></div>
           <VrDrawing variant={step.id} />
         </li>)}</ol>
-        <p className="vr-sequence__note">Illustrative sequence. Live immersive content will depend on approved project material.</p>
+        <p className="vr-sequence__note">Concept studies show the process. Project-specific immersive presentations begin with coordinated drawings and a prepared spatial model.</p>
       </PageContainer></SectionWrapper>
       <SectionWrapper className="vr-closing"><PageContainer>
         <div className="vr-closing__layout"><div className="vr-closing__copy">

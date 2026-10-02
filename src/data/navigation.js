@@ -3,9 +3,9 @@ import { routePaths } from './routePaths.js'
 export const brandNavigation = Object.freeze({
   spoorthi: Object.freeze([
     { label: 'Home', path: routePaths.spoorthi.home, end: true },
-    { label: 'Civil Construction', path: routePaths.spoorthi.civilConstruction },
+    { label: 'Construction', path: routePaths.spoorthi.civilConstruction },
     { label: 'Projects', path: routePaths.spoorthi.projects },
-    { label: 'Design / 3D', path: routePaths.spoorthi.design3d },
+    { label: 'Design & 3D', path: routePaths.spoorthi.design3d },
     { label: 'VR Experience', path: routePaths.spoorthi.vr },
     { label: 'Contact', path: routePaths.spoorthi.contact },
   ]),

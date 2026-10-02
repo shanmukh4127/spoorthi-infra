@@ -115,6 +115,38 @@
     opacity var(--brand-motion-transition-interactive);
 }
 
+.page-transition {
+  animation: page-enter var(--brand-motion-duration-slow) var(--brand-motion-ease-enter) both;
+}
+
+.layout-section {
+  opacity: 1;
+  transform: none;
+}
+
+.layout-section.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.scroll-reveal {
+  opacity: 1;
+  transform: translateY(1rem);
+  transition: opacity var(--brand-motion-duration-slow) var(--brand-motion-ease-enter),
+    transform var(--brand-motion-duration-slow) var(--brand-motion-ease-enter);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(0.5rem); }
+  to { opacity: 1; transform: none; }
+}
+
 @keyframes motion-fade-up {
   from {
     opacity: 0;
@@ -162,9 +194,13 @@
   .motion-enter,
   .motion-fade-up,
   .motion-fade,
-  .motion-slide-in {
+  .motion-slide-in,
+  .page-transition,
+  .layout-section,
+  .scroll-reveal {
     animation: none;
     opacity: 1;
     transform: none;
+    transition: none;
   }
 }

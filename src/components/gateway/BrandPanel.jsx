@@ -36,6 +36,7 @@ function BrandPanel({
       onMouseEnter={() => onHoverChange(brand.id)}
       onMouseLeave={() => onHoverChange(null)}
     >
+      <img className="gateway-panel__image" src={brand.id === 'spoorthi' ? '/assets/spoorthi/construction.webp' : '/assets/spoorthi/spatial.webp'} alt="" aria-hidden="true" width={brand.id === 'spoorthi' ? 1672 : 1536} height={brand.id === 'spoorthi' ? 941 : 1024} fetchPriority={brand.id === 'spoorthi' ? 'high' : 'auto'} />
       <div className="gateway-panel__content">
         <p className="gateway-panel__industry">{brand.industry}</p>
         <h2>{brand.name}</h2>
@@ -46,11 +47,7 @@ function BrandPanel({
         </span>
       </div>
 
-      <div className="gateway-panel__visual" aria-hidden="true">
-        <span className="gateway-panel__line gateway-panel__line--vertical" />
-        <span className="gateway-panel__line gateway-panel__line--horizontal" />
-        <span className="gateway-panel__marker" />
-      </div>
+      <span className="gateway-panel__concept">Illustrative architectural concept</span>
     </Link>
   )
 }

@@ -114,3 +114,75 @@
   .vr-closing__layout { grid-template-columns: minmax(0,1fr); }
   .vr-closing__copy { min-width: 0; }
 }
+
+/* Browser concept exploration. All controls share the site's brand palette. */
+.spoorthi-vr-page .vr-intro { padding-top: clamp(3.5rem, 7vw, 7rem); padding-bottom: 2.5rem; }
+.spoorthi-vr-page .vr-intro h1 { text-transform: none; font-size: clamp(3rem, 6.4vw, 6.8rem); line-height: 1.02; letter-spacing: -.055em; max-width: 11ch; }
+.vr-intro .section-heading__description { max-width: 38ch; line-height: 1.7; }
+.vr-intro__layout { padding-bottom: 2rem; }
+.vr-intro__elevation { opacity: .6; }
+.vr-closing .section-heading__title { text-transform: none; max-width: 14ch; font-size: clamp(2.6rem, 4.5vw, 4.6rem); line-height: 1.05; }
+.spatial-explorer { border: 1px solid var(--brand-border); background: var(--brand-bg-secondary); }
+.spatial-explorer__header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; padding: 1rem 1.5rem; border-bottom: 1px solid var(--brand-border); }
+.spatial-explorer__header > span:last-child { display: flex; align-items: center; gap: .5rem; color: var(--brand-text-secondary); font-size: .75rem; }
+.spatial-explorer__layout { display: grid; grid-template-columns: minmax(0, 1.8fr) minmax(18rem, 1fr); }
+.spatial-explorer__canvas { min-width: 0; }
+.spatial-explorer__viewport { position: relative; overflow: hidden; aspect-ratio: 3 / 2; background: var(--brand-bg-primary); touch-action: pan-y; }
+.spatial-explorer__viewport.is-zoomed { cursor: grab; }
+.spatial-explorer__viewport.is-dragging { cursor: grabbing; }
+.spatial-explorer__viewport:focus-visible { outline: 3px solid var(--brand-focus); outline-offset: -3px; }
+.spatial-explorer__scene { position: absolute; inset: 0; will-change: transform; }
+.spatial-explorer__scene img { display: block; width: 100%; height: 100%; object-fit: cover; user-select: none; pointer-events: none; }
+.spatial-explorer__hotspot { position: absolute; display: grid; place-items: center; width: 44px; height: 44px; transform: translate(-50%, -50%); border: 1px solid #fff8; border-radius: 50%; background: var(--brand-accent); color: var(--brand-text-on-accent); box-shadow: 0 0 0 7px #ffffff28; font-size: .75rem; font-weight: 600; cursor: pointer; }
+.spatial-explorer__hotspot[aria-pressed="true"] { background: var(--brand-bg-primary); color: var(--brand-accent); border-color: var(--brand-accent); }
+.spatial-explorer__hotspot:focus-visible { outline: 3px solid var(--brand-focus); outline-offset: 4px; }
+.spatial-explorer__badge { position: absolute; left: 1rem; top: 1rem; padding: .45rem .7rem; background: #f7f5eeeb; color: #25433a; font: .6rem var(--brand-font-technical); text-transform: uppercase; letter-spacing: .12em; pointer-events: none; }
+.spatial-explorer__controls { display: flex; align-items: center; gap: .35rem; padding: .5rem .75rem; border-block: 1px solid var(--brand-border); background: var(--brand-bg-primary); }
+.spatial-explorer__controls button { display: flex; align-items: center; justify-content: center; gap: .4rem; min-width: 44px; min-height: 44px; padding: .5rem; border: 0; background: transparent; color: var(--brand-accent); cursor: pointer; }
+.spatial-explorer__controls button:hover:not(:disabled) { background: var(--brand-accent-soft); }
+.spatial-explorer__controls button:disabled { opacity: .35; cursor: default; }
+.spatial-explorer__controls button:focus-visible, .spatial-explorer__viewpoints button:focus-visible { outline: 2px solid var(--brand-focus); outline-offset: -2px; }
+.spatial-explorer__zoom { display: flex; align-items: center; gap: .75rem; flex: 1; min-width: 0; }
+.spatial-explorer__zoom input { width: 100%; min-width: 2rem; max-width: 10rem; min-height: 44px; accent-color: var(--brand-accent); cursor: pointer; }
+.spatial-explorer__zoom output { font: .7rem var(--brand-font-technical); min-width: 3.5ch; }
+.spatial-explorer__reset { margin-left: auto; font: .65rem var(--brand-font-technical); }
+.spatial-explorer__instructions { margin: 0; padding: .8rem 1.25rem 1rem; font-size: .7rem; color: var(--brand-text-secondary); line-height: 1.6; }
+.spatial-explorer__panel { padding: clamp(1.5rem, 3vw, 3rem); border-left: 1px solid var(--brand-border); display: flex; flex-direction: column; }
+.spatial-explorer__panel > .type-label { margin: 0; color: var(--brand-accent); }
+.spatial-explorer__panel h3 { font-size: clamp(1.7rem, 2.5vw, 2.8rem); font-weight: var(--type-weight-regular); line-height: 1.1; letter-spacing: -.035em; margin: 1rem 0 1.8rem; }
+.spatial-explorer__viewpoints { display: grid; border-top: 1px solid var(--brand-border); }
+.spatial-explorer__viewpoints button { display: flex; align-items: center; gap: .8rem; min-height: 52px; padding: .8rem .5rem; border: 0; border-bottom: 1px solid var(--brand-border); background: transparent; color: var(--brand-text-secondary); text-align: left; font: .8rem var(--brand-font-body); cursor: pointer; }
+.spatial-explorer__viewpoints button span:first-child { font: .65rem var(--brand-font-technical); opacity: .65; }
+.spatial-explorer__viewpoints button span:last-child { margin-left: auto; font-size: 1rem; }
+.spatial-explorer__viewpoints button[aria-pressed="true"] { color: var(--brand-accent); background: var(--brand-accent-soft); }
+.spatial-explorer__viewpoints button:hover { color: var(--brand-accent); }
+.spatial-explorer__detail { padding-top: 1.6rem; margin-top: auto; }
+.spatial-explorer__detail p { margin: .65rem 0 0; color: var(--brand-text-secondary); font-size: .85rem; line-height: 1.7; }
+.spatial-explorer figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 2rem; padding: 1rem 1.5rem; border-top: 1px solid var(--brand-border); }
+.spatial-explorer figcaption span:last-child { max-width: 70ch; }
+@media (max-width:1024px) {
+  .spatial-explorer__layout { grid-template-columns: minmax(0, 1.5fr) minmax(17rem, 1fr); }
+  .spatial-explorer__panel { padding: 1.5rem; }
+  .spatial-explorer__panel h3 { font-size: 1.8rem; }
+  .spatial-explorer__reset span { display: none; }
+}
+@media (max-width:768px) {
+  .spatial-explorer__layout { grid-template-columns: minmax(0, 1fr); }
+  .spatial-explorer__panel { border-left: 0; border-top: 1px solid var(--brand-border); }
+  .spatial-explorer__viewpoints { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 0 1rem; }
+  .spatial-explorer__detail { min-height: 7rem; }
+  .spatial-explorer__reset span { display: inline; }
+}
+@media (max-width:600px) {
+  .spatial-explorer__header { padding: 1rem; }
+  .spatial-explorer__header > span:last-child { font-size: .6875rem; }
+  .spatial-explorer__controls { gap: .2rem; padding-inline: .25rem; }
+  .spatial-explorer__zoom { gap: .3rem; }
+  .spatial-explorer__zoom output { font-size: .625rem; }
+  .spatial-explorer__reset span { display: none; }
+  .spatial-explorer__panel { padding: 1.25rem; }
+  .spatial-explorer__viewpoints { grid-template-columns: minmax(0,1fr); }
+  .spatial-explorer__detail { min-height: 0; }
+  .spatial-explorer figcaption { padding: 1rem; }
+  .spatial-explorer__badge { left: .6rem; top: .6rem; font-size: .55rem; }
+}

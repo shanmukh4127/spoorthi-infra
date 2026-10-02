@@ -9,7 +9,7 @@ function RouteMetadata({ children }) {
   useEffect(() => {
     document.title = metadata.title
     const description = document.head.querySelector('meta[name="description"]')
-    if (description && metadata.description) description.setAttribute('content', metadata.description)
+    if (description) description.setAttribute('content', metadata.description ?? 'This page could not be found. Explore Spoorthi Infra and Tejes Interiors.')
   }, [metadata])
 
   return children

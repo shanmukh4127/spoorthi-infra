@@ -1,7 +1,7 @@
 export const contactPlaceholder = Object.freeze({
-  email: null,
+  email: 'aarambh634@gmail.com',
   phone: null,
   address: null,
   hours: null,
-  note: '[Contact information will be supplied by the client.]',
+  note: null,
 })

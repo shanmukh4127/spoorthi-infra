@@ -1,0 +1,68 @@
+/* Tejes secondary pages preserve the existing brand typography and palette. */
+.tejes-detail-page .layout-container { max-width: 86rem; padding-inline: clamp(1.25rem, 5vw, 5rem); }
+.tejes-detail-page .layout-section { padding-block: clamp(3rem, 6vw, 6rem); }
+.tejes-detail-page .type-label { color: var(--brand-accent); }
+.tejes-detail-page h1, .tejes-detail-page h2, .tejes-detail-page h3 { font-weight: 400; letter-spacing: -.035em; }
+.tejes-detail-page h1 { max-width: 14ch; font-size: clamp(3rem, 5.8vw, 5.8rem); line-height: 1.05; margin: 1rem 0 1.5rem; }
+.tejes-detail-page h2 { font-size: clamp(2rem, 3.4vw, 3.4rem); line-height: 1.15; margin: 0 0 1rem; }
+.tejes-detail-page h3 { font-size: 1.4rem; margin: 0 0 .75rem; }
+.tejes-detail-page p { color: var(--brand-text-secondary); line-height: 1.7; }
+.tejes-detail-lead { max-width: 54ch; font-size: 1.0625rem; }
+.tejes-detail-note { max-width: 80ch; font-size: .8rem; }
+.tejes-detail-split { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2rem, 6vw, 6rem); align-items: center; }
+.tejes-detail-split .media__frame { max-height: 34rem; }
+.tejes-detail-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 2rem; margin-top: 1.8rem; }
+.tejes-detail-actions .ui-link { min-height: 44px; }
+.tejes-detail-section-heading { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; align-items: start; }
+.tejes-detail-services { background: var(--brand-bg-secondary); }
+.tejes-detail-page .tejes-detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--brand-border); margin-top: 2rem; }
+.tejes-detail-page .tejes-detail-grid article { padding: 2rem; border-right: 1px solid var(--brand-border); border-bottom: 1px solid var(--brand-border); }
+.tejes-detail-page .tejes-detail-grid article:nth-child(2n) { border-right: 0; }
+.tejes-detail-page .tejes-detail-grid p { font-size: .95rem; margin: 0; }
+.tejes-detail-closing { background: var(--tejes-bg-dark); color: var(--tejes-text-on-dark); --brand-focus: var(--tejes-text-on-dark); }
+.tejes-detail-closing .type-label, .tejes-detail-closing p, .tejes-detail-closing .ui-link { color: var(--tejes-text-on-dark); }
+.tejes-detail-filters { display: flex; flex-wrap: wrap; gap: .6rem; padding-bottom: 1rem; border-bottom: 1px solid var(--brand-border); }
+.tejes-detail-filters button { min-height: 44px; padding: .65rem 1.15rem; border: 1px solid var(--brand-border); border-radius: 2rem; background: transparent; color: var(--brand-text-primary); cursor: pointer; font-size: .85rem; }
+.tejes-detail-filters button[aria-pressed="true"] { background: var(--brand-accent); border-color: var(--brand-accent); color: var(--brand-text-on-accent); }
+.tejes-detail-page button:focus-visible, .tejes-detail-page input:focus-visible { outline: 2px solid var(--brand-focus); outline-offset: 3px; }
+.tejes-concept-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; margin-top: 2rem; }
+.tejes-concept-grid h2 { font-size: 1.6rem; }
+.tejes-concept-grid article { min-width: 0; }
+.tejes-concept-grid .media { margin-bottom: 1.5rem; }
+.tejes-concept-grid .media__frame { aspect-ratio: 4 / 5; }
+.tejes-concept-grid p { font-size: .9rem; }
+.tejes-explorer { border: 1px solid var(--brand-border); background: var(--brand-bg-secondary); padding: clamp(1rem, 3vw, 2rem); }
+.tejes-explorer__image { position: relative; overflow: hidden; aspect-ratio: 3 / 2; }
+.tejes-explorer__image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.tejes-explorer__controls { display: flex; align-items: center; flex-wrap: wrap; gap: .65rem; padding-block: 1rem; }
+.tejes-explorer__controls button { min-width: 44px; min-height: 44px; border: 1px solid var(--brand-border); background: var(--brand-bg-primary); color: var(--brand-text-primary); cursor: pointer; }
+.tejes-explorer__controls button:disabled { opacity: .4; cursor: default; }
+.tejes-explorer__controls label { display: flex; align-items: center; gap: .65rem; flex: 1; font-size: .8rem; }
+.tejes-explorer__controls input { width: 100%; max-width: 14rem; min-width: 4rem; min-height: 44px; accent-color: var(--brand-accent); }
+.tejes-explorer__description { min-height: 5rem; max-width: 80ch; }
+.tejes-enquiry-layout { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; }
+.tejes-enquiry-layout aside { min-width: 0; }
+.tejes-contact-email { display: inline-flex; min-height: 44px; align-items: center; overflow-wrap: anywhere; max-width: 100%; color: var(--brand-accent); }
+.tejes-enquiry { min-width: 0; padding: clamp(1.25rem, 3vw, 2.5rem); background: var(--brand-bg-secondary); border: 1px solid var(--brand-border); }
+.tejes-enquiry__fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; margin-block: 1.5rem; }
+.tejes-enquiry__fields > :last-child { grid-column: 1 / -1; }
+.tejes-enquiry__actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+.tejes-enquiry__preview { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--brand-border); }
+.tejes-enquiry__preview textarea { width: 100%; min-height: 14rem; padding: 1rem; border: 1px solid var(--brand-border); background: var(--brand-bg-primary); color: var(--brand-text-primary); resize: vertical; font-size: .85rem; line-height: 1.7; }
+.tejes-faq { border-bottom: 1px solid var(--brand-border); padding-block: 1rem; }
+.tejes-faq summary { cursor: pointer; font-size: 1rem; }
+.tejes-faq p { font-size: .9rem; }
+@media (max-width: 900px) {
+  .tejes-detail-split, .tejes-enquiry-layout { grid-template-columns: minmax(0, 1fr); }
+  .tejes-detail-split .media__frame { aspect-ratio: 4 / 3; max-height: 28rem; }
+  .tejes-concept-grid { gap: 1.25rem; }
+}
+@media (max-width: 600px) {
+  .tejes-detail-page h1 { font-size: clamp(2.6rem, 12vw, 3.5rem); }
+  .tejes-detail-section-heading, .tejes-detail-page .tejes-detail-grid, .tejes-concept-grid, .tejes-enquiry__fields { grid-template-columns: minmax(0, 1fr); }
+  .tejes-detail-page .tejes-detail-grid article { padding: 1.5rem 0; border-right: 0; }
+  .tejes-explorer__controls label { flex-basis: 50%; }
+  .tejes-concept-grid .media__frame { aspect-ratio: 4 / 3; }
+  .tejes-enquiry__fields > :last-child { grid-column: auto; }
+  .tejes-enquiry__actions .ui-button { width: 100%; }
+}

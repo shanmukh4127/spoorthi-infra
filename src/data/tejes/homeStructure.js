@@ -1,4 +1,5 @@
 import { routePaths } from '../routePaths.js'
+import { tejesConceptStudies, tejesFaqs } from './studio.js'
 
 export const tejesHomeStructure = Object.freeze({
   rooms: Object.freeze([
@@ -43,7 +44,7 @@ export const tejesHomeStructure = Object.freeze({
     ['01', '2D Plan', 'Understand the layout and spatial relationships.'],
     ['02', '3D Development', 'Understand form, proportion, and movement.'],
     ['03', 'Visualization', 'Understand the intended appearance and atmosphere.'],
-    ['04', 'VR Experience', 'Explore the proposed space more immersively.'],
+    ['04', 'Spatial Experience', 'Look closer at an interior concept through browser exploration.'],
   ]),
   why: Object.freeze([
     ['Personalized design', 'Spaces develop around the individual project and its brief.'],
@@ -53,15 +54,7 @@ export const tejesHomeStructure = Object.freeze({
     ['Attention to detail', 'Small decisions shape the finished interior.'],
     ['End-to-end thinking', 'Design and execution remain connected stages of the work.'],
   ]),
-  projects: Object.freeze([
-    { number: '01', name: 'Project content ready', type: 'Interior project', description: 'Approved project information and imagery can be inserted here.', id: null },
-    { number: '02', name: 'Project content ready', type: 'Spatial project', description: 'A second verified project record can be added without changing the layout.', id: null },
-    { number: '03', name: 'Project content ready', type: 'Interior project', description: 'A third verified project record can be added when approved.', id: null },
-  ]),
-  reviews: Object.freeze([
-    { quote: null, client: null, project: null, location: null },
-    { quote: null, client: null, project: null, location: null },
-    { quote: null, client: null, project: null, location: null },
-  ]),
+  projects: Object.freeze(tejesConceptStudies.map(study => ({ number: study.number, name: study.title, type: study.category, description: study.description, id: study.id }))),
+  questions: tejesFaqs,
   links: Object.freeze({ projects: routePaths.tejes.projects, services: routePaths.tejes.interiorDesign, development: routePaths.tejes.design3d, contact: routePaths.tejes.contact }),
 })

@@ -1,29 +1,15 @@
-import { spoorthiProjectsPage } from './projectsPage.js'
+import { spoorthiProjectCollection } from './projectsPage.js'
 
-const detailSections = Object.freeze({
-  design2D: Object.freeze([]),
-  development3D: Object.freeze([]),
-  visualization: Object.freeze([]),
-  vr: Object.freeze({ image: null, title: null, description: null, experienceUrl: null }),
-})
-
-export const spoorthiProjectCollection = spoorthiProjectsPage.demo.projects
+export { spoorthiProjectCollection }
 
 export const spoorthiProjectDetails = Object.freeze(
   spoorthiProjectCollection.map((project, index) => Object.freeze({
-    id: project.id,
+    ...project,
     number: String(index + 1).padStart(2, '0'),
-    title: project.title,
-    description: project.description ?? null,
-    type: null,
-    location: null,
-    area: null,
-    status: null,
-    isDemo: project.isDemo === true,
-    heroImage: null,
-    overview: null,
-    ...detailSections,
-    nextProjectId: spoorthiProjectCollection[index + 1]?.id ?? null,
+    type: project.projectType,
+    status: 'Illustrative concept study',
+    heroImage: Object.freeze({ src: project.coverImage, alt: project.coverAlt }),
+    nextProjectId: spoorthiProjectCollection[(index + 1) % spoorthiProjectCollection.length]?.id ?? null,
   })),
 )
 
