@@ -1,0 +1,80 @@
+[
+  {
+    "categories": {
+      "height": 515.3624877929688,
+      "top": 1671.0750732421875
+    },
+    "images": true,
+    "overflow": false,
+    "project": {
+      "height": 237.6750030517578,
+      "top": 2799.137451171875
+    },
+    "width": 1440
+  },
+  {
+    "categories": {
+      "height": 457.9250183105469,
+      "top": 1485.4124755859375
+    },
+    "images": true,
+    "overflow": false,
+    "project": {
+      "height": 211.3500061035156,
+      "top": 2487.962646484375
+    },
+    "width": 1280
+  },
+  {
+    "categories": {
+      "height": 373.2000122070313,
+      "top": 1189.3125
+    },
+    "images": true,
+    "overflow": false,
+    "project": {
+      "height": 169.2375030517578,
+      "top": 2015.5625
+    },
+    "width": 1024
+  },
+  {
+    "categories": {
+      "height": 381.5874938964844,
+      "top": 1455
+    },
+    "images": true,
+    "overflow": false,
+    "project": {
+      "height": 183.7875061035156,
+      "top": 2364.337646484375
+    },
+    "width": 768
+  },
+  {
+    "categories": {
+      "height": 983.3250122070312,
+      "top": 3005.512451171875
+    },
+    "images": true,
+    "overflow": false,
+    "project": {
+      "height": 449.3250122070313,
+      "top": 5322.8125
+    },
+    "width": 390
+  },
+  {
+    "categories": {
+      "height": 961.5125122070312,
+      "top": 3035.6875
+    },
+    "images": true,
+    "overflow": false,
+    "project": {
+      "height": 449.2749938964844,
+      "top": 5356.125
+    },
+    "width": 375
+  }
+]

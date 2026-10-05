@@ -1,0 +1,48 @@
+from pathlib import Path
+import json
+from PIL import Image
+
+source = Image.open(r'C:\Users\Pardhu\Downloads\Tejes Interiors Luxury Design Website.png').convert('RGB')
+out = Path('public/assets/tejes/reference')
+out.mkdir(parents=True, exist_ok=True)
+# Only photographic regions are used; headings, buttons, and navigation are real HTML.
+regions = {
+    'hero-living': (281, 37, 634, 244),
+    'hero-landscape': (0, 45, 43, 242),
+    'about-interior': (419, 260, 759, 401),
+    'founder-reference': (0, 412, 218, 565),
+    'achievement-still-life': (550, 660, 759, 768),
+    'philosophy-light': (0, 769, 183, 879),
+    'category-living': (63, 925, 161, 970),
+    'category-bedroom': (191, 925, 290, 970),
+    'category-kitchen': (324, 925, 424, 970),
+    'category-dining': (459, 925, 558, 970),
+    'category-bathroom': (593, 925, 694, 970),
+    'category-office': (63, 1015, 190, 1062),
+    'category-entertainment': (202, 1015, 319, 1062),
+    'category-luxury': (332, 1015, 439, 1062),
+    'category-contemporary': (453, 1015, 566, 1062),
+    'category-custom': (581, 1015, 695, 1062),
+    'process-interior': (0, 1199, 168, 1303),
+    'quality-interior': (584, 1307, 759, 1425),
+    'featured-residence': (0, 1437, 391, 1551),
+    'development-plan': (247, 1569, 344, 1609),
+    'development-3d': (368, 1569, 461, 1609),
+    'development-visual': (487, 1569, 580, 1609),
+    'development-vr': (607, 1569, 700, 1609),
+    'material-wood': (226, 1658, 289, 1688),
+    'material-stone': (298, 1658, 359, 1688),
+    'material-marble': (367, 1658, 430, 1688),
+    'material-glass': (439, 1658, 471, 1688),
+    'material-metal': (477, 1658, 500, 1688),
+    'material-fabric': (508, 1658, 570, 1688),
+    'material-lighting': (579, 1658, 639, 1688),
+    'material-surface': (649, 1658, 710, 1688),
+    'final-living': (0, 1890, 265, 1959),
+    'contact-detail': (552, 1968, 759, 2023),
+}
+for name, box in regions.items():
+    source.crop(box).save(out / f'{name}.webp', quality=94, method=6)
+source.crop((53, 11, 122, 41)).save(out / 'tejes-wordmark.png')
+(out / 'regions.json').write_text(json.dumps({'source': 'Tejes Interiors Luxury Design Website.png', 'sourceSize': [759, 2073], 'regions': regions}, indent=2))
+print(f'Extracted {len(regions)} reference photos and the supplied wordmark.')

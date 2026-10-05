@@ -1,0 +1,1740 @@
+{
+  "hero-living": {
+    "src": "/assets/tejes/photography/hero-living-2560.webp",
+    "srcSet": "/assets/tejes/photography/hero-living-320.webp 320w, /assets/tejes/photography/hero-living-480.webp 480w, /assets/tejes/photography/hero-living-800.webp 800w, /assets/tejes/photography/hero-living-1280.webp 1280w, /assets/tejes/photography/hero-living-1600.webp 1600w, /assets/tejes/photography/hero-living-1920.webp 1920w, /assets/tejes/photography/hero-living-2560.webp 2560w",
+    "width": 2560,
+    "height": 1440,
+    "native": [
+      2560,
+      1707
+    ],
+    "kind": "licensed studio interior image",
+    "source": "https://www.pexels.com/photo/modern-luxury-living-room-with-elegant-decor-28853352/",
+    "credit": "S3T Koncepts",
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "width": 320,
+        "height": 180,
+        "src": "/assets/tejes/photography/hero-living-320.webp",
+        "bytes": 13034
+      },
+      {
+        "width": 480,
+        "height": 270,
+        "src": "/assets/tejes/photography/hero-living-480.webp",
+        "bytes": 24208
+      },
+      {
+        "width": 800,
+        "height": 450,
+        "src": "/assets/tejes/photography/hero-living-800.webp",
+        "bytes": 58386
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "src": "/assets/tejes/photography/hero-living-1280.webp",
+        "bytes": 134344
+      },
+      {
+        "width": 1600,
+        "height": 900,
+        "src": "/assets/tejes/photography/hero-living-1600.webp",
+        "bytes": 203968
+      },
+      {
+        "width": 1920,
+        "height": 1080,
+        "src": "/assets/tejes/photography/hero-living-1920.webp",
+        "bytes": 289356
+      },
+      {
+        "width": 2560,
+        "height": 1440,
+        "src": "/assets/tejes/photography/hero-living-2560.webp",
+        "bytes": 506904
+      }
+    ],
+    "status": "illustrative \u2014 not Tejes client work"
+  },
+  "about-interior": {
+    "src": "/assets/tejes/photography/about-interior-3200.webp",
+    "srcSet": "/assets/tejes/photography/about-interior-320.webp 320w, /assets/tejes/photography/about-interior-480.webp 480w, /assets/tejes/photography/about-interior-800.webp 800w, /assets/tejes/photography/about-interior-1280.webp 1280w, /assets/tejes/photography/about-interior-1600.webp 1600w, /assets/tejes/photography/about-interior-1920.webp 1920w, /assets/tejes/photography/about-interior-2560.webp 2560w, /assets/tejes/photography/about-interior-3200.webp 3200w",
+    "width": 3200,
+    "height": 2133,
+    "native": [
+      7360,
+      4912
+    ],
+    "kind": "licensed camera photograph",
+    "source": "https://www.pexels.com/photo/modern-kitchen-interior-design-with-tiles-8146212/",
+    "credit": "Max Vakhtbovych",
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "width": 320,
+        "height": 213,
+        "src": "/assets/tejes/photography/about-interior-320.webp",
+        "bytes": 15968
+      },
+      {
+        "width": 480,
+        "height": 320,
+        "src": "/assets/tejes/photography/about-interior-480.webp",
+        "bytes": 32832
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "src": "/assets/tejes/photography/about-interior-800.webp",
+        "bytes": 81744
+      },
+      {
+        "width": 1280,
+        "height": 853,
+        "src": "/assets/tejes/photography/about-interior-1280.webp",
+        "bytes": 186460
+      },
+      {
+        "width": 1600,
+        "height": 1067,
+        "src": "/assets/tejes/photography/about-interior-1600.webp",
+        "bytes": 270214
+      },
+      {
+        "width": 1920,
+        "height": 1280,
+        "src": "/assets/tejes/photography/about-interior-1920.webp",
+        "bytes": 369052
+      },
+      {
+        "width": 2560,
+        "height": 1706,
+        "src": "/assets/tejes/photography/about-interior-2560.webp",
+        "bytes": 591966
+      },
+      {
+        "width": 3200,
+        "height": 2133,
+        "src": "/assets/tejes/photography/about-interior-3200.webp",
+        "bytes": 928106
+      }
+    ],
+    "status": "illustrative \u2014 not Tejes client work"
+  },
+  "achievement-still-life": {
+    "src": "/assets/tejes/photography/achievement-still-life-3200.webp",
+    "srcSet": "/assets/tejes/photography/achievement-still-life-320.webp 320w, /assets/tejes/photography/achievement-still-life-480.webp 480w, /assets/tejes/photography/achievement-still-life-800.webp 800w, /assets/tejes/photography/achievement-still-life-1280.webp 1280w, /assets/tejes/photography/achievement-still-life-1600.webp 1600w, /assets/tejes/photography/achievement-still-life-1920.webp 1920w, /assets/tejes/photography/achievement-still-life-2560.webp 2560w, /assets/tejes/photography/achievement-still-life-3200.webp 3200w",
+    "width": 3200,
+    "height": 2133,
+    "native": [
+      4803,
+      7197
+    ],
+    "kind": "licensed camera photograph",
+    "source": "https://www.pexels.com/photo/glass-vase-with-green-plants-6492393/",
+    "credit": "Max Vakhtbovych",
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "width": 320,
+        "height": 213,
+        "src": "/assets/tejes/photography/achievement-still-life-320.webp",
+        "bytes": 18250
+      },
+      {
+        "width": 480,
+        "height": 320,
+        "src": "/assets/tejes/photography/achievement-still-life-480.webp",
+        "bytes": 37058
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "src": "/assets/tejes/photography/achievement-still-life-800.webp",
+        "bytes": 90358
+      },
+      {
+        "width": 1280,
+        "height": 853,
+        "src": "/assets/tejes/photography/achievement-still-life-1280.webp",
+        "bytes": 200844
+      },
+      {
+        "width": 1600,
+        "height": 1067,
+        "src": "/assets/tejes/photography/achievement-still-life-1600.webp",
+        "bytes": 288332
+      },
+      {
+        "width": 1920,
+        "height": 1280,
+        "src": "/assets/tejes/photography/achievement-still-life-1920.webp",
+        "bytes": 388966
+      },
+      {
+        "width": 2560,
+        "height": 1707,
+        "src": "/assets/tejes/photography/achievement-still-life-2560.webp",
+        "bytes": 631684
+      },
+      {
+        "width": 3200,
+        "height": 2133,
+        "src": "/assets/tejes/photography/achievement-still-life-3200.webp",
+        "bytes": 929040
+      }
+    ],
+    "status": "illustrative \u2014 not Tejes client work"
+  },
+  "philosophy-light": {
+    "src": "/assets/tejes/photography/philosophy-light-3200.webp",
+    "srcSet": "/assets/tejes/photography/philosophy-light-320.webp 320w, /assets/tejes/photography/philosophy-light-480.webp 480w, /assets/tejes/photography/philosophy-light-800.webp 800w, /assets/tejes/photography/philosophy-light-1280.webp 1280w, /assets/tejes/photography/philosophy-light-1600.webp 1600w, /assets/tejes/photography/philosophy-light-1920.webp 1920w, /assets/tejes/photography/philosophy-light-2560.webp 2560w, /assets/tejes/photography/philosophy-light-3200.webp 3200w",
+    "width": 3200,
+    "height": 2133,
+    "native": [
+      7360,
+      4912
+    ],
+    "kind": "licensed camera photograph",
+    "source": "https://www.pexels.com/photo/bedroom-and-living-room-interiors-at-home-6436775/",
+    "credit": "Max Vakhtbovych",
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "width": 320,
+        "height": 213,
+        "src": "/assets/tejes/photography/philosophy-light-320.webp",
+        "bytes": 6078
+      },
+      {
+        "width": 480,
+        "height": 320,
+        "src": "/assets/tejes/photography/philosophy-light-480.webp",
+        "bytes": 10814
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "src": "/assets/tejes/photography/philosophy-light-800.webp",
+        "bytes": 26620
+      },
+      {
+        "width": 1280,
+        "height": 853,
+        "src": "/assets/tejes/photography/philosophy-light-1280.webp",
+        "bytes": 67410
+      },
+      {
+        "width": 1600,
+        "height": 1067,
+        "src": "/assets/tejes/photography/philosophy-light-1600.webp",
+        "bytes": 112824
+      },
+      {
+        "width": 1920,
+        "height": 1280,
+        "src": "/assets/tejes/photography/philosophy-light-1920.webp",
+        "bytes": 180450
+      },
+      {
+        "width": 2560,
+        "height": 1706,
+        "src": "/assets/tejes/photography/philosophy-light-2560.webp",
+        "bytes": 395868
+      },
+      {
+        "width": 3200,
+        "height": 2133,
+        "src": "/assets/tejes/photography/philosophy-light-3200.webp",
+        "bytes": 722152
+      }
+    ],
+    "status": "illustrative \u2014 not Tejes client work"
+  },
+  "process-interior": {
+    "src": "/assets/tejes/photography/process-interior-3200.webp",
+    "srcSet": "/assets/tejes/photography/process-interior-320.webp 320w, /assets/tejes/photography/process-interior-480.webp 480w, /assets/tejes/photography/process-interior-800.webp 800w, /assets/tejes/photography/process-interior-1280.webp 1280w, /assets/tejes/photography/process-interior-1600.webp 1600w, /assets/tejes/photography/process-interior-1920.webp 1920w, /assets/tejes/photography/process-interior-2560.webp 2560w, /assets/tejes/photography/process-interior-3200.webp 3200w",
+    "width": 3200,
+    "height": 2133,
+    "native": [
+      7360,
+      4912
+    ],
+    "kind": "licensed camera photograph",
+    "source": "https://www.pexels.com/photo/comfortable-sofa-placed-in-stylish-living-room-7214171/",
+    "credit": "Max Vakhtbovych",
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "width": 320,
+        "height": 213,
+        "src": "/assets/tejes/photography/process-interior-320.webp",
+        "bytes": 11142
+      },
+      {
+        "width": 480,
+        "height": 320,
+        "src": "/assets/tejes/photography/process-interior-480.webp",
+        "bytes": 20036
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "src": "/assets/tejes/photography/process-interior-800.webp",
+        "bytes": 41226
+      },
+      {
+        "width": 1280,
+        "height": 853,
+        "src": "/assets/tejes/photography/process-interior-1280.webp",
+        "bytes": 88254
+      },
+      {
+        "width": 1600,
+        "height": 1067,
+        "src": "/assets/tejes/photography/process-interior-1600.webp",
+        "bytes": 130460
+      },
+      {
+        "width": 1920,
+        "height": 1280,
+        "src": "/assets/tejes/photography/process-interior-1920.webp",
+        "bytes": 181520
+      },
+      {
+        "width": 2560,
+        "height": 1706,
+        "src": "/assets/tejes/photography/process-interior-2560.webp",
+        "bytes": 315050
+      },
+      {
+        "width": 3200,
+        "height": 2133,
+        "src": "/assets/tejes/photography/process-interior-3200.webp",
+        "bytes": 503354
+      }
+    ],
+    "status": "illustrative \u2014 not Tejes client work"
+  },
+  "quality-interior": {
+    "src": "/assets/tejes/photography/quality-interior-3200.webp",
+    "srcSet": "/assets/tejes/photography/quality-interior-320.webp 320w, /assets/tejes/photography/quality-interior-480.webp 480w, /assets/tejes/photography/quality-interior-800.webp 800w, /assets/tejes/photography/quality-interior-1280.webp 1280w, /assets/tejes/photography/quality-interior-1600.webp 1600w, /assets/tejes/photography/quality-interior-1920.webp 1920w, /assets/tejes/photography/quality-interior-2560.webp 2560w, /assets/tejes/photography/quality-interior-3200.webp 3200w",
+    "width": 3200,
+    "height": 2133,
+    "native": [
+      4768,
+      7144
+    ],
+    "kind": "licensed camera photograph",
+    "source": "https://www.pexels.com/photo/black-leather-chair-near-decorative-shelving-6758397/",
+    "credit": "Max Vakhtbovych",
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "width": 320,
+        "height": 213,
+        "src": "/assets/tejes/photography/quality-interior-320.webp",
+        "bytes": 5944
+      },
+      {
+        "width": 480,
+        "height": 320,
+        "src": "/assets/tejes/photography/quality-interior-480.webp",
+        "bytes": 9062
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "src": "/assets/tejes/photography/quality-interior-800.webp",
+        "bytes": 18386
+      },
+      {
+        "width": 1280,
+        "height": 853,
+        "src": "/assets/tejes/photography/quality-interior-1280.webp",
+        "bytes": 37740
+      },
+      {
+        "width": 1600,
+        "height": 1066,
+        "src": "/assets/tejes/photography/quality-interior-1600.webp",
+        "bytes": 59092
+      },
+      {
+        "width": 1920,
+        "height": 1280,
+        "src": "/assets/tejes/photography/quality-interior-1920.webp",
+        "bytes": 97020
+      },
+      {
+        "width": 2560,
+        "height": 1706,
+        "src": "/assets/tejes/photography/quality-interior-2560.webp",
+        "bytes": 274618
+      },
+      {
+        "width": 3200,
+        "height": 2133,
+        "src": "/assets/tejes/photography/quality-interior-3200.webp",
+        "bytes": 533660
+      }
+    ],
+    "status": "illustrative \u2014 not Tejes client work"
+  },
+  "featured-residence": {
+    "src": "/assets/tejes/photography/featured-residence-3200.webp",
+    "srcSet": "/assets/tejes/photography/featured-residence-320.webp 320w, /assets/tejes/photography/featured-residence-480.webp 480w, /assets/tejes/photography/featured-residence-800.webp 800w, /assets/tejes/photography/featured-residence-1280.webp 1280w, /assets/tejes/photography/featured-residence-1600.webp 1600w, /assets/tejes/photography/featured-residence-1920.webp 1920w, /assets/tejes/photography/featured-residence-2560.webp 2560w, /assets/tejes/photography/featured-residence-3200.webp 3200w",
+    "width": 3200,
+    "height": 2133,
+    "native": [
+      7360,
+      4912
+    ],
+    "kind": "licensed camera photograph",
+    "source": "https://www.pexels.com/photo/a-marble-top-with-chairs-near-the-living-room-7587858/",
+    "credit": "Max Vakhtbovych",
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "width": 320,
+        "height": 213,
+        "src": "/assets/tejes/photography/featured-residence-320.webp",
+        "bytes": 22162
+      },
+      {
+        "width": 480,
+        "height": 320,
+        "src": "/assets/tejes/photography/featured-residence-480.webp",
+        "bytes": 43886
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "src": "/assets/tejes/photography/featured-residence-800.webp",
+        "bytes": 106834
+      },
+      {
+        "width": 1280,
+        "height": 853,
+        "src": "/assets/tejes/photography/featured-residence-1280.webp",
+        "bytes": 244920
+      },
+      {
+        "width": 1600,
+        "height": 1067,
+        "src": "/assets/tejes/photography/featured-residence-1600.webp",
+        "bytes": 369354
+      },
+      {
+        "width": 1920,
+        "height": 1280,
+        "src": "/assets/tejes/photography/featured-residence-1920.webp",
+        "bytes": 517970
+      },
+      {
+        "width": 2560,
+        "height": 1706,
+        "src": "/assets/tejes/photography/featured-residence-2560.webp",
+        "bytes": 912622
+      },
+      {
+        "width": 3200,
+        "height": 2133,
+        "src": "/assets/tejes/photography/featured-residence-3200.webp",
+        "bytes": 1451534
+      }
+    ],
+    "status": "illustrative \u2014 not Tejes client work"
+  },
+  "final-living": {
+    "src": "/assets/tejes/photography/final-living-3200.webp",
+    "srcSet": "/assets/tejes/photography/final-living-320.webp 320w, /assets/tejes/photography/final-living-480.webp 480w, /assets/tejes/photography/final-living-800.webp 800w, /assets/tejes/photography/final-living-1280.webp 1280w, /assets/tejes/photography/final-living-1600.webp 1600w, /assets/tejes/photography/final-living-1920.webp 1920w, /assets/tejes/photography/final-living-2560.webp 2560w, /assets/tejes/photography/final-living-3200.webp 3200w",
+    "width": 3200,
+    "height": 2133,
+    "native": [
+      3400,
+      3140
+    ],
+    "kind": "licensed camera photograph",
+    "source": "https://www.pexels.com/photo/comfy-armchair-in-modern-living-room-5997979/",
+    "credit": "Max Vakhtbovych",
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "width": 320,
+        "height": 213,
+        "src": "/assets/tejes/photography/final-living-320.webp",
+        "bytes": 14434
+      },
+      {
+        "width": 480,
+        "height": 320,
+        "src": "/assets/tejes/photography/final-living-480.webp",
+        "bytes": 27574
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "src": "/assets/tejes/photography/final-living-800.webp",
+        "bytes": 63470
+      },
+      {
+        "width": 1280,
+        "height": 853,
+        "src": "/assets/tejes/photography/final-living-1280.webp",
+        "bytes": 146004
+      },
+      {
+        "width": 1600,
+        "height": 1066,
+        "src": "/assets/tejes/photography/final-living-1600.webp",
+        "bytes": 220468
+      },
+      {
+        "width": 1920,
+        "height": 1280,
+        "src": "/assets/tejes/photography/final-living-1920.webp",
+        "bytes": 289716
+      },
+      {
+        "width": 2560,
+        "height": 1706,
+        "src": "/assets/tejes/photography/final-living-2560.webp",
+        "bytes": 473328
+      },
+      {
+        "width": 3200,
+        "height": 2133,
+        "src": "/assets/tejes/photography/final-living-3200.webp",
+        "bytes": 709108
+      }
+    ],
+    "status": "illustrative \u2014 not Tejes client work"
+  },
+  "contact-detail": {
+    "src": "/assets/tejes/photography/contact-detail-3200.webp",
+    "srcSet": "/assets/tejes/photography/contact-detail-320.webp 320w, /assets/tejes/photography/contact-detail-480.webp 480w, /assets/tejes/photography/contact-detail-800.webp 800w, /assets/tejes/photography/contact-detail-1280.webp 1280w, /assets/tejes/photography/contact-detail-1600.webp 1600w, /assets/tejes/photography/contact-detail-1920.webp 1920w, /assets/tejes/photography/contact-detail-2560.webp 2560w, /assets/tejes/photography/contact-detail-3200.webp 3200w",
+    "width": 3200,
+    "height": 2133,
+    "native": [
+      7208,
+      4912
+    ],
+    "kind": "licensed camera photograph",
+    "source": "https://www.pexels.com/photo/dining-table-in-contemporary-apartment-7533758/",
+    "credit": "Max Vakhtbovych",
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "width": 320,
+        "height": 213,
+        "src": "/assets/tejes/photography/contact-detail-320.webp",
+        "bytes": 11970
+      },
+      {
+        "width": 480,
+        "height": 320,
+        "src": "/assets/tejes/photography/contact-detail-480.webp",
+        "bytes": 21578
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "src": "/assets/tejes/photography/contact-detail-800.webp",
+        "bytes": 45140
+      },
+      {
+        "width": 1280,
+        "height": 853,
+        "src": "/assets/tejes/photography/contact-detail-1280.webp",
+        "bytes": 105066
+      },
+      {
+        "width": 1600,
+        "height": 1067,
+        "src": "/assets/tejes/photography/contact-detail-1600.webp",
+        "bytes": 167592
+      },
+      {
+        "width": 1920,
+        "height": 1280,
+        "src": "/assets/tejes/photography/contact-detail-1920.webp",
+        "bytes": 242630
+      },
+      {
+        "width": 2560,
+        "height": 1707,
+        "src": "/assets/tejes/photography/contact-detail-2560.webp",
+        "bytes": 428358
+      },
+      {
+        "width": 3200,
+        "height": 2133,
+        "src": "/assets/tejes/photography/contact-detail-3200.webp",
+        "bytes": 759192
+      }
+    ],
+    "status": "illustrative \u2014 not Tejes client work"
+  },
+  "category-living": {
+    "src": "/assets/tejes/photography/category-living-3200.webp",
+    "srcSet": "/assets/tejes/photography/category-living-320.webp 320w, /assets/tejes/photography/category-living-480.webp 480w, /assets/tejes/photography/category-living-800.webp 800w, /assets/tejes/photography/category-living-1280.webp 1280w, /assets/tejes/photography/category-living-1600.webp 1600w, /assets/tejes/photography/category-living-1920.webp 1920w, /assets/tejes/photography/category-living-2560.webp 2560w, /assets/tejes/photography/category-living-3200.webp 3200w",
+    "width": 3200,
+    "height": 2133,
+    "native": [
+      5904,
+      3936
+    ],
+    "kind": "licensed camera photograph",
+    "source": "https://www.pexels.com/photo/luxury-living-room-with-modern-light-furniture-6207822/",
+    "credit": "Max Vakhtbovych",
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "width": 320,
+        "height": 213,
+        "src": "/assets/tejes/photography/category-living-320.webp",
+        "bytes": 13876
+      },
+      {
+        "width": 480,
+        "height": 320,
+        "src": "/assets/tejes/photography/category-living-480.webp",
+        "bytes": 26820
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "src": "/assets/tejes/photography/category-living-800.webp",
+        "bytes": 61220
+      },
+      {
+        "width": 1280,
+        "height": 853,
+        "src": "/assets/tejes/photography/category-living-1280.webp",
+        "bytes": 132712
+      },
+      {
+        "width": 1600,
+        "height": 1067,
+        "src": "/assets/tejes/photography/category-living-1600.webp",
+        "bytes": 204528
+      },
+      {
+        "width": 1920,
+        "height": 1280,
+        "src": "/assets/tejes/photography/category-living-1920.webp",
+        "bytes": 302672
+      },
+      {
+        "width": 2560,
+        "height": 1707,
+        "src": "/assets/tejes/photography/category-living-2560.webp",
+        "bytes": 635026
+      },
+      {
+        "width": 3200,
+        "height": 2133,
+        "src": "/assets/tejes/photography/category-living-3200.webp",
+        "bytes": 1167708
+      }
+    ],
+    "status": "illustrative \u2014 not Tejes client work"
+  },
+  "category-bedroom": {
+    "src": "/assets/tejes/photography/category-bedroom-3200.webp",
+    "srcSet": "/assets/tejes/photography/category-bedroom-320.webp 320w, /assets/tejes/photography/category-bedroom-480.webp 480w, /assets/tejes/photography/category-bedroom-800.webp 800w, /assets/tejes/photography/category-bedroom-1280.webp 1280w, /assets/tejes/photography/category-bedroom-1600.webp 1600w, /assets/tejes/photography/category-bedroom-1920.webp 1920w, /assets/tejes/photography/category-bedroom-2560.webp 2560w, /assets/tejes/photography/category-bedroom-3200.webp 3200w",
+    "width": 3200,
+    "height": 2133,
+    "native": [
+      7121,
+      4900
+    ],
+    "kind": "licensed camera photograph",
+    "source": "https://www.pexels.com/photo/a-modern-design-bedroom-with-window-light-shining-inside-7546724/",
+    "credit": "Max Vakhtbovych",
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "width": 320,
+        "height": 213,
+        "src": "/assets/tejes/photography/category-bedroom-320.webp",
+        "bytes": 9282
+      },
+      {
+        "width": 480,
+        "height": 320,
+        "src": "/assets/tejes/photography/category-bedroom-480.webp",
+        "bytes": 15836
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "src": "/assets/tejes/photography/category-bedroom-800.webp",
+        "bytes": 35232
+      },
+      {
+        "width": 1280,
+        "height": 853,
+        "src": "/assets/tejes/photography/category-bedroom-1280.webp",
+        "bytes": 70320
+      },
+      {
+        "width": 1600,
+        "height": 1067,
+        "src": "/assets/tejes/photography/category-bedroom-1600.webp",
+        "bytes": 104600
+      },
+      {
+        "width": 1920,
+        "height": 1280,
+        "src": "/assets/tejes/photography/category-bedroom-1920.webp",
+        "bytes": 144032
+      },
+      {
+        "width": 2560,
+        "height": 1707,
+        "src": "/assets/tejes/photography/category-bedroom-2560.webp",
+        "bytes": 254516
+      },
+      {
+        "width": 3200,
+        "height": 2133,
+        "src": "/assets/tejes/photography/category-bedroom-3200.webp",
+        "bytes": 424166
+      }
+    ],
+    "status": "illustrative \u2014 not Tejes client work"
+  },
+  "category-kitchen": {
+    "src": "/assets/tejes/photography/category-kitchen-3200.webp",
+    "srcSet": "/assets/tejes/photography/category-kitchen-320.webp 320w, /assets/tejes/photography/category-kitchen-480.webp 480w, /assets/tejes/photography/category-kitchen-800.webp 800w, /assets/tejes/photography/category-kitchen-1280.webp 1280w, /assets/tejes/photography/category-kitchen-1600.webp 1600w, /assets/tejes/photography/category-kitchen-1920.webp 1920w, /assets/tejes/photography/category-kitchen-2560.webp 2560w, /assets/tejes/photography/category-kitchen-3200.webp 3200w",
+    "width": 3200,
+    "height": 2133,
+    "native": [
+      7360,
+      4912
+    ],
+    "kind": "licensed camera photograph",
+    "source": "https://www.pexels.com/photo/spacious-light-kitchen-in-modern-house-6032398/",
+    "credit": "Max Vakhtbovych",
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "width": 320,
+        "height": 213,
+        "src": "/assets/tejes/photography/category-kitchen-320.webp",
+        "bytes": 13744
+      },
+      {
+        "width": 480,
+        "height": 320,
+        "src": "/assets/tejes/photography/category-kitchen-480.webp",
+        "bytes": 24330
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "src": "/assets/tejes/photography/category-kitchen-800.webp",
+        "bytes": 52482
+      },
+      {
+        "width": 1280,
+        "height": 853,
+        "src": "/assets/tejes/photography/category-kitchen-1280.webp",
+        "bytes": 112250
+      },
+      {
+        "width": 1600,
+        "height": 1067,
+        "src": "/assets/tejes/photography/category-kitchen-1600.webp",
+        "bytes": 157256
+      },
+      {
+        "width": 1920,
+        "height": 1280,
+        "src": "/assets/tejes/photography/category-kitchen-1920.webp",
+        "bytes": 224314
+      },
+      {
+        "width": 2560,
+        "height": 1706,
+        "src": "/assets/tejes/photography/category-kitchen-2560.webp",
+        "bytes": 371198
+      },
+      {
+        "width": 3200,
+        "height": 2133,
+        "src": "/assets/tejes/photography/category-kitchen-3200.webp",
+        "bytes": 597544
+      }
+    ],
+    "status": "illustrative \u2014 not Tejes client work"
+  },
+  "category-dining": {
+    "src": "/assets/tejes/photography/category-dining-3200.webp",
+    "srcSet": "/assets/tejes/photography/category-dining-320.webp 320w, /assets/tejes/photography/category-dining-480.webp 480w, /assets/tejes/photography/category-dining-800.webp 800w, /assets/tejes/photography/category-dining-1280.webp 1280w, /assets/tejes/photography/category-dining-1600.webp 1600w, /assets/tejes/photography/category-dining-1920.webp 1920w, /assets/tejes/photography/category-dining-2560.webp 2560w, /assets/tejes/photography/category-dining-3200.webp 3200w",
+    "width": 3200,
+    "height": 2133,
+    "native": [
+      7342,
+      4900
+    ],
+    "kind": "licensed camera photograph",
+    "source": "https://www.pexels.com/photo/dining-zone-and-kitchen-in-mansion-with-panoramic-windows-7061670/",
+    "credit": "Max Vakhtbovych",
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "width": 320,
+        "height": 213,
+        "src": "/assets/tejes/photography/category-dining-320.webp",
+        "bytes": 18524
+      },
+      {
+        "width": 480,
+        "height": 320,
+        "src": "/assets/tejes/photography/category-dining-480.webp",
+        "bytes": 34706
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "src": "/assets/tejes/photography/category-dining-800.webp",
+        "bytes": 82546
+      },
+      {
+        "width": 1280,
+        "height": 853,
+        "src": "/assets/tejes/photography/category-dining-1280.webp",
+        "bytes": 180854
+      },
+      {
+        "width": 1600,
+        "height": 1067,
+        "src": "/assets/tejes/photography/category-dining-1600.webp",
+        "bytes": 266376
+      },
+      {
+        "width": 1920,
+        "height": 1280,
+        "src": "/assets/tejes/photography/category-dining-1920.webp",
+        "bytes": 360658
+      },
+      {
+        "width": 2560,
+        "height": 1706,
+        "src": "/assets/tejes/photography/category-dining-2560.webp",
+        "bytes": 565734
+      },
+      {
+        "width": 3200,
+        "height": 2133,
+        "src": "/assets/tejes/photography/category-dining-3200.webp",
+        "bytes": 834588
+      }
+    ],
+    "status": "illustrative \u2014 not Tejes client work"
+  },
+  "category-bathroom": {
+    "src": "/assets/tejes/photography/category-bathroom-3200.webp",
+    "srcSet": "/assets/tejes/photography/category-bathroom-320.webp 320w, /assets/tejes/photography/category-bathroom-480.webp 480w, /assets/tejes/photography/category-bathroom-800.webp 800w, /assets/tejes/photography/category-bathroom-1280.webp 1280w, /assets/tejes/photography/category-bathroom-1600.webp 1600w, /assets/tejes/photography/category-bathroom-1920.webp 1920w, /assets/tejes/photography/category-bathroom-2560.webp 2560w, /assets/tejes/photography/category-bathroom-3200.webp 3200w",
+    "width": 3200,
+    "height": 2133,
+    "native": [
+      7360,
+      4912
+    ],
+    "kind": "licensed camera photograph",
+    "source": "https://www.pexels.com/photo/contemporary-bathroom-with-minimalistic-interior-7045908/",
+    "credit": "Max Vakhtbovych",
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "width": 320,
+        "height": 213,
+        "src": "/assets/tejes/photography/category-bathroom-320.webp",
+        "bytes": 12684
+      },
+      {
+        "width": 480,
+        "height": 320,
+        "src": "/assets/tejes/photography/category-bathroom-480.webp",
+        "bytes": 23670
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "src": "/assets/tejes/photography/category-bathroom-800.webp",
+        "bytes": 51484
+      },
+      {
+        "width": 1280,
+        "height": 853,
+        "src": "/assets/tejes/photography/category-bathroom-1280.webp",
+        "bytes": 103722
+      },
+      {
+        "width": 1600,
+        "height": 1067,
+        "src": "/assets/tejes/photography/category-bathroom-1600.webp",
+        "bytes": 147876
+      },
+      {
+        "width": 1920,
+        "height": 1280,
+        "src": "/assets/tejes/photography/category-bathroom-1920.webp",
+        "bytes": 209722
+      },
+      {
+        "width": 2560,
+        "height": 1706,
+        "src": "/assets/tejes/photography/category-bathroom-2560.webp",
+        "bytes": 329422
+      },
+      {
+        "width": 3200,
+        "height": 2133,
+        "src": "/assets/tejes/photography/category-bathroom-3200.webp",
+        "bytes": 531118
+      }
+    ],
+    "status": "illustrative \u2014 not Tejes client work"
+  },
+  "category-office": {
+    "src": "/assets/tejes/photography/category-office-3200.webp",
+    "srcSet": "/assets/tejes/photography/category-office-320.webp 320w, /assets/tejes/photography/category-office-480.webp 480w, /assets/tejes/photography/category-office-800.webp 800w, /assets/tejes/photography/category-office-1280.webp 1280w, /assets/tejes/photography/category-office-1600.webp 1600w, /assets/tejes/photography/category-office-1920.webp 1920w, /assets/tejes/photography/category-office-2560.webp 2560w, /assets/tejes/photography/category-office-3200.webp 3200w",
+    "width": 3200,
+    "height": 2133,
+    "native": [
+      7360,
+      4912
+    ],
+    "kind": "licensed camera photograph",
+    "source": "https://www.pexels.com/photo/modern-home-office-design-8082224/",
+    "credit": "Max Vakhtbovych",
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "width": 320,
+        "height": 213,
+        "src": "/assets/tejes/photography/category-office-320.webp",
+        "bytes": 11178
+      },
+      {
+        "width": 480,
+        "height": 320,
+        "src": "/assets/tejes/photography/category-office-480.webp",
+        "bytes": 20134
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "src": "/assets/tejes/photography/category-office-800.webp",
+        "bytes": 41118
+      },
+      {
+        "width": 1280,
+        "height": 853,
+        "src": "/assets/tejes/photography/category-office-1280.webp",
+        "bytes": 81584
+      },
+      {
+        "width": 1600,
+        "height": 1067,
+        "src": "/assets/tejes/photography/category-office-1600.webp",
+        "bytes": 114420
+      },
+      {
+        "width": 1920,
+        "height": 1280,
+        "src": "/assets/tejes/photography/category-office-1920.webp",
+        "bytes": 151882
+      },
+      {
+        "width": 2560,
+        "height": 1706,
+        "src": "/assets/tejes/photography/category-office-2560.webp",
+        "bytes": 247864
+      },
+      {
+        "width": 3200,
+        "height": 2133,
+        "src": "/assets/tejes/photography/category-office-3200.webp",
+        "bytes": 387064
+      }
+    ],
+    "status": "illustrative \u2014 not Tejes client work"
+  },
+  "category-entertainment": {
+    "src": "/assets/tejes/photography/category-entertainment-3200.webp",
+    "srcSet": "/assets/tejes/photography/category-entertainment-320.webp 320w, /assets/tejes/photography/category-entertainment-480.webp 480w, /assets/tejes/photography/category-entertainment-800.webp 800w, /assets/tejes/photography/category-entertainment-1280.webp 1280w, /assets/tejes/photography/category-entertainment-1600.webp 1600w, /assets/tejes/photography/category-entertainment-1920.webp 1920w, /assets/tejes/photography/category-entertainment-2560.webp 2560w, /assets/tejes/photography/category-entertainment-3200.webp 3200w",
+    "width": 3200,
+    "height": 2133,
+    "native": [
+      7360,
+      4912
+    ],
+    "kind": "licensed camera photograph",
+    "source": "https://www.pexels.com/photo/cozy-sofas-and-modern-tv-set-in-spacious-living-room-7005270/",
+    "credit": "Max Vakhtbovych",
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "width": 320,
+        "height": 213,
+        "src": "/assets/tejes/photography/category-entertainment-320.webp",
+        "bytes": 11144
+      },
+      {
+        "width": 480,
+        "height": 320,
+        "src": "/assets/tejes/photography/category-entertainment-480.webp",
+        "bytes": 19688
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "src": "/assets/tejes/photography/category-entertainment-800.webp",
+        "bytes": 43220
+      },
+      {
+        "width": 1280,
+        "height": 853,
+        "src": "/assets/tejes/photography/category-entertainment-1280.webp",
+        "bytes": 92544
+      },
+      {
+        "width": 1600,
+        "height": 1067,
+        "src": "/assets/tejes/photography/category-entertainment-1600.webp",
+        "bytes": 133836
+      },
+      {
+        "width": 1920,
+        "height": 1280,
+        "src": "/assets/tejes/photography/category-entertainment-1920.webp",
+        "bytes": 187688
+      },
+      {
+        "width": 2560,
+        "height": 1706,
+        "src": "/assets/tejes/photography/category-entertainment-2560.webp",
+        "bytes": 370018
+      },
+      {
+        "width": 3200,
+        "height": 2133,
+        "src": "/assets/tejes/photography/category-entertainment-3200.webp",
+        "bytes": 748650
+      }
+    ],
+    "status": "illustrative \u2014 not Tejes client work"
+  },
+  "category-luxury": {
+    "src": "/assets/tejes/photography/category-luxury-3200.webp",
+    "srcSet": "/assets/tejes/photography/category-luxury-320.webp 320w, /assets/tejes/photography/category-luxury-480.webp 480w, /assets/tejes/photography/category-luxury-800.webp 800w, /assets/tejes/photography/category-luxury-1280.webp 1280w, /assets/tejes/photography/category-luxury-1600.webp 1600w, /assets/tejes/photography/category-luxury-1920.webp 1920w, /assets/tejes/photography/category-luxury-2560.webp 2560w, /assets/tejes/photography/category-luxury-3200.webp 3200w",
+    "width": 3200,
+    "height": 2133,
+    "native": [
+      7360,
+      4912
+    ],
+    "kind": "licensed camera photograph",
+    "source": "https://www.pexels.com/photo/luxury-living-room-interior-design-7546321/",
+    "credit": "Max Vakhtbovych",
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "width": 320,
+        "height": 213,
+        "src": "/assets/tejes/photography/category-luxury-320.webp",
+        "bytes": 15920
+      },
+      {
+        "width": 480,
+        "height": 320,
+        "src": "/assets/tejes/photography/category-luxury-480.webp",
+        "bytes": 30140
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "src": "/assets/tejes/photography/category-luxury-800.webp",
+        "bytes": 73892
+      },
+      {
+        "width": 1280,
+        "height": 853,
+        "src": "/assets/tejes/photography/category-luxury-1280.webp",
+        "bytes": 161830
+      },
+      {
+        "width": 1600,
+        "height": 1067,
+        "src": "/assets/tejes/photography/category-luxury-1600.webp",
+        "bytes": 241918
+      },
+      {
+        "width": 1920,
+        "height": 1280,
+        "src": "/assets/tejes/photography/category-luxury-1920.webp",
+        "bytes": 328872
+      },
+      {
+        "width": 2560,
+        "height": 1706,
+        "src": "/assets/tejes/photography/category-luxury-2560.webp",
+        "bytes": 522466
+      },
+      {
+        "width": 3200,
+        "height": 2133,
+        "src": "/assets/tejes/photography/category-luxury-3200.webp",
+        "bytes": 777176
+      }
+    ],
+    "status": "illustrative \u2014 not Tejes client work"
+  },
+  "category-contemporary": {
+    "src": "/assets/tejes/photography/category-contemporary-3200.webp",
+    "srcSet": "/assets/tejes/photography/category-contemporary-320.webp 320w, /assets/tejes/photography/category-contemporary-480.webp 480w, /assets/tejes/photography/category-contemporary-800.webp 800w, /assets/tejes/photography/category-contemporary-1280.webp 1280w, /assets/tejes/photography/category-contemporary-1600.webp 1600w, /assets/tejes/photography/category-contemporary-1920.webp 1920w, /assets/tejes/photography/category-contemporary-2560.webp 2560w, /assets/tejes/photography/category-contemporary-3200.webp 3200w",
+    "width": 3200,
+    "height": 2133,
+    "native": [
+      7234,
+      4828
+    ],
+    "kind": "licensed camera photograph",
+    "source": "https://www.pexels.com/photo/luxury-brown-sofa-near-wooden-furniture-of-modern-apartment-6908555/",
+    "credit": "Max Vakhtbovych",
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "width": 320,
+        "height": 213,
+        "src": "/assets/tejes/photography/category-contemporary-320.webp",
+        "bytes": 12754
+      },
+      {
+        "width": 480,
+        "height": 320,
+        "src": "/assets/tejes/photography/category-contemporary-480.webp",
+        "bytes": 23050
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "src": "/assets/tejes/photography/category-contemporary-800.webp",
+        "bytes": 50654
+      },
+      {
+        "width": 1280,
+        "height": 853,
+        "src": "/assets/tejes/photography/category-contemporary-1280.webp",
+        "bytes": 107326
+      },
+      {
+        "width": 1600,
+        "height": 1067,
+        "src": "/assets/tejes/photography/category-contemporary-1600.webp",
+        "bytes": 158474
+      },
+      {
+        "width": 1920,
+        "height": 1280,
+        "src": "/assets/tejes/photography/category-contemporary-1920.webp",
+        "bytes": 223838
+      },
+      {
+        "width": 2560,
+        "height": 1706,
+        "src": "/assets/tejes/photography/category-contemporary-2560.webp",
+        "bytes": 413540
+      },
+      {
+        "width": 3200,
+        "height": 2133,
+        "src": "/assets/tejes/photography/category-contemporary-3200.webp",
+        "bytes": 682100
+      }
+    ],
+    "status": "illustrative \u2014 not Tejes client work"
+  },
+  "category-custom": {
+    "src": "/assets/tejes/photography/category-custom-3200.webp",
+    "srcSet": "/assets/tejes/photography/category-custom-320.webp 320w, /assets/tejes/photography/category-custom-480.webp 480w, /assets/tejes/photography/category-custom-800.webp 800w, /assets/tejes/photography/category-custom-1280.webp 1280w, /assets/tejes/photography/category-custom-1600.webp 1600w, /assets/tejes/photography/category-custom-1920.webp 1920w, /assets/tejes/photography/category-custom-2560.webp 2560w, /assets/tejes/photography/category-custom-3200.webp 3200w",
+    "width": 3200,
+    "height": 2133,
+    "native": [
+      4912,
+      6617
+    ],
+    "kind": "licensed camera photograph",
+    "source": "https://www.pexels.com/photo/modern-dressing-room-with-vanity-table-6198662/",
+    "credit": "Max Vakhtbovych",
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "width": 320,
+        "height": 213,
+        "src": "/assets/tejes/photography/category-custom-320.webp",
+        "bytes": 10574
+      },
+      {
+        "width": 480,
+        "height": 320,
+        "src": "/assets/tejes/photography/category-custom-480.webp",
+        "bytes": 17518
+      },
+      {
+        "width": 800,
+        "height": 533,
+        "src": "/assets/tejes/photography/category-custom-800.webp",
+        "bytes": 34560
+      },
+      {
+        "width": 1280,
+        "height": 853,
+        "src": "/assets/tejes/photography/category-custom-1280.webp",
+        "bytes": 68896
+      },
+      {
+        "width": 1600,
+        "height": 1066,
+        "src": "/assets/tejes/photography/category-custom-1600.webp",
+        "bytes": 99396
+      },
+      {
+        "width": 1920,
+        "height": 1280,
+        "src": "/assets/tejes/photography/category-custom-1920.webp",
+        "bytes": 150766
+      },
+      {
+        "width": 2560,
+        "height": 1706,
+        "src": "/assets/tejes/photography/category-custom-2560.webp",
+        "bytes": 346916
+      },
+      {
+        "width": 3200,
+        "height": 2133,
+        "src": "/assets/tejes/photography/category-custom-3200.webp",
+        "bytes": 557816
+      }
+    ],
+    "status": "illustrative \u2014 not Tejes client work"
+  },
+  "material-wood": {
+    "src": "/assets/tejes/photography/material-wood-1672.webp",
+    "srcSet": "/assets/tejes/photography/material-wood-320.webp 320w, /assets/tejes/photography/material-wood-480.webp 480w, /assets/tejes/photography/material-wood-800.webp 800w, /assets/tejes/photography/material-wood-1280.webp 1280w, /assets/tejes/photography/material-wood-1600.webp 1600w, /assets/tejes/photography/material-wood-1672.webp 1672w",
+    "width": 1672,
+    "height": 941,
+    "native": [
+      1672,
+      941
+    ],
+    "kind": "generated material sample",
+    "source": "generation-prompts.json",
+    "credit": "Built-in image generation",
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "width": 320,
+        "height": 180,
+        "src": "/assets/tejes/photography/material-wood-320.webp",
+        "bytes": 14070
+      },
+      {
+        "width": 480,
+        "height": 270,
+        "src": "/assets/tejes/photography/material-wood-480.webp",
+        "bytes": 32038
+      },
+      {
+        "width": 800,
+        "height": 450,
+        "src": "/assets/tejes/photography/material-wood-800.webp",
+        "bytes": 85460
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "src": "/assets/tejes/photography/material-wood-1280.webp",
+        "bytes": 194880
+      },
+      {
+        "width": 1600,
+        "height": 900,
+        "src": "/assets/tejes/photography/material-wood-1600.webp",
+        "bytes": 289340
+      },
+      {
+        "width": 1672,
+        "height": 941,
+        "src": "/assets/tejes/photography/material-wood-1672.webp",
+        "bytes": 321636
+      }
+    ],
+    "status": "illustrative \u2014 not Tejes client work"
+  },
+  "material-marble": {
+    "src": "/assets/tejes/photography/material-marble-1672.webp",
+    "srcSet": "/assets/tejes/photography/material-marble-320.webp 320w, /assets/tejes/photography/material-marble-480.webp 480w, /assets/tejes/photography/material-marble-800.webp 800w, /assets/tejes/photography/material-marble-1280.webp 1280w, /assets/tejes/photography/material-marble-1600.webp 1600w, /assets/tejes/photography/material-marble-1672.webp 1672w",
+    "width": 1672,
+    "height": 941,
+    "native": [
+      1672,
+      941
+    ],
+    "kind": "generated material sample",
+    "source": "generation-prompts.json",
+    "credit": "Built-in image generation",
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "width": 320,
+        "height": 180,
+        "src": "/assets/tejes/photography/material-marble-320.webp",
+        "bytes": 11336
+      },
+      {
+        "width": 480,
+        "height": 270,
+        "src": "/assets/tejes/photography/material-marble-480.webp",
+        "bytes": 21536
+      },
+      {
+        "width": 800,
+        "height": 450,
+        "src": "/assets/tejes/photography/material-marble-800.webp",
+        "bytes": 44308
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "src": "/assets/tejes/photography/material-marble-1280.webp",
+        "bytes": 82064
+      },
+      {
+        "width": 1600,
+        "height": 900,
+        "src": "/assets/tejes/photography/material-marble-1600.webp",
+        "bytes": 109992
+      },
+      {
+        "width": 1672,
+        "height": 941,
+        "src": "/assets/tejes/photography/material-marble-1672.webp",
+        "bytes": 116876
+      }
+    ],
+    "status": "illustrative \u2014 not Tejes client work"
+  },
+  "material-fabric": {
+    "src": "/assets/tejes/photography/material-fabric-1672.webp",
+    "srcSet": "/assets/tejes/photography/material-fabric-320.webp 320w, /assets/tejes/photography/material-fabric-480.webp 480w, /assets/tejes/photography/material-fabric-800.webp 800w, /assets/tejes/photography/material-fabric-1280.webp 1280w, /assets/tejes/photography/material-fabric-1600.webp 1600w, /assets/tejes/photography/material-fabric-1672.webp 1672w",
+    "width": 1672,
+    "height": 941,
+    "native": [
+      1672,
+      941
+    ],
+    "kind": "generated material sample",
+    "source": "generation-prompts.json",
+    "credit": "Built-in image generation",
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "width": 320,
+        "height": 180,
+        "src": "/assets/tejes/photography/material-fabric-320.webp",
+        "bytes": 18596
+      },
+      {
+        "width": 480,
+        "height": 270,
+        "src": "/assets/tejes/photography/material-fabric-480.webp",
+        "bytes": 50302
+      },
+      {
+        "width": 800,
+        "height": 450,
+        "src": "/assets/tejes/photography/material-fabric-800.webp",
+        "bytes": 143872
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "src": "/assets/tejes/photography/material-fabric-1280.webp",
+        "bytes": 314692
+      },
+      {
+        "width": 1600,
+        "height": 900,
+        "src": "/assets/tejes/photography/material-fabric-1600.webp",
+        "bytes": 426998
+      },
+      {
+        "width": 1672,
+        "height": 941,
+        "src": "/assets/tejes/photography/material-fabric-1672.webp",
+        "bytes": 459044
+      }
+    ],
+    "status": "illustrative \u2014 not Tejes client work"
+  },
+  "material-stone": {
+    "src": "/assets/tejes/photography/material-stone-1672.webp",
+    "srcSet": "/assets/tejes/photography/material-stone-320.webp 320w, /assets/tejes/photography/material-stone-480.webp 480w, /assets/tejes/photography/material-stone-800.webp 800w, /assets/tejes/photography/material-stone-1280.webp 1280w, /assets/tejes/photography/material-stone-1600.webp 1600w, /assets/tejes/photography/material-stone-1672.webp 1672w",
+    "width": 1672,
+    "height": 941,
+    "native": [
+      1672,
+      941
+    ],
+    "kind": "generated material sample",
+    "source": "generation-prompts.json",
+    "credit": "Built-in image generation",
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "width": 320,
+        "height": 180,
+        "src": "/assets/tejes/photography/material-stone-320.webp",
+        "bytes": 21360
+      },
+      {
+        "width": 480,
+        "height": 270,
+        "src": "/assets/tejes/photography/material-stone-480.webp",
+        "bytes": 47310
+      },
+      {
+        "width": 800,
+        "height": 450,
+        "src": "/assets/tejes/photography/material-stone-800.webp",
+        "bytes": 121358
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "src": "/assets/tejes/photography/material-stone-1280.webp",
+        "bytes": 261508
+      },
+      {
+        "width": 1600,
+        "height": 900,
+        "src": "/assets/tejes/photography/material-stone-1600.webp",
+        "bytes": 362446
+      },
+      {
+        "width": 1672,
+        "height": 941,
+        "src": "/assets/tejes/photography/material-stone-1672.webp",
+        "bytes": 389618
+      }
+    ],
+    "status": "illustrative \u2014 not Tejes client work"
+  },
+  "material-glass": {
+    "src": "/assets/tejes/photography/material-glass-1672.webp",
+    "srcSet": "/assets/tejes/photography/material-glass-320.webp 320w, /assets/tejes/photography/material-glass-480.webp 480w, /assets/tejes/photography/material-glass-800.webp 800w, /assets/tejes/photography/material-glass-1280.webp 1280w, /assets/tejes/photography/material-glass-1600.webp 1600w, /assets/tejes/photography/material-glass-1672.webp 1672w",
+    "width": 1672,
+    "height": 941,
+    "native": [
+      1672,
+      941
+    ],
+    "kind": "generated material sample",
+    "source": "generation-prompts.json",
+    "credit": "Built-in image generation",
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "width": 320,
+        "height": 180,
+        "src": "/assets/tejes/photography/material-glass-320.webp",
+        "bytes": 12216
+      },
+      {
+        "width": 480,
+        "height": 270,
+        "src": "/assets/tejes/photography/material-glass-480.webp",
+        "bytes": 24498
+      },
+      {
+        "width": 800,
+        "height": 450,
+        "src": "/assets/tejes/photography/material-glass-800.webp",
+        "bytes": 56576
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "src": "/assets/tejes/photography/material-glass-1280.webp",
+        "bytes": 108364
+      },
+      {
+        "width": 1600,
+        "height": 900,
+        "src": "/assets/tejes/photography/material-glass-1600.webp",
+        "bytes": 148496
+      },
+      {
+        "width": 1672,
+        "height": 941,
+        "src": "/assets/tejes/photography/material-glass-1672.webp",
+        "bytes": 159574
+      }
+    ],
+    "status": "illustrative \u2014 not Tejes client work"
+  },
+  "material-metal": {
+    "src": "/assets/tejes/photography/material-metal-1672.webp",
+    "srcSet": "/assets/tejes/photography/material-metal-320.webp 320w, /assets/tejes/photography/material-metal-480.webp 480w, /assets/tejes/photography/material-metal-800.webp 800w, /assets/tejes/photography/material-metal-1280.webp 1280w, /assets/tejes/photography/material-metal-1600.webp 1600w, /assets/tejes/photography/material-metal-1672.webp 1672w",
+    "width": 1672,
+    "height": 941,
+    "native": [
+      1672,
+      941
+    ],
+    "kind": "generated material sample",
+    "source": "generation-prompts.json",
+    "credit": "Built-in image generation",
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "width": 320,
+        "height": 180,
+        "src": "/assets/tejes/photography/material-metal-320.webp",
+        "bytes": 15212
+      },
+      {
+        "width": 480,
+        "height": 270,
+        "src": "/assets/tejes/photography/material-metal-480.webp",
+        "bytes": 32154
+      },
+      {
+        "width": 800,
+        "height": 450,
+        "src": "/assets/tejes/photography/material-metal-800.webp",
+        "bytes": 80314
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "src": "/assets/tejes/photography/material-metal-1280.webp",
+        "bytes": 173234
+      },
+      {
+        "width": 1600,
+        "height": 900,
+        "src": "/assets/tejes/photography/material-metal-1600.webp",
+        "bytes": 237298
+      },
+      {
+        "width": 1672,
+        "height": 941,
+        "src": "/assets/tejes/photography/material-metal-1672.webp",
+        "bytes": 254210
+      }
+    ],
+    "status": "illustrative \u2014 not Tejes client work"
+  },
+  "material-lighting": {
+    "src": "/assets/tejes/photography/material-lighting-1672.webp",
+    "srcSet": "/assets/tejes/photography/material-lighting-320.webp 320w, /assets/tejes/photography/material-lighting-480.webp 480w, /assets/tejes/photography/material-lighting-800.webp 800w, /assets/tejes/photography/material-lighting-1280.webp 1280w, /assets/tejes/photography/material-lighting-1600.webp 1600w, /assets/tejes/photography/material-lighting-1672.webp 1672w",
+    "width": 1672,
+    "height": 941,
+    "native": [
+      1672,
+      941
+    ],
+    "kind": "generated material sample",
+    "source": "generation-prompts.json",
+    "credit": "Built-in image generation",
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "width": 320,
+        "height": 180,
+        "src": "/assets/tejes/photography/material-lighting-320.webp",
+        "bytes": 8778
+      },
+      {
+        "width": 480,
+        "height": 270,
+        "src": "/assets/tejes/photography/material-lighting-480.webp",
+        "bytes": 18500
+      },
+      {
+        "width": 800,
+        "height": 450,
+        "src": "/assets/tejes/photography/material-lighting-800.webp",
+        "bytes": 51630
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "src": "/assets/tejes/photography/material-lighting-1280.webp",
+        "bytes": 124796
+      },
+      {
+        "width": 1600,
+        "height": 900,
+        "src": "/assets/tejes/photography/material-lighting-1600.webp",
+        "bytes": 180876
+      },
+      {
+        "width": 1672,
+        "height": 941,
+        "src": "/assets/tejes/photography/material-lighting-1672.webp",
+        "bytes": 195280
+      }
+    ],
+    "status": "illustrative \u2014 not Tejes client work"
+  },
+  "material-surface": {
+    "src": "/assets/tejes/photography/material-surface-1672.webp",
+    "srcSet": "/assets/tejes/photography/material-surface-320.webp 320w, /assets/tejes/photography/material-surface-480.webp 480w, /assets/tejes/photography/material-surface-800.webp 800w, /assets/tejes/photography/material-surface-1280.webp 1280w, /assets/tejes/photography/material-surface-1600.webp 1600w, /assets/tejes/photography/material-surface-1672.webp 1672w",
+    "width": 1672,
+    "height": 941,
+    "native": [
+      1672,
+      941
+    ],
+    "kind": "generated material sample",
+    "source": "generation-prompts.json",
+    "credit": "Built-in image generation",
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "width": 320,
+        "height": 180,
+        "src": "/assets/tejes/photography/material-surface-320.webp",
+        "bytes": 13044
+      },
+      {
+        "width": 480,
+        "height": 270,
+        "src": "/assets/tejes/photography/material-surface-480.webp",
+        "bytes": 29726
+      },
+      {
+        "width": 800,
+        "height": 450,
+        "src": "/assets/tejes/photography/material-surface-800.webp",
+        "bytes": 89120
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "src": "/assets/tejes/photography/material-surface-1280.webp",
+        "bytes": 230114
+      },
+      {
+        "width": 1600,
+        "height": 900,
+        "src": "/assets/tejes/photography/material-surface-1600.webp",
+        "bytes": 341272
+      },
+      {
+        "width": 1672,
+        "height": 941,
+        "src": "/assets/tejes/photography/material-surface-1672.webp",
+        "bytes": 371140
+      }
+    ],
+    "status": "illustrative \u2014 not Tejes client work"
+  },
+  "founder-reference": {
+    "src": "/assets/tejes/placeholders/founder-reference.svg",
+    "width": 2400,
+    "height": 1600,
+    "kind": "editable vector placeholder",
+    "status": "replace with approved founder portrait",
+    "focalPoint": "50% 50%"
+  },
+  "development-plan": {
+    "src": "/assets/tejes/placeholders/development-plan.svg",
+    "width": 2400,
+    "height": 1600,
+    "kind": "editable vector placeholder",
+    "status": "replace with actual project document",
+    "focalPoint": "50% 50%"
+  },
+  "development-3d": {
+    "src": "/assets/tejes/placeholders/development-3d.svg",
+    "width": 2400,
+    "height": 1600,
+    "kind": "editable vector placeholder",
+    "status": "replace with actual project document",
+    "focalPoint": "50% 50%"
+  },
+  "development-vr": {
+    "src": "/assets/tejes/placeholders/development-vr.svg",
+    "width": 2400,
+    "height": 1600,
+    "kind": "editable vector placeholder",
+    "status": "replace with actual project document",
+    "focalPoint": "50% 50%"
+  },
+  "development-visual": {
+    "src": "/assets/tejes/photography/development-visual-1672.webp",
+    "srcSet": "/assets/tejes/photography/development-visual-320.webp 320w, /assets/tejes/photography/development-visual-480.webp 480w, /assets/tejes/photography/development-visual-800.webp 800w, /assets/tejes/photography/development-visual-1280.webp 1280w, /assets/tejes/photography/development-visual-1600.webp 1600w, /assets/tejes/photography/development-visual-1672.webp 1672w",
+    "width": 1672,
+    "height": 941,
+    "native": [
+      1672,
+      941
+    ],
+    "kind": "generated design visualization",
+    "source": "Original generated concept \u2014 rejected for hero resolution",
+    "credit": "Built-in image generation",
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "width": 320,
+        "height": 180,
+        "src": "/assets/tejes/photography/development-visual-320.webp",
+        "bytes": 14962
+      },
+      {
+        "width": 480,
+        "height": 270,
+        "src": "/assets/tejes/photography/development-visual-480.webp",
+        "bytes": 29044
+      },
+      {
+        "width": 800,
+        "height": 450,
+        "src": "/assets/tejes/photography/development-visual-800.webp",
+        "bytes": 70124
+      },
+      {
+        "width": 1280,
+        "height": 720,
+        "src": "/assets/tejes/photography/development-visual-1280.webp",
+        "bytes": 156624
+      },
+      {
+        "width": 1600,
+        "height": 900,
+        "src": "/assets/tejes/photography/development-visual-1600.webp",
+        "bytes": 220274
+      },
+      {
+        "width": 1672,
+        "height": 941,
+        "src": "/assets/tejes/photography/development-visual-1672.webp",
+        "bytes": 237428
+      }
+    ],
+    "status": "illustrative \u2014 not Tejes client work"
+  }
+}

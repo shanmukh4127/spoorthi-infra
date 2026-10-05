@@ -1,0 +1,17 @@
+[
+  {
+    "Algorithm": "SHA256",
+    "Hash": "EDB67F2D95B25EFE9D2A765B061CB43D6662F268D1D98699E9178B23EF9AEBE7",
+    "Path": "C:\\Users\\Pardhu\\Downloads\\spoorthi-infra-main\\src\\pages\\tejes\\TejesHomePage.jsx"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "157B9F5579114C6A7B67297EDC1417FE138FD02FDA0E11BA2F7EA51BAFE2D006",
+    "Path": "C:\\Users\\Pardhu\\Downloads\\spoorthi-infra-main\\src\\data\\tejes\\homeStructure.js"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "0B601A5F032CAC4C63D805292EAEADC23388C95EB599FA343EC82E87B3174E87",
+    "Path": "C:\\Users\\Pardhu\\Downloads\\spoorthi-infra-main\\src\\styles\\tejes-home.css"
+  }
+]

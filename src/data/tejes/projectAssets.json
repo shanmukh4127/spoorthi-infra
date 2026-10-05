@@ -1,0 +1,450 @@
+{
+  "architecture-light": {
+    "src": "/assets/tejes/projects/architecture-light-2560.webp",
+    "width": 2560,
+    "height": 1436,
+    "bytes": 688494,
+    "srcSet": "/assets/tejes/projects/architecture-light-480.webp 480w, /assets/tejes/projects/architecture-light-800.webp 800w, /assets/tejes/projects/architecture-light-1280.webp 1280w, /assets/tejes/projects/architecture-light-1600.webp 1600w, /assets/tejes/projects/architecture-light-1920.webp 1920w, /assets/tejes/projects/architecture-light-2560.webp 2560w",
+    "focalPoint": "50% 50%",
+    "native": [
+      4100,
+      2300
+    ],
+    "originalNative": [
+      7360,
+      4912
+    ],
+    "crop": [
+      2100,
+      0,
+      6200,
+      2300
+    ],
+    "source": "https://www.pexels.com/photo/a-marble-top-with-chairs-near-the-living-room-7587858/",
+    "credit": "Max Vakhtbovych",
+    "license": "https://www.pexels.com/license/",
+    "status": "Illustrative licensed photograph, not a Tejes client project",
+    "variants": [
+      {
+        "src": "/assets/tejes/projects/architecture-light-480.webp",
+        "width": 480,
+        "height": 269,
+        "bytes": 25662
+      },
+      {
+        "src": "/assets/tejes/projects/architecture-light-800.webp",
+        "width": 800,
+        "height": 449,
+        "bytes": 60738
+      },
+      {
+        "src": "/assets/tejes/projects/architecture-light-1280.webp",
+        "width": 1280,
+        "height": 718,
+        "bytes": 148878
+      },
+      {
+        "src": "/assets/tejes/projects/architecture-light-1600.webp",
+        "width": 1600,
+        "height": 898,
+        "bytes": 246354
+      },
+      {
+        "src": "/assets/tejes/projects/architecture-light-1920.webp",
+        "width": 1920,
+        "height": 1077,
+        "bytes": 363936
+      },
+      {
+        "src": "/assets/tejes/projects/architecture-light-2560.webp",
+        "width": 2560,
+        "height": 1436,
+        "bytes": 688494
+      }
+    ]
+  },
+  "living-detail": {
+    "src": "/assets/tejes/projects/living-detail-2560.webp",
+    "width": 2560,
+    "height": 2293,
+    "bytes": 1114122,
+    "srcSet": "/assets/tejes/projects/living-detail-480.webp 480w, /assets/tejes/projects/living-detail-800.webp 800w, /assets/tejes/projects/living-detail-1280.webp 1280w, /assets/tejes/projects/living-detail-1600.webp 1600w, /assets/tejes/projects/living-detail-1920.webp 1920w, /assets/tejes/projects/living-detail-2560.webp 2560w",
+    "focalPoint": "50% 50%",
+    "native": [
+      3350,
+      3000
+    ],
+    "originalNative": [
+      7360,
+      4912
+    ],
+    "crop": [
+      0,
+      1800,
+      3350,
+      4800
+    ],
+    "source": "https://www.pexels.com/photo/a-marble-top-with-chairs-near-the-living-room-7587858/",
+    "credit": "Max Vakhtbovych",
+    "license": "https://www.pexels.com/license/",
+    "status": "Illustrative licensed photograph, not a Tejes client project",
+    "variants": [
+      {
+        "src": "/assets/tejes/projects/living-detail-480.webp",
+        "width": 480,
+        "height": 430,
+        "bytes": 48768
+      },
+      {
+        "src": "/assets/tejes/projects/living-detail-800.webp",
+        "width": 800,
+        "height": 716,
+        "bytes": 122740
+      },
+      {
+        "src": "/assets/tejes/projects/living-detail-1280.webp",
+        "width": 1280,
+        "height": 1146,
+        "bytes": 299956
+      },
+      {
+        "src": "/assets/tejes/projects/living-detail-1600.webp",
+        "width": 1600,
+        "height": 1433,
+        "bytes": 479992
+      },
+      {
+        "src": "/assets/tejes/projects/living-detail-1920.webp",
+        "width": 1920,
+        "height": 1719,
+        "bytes": 690624
+      },
+      {
+        "src": "/assets/tejes/projects/living-detail-2560.webp",
+        "width": 2560,
+        "height": 2293,
+        "bytes": 1114122
+      }
+    ]
+  },
+  "spatial-detail": {
+    "src": "/assets/tejes/projects/spatial-detail-2560.webp",
+    "width": 2560,
+    "height": 2499,
+    "bytes": 1176162,
+    "srcSet": "/assets/tejes/projects/spatial-detail-480.webp 480w, /assets/tejes/projects/spatial-detail-800.webp 800w, /assets/tejes/projects/spatial-detail-1280.webp 1280w, /assets/tejes/projects/spatial-detail-1600.webp 1600w, /assets/tejes/projects/spatial-detail-1920.webp 1920w, /assets/tejes/projects/spatial-detail-2560.webp 2560w",
+    "focalPoint": "50% 50%",
+    "native": [
+      4200,
+      4100
+    ],
+    "originalNative": [
+      7360,
+      4912
+    ],
+    "crop": [
+      0,
+      800,
+      4200,
+      4900
+    ],
+    "source": "https://www.pexels.com/photo/a-marble-top-with-chairs-near-the-living-room-7587858/",
+    "credit": "Max Vakhtbovych",
+    "license": "https://www.pexels.com/license/",
+    "status": "Illustrative licensed photograph, not a Tejes client project",
+    "variants": [
+      {
+        "src": "/assets/tejes/projects/spatial-detail-480.webp",
+        "width": 480,
+        "height": 469,
+        "bytes": 52050
+      },
+      {
+        "src": "/assets/tejes/projects/spatial-detail-800.webp",
+        "width": 800,
+        "height": 781,
+        "bytes": 128182
+      },
+      {
+        "src": "/assets/tejes/projects/spatial-detail-1280.webp",
+        "width": 1280,
+        "height": 1250,
+        "bytes": 300488
+      },
+      {
+        "src": "/assets/tejes/projects/spatial-detail-1600.webp",
+        "width": 1600,
+        "height": 1562,
+        "bytes": 464980
+      },
+      {
+        "src": "/assets/tejes/projects/spatial-detail-1920.webp",
+        "width": 1920,
+        "height": 1874,
+        "bytes": 677684
+      },
+      {
+        "src": "/assets/tejes/projects/spatial-detail-2560.webp",
+        "width": 2560,
+        "height": 2499,
+        "bytes": 1176162
+      }
+    ]
+  },
+  "stone-detail": {
+    "src": "/assets/tejes/projects/stone-detail-2560.webp",
+    "width": 2560,
+    "height": 1144,
+    "bytes": 730338,
+    "srcSet": "/assets/tejes/projects/stone-detail-480.webp 480w, /assets/tejes/projects/stone-detail-800.webp 800w, /assets/tejes/projects/stone-detail-1280.webp 1280w, /assets/tejes/projects/stone-detail-1600.webp 1600w, /assets/tejes/projects/stone-detail-1920.webp 1920w, /assets/tejes/projects/stone-detail-2560.webp 2560w",
+    "focalPoint": "50% 50%",
+    "native": [
+      4700,
+      2100
+    ],
+    "originalNative": [
+      7360,
+      4912
+    ],
+    "crop": [
+      1900,
+      2500,
+      6600,
+      4600
+    ],
+    "source": "https://www.pexels.com/photo/a-marble-top-with-chairs-near-the-living-room-7587858/",
+    "credit": "Max Vakhtbovych",
+    "license": "https://www.pexels.com/license/",
+    "status": "Illustrative licensed photograph, not a Tejes client project",
+    "variants": [
+      {
+        "src": "/assets/tejes/projects/stone-detail-480.webp",
+        "width": 480,
+        "height": 214,
+        "bytes": 38010
+      },
+      {
+        "src": "/assets/tejes/projects/stone-detail-800.webp",
+        "width": 800,
+        "height": 357,
+        "bytes": 92192
+      },
+      {
+        "src": "/assets/tejes/projects/stone-detail-1280.webp",
+        "width": 1280,
+        "height": 572,
+        "bytes": 208272
+      },
+      {
+        "src": "/assets/tejes/projects/stone-detail-1600.webp",
+        "width": 1600,
+        "height": 715,
+        "bytes": 302482
+      },
+      {
+        "src": "/assets/tejes/projects/stone-detail-1920.webp",
+        "width": 1920,
+        "height": 858,
+        "bytes": 422312
+      },
+      {
+        "src": "/assets/tejes/projects/stone-detail-2560.webp",
+        "width": 2560,
+        "height": 1144,
+        "bytes": 730338
+      }
+    ]
+  },
+  "window-detail": {
+    "src": "/assets/tejes/projects/window-detail-2560.webp",
+    "width": 2560,
+    "height": 2106,
+    "bytes": 1399122,
+    "srcSet": "/assets/tejes/projects/window-detail-480.webp 480w, /assets/tejes/projects/window-detail-800.webp 800w, /assets/tejes/projects/window-detail-1280.webp 1280w, /assets/tejes/projects/window-detail-1600.webp 1600w, /assets/tejes/projects/window-detail-1920.webp 1920w, /assets/tejes/projects/window-detail-2560.webp 2560w",
+    "focalPoint": "50% 50%",
+    "native": [
+      3160,
+      2600
+    ],
+    "originalNative": [
+      7360,
+      4912
+    ],
+    "crop": [
+      4200,
+      1000,
+      7360,
+      3600
+    ],
+    "source": "https://www.pexels.com/photo/a-marble-top-with-chairs-near-the-living-room-7587858/",
+    "credit": "Max Vakhtbovych",
+    "license": "https://www.pexels.com/license/",
+    "status": "Illustrative licensed photograph, not a Tejes client project",
+    "variants": [
+      {
+        "src": "/assets/tejes/projects/window-detail-480.webp",
+        "width": 480,
+        "height": 395,
+        "bytes": 61424
+      },
+      {
+        "src": "/assets/tejes/projects/window-detail-800.webp",
+        "width": 800,
+        "height": 658,
+        "bytes": 167194
+      },
+      {
+        "src": "/assets/tejes/projects/window-detail-1280.webp",
+        "width": 1280,
+        "height": 1053,
+        "bytes": 418620
+      },
+      {
+        "src": "/assets/tejes/projects/window-detail-1600.webp",
+        "width": 1600,
+        "height": 1316,
+        "bytes": 645846
+      },
+      {
+        "src": "/assets/tejes/projects/window-detail-1920.webp",
+        "width": 1920,
+        "height": 1580,
+        "bytes": 882180
+      },
+      {
+        "src": "/assets/tejes/projects/window-detail-2560.webp",
+        "width": 2560,
+        "height": 2106,
+        "bytes": 1399122
+      }
+    ]
+  },
+  "timber-detail": {
+    "src": "/assets/tejes/projects/timber-detail-2560.webp",
+    "width": 2560,
+    "height": 1640,
+    "bytes": 730510,
+    "srcSet": "/assets/tejes/projects/timber-detail-480.webp 480w, /assets/tejes/projects/timber-detail-800.webp 800w, /assets/tejes/projects/timber-detail-1280.webp 1280w, /assets/tejes/projects/timber-detail-1600.webp 1600w, /assets/tejes/projects/timber-detail-1920.webp 1920w, /assets/tejes/projects/timber-detail-2560.webp 2560w",
+    "focalPoint": "50% 50%",
+    "native": [
+      3200,
+      2050
+    ],
+    "originalNative": [
+      7360,
+      4912
+    ],
+    "crop": [
+      0,
+      2850,
+      3200,
+      4900
+    ],
+    "source": "https://www.pexels.com/photo/a-marble-top-with-chairs-near-the-living-room-7587858/",
+    "credit": "Max Vakhtbovych",
+    "license": "https://www.pexels.com/license/",
+    "status": "Illustrative licensed photograph, not a Tejes client project",
+    "variants": [
+      {
+        "src": "/assets/tejes/projects/timber-detail-480.webp",
+        "width": 480,
+        "height": 308,
+        "bytes": 34264
+      },
+      {
+        "src": "/assets/tejes/projects/timber-detail-800.webp",
+        "width": 800,
+        "height": 512,
+        "bytes": 85014
+      },
+      {
+        "src": "/assets/tejes/projects/timber-detail-1280.webp",
+        "width": 1280,
+        "height": 820,
+        "bytes": 207182
+      },
+      {
+        "src": "/assets/tejes/projects/timber-detail-1600.webp",
+        "width": 1600,
+        "height": 1025,
+        "bytes": 317670
+      },
+      {
+        "src": "/assets/tejes/projects/timber-detail-1920.webp",
+        "width": 1920,
+        "height": 1230,
+        "bytes": 450186
+      },
+      {
+        "src": "/assets/tejes/projects/timber-detail-2560.webp",
+        "width": 2560,
+        "height": 1640,
+        "bytes": 730510
+      }
+    ]
+  },
+  "milestone-view": {
+    "src": "/assets/tejes/projects/milestone-view-2560.webp",
+    "width": 2560,
+    "height": 1504,
+    "bytes": 949260,
+    "srcSet": "/assets/tejes/projects/milestone-view-480.webp 480w, /assets/tejes/projects/milestone-view-800.webp 800w, /assets/tejes/projects/milestone-view-1280.webp 1280w, /assets/tejes/projects/milestone-view-1600.webp 1600w, /assets/tejes/projects/milestone-view-1920.webp 1920w, /assets/tejes/projects/milestone-view-2560.webp 2560w",
+    "focalPoint": "50% 50%",
+    "native": [
+      6660,
+      3912
+    ],
+    "originalNative": [
+      7360,
+      4912
+    ],
+    "crop": [
+      700,
+      1000,
+      7360,
+      4912
+    ],
+    "source": "https://www.pexels.com/photo/a-marble-top-with-chairs-near-the-living-room-7587858/",
+    "credit": "Max Vakhtbovych",
+    "license": "https://www.pexels.com/license/",
+    "status": "Illustrative licensed photograph, not a Tejes client project",
+    "variants": [
+      {
+        "src": "/assets/tejes/projects/milestone-view-480.webp",
+        "width": 480,
+        "height": 282,
+        "bytes": 44552
+      },
+      {
+        "src": "/assets/tejes/projects/milestone-view-800.webp",
+        "width": 800,
+        "height": 470,
+        "bytes": 111806
+      },
+      {
+        "src": "/assets/tejes/projects/milestone-view-1280.webp",
+        "width": 1280,
+        "height": 752,
+        "bytes": 265240
+      },
+      {
+        "src": "/assets/tejes/projects/milestone-view-1600.webp",
+        "width": 1600,
+        "height": 940,
+        "bytes": 401020
+      },
+      {
+        "src": "/assets/tejes/projects/milestone-view-1920.webp",
+        "width": 1920,
+        "height": 1128,
+        "bytes": 543430
+      },
+      {
+        "src": "/assets/tejes/projects/milestone-view-2560.webp",
+        "width": 2560,
+        "height": 1504,
+        "bytes": 949260
+      }
+    ]
+  }
+}

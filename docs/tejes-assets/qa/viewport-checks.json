@@ -1,0 +1,1190 @@
+[
+  {
+    "overflow": false,
+    "photos": [
+      {
+        "height": 468,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/hero-living-1280.webp",
+        "width": 940
+      },
+      {
+        "height": 288,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/about-interior-800.webp",
+        "width": 655
+      },
+      {
+        "height": 292,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/placeholders/founder-reference.svg",
+        "width": 379
+      },
+      {
+        "height": 210,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/achievement-still-life-800.webp",
+        "width": 456
+      },
+      {
+        "height": 210,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/philosophy-light-800.webp",
+        "width": 314
+      },
+      {
+        "height": 134,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-living-320.webp",
+        "width": 200
+      },
+      {
+        "height": 134,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-bedroom-320.webp",
+        "width": 200
+      },
+      {
+        "height": 134,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-kitchen-320.webp",
+        "width": 200
+      },
+      {
+        "height": 134,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-dining-320.webp",
+        "width": 200
+      },
+      {
+        "height": 134,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-bathroom-320.webp",
+        "width": 200
+      },
+      {
+        "height": 134,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-office-320.webp",
+        "width": 200
+      },
+      {
+        "height": 134,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-entertainment-320.webp",
+        "width": 200
+      },
+      {
+        "height": 134,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-luxury-320.webp",
+        "width": 200
+      },
+      {
+        "height": 134,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-contemporary-320.webp",
+        "width": 200
+      },
+      {
+        "height": 134,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-custom-320.webp",
+        "width": 200
+      },
+      {
+        "height": 202,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/process-interior-800.webp",
+        "width": 288
+      },
+      {
+        "height": 234,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/quality-interior-800.webp",
+        "width": 427
+      },
+      {
+        "height": 219,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/featured-residence-800.webp",
+        "width": 680
+      },
+      {
+        "height": 78,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/placeholders/development-plan.svg",
+        "width": 184
+      },
+      {
+        "height": 78,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/placeholders/development-3d.svg",
+        "width": 184
+      },
+      {
+        "height": 78,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/development-visual-320.webp",
+        "width": 184
+      },
+      {
+        "height": 78,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/placeholders/development-vr.svg",
+        "width": 184
+      },
+      {
+        "height": 59,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-wood-320.webp",
+        "width": 98
+      },
+      {
+        "height": 59,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-stone-320.webp",
+        "width": 98
+      },
+      {
+        "height": 59,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-marble-320.webp",
+        "width": 98
+      },
+      {
+        "height": 59,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-glass-320.webp",
+        "width": 98
+      },
+      {
+        "height": 59,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-metal-320.webp",
+        "width": 98
+      },
+      {
+        "height": 59,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-fabric-320.webp",
+        "width": 98
+      },
+      {
+        "height": 59,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-lighting-320.webp",
+        "width": 98
+      },
+      {
+        "height": 59,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-surface-320.webp",
+        "width": 98
+      },
+      {
+        "height": 137,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/final-living-800.webp",
+        "width": 458
+      },
+      {
+        "height": 105,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/contact-detail-800.webp",
+        "width": 413
+      }
+    ],
+    "width": 1440
+  },
+  {
+    "overflow": false,
+    "photos": [
+      {
+        "height": 416,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/hero-living-1280.webp",
+        "width": 835
+      },
+      {
+        "height": 256,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/about-interior-800.webp",
+        "width": 582
+      },
+      {
+        "height": 259,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/placeholders/founder-reference.svg",
+        "width": 337
+      },
+      {
+        "height": 187,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/achievement-still-life-800.webp",
+        "width": 405
+      },
+      {
+        "height": 187,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/philosophy-light-800.webp",
+        "width": 279
+      },
+      {
+        "height": 118,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-living-320.webp",
+        "width": 178
+      },
+      {
+        "height": 118,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-bedroom-320.webp",
+        "width": 178
+      },
+      {
+        "height": 118,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-kitchen-320.webp",
+        "width": 178
+      },
+      {
+        "height": 118,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-dining-320.webp",
+        "width": 178
+      },
+      {
+        "height": 118,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-bathroom-320.webp",
+        "width": 178
+      },
+      {
+        "height": 118,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-office-320.webp",
+        "width": 178
+      },
+      {
+        "height": 118,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-entertainment-320.webp",
+        "width": 178
+      },
+      {
+        "height": 118,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-luxury-320.webp",
+        "width": 178
+      },
+      {
+        "height": 118,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-contemporary-320.webp",
+        "width": 178
+      },
+      {
+        "height": 118,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-custom-320.webp",
+        "width": 178
+      },
+      {
+        "height": 180,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/process-interior-800.webp",
+        "width": 255
+      },
+      {
+        "height": 208,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/quality-interior-800.webp",
+        "width": 379
+      },
+      {
+        "height": 195,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/featured-residence-800.webp",
+        "width": 604
+      },
+      {
+        "height": 70,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/placeholders/development-plan.svg",
+        "width": 164
+      },
+      {
+        "height": 70,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/placeholders/development-3d.svg",
+        "width": 164
+      },
+      {
+        "height": 70,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/development-visual-320.webp",
+        "width": 164
+      },
+      {
+        "height": 70,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/placeholders/development-vr.svg",
+        "width": 164
+      },
+      {
+        "height": 52,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-wood-320.webp",
+        "width": 87
+      },
+      {
+        "height": 52,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-stone-320.webp",
+        "width": 87
+      },
+      {
+        "height": 52,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-marble-320.webp",
+        "width": 87
+      },
+      {
+        "height": 52,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-glass-320.webp",
+        "width": 87
+      },
+      {
+        "height": 52,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-metal-320.webp",
+        "width": 87
+      },
+      {
+        "height": 52,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-fabric-320.webp",
+        "width": 87
+      },
+      {
+        "height": 52,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-lighting-320.webp",
+        "width": 87
+      },
+      {
+        "height": 52,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-surface-320.webp",
+        "width": 87
+      },
+      {
+        "height": 122,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/final-living-800.webp",
+        "width": 406
+      },
+      {
+        "height": 93,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/contact-detail-800.webp",
+        "width": 367
+      }
+    ],
+    "width": 1280
+  },
+  {
+    "overflow": false,
+    "photos": [
+      {
+        "height": 333,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/hero-living-1280.webp",
+        "width": 666
+      },
+      {
+        "height": 205,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/about-interior-800.webp",
+        "width": 464
+      },
+      {
+        "height": 207,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/placeholders/founder-reference.svg",
+        "width": 269
+      },
+      {
+        "height": 149,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/achievement-still-life-800.webp",
+        "width": 323
+      },
+      {
+        "height": 149,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/philosophy-light-800.webp",
+        "width": 222
+      },
+      {
+        "height": 94,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-living-320.webp",
+        "width": 141
+      },
+      {
+        "height": 94,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-bedroom-320.webp",
+        "width": 141
+      },
+      {
+        "height": 94,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-kitchen-320.webp",
+        "width": 141
+      },
+      {
+        "height": 94,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-dining-320.webp",
+        "width": 141
+      },
+      {
+        "height": 94,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-bathroom-320.webp",
+        "width": 141
+      },
+      {
+        "height": 94,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-office-320.webp",
+        "width": 141
+      },
+      {
+        "height": 94,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-entertainment-320.webp",
+        "width": 141
+      },
+      {
+        "height": 94,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-luxury-320.webp",
+        "width": 141
+      },
+      {
+        "height": 94,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-contemporary-320.webp",
+        "width": 141
+      },
+      {
+        "height": 94,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-custom-320.webp",
+        "width": 141
+      },
+      {
+        "height": 144,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/process-interior-800.webp",
+        "width": 204
+      },
+      {
+        "height": 183,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/quality-interior-800.webp",
+        "width": 303
+      },
+      {
+        "height": 156,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/featured-residence-800.webp",
+        "width": 482
+      },
+      {
+        "height": 56,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/placeholders/development-plan.svg",
+        "width": 131
+      },
+      {
+        "height": 56,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/placeholders/development-3d.svg",
+        "width": 131
+      },
+      {
+        "height": 56,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/development-visual-320.webp",
+        "width": 131
+      },
+      {
+        "height": 56,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/placeholders/development-vr.svg",
+        "width": 131
+      },
+      {
+        "height": 42,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-wood-320.webp",
+        "width": 69
+      },
+      {
+        "height": 42,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-stone-320.webp",
+        "width": 69
+      },
+      {
+        "height": 42,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-marble-320.webp",
+        "width": 69
+      },
+      {
+        "height": 42,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-glass-320.webp",
+        "width": 69
+      },
+      {
+        "height": 42,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-metal-320.webp",
+        "width": 69
+      },
+      {
+        "height": 42,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-fabric-320.webp",
+        "width": 69
+      },
+      {
+        "height": 42,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-lighting-320.webp",
+        "width": 69
+      },
+      {
+        "height": 42,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-surface-320.webp",
+        "width": 69
+      },
+      {
+        "height": 97,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/final-living-800.webp",
+        "width": 324
+      },
+      {
+        "height": 74,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/contact-detail-800.webp",
+        "width": 293
+      }
+    ],
+    "width": 1024
+  },
+  {
+    "overflow": false,
+    "photos": [
+      {
+        "height": 419,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/hero-living-1280.webp",
+        "width": 497
+      },
+      {
+        "height": 276,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/about-interior-800.webp",
+        "width": 346
+      },
+      {
+        "height": 249,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/placeholders/founder-reference.svg",
+        "width": 205
+      },
+      {
+        "height": 169,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/achievement-still-life-800.webp",
+        "width": 241
+      },
+      {
+        "height": 179,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/philosophy-light-800.webp",
+        "width": 170
+      },
+      {
+        "height": 81,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-living-320.webp",
+        "width": 121
+      },
+      {
+        "height": 81,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-bedroom-320.webp",
+        "width": 121
+      },
+      {
+        "height": 81,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-kitchen-320.webp",
+        "width": 121
+      },
+      {
+        "height": 81,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-dining-320.webp",
+        "width": 121
+      },
+      {
+        "height": 81,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-bathroom-320.webp",
+        "width": 121
+      },
+      {
+        "height": 81,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-office-320.webp",
+        "width": 121
+      },
+      {
+        "height": 81,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-entertainment-320.webp",
+        "width": 121
+      },
+      {
+        "height": 81,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-luxury-320.webp",
+        "width": 121
+      },
+      {
+        "height": 81,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-contemporary-320.webp",
+        "width": 121
+      },
+      {
+        "height": 81,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-custom-320.webp",
+        "width": 121
+      },
+      {
+        "height": 159,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/process-interior-800.webp",
+        "width": 156
+      },
+      {
+        "height": 202,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/quality-interior-800.webp",
+        "width": 226
+      },
+      {
+        "height": 170,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/featured-residence-800.webp",
+        "width": 368
+      },
+      {
+        "height": 60,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/placeholders/development-plan.svg",
+        "width": 107
+      },
+      {
+        "height": 60,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/placeholders/development-3d.svg",
+        "width": 107
+      },
+      {
+        "height": 60,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/development-visual-320.webp",
+        "width": 107
+      },
+      {
+        "height": 60,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/placeholders/development-vr.svg",
+        "width": 107
+      },
+      {
+        "height": 45,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-wood-320.webp",
+        "width": 55
+      },
+      {
+        "height": 45,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-stone-320.webp",
+        "width": 55
+      },
+      {
+        "height": 45,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-marble-320.webp",
+        "width": 55
+      },
+      {
+        "height": 45,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-glass-320.webp",
+        "width": 55
+      },
+      {
+        "height": 45,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-metal-320.webp",
+        "width": 55
+      },
+      {
+        "height": 45,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-fabric-320.webp",
+        "width": 55
+      },
+      {
+        "height": 45,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-lighting-320.webp",
+        "width": 55
+      },
+      {
+        "height": 45,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-surface-320.webp",
+        "width": 55
+      },
+      {
+        "height": 140,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/final-living-800.webp",
+        "width": 248
+      },
+      {
+        "height": 115,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/contact-detail-800.webp",
+        "width": 218
+      }
+    ],
+    "width": 768
+  },
+  {
+    "overflow": false,
+    "photos": [
+      {
+        "height": 382,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/hero-living-1280.webp",
+        "width": 375
+      },
+      {
+        "height": 160,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/about-interior-800.webp",
+        "width": 323
+      },
+      {
+        "height": 265,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/placeholders/founder-reference.svg",
+        "width": 375
+      },
+      {
+        "height": 279,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/achievement-still-life-800.webp",
+        "width": 244
+      },
+      {
+        "height": 200,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/philosophy-light-800.webp",
+        "width": 128
+      },
+      {
+        "height": 102,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-living-320.webp",
+        "width": 153
+      },
+      {
+        "height": 102,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-bedroom-320.webp",
+        "width": 153
+      },
+      {
+        "height": 102,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-kitchen-320.webp",
+        "width": 153
+      },
+      {
+        "height": 102,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-dining-320.webp",
+        "width": 153
+      },
+      {
+        "height": 102,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-bathroom-320.webp",
+        "width": 153
+      },
+      {
+        "height": 102,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-office-320.webp",
+        "width": 153
+      },
+      {
+        "height": 102,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-entertainment-320.webp",
+        "width": 153
+      },
+      {
+        "height": 102,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-luxury-320.webp",
+        "width": 153
+      },
+      {
+        "height": 102,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-contemporary-320.webp",
+        "width": 153
+      },
+      {
+        "height": 102,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-custom-320.webp",
+        "width": 153
+      },
+      {
+        "height": 165,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/process-interior-800.webp",
+        "width": 375
+      },
+      {
+        "height": 485,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/quality-interior-800.webp",
+        "width": 113
+      },
+      {
+        "height": 190,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/featured-residence-800.webp",
+        "width": 375
+      },
+      {
+        "height": 82,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/placeholders/development-plan.svg",
+        "width": 153
+      },
+      {
+        "height": 82,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/placeholders/development-3d.svg",
+        "width": 153
+      },
+      {
+        "height": 82,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/development-visual-320.webp",
+        "width": 153
+      },
+      {
+        "height": 82,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/placeholders/development-vr.svg",
+        "width": 153
+      },
+      {
+        "height": 51,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-wood-320.webp",
+        "width": 72
+      },
+      {
+        "height": 51,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-stone-320.webp",
+        "width": 72
+      },
+      {
+        "height": 51,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-marble-320.webp",
+        "width": 72
+      },
+      {
+        "height": 51,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-glass-320.webp",
+        "width": 72
+      },
+      {
+        "height": 51,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-metal-320.webp",
+        "width": 72
+      },
+      {
+        "height": 51,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-fabric-320.webp",
+        "width": 72
+      },
+      {
+        "height": 51,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-lighting-320.webp",
+        "width": 72
+      },
+      {
+        "height": 51,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-surface-320.webp",
+        "width": 72
+      },
+      {
+        "height": 155,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/final-living-800.webp",
+        "width": 375
+      },
+      {
+        "height": 100,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/contact-detail-800.webp",
+        "width": 375
+      }
+    ],
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "photos": [
+      {
+        "height": 382,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/hero-living-1280.webp",
+        "width": 360
+      },
+      {
+        "height": 160,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/about-interior-800.webp",
+        "width": 310
+      },
+      {
+        "height": 265,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/placeholders/founder-reference.svg",
+        "width": 360
+      },
+      {
+        "height": 279,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/achievement-still-life-800.webp",
+        "width": 234
+      },
+      {
+        "height": 200,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/philosophy-light-800.webp",
+        "width": 122
+      },
+      {
+        "height": 97,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-living-320.webp",
+        "width": 146
+      },
+      {
+        "height": 97,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-bedroom-320.webp",
+        "width": 146
+      },
+      {
+        "height": 97,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-kitchen-320.webp",
+        "width": 146
+      },
+      {
+        "height": 97,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-dining-320.webp",
+        "width": 146
+      },
+      {
+        "height": 97,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-bathroom-320.webp",
+        "width": 146
+      },
+      {
+        "height": 97,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-office-320.webp",
+        "width": 146
+      },
+      {
+        "height": 97,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-entertainment-320.webp",
+        "width": 146
+      },
+      {
+        "height": 97,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-luxury-320.webp",
+        "width": 146
+      },
+      {
+        "height": 97,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-contemporary-320.webp",
+        "width": 146
+      },
+      {
+        "height": 97,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/category-custom-320.webp",
+        "width": 146
+      },
+      {
+        "height": 165,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/process-interior-800.webp",
+        "width": 360
+      },
+      {
+        "height": 485,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/quality-interior-800.webp",
+        "width": 108
+      },
+      {
+        "height": 190,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/featured-residence-800.webp",
+        "width": 360
+      },
+      {
+        "height": 82,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/placeholders/development-plan.svg",
+        "width": 147
+      },
+      {
+        "height": 82,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/placeholders/development-3d.svg",
+        "width": 147
+      },
+      {
+        "height": 82,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/development-visual-320.webp",
+        "width": 147
+      },
+      {
+        "height": 82,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/placeholders/development-vr.svg",
+        "width": 147
+      },
+      {
+        "height": 51,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-wood-320.webp",
+        "width": 68
+      },
+      {
+        "height": 51,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-stone-320.webp",
+        "width": 68
+      },
+      {
+        "height": 51,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-marble-320.webp",
+        "width": 68
+      },
+      {
+        "height": 51,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-glass-320.webp",
+        "width": 68
+      },
+      {
+        "height": 51,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-metal-320.webp",
+        "width": 68
+      },
+      {
+        "height": 51,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-fabric-320.webp",
+        "width": 68
+      },
+      {
+        "height": 51,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-lighting-320.webp",
+        "width": 68
+      },
+      {
+        "height": 51,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/material-surface-320.webp",
+        "width": 68
+      },
+      {
+        "height": 155,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/final-living-800.webp",
+        "width": 360
+      },
+      {
+        "height": 100,
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/tejes/photography/contact-detail-800.webp",
+        "width": 360
+      }
+    ],
+    "width": 375
+  }
+]

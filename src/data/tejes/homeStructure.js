@@ -1,60 +1,56 @@
 import { routePaths } from '../routePaths.js'
-import { tejesConceptStudies, tejesFaqs } from './studio.js'
+import homeAssets from './homeAssets.json'
 
-export const tejesHomeStructure = Object.freeze({
-  rooms: Object.freeze([
-    ['living-rooms', 'Living Rooms', 'Relax, reconnect, and make space for everyday life.'],
-    ['bedrooms', 'Bedrooms', 'Rest, recharge, and shape a more personal retreat.'],
-    ['kitchens', 'Kitchens', 'Plan, gather, and make daily routines work beautifully.'],
-    ['dining-spaces', 'Dining Spaces', 'Share meals and conversations in considered surroundings.'],
-    ['bathrooms', 'Bathrooms', 'Refresh, reset, and bring calm to the everyday.'],
-    ['home-offices', 'Home Offices', 'Support focus with a clear and comfortable setting.'],
-    ['entertainment-spaces', 'Entertainment Spaces', 'Create room for connection, play, and pause.'],
-    ['custom-spaces', 'Custom Spaces', 'Develop the right response for the space and its brief.'],
-    ['entryways-foyers', 'Entryways + Foyers', 'Shape the first transition into the home.'],
-    ['study-reading-spaces', 'Study + Reading Spaces', 'Create room for focus, reflection, and quiet.'],
-  ]),
-  services: Object.freeze([
-    ['01', 'Consultation', 'Understand your requirements, space, and priorities.'],
-    ['02', 'Space Planning', 'Establish layouts, circulation, and relationships.'],
-    ['03', 'Interior Design', 'Shape the concept, atmosphere, and visual direction.'],
-    ['04', '2D Development', 'Make the plan, detail, and decisions legible.'],
-    ['05', '3D Development', 'Explore form, proportion, materials, and light.'],
-    ['06', 'Visualization', 'See the intended interior before it is built.'],
-    ['07', 'Materials & Finishes', 'Coordinate surfaces, textures, fixtures, and details.'],
-    ['08', 'Execution', 'Carry the considered design toward the finished space.'],
-  ]),
-  process: Object.freeze([
-    ['01', 'Understand', 'Client requirements and the character of the space.'],
-    ['02', 'Plan', 'Layout, circulation, and spatial organization.'],
-    ['03', 'Design', 'Concept, materials, and visual direction.'],
-    ['04', 'Develop', '2D, 3D, and visualization for clearer decisions.'],
-    ['05', 'Realize', 'Execution toward the intended finished interior.'],
-  ]),
-  quality: Object.freeze([
-    ['Material quality', 'Selection follows the intended design, application, and everyday use.'],
-    ['Craftsmanship', 'Construction and finishing details are considered as part of the design.'],
-    ['Detail control', 'Surfaces, furniture, lighting, and finishes are kept visually consistent.'],
-    ['Execution quality', 'The developed design remains connected to the finished interior.'],
-    ['Finishing', 'Edges, joints, alignment, surfaces, and final detailing receive attention.'],
-  ]),
-  inspiration: Object.freeze(['Modern Living', 'Luxury Bedroom', 'Contemporary Kitchen', 'Elegant Dining', 'Spa-Inspired Bathroom', 'Home Office', 'Entertainment Space', 'Custom Interiors']),
-  materials: Object.freeze(['Wood', 'Stone', 'Marble', 'Glass', 'Metal', 'Fabrics', 'Lighting', 'Surface Finishes']),
-  development: Object.freeze([
-    ['01', '2D Plan', 'Understand the layout and spatial relationships.'],
-    ['02', '3D Development', 'Understand form, proportion, and movement.'],
-    ['03', 'Visualization', 'Understand the intended appearance and atmosphere.'],
-    ['04', 'Spatial Experience', 'Look closer at an interior concept through browser exploration.'],
-  ]),
-  why: Object.freeze([
-    ['Personalized design', 'Spaces develop around the individual project and its brief.'],
-    ['Function + beauty', 'Everyday usability and visual character are considered together.'],
-    ['Design development', 'The concept is carried into detailed spatial development.'],
-    ['Material consideration', 'Materials and finishes contribute to the overall experience.'],
-    ['Attention to detail', 'Small decisions shape the finished interior.'],
-    ['End-to-end thinking', 'Design and execution remain connected stages of the work.'],
-  ]),
-  projects: Object.freeze(tejesConceptStudies.map(study => ({ number: study.number, name: study.title, type: study.category, description: study.description, id: study.id }))),
-  questions: tejesFaqs,
-  links: Object.freeze({ projects: routePaths.tejes.projects, services: routePaths.tejes.interiorDesign, development: routePaths.tejes.design3d, contact: routePaths.tejes.contact }),
-})
+const asset = name => homeAssets[name]
+// Homepage-only reference content. Unverified client facts remain editable.
+export const tejesHomeStructure = {
+  media: {
+    hero: asset('hero-living'), about: asset('about-interior'),
+    founder: asset('founder-reference'), achievements: asset('achievement-still-life'),
+    philosophy: asset('philosophy-light'), process: asset('process-interior'),
+    quality: asset('quality-interior'), project: asset('featured-residence'),
+    final: asset('final-living'), contact: asset('contact-detail'),
+  },
+  founder: { name: null, role: 'Founder / Owner', description: 'The founder’s story will be introduced here once approved.' },
+  founderPrinciples: [
+    ['Vision', 'To create spaces that inspire and add value to people’s lives.'],
+    ['Philosophy', 'Design with purpose. Build with integrity.'],
+    ['Journey', 'A continuous pursuit of better spaces, better living.'],
+  ],
+  capabilities: ['Interior design', 'Space planning', '3D visualization', 'Materials & finishes', 'Execution'],
+  story: [['Beginning', 'The spark of an idea.'], ['Vision', 'Turning ideas into spaces.'], ['Approach', 'Design with purpose.'], ['Future', 'Growing, together.']],
+  achievements: ['Projects completed', 'Spaces designed', 'Years of practice', 'Design categories', 'Awards & recognition'].map(label => ({ label, value: null })),
+  philosophy: ['Space', 'Function', 'Material', 'Light', 'Detail', 'Comfort'],
+  rooms: [
+    ['Living Spaces', 'category-living', 'Refined cream living room with upholstered seating and marble tables'],
+    ['Bedrooms', 'category-bedroom', 'Neutral bedroom with an upholstered headboard and soft daylight'],
+    ['Kitchens', 'category-kitchen', 'Contemporary timber kitchen with a cantilevered central island'],
+    ['Dining', 'category-dining', 'Light filled dining and kitchen interior'],
+    ['Bathrooms', 'category-bathroom', 'Warm bathroom with timber detailing and natural light'],
+    ['Home Offices', 'category-office', 'Quiet home workspace with a timber desk and cream seating'],
+    ['Entertainment Spaces', 'category-entertainment', 'Neutral media lounge with integrated television and fireplace'],
+    ['Luxury Interiors', 'category-luxury', 'Double-height residential lounge with tall curtains and elegant seating'],
+    ['Contemporary Interiors', 'category-contemporary', 'Contemporary open-plan interior with leather seating and timber joinery'],
+    ['Custom Spaces', 'category-custom', 'Bespoke dressing room with integrated vanity, mirrors and dark cabinetry'],
+  ].map(([title, image, alt]) => ({ title, image: asset(image), alt })),
+  services: ['Consultation', 'Space Planning', 'Interior Design', '2D Design', '3D Development', 'Visualization', 'Materials & Finishes', 'Execution'],
+  process: [['Understand', 'Your needs'], ['Plan', 'Space & flow'], ['Design', 'Concept & style'], ['Develop', '2D, 3D & visuals'], ['Realize', 'The final space']],
+  quality: [
+    ['Material quality', 'The right materials for lasting spaces.'],
+    ['Craftsmanship', 'Skilled hands, refined finishes.'],
+    ['Detail control', 'Thoughtful details, better living.'],
+    ['Spatial precision', 'Balanced spaces, perfect flow.'],
+    ['Execution quality', 'From plan to the finished space.'],
+    ['Finishing', 'Beautiful, durable, long-lasting.'],
+  ],
+  // The supplied image is an illustrative design study, not a verified client project.
+  featured: { title: 'Modern Living Residence', type: 'Residential interior', description: 'A modern home design with clean lines, natural materials and a calm, elegant aesthetic.' },
+  development: ['2D Design', '3D Development', 'Visualization', 'VR Experience'].map((title, i) => ({ title, image: asset(['development-plan', 'development-3d', 'development-visual', 'development-vr'][i]), path: i === 3 ? routePaths.tejes.vr : routePaths.tejes.design3d })),
+  materials: ['Wood', 'Stone', 'Marble', 'Glass', 'Metal', 'Fabric', 'Lighting', 'Surface Finishes'].map((title, i) => ({ title, image: asset(['material-wood', 'material-stone', 'material-marble', 'material-glass', 'material-metal', 'material-fabric', 'material-lighting', 'material-surface'][i]) })),
+  approach: ['Planning', 'Design', 'Materials', 'Coordination', 'Execution', 'Detail'],
+  // Populate only with approved testimonials: { id, quote, author? }.
+  reviews: [],
+  reviewsEmptyState: 'Verified client feedback will appear here.',
+  why: ['Personalized design', 'Function + beauty', 'Spatial thinking', 'Design development', 'Material consideration', 'Attention to detail', 'End-to-end thinking'],
+  links: { projects: routePaths.tejes.projects, services: routePaths.tejes.interiorDesign, development: routePaths.tejes.design3d, contact: routePaths.tejes.contact },
+}
