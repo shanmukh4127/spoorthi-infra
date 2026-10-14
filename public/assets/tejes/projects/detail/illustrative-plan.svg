@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Illustrative residential planning study</title>
+  <desc id="desc">A replaceable concept floor-plan drawing with living, dining, kitchen, bedroom, and entry zones. It is not an approved client or construction drawing.</desc>
+  <defs>
+    <pattern id="paper" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M34 0H0V34" fill="none" stroke="#d9d0c5" stroke-width=".5" opacity=".55"/></pattern>
+    <pattern id="timber" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M0 0V20M10 0V20M20 0V20" stroke="#d9c3a4" stroke-width=".7"/></pattern>
+  </defs>
+  <rect width="1600" height="1000" fill="#f4efe8"/>
+  <rect x="36" y="36" width="1528" height="928" fill="url(#paper)" stroke="#d3c6b9" stroke-width="2"/>
+  <text x="90" y="88" fill="#765273" font-family="Arial,sans-serif" font-size="16" font-weight="700" letter-spacing="6">TEJES INTERIORS  /  CONCEPT PLAN</text>
+  <text x="90" y="935" fill="#7c6a72" font-family="Arial,sans-serif" font-size="15" letter-spacing="3">ILLUSTRATIVE PLANNING STUDY · REPLACE WITH APPROVED PROJECT DRAWING</text>
+  <g transform="translate(1372 74)" fill="none" stroke="#825b7c" stroke-width="2"><circle cx="60" cy="52" r="38"/><path d="M60 12V90M20 52H100M60 12l-8 19h16z" fill="#825b7c"/><text x="54" y="4" fill="#825b7c" stroke="none" font-family="Arial,sans-serif" font-size="19">N</text></g>
+  <g fill="#e5d8c5" opacity=".64"><rect x="170" y="126" width="1250" height="724"/><rect x="225" y="170" width="1170" height="630" fill="#f9f6f0"/></g>
+  <g fill="url(#timber)" opacity=".22"><rect x="250" y="194" width="425" height="310"/><rect x="694" y="194" width="270" height="310"/><rect x="982" y="194" width="385" height="310"/></g>
+  <g fill="none" stroke="#695b55" stroke-linecap="square">
+    <path d="M205 150H1395V822H205Z" stroke-width="18"/>
+    <path d="M680 160V505M975 160V505M205 508H1377M635 508V822M1010 508V822" stroke-width="12"/>
+    <path d="M235 502H280M365 502H635M660 508H704M775 508H975M1004 508H1050M1125 508H1370" stroke="#f9f6f0" stroke-width="14"/>
+    <path d="M635 560V610M635 685V800M1010 560V616M1010 690V803" stroke="#f9f6f0" stroke-width="14"/>
+  </g>
+  <g fill="none" stroke="#a58c80" stroke-width="3" opacity=".85">
+    <path d="M280 508A85 85 0 0 0 365 593M704 508A71 71 0 0 0 775 579M1050 508A75 75 0 0 0 1125 583"/>
+    <path d="M635 610A75 75 0 0 0 710 685M1010 616A74 74 0 0 0 1084 690"/>
+  </g>
+  <g fill="none" stroke="#9e857d" stroke-width="3"><path d="M265 150V110H580V150M716 150V110H926V150M1030 150V110H1340V150"/><path d="M265 110H580M716 110H926M1030 110H1340" stroke="#d9c3ae" stroke-width="7"/></g>
+  <g fill="#ece5db" stroke="#9b8377" stroke-width="3">
+    <rect x="294" y="266" width="322" height="96" rx="17"/><rect x="293" y="226" width="86" height="56" rx="12"/><rect x="531" y="226" width="86" height="56" rx="12"/>
+    <rect x="400" y="379" width="164" height="80" rx="40" fill="#d7c2a7"/><circle cx="366" cy="408" r="26"/><circle cx="589" cy="408" r="25"/>
+    <rect x="724" y="283" width="218" height="118" rx="58" fill="#d7c2a7"/>
+    <rect x="1040" y="203" width="284" height="58" rx="4"/><rect x="1040" y="278" width="90" height="180" rx="4"/><rect x="1155" y="317" width="160" height="93" rx="7" fill="#d7c2a7"/>
+    <rect x="266" y="599" width="245" height="165" rx="12"/><rect x="286" y="612" width="100" height="50" rx="13"/><rect x="391" y="612" width="100" height="50" rx="13"/>
+    <rect x="692" y="595" width="246" height="166" rx="12"/><rect x="710" y="608" width="100" height="48" rx="13"/><rect x="818" y="608" width="100" height="48" rx="13"/>
+    <rect x="1062" y="574" width="267" height="84" rx="7"/><rect x="1085" y="716" width="194" height="41" rx="5"/>
+  </g>
+  <g fill="#ede7de" stroke="#a68f82" stroke-width="2"><circle cx="745" cy="260" r="20"/><circle cx="814" cy="260" r="20"/><circle cx="883" cy="260" r="20"/><circle cx="745" cy="425" r="20"/><circle cx="814" cy="425" r="20"/><circle cx="883" cy="425" r="20"/><rect x="1159" y="421" width="38" height="24" rx="7"/><rect x="1220" y="421" width="38" height="24" rx="7"/><rect x="1281" y="421" width="38" height="24" rx="7"/></g>
+  <g fill="none" stroke="#78907b" stroke-width="3"><circle cx="245" cy="194" r="23"/><circle cx="630" cy="195" r="20"/><circle cx="1340" cy="782" r="25"/><circle cx="1048" cy="772" r="19"/><path d="M245 178v32m-15-16h30M1340 760v42m-21-21h42"/></g>
+  <g font-family="Arial,sans-serif" font-size="16" font-weight="700" letter-spacing="5" fill="#795d73"><text x="360" y="482">LIVING</text><text x="780" y="480">DINING</text><text x="1125" y="480">KITCHEN</text><text x="345" y="795">BEDROOM</text><text x="765" y="795">BEDROOM</text><text x="1134" y="795">ENTRY / STUDY</text></g>
+  <g stroke="#b8a59a" stroke-width="2" fill="none"><path d="M205 875H1395M205 865v20M1395 865v20M145 150V822M135 150h20M135 822h20"/></g>
+  <text x="780" y="899" fill="#8e7e78" font-family="Arial,sans-serif" font-size="15" letter-spacing="4">CONCEPTUAL ZONING — NOT TO SCALE</text>
+</svg>

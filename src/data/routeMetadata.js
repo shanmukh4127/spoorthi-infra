@@ -16,5 +16,6 @@ export const routeMetadata = Object.freeze({
 
 export function getRouteMetadata(pathname) {
   if (pathname.startsWith('/spoorthi/projects/')) return { title: 'Spoorthi Project', description: 'Explore a Spoorthi Infra project record and its connected design journey.', brand: 'spoorthi', route: pathname, pageType: 'project-detail' }
+  if (pathname.startsWith('/tejes/projects/')) return { title: 'Tejes Project Study', description: 'An illustrative Tejes Interiors project study awaiting approved project records.', brand: 'tejes', route: pathname, pageType: 'project-detail' }
   return routeMetadata[pathname] ?? { title: 'Page not found', pageType: '404' }
 }

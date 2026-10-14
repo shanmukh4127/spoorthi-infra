@@ -13,6 +13,7 @@ export const routePaths = Object.freeze({
     home: '/tejes',
     interiorDesign: '/tejes/interior-design',
     projects: '/tejes/projects',
+    projectDetail: (projectId = ':projectId') => `/tejes/projects/${projectId}`,
     design3d: '/tejes/design-3d',
     vr: '/tejes/vr',
     contact: '/tejes/contact',

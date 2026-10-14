@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Illustrative spatial flow study</title>
+  <desc id="desc">A conceptual diagram of public and private room relationships. It is not an approved client or construction drawing.</desc>
+  <defs>
+    <pattern id="grid" width="35" height="35" patternUnits="userSpaceOnUse"><path d="M35 0H0V35" fill="none" stroke="#dfd5ca" stroke-width=".7"/></pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5 0 10" fill="none" stroke="#875d7f" stroke-width="1.8"/></marker>
+  </defs>
+  <rect width="1600" height="1000" fill="#f5f0e9"/>
+  <rect x="35" y="35" width="1530" height="930" fill="url(#grid)" stroke="#d5c9bd" stroke-width="2"/>
+  <text x="88" y="92" fill="#765273" font-family="Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="5">TEJES INTERIORS  /  SPATIAL FLOW STUDY</text>
+  <text x="88" y="942" fill="#7c6a72" font-family="Arial,sans-serif" font-size="15" letter-spacing="3">ILLUSTRATIVE CONCEPT DIAGRAM · NOT AN APPROVED PROJECT DRAWING · NOT TO SCALE</text>
+  <g fill="none" stroke="#c8b9ab" stroke-width="3"><path d="M144 180H1456V832H144Z"/><path d="M144 502H1456" stroke-dasharray="8 12"/><path d="M780 180V832" stroke-dasharray="8 12"/></g>
+  <g fill="none" stroke="#875d7f" stroke-width="6" marker-end="url(#arrow)" opacity=".72">
+    <path d="M260 511C390 512 431 432 532 408"/>
+    <path d="M649 406C737 347 816 323 922 337"/>
+    <path d="M651 454C744 543 855 567 939 574"/>
+    <path d="M577 514C584 609 565 653 561 709"/>
+  </g>
+  <g stroke="#9d827f" stroke-width="3">
+    <rect x="174" y="438" width="187" height="143" rx="70" fill="#e9dfd6"/>
+    <rect x="390" y="287" width="304" height="255" rx="28" fill="#e7d9c8"/>
+    <rect x="830" y="244" width="368" height="214" rx="28" fill="#e6d8c6"/>
+    <rect x="890" y="535" width="330" height="221" rx="28" fill="#ede2d6"/>
+    <rect x="385" y="657" width="334" height="153" rx="28" fill="#ded7d1"/>
+  </g>
+  <g fill="#70566c" font-family="Georgia,serif" font-size="30" text-anchor="middle">
+    <text x="268" y="506">Arrival</text><text x="542" y="402">Living</text><text x="1014" y="346">Dining</text><text x="1055" y="647">Kitchen</text><text x="552" y="746">Private rooms</text>
+  </g>
+  <g fill="#85747a" font-family="Arial,sans-serif" font-size="16" letter-spacing="3" text-anchor="middle">
+    <text x="542" y="437">GATHERING</text><text x="1014" y="380">CONNECTION</text><text x="1055" y="680">EVERYDAY FLOW</text><text x="552" y="775">QUIET RETREAT</text>
+  </g>
+  <g fill="none" stroke="#a4869c" stroke-width="2"><circle cx="1368" cy="236" r="53"/><path d="M1368 175v123M1307 236h123"/></g>
+  <text x="1359" y="166" fill="#765273" font-family="Arial,sans-serif" font-size="21">N</text>
+</svg>

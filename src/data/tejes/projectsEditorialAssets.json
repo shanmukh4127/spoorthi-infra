@@ -1,0 +1,272 @@
+{
+  "hero-living": {
+    "src": "/assets/tejes/projects/editorial/hero-living-1916.webp",
+    "srcSet": "/assets/tejes/projects/editorial/hero-living-480.webp 480w, /assets/tejes/projects/editorial/hero-living-768.webp 768w, /assets/tejes/projects/editorial/hero-living-1024.webp 1024w, /assets/tejes/projects/editorial/hero-living-1280.webp 1280w, /assets/tejes/projects/editorial/hero-living-1536.webp 1536w, /assets/tejes/projects/editorial/hero-living-1916.webp 1916w",
+    "width": 1916,
+    "height": 821,
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "src": "/assets/tejes/projects/editorial/hero-living-480.webp",
+        "width": 480,
+        "height": 206,
+        "bytes": 37044
+      },
+      {
+        "src": "/assets/tejes/projects/editorial/hero-living-768.webp",
+        "width": 768,
+        "height": 329,
+        "bytes": 85130
+      },
+      {
+        "src": "/assets/tejes/projects/editorial/hero-living-1024.webp",
+        "width": 1024,
+        "height": 439,
+        "bytes": 141010
+      },
+      {
+        "src": "/assets/tejes/projects/editorial/hero-living-1280.webp",
+        "width": 1280,
+        "height": 548,
+        "bytes": 206408
+      },
+      {
+        "src": "/assets/tejes/projects/editorial/hero-living-1536.webp",
+        "width": 1536,
+        "height": 658,
+        "bytes": 281404
+      },
+      {
+        "src": "/assets/tejes/projects/editorial/hero-living-1916.webp",
+        "width": 1916,
+        "height": 821,
+        "bytes": 401054
+      }
+    ],
+    "status": "Illustrative generated reference image, not a Tejes client project",
+    "sourceFile": "exec-677e18b1-4bd7-4b59-a998-8913358de0a2.png"
+  },
+  "signature-living": {
+    "src": "/assets/tejes/projects/editorial/signature-living-1536.webp",
+    "srcSet": "/assets/tejes/projects/editorial/signature-living-480.webp 480w, /assets/tejes/projects/editorial/signature-living-768.webp 768w, /assets/tejes/projects/editorial/signature-living-1024.webp 1024w, /assets/tejes/projects/editorial/signature-living-1280.webp 1280w, /assets/tejes/projects/editorial/signature-living-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024,
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "src": "/assets/tejes/projects/editorial/signature-living-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 52940
+      },
+      {
+        "src": "/assets/tejes/projects/editorial/signature-living-768.webp",
+        "width": 768,
+        "height": 512,
+        "bytes": 132428
+      },
+      {
+        "src": "/assets/tejes/projects/editorial/signature-living-1024.webp",
+        "width": 1024,
+        "height": 683,
+        "bytes": 227488
+      },
+      {
+        "src": "/assets/tejes/projects/editorial/signature-living-1280.webp",
+        "width": 1280,
+        "height": 853,
+        "bytes": 337842
+      },
+      {
+        "src": "/assets/tejes/projects/editorial/signature-living-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 470496
+      }
+    ],
+    "status": "Illustrative generated reference image, not a Tejes client project",
+    "sourceFile": "exec-66ef43d2-4d15-4d2c-bafb-816568249cbb.png"
+  },
+  "harmony-kitchen": {
+    "src": "/assets/tejes/projects/editorial/harmony-kitchen-1672.webp",
+    "srcSet": "/assets/tejes/projects/editorial/harmony-kitchen-480.webp 480w, /assets/tejes/projects/editorial/harmony-kitchen-768.webp 768w, /assets/tejes/projects/editorial/harmony-kitchen-1024.webp 1024w, /assets/tejes/projects/editorial/harmony-kitchen-1280.webp 1280w, /assets/tejes/projects/editorial/harmony-kitchen-1536.webp 1536w, /assets/tejes/projects/editorial/harmony-kitchen-1672.webp 1672w",
+    "width": 1672,
+    "height": 941,
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "src": "/assets/tejes/projects/editorial/harmony-kitchen-480.webp",
+        "width": 480,
+        "height": 270,
+        "bytes": 36834
+      },
+      {
+        "src": "/assets/tejes/projects/editorial/harmony-kitchen-768.webp",
+        "width": 768,
+        "height": 432,
+        "bytes": 82856
+      },
+      {
+        "src": "/assets/tejes/projects/editorial/harmony-kitchen-1024.webp",
+        "width": 1024,
+        "height": 576,
+        "bytes": 135784
+      },
+      {
+        "src": "/assets/tejes/projects/editorial/harmony-kitchen-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 191922
+      },
+      {
+        "src": "/assets/tejes/projects/editorial/harmony-kitchen-1536.webp",
+        "width": 1536,
+        "height": 864,
+        "bytes": 256270
+      },
+      {
+        "src": "/assets/tejes/projects/editorial/harmony-kitchen-1672.webp",
+        "width": 1672,
+        "height": 941,
+        "bytes": 288348
+      }
+    ],
+    "status": "Illustrative generated reference image, not a Tejes client project",
+    "sourceFile": "exec-24306274-374c-4343-96a1-47357649c55c.png"
+  },
+  "serenity-bedroom": {
+    "src": "/assets/tejes/projects/editorial/serenity-bedroom-1774.webp",
+    "srcSet": "/assets/tejes/projects/editorial/serenity-bedroom-480.webp 480w, /assets/tejes/projects/editorial/serenity-bedroom-768.webp 768w, /assets/tejes/projects/editorial/serenity-bedroom-1024.webp 1024w, /assets/tejes/projects/editorial/serenity-bedroom-1280.webp 1280w, /assets/tejes/projects/editorial/serenity-bedroom-1536.webp 1536w, /assets/tejes/projects/editorial/serenity-bedroom-1774.webp 1774w",
+    "width": 1774,
+    "height": 887,
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "src": "/assets/tejes/projects/editorial/serenity-bedroom-480.webp",
+        "width": 480,
+        "height": 240,
+        "bytes": 31046
+      },
+      {
+        "src": "/assets/tejes/projects/editorial/serenity-bedroom-768.webp",
+        "width": 768,
+        "height": 384,
+        "bytes": 73846
+      },
+      {
+        "src": "/assets/tejes/projects/editorial/serenity-bedroom-1024.webp",
+        "width": 1024,
+        "height": 512,
+        "bytes": 126964
+      },
+      {
+        "src": "/assets/tejes/projects/editorial/serenity-bedroom-1280.webp",
+        "width": 1280,
+        "height": 640,
+        "bytes": 189452
+      },
+      {
+        "src": "/assets/tejes/projects/editorial/serenity-bedroom-1536.webp",
+        "width": 1536,
+        "height": 768,
+        "bytes": 259732
+      },
+      {
+        "src": "/assets/tejes/projects/editorial/serenity-bedroom-1774.webp",
+        "width": 1774,
+        "height": 887,
+        "bytes": 331548
+      }
+    ],
+    "status": "Illustrative generated reference image, not a Tejes client project",
+    "sourceFile": "exec-74a406fd-8dae-44be-ad3f-9001eabf7a9a.png"
+  },
+  "urban-kitchen": {
+    "src": "/assets/tejes/projects/editorial/urban-kitchen-1536.webp",
+    "srcSet": "/assets/tejes/projects/editorial/urban-kitchen-480.webp 480w, /assets/tejes/projects/editorial/urban-kitchen-768.webp 768w, /assets/tejes/projects/editorial/urban-kitchen-1024.webp 1024w, /assets/tejes/projects/editorial/urban-kitchen-1280.webp 1280w, /assets/tejes/projects/editorial/urban-kitchen-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024,
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "src": "/assets/tejes/projects/editorial/urban-kitchen-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 37276
+      },
+      {
+        "src": "/assets/tejes/projects/editorial/urban-kitchen-768.webp",
+        "width": 768,
+        "height": 512,
+        "bytes": 81868
+      },
+      {
+        "src": "/assets/tejes/projects/editorial/urban-kitchen-1024.webp",
+        "width": 1024,
+        "height": 683,
+        "bytes": 136432
+      },
+      {
+        "src": "/assets/tejes/projects/editorial/urban-kitchen-1280.webp",
+        "width": 1280,
+        "height": 853,
+        "bytes": 203804
+      },
+      {
+        "src": "/assets/tejes/projects/editorial/urban-kitchen-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 283126
+      }
+    ],
+    "status": "Illustrative generated reference image, not a Tejes client project",
+    "sourceFile": "exec-8b887091-5c66-48c1-b6fc-a548813d169c.png"
+  },
+  "verdant-living": {
+    "src": "/assets/tejes/projects/editorial/verdant-living-1916.webp",
+    "srcSet": "/assets/tejes/projects/editorial/verdant-living-480.webp 480w, /assets/tejes/projects/editorial/verdant-living-768.webp 768w, /assets/tejes/projects/editorial/verdant-living-1024.webp 1024w, /assets/tejes/projects/editorial/verdant-living-1280.webp 1280w, /assets/tejes/projects/editorial/verdant-living-1536.webp 1536w, /assets/tejes/projects/editorial/verdant-living-1916.webp 1916w",
+    "width": 1916,
+    "height": 821,
+    "focalPoint": "50% 50%",
+    "variants": [
+      {
+        "src": "/assets/tejes/projects/editorial/verdant-living-480.webp",
+        "width": 480,
+        "height": 206,
+        "bytes": 31644
+      },
+      {
+        "src": "/assets/tejes/projects/editorial/verdant-living-768.webp",
+        "width": 768,
+        "height": 329,
+        "bytes": 78996
+      },
+      {
+        "src": "/assets/tejes/projects/editorial/verdant-living-1024.webp",
+        "width": 1024,
+        "height": 439,
+        "bytes": 140696
+      },
+      {
+        "src": "/assets/tejes/projects/editorial/verdant-living-1280.webp",
+        "width": 1280,
+        "height": 548,
+        "bytes": 212322
+      },
+      {
+        "src": "/assets/tejes/projects/editorial/verdant-living-1536.webp",
+        "width": 1536,
+        "height": 658,
+        "bytes": 294470
+      },
+      {
+        "src": "/assets/tejes/projects/editorial/verdant-living-1916.webp",
+        "width": 1916,
+        "height": 821,
+        "bytes": 428944
+      }
+    ],
+    "status": "Illustrative generated reference image, not a Tejes client project",
+    "sourceFile": "exec-1aed9116-c4c9-4a67-98bd-d2207b51f170.png"
+  }
+}

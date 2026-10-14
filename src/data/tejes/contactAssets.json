@@ -1,0 +1,92 @@
+{
+  "hero": {
+    "src": "/assets/tejes/contact/hero-1672.webp",
+    "srcSet": "/assets/tejes/contact/hero-480.webp 480w, /assets/tejes/contact/hero-768.webp 768w, /assets/tejes/contact/hero-1024.webp 1024w, /assets/tejes/contact/hero-1280.webp 1280w, /assets/tejes/contact/hero-1600.webp 1600w, /assets/tejes/contact/hero-1672.webp 1672w",
+    "width": 1672,
+    "height": 941,
+    "focalPoint": "50% 50%",
+    "status": "Generated architectural visual study",
+    "variants": [
+      {
+        "src": "/assets/tejes/contact/hero-480.webp",
+        "width": 480,
+        "height": 270
+      },
+      {
+        "src": "/assets/tejes/contact/hero-768.webp",
+        "width": 768,
+        "height": 432
+      },
+      {
+        "src": "/assets/tejes/contact/hero-1024.webp",
+        "width": 1024,
+        "height": 576
+      },
+      {
+        "src": "/assets/tejes/contact/hero-1280.webp",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "src": "/assets/tejes/contact/hero-1600.webp",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/assets/tejes/contact/hero-1672.webp",
+        "width": 1672,
+        "height": 941
+      }
+    ]
+  },
+  "detail": {
+    "src": "/assets/tejes/contact/detail-1024.webp",
+    "srcSet": "/assets/tejes/contact/detail-480.webp 480w, /assets/tejes/contact/detail-768.webp 768w, /assets/tejes/contact/detail-1024.webp 1024w",
+    "width": 1024,
+    "height": 1536,
+    "focalPoint": "50% 50%",
+    "status": "Generated architectural visual study",
+    "variants": [
+      {
+        "src": "/assets/tejes/contact/detail-480.webp",
+        "width": 480,
+        "height": 720
+      },
+      {
+        "src": "/assets/tejes/contact/detail-768.webp",
+        "width": 768,
+        "height": 1152
+      },
+      {
+        "src": "/assets/tejes/contact/detail-1024.webp",
+        "width": 1024,
+        "height": 1536
+      }
+    ]
+  },
+  "studio": {
+    "src": "/assets/tejes/contact/studio-1024.webp",
+    "srcSet": "/assets/tejes/contact/studio-480.webp 480w, /assets/tejes/contact/studio-768.webp 768w, /assets/tejes/contact/studio-1024.webp 1024w",
+    "width": 1024,
+    "height": 1536,
+    "focalPoint": "50% 50%",
+    "status": "Generated architectural visual study",
+    "variants": [
+      {
+        "src": "/assets/tejes/contact/studio-480.webp",
+        "width": 480,
+        "height": 720
+      },
+      {
+        "src": "/assets/tejes/contact/studio-768.webp",
+        "width": 768,
+        "height": 1152
+      },
+      {
+        "src": "/assets/tejes/contact/studio-1024.webp",
+        "width": 1024,
+        "height": 1536
+      }
+    ]
+  }
+}

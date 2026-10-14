@@ -13,9 +13,9 @@ export function TejesWordmark() {
   return <Link to={routePaths.tejes.home} className="th-wordmark" aria-label="Tejes Interiors home"><img src="/assets/tejes/brand/wordmark.svg" alt="Tejes Interiors" width="700" height="300" /></Link>
 }
 
-export default function TejesHomeMenu() {
+export default function TejesHomeMenu({ initialOpen, navigationItems = items, navigationLabel = 'Tejes homepage' }) {
   // The approved desktop reference shows the menu expanded.
-  const [open, setOpen] = useState(() => window.matchMedia('(min-width: 1000px)').matches)
+  const [open, setOpen] = useState(() => initialOpen ?? window.matchMedia('(min-width: 1000px)').matches)
   const trigger = useRef(null)
   const menu = useRef(null)
   useEffect(() => {
@@ -30,8 +30,8 @@ export default function TejesHomeMenu() {
     <TejesWordmark />
     <div ref={menu} className="th-menu" onBlur={event => { if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget)) setOpen(false) }}>
       <button ref={trigger} type="button" className="th-menu-trigger" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} aria-controls="tejes-home-menu" onClick={() => setOpen(value => !value)}><span>Menu</span><span className="th-menu-symbol">{open ? <X size={14} aria-hidden="true" /> : <Menu size={14} aria-hidden="true" />}</span></button>
-      <nav id="tejes-home-menu" className={`th-menu-panel${open ? ' is-open' : ''}`} aria-label="Tejes homepage" hidden={!open}>
-        {items.map(([label, path]) => path.startsWith('#') ? <a key={label} href={path} onClick={() => setOpen(false)}>{label}</a> : <Link key={label} to={path} onClick={() => setOpen(false)}>{label}</Link>)}
+      <nav id="tejes-home-menu" className={`th-menu-panel${open ? ' is-open' : ''}`} aria-label={navigationLabel} hidden={!open}>
+        {navigationItems.map(([label, path]) => path.startsWith('#') ? <a key={label} href={path} onClick={() => setOpen(false)}>{label}</a> : <Link key={label} to={path} onClick={() => setOpen(false)}>{label}</Link>)}
       </nav>
     </div>
   </header>

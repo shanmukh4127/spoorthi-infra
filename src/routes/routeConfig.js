@@ -10,6 +10,7 @@ import TejesDesign3DPage from '../pages/tejes/Design3DPage.jsx'
 import TejesHomePage from '../pages/tejes/TejesHomePage.jsx'
 import TejesInteriorDesignPage from '../pages/tejes/InteriorDesignPage.jsx'
 import TejesProjectsPage from '../pages/tejes/ProjectsPage.jsx'
+import TejesProjectDetailPage from '../pages/tejes/ProjectDetailPage.jsx'
 import TejesVrPage from '../pages/tejes/VrPage.jsx'
 import { routeMetadata } from '../data/routeMetadata.js'
 import { routePaths } from '../data/routePaths.js'
@@ -35,6 +36,7 @@ export const brandRouteConfig = Object.freeze({
     sections: Object.freeze([
       withMetadata(routePaths.tejes.interiorDesign, TejesInteriorDesignPage),
       withMetadata(routePaths.tejes.projects, TejesProjectsPage),
+      withMetadata(routePaths.tejes.projectDetail(), TejesProjectDetailPage),
       withMetadata(routePaths.tejes.design3d, TejesDesign3DPage),
       withMetadata(routePaths.tejes.vr, TejesVrPage),
       withMetadata(routePaths.tejes.contact, TejesContactPage),
