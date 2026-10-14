@@ -1,0 +1,217 @@
+{
+  "hero": {
+    "src": "/assets/tejes/services/hero-1536.webp",
+    "srcSet": "/assets/tejes/services/hero-480.webp 480w, /assets/tejes/services/hero-768.webp 768w, /assets/tejes/services/hero-1024.webp 1024w, /assets/tejes/services/hero-1280.webp 1280w, /assets/tejes/services/hero-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024,
+    "focalPoint": "50% 50%",
+    "status": "Generated illustrative visual; not Tejes client work or staff",
+    "variants": [
+      {
+        "src": "/assets/tejes/services/hero-480.webp",
+        "width": 480,
+        "height": 320
+      },
+      {
+        "src": "/assets/tejes/services/hero-768.webp",
+        "width": 768,
+        "height": 512
+      },
+      {
+        "src": "/assets/tejes/services/hero-1024.webp",
+        "width": 1024,
+        "height": 683
+      },
+      {
+        "src": "/assets/tejes/services/hero-1280.webp",
+        "width": 1280,
+        "height": 853
+      },
+      {
+        "src": "/assets/tejes/services/hero-1536.webp",
+        "width": 1536,
+        "height": 1024
+      }
+    ]
+  },
+  "commercial": {
+    "src": "/assets/tejes/services/commercial-1536.webp",
+    "srcSet": "/assets/tejes/services/commercial-480.webp 480w, /assets/tejes/services/commercial-768.webp 768w, /assets/tejes/services/commercial-1024.webp 1024w, /assets/tejes/services/commercial-1280.webp 1280w, /assets/tejes/services/commercial-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024,
+    "focalPoint": "50% 50%",
+    "status": "Generated illustrative visual; not Tejes client work or staff",
+    "variants": [
+      {
+        "src": "/assets/tejes/services/commercial-480.webp",
+        "width": 480,
+        "height": 320
+      },
+      {
+        "src": "/assets/tejes/services/commercial-768.webp",
+        "width": 768,
+        "height": 512
+      },
+      {
+        "src": "/assets/tejes/services/commercial-1024.webp",
+        "width": 1024,
+        "height": 683
+      },
+      {
+        "src": "/assets/tejes/services/commercial-1280.webp",
+        "width": 1280,
+        "height": 853
+      },
+      {
+        "src": "/assets/tejes/services/commercial-1536.webp",
+        "width": 1536,
+        "height": 1024
+      }
+    ]
+  },
+  "materials": {
+    "src": "/assets/tejes/services/materials-1536.webp",
+    "srcSet": "/assets/tejes/services/materials-480.webp 480w, /assets/tejes/services/materials-768.webp 768w, /assets/tejes/services/materials-1024.webp 1024w, /assets/tejes/services/materials-1280.webp 1280w, /assets/tejes/services/materials-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024,
+    "focalPoint": "50% 50%",
+    "status": "Generated illustrative visual; not Tejes client work or staff",
+    "variants": [
+      {
+        "src": "/assets/tejes/services/materials-480.webp",
+        "width": 480,
+        "height": 320
+      },
+      {
+        "src": "/assets/tejes/services/materials-768.webp",
+        "width": 768,
+        "height": 512
+      },
+      {
+        "src": "/assets/tejes/services/materials-1024.webp",
+        "width": 1024,
+        "height": 683
+      },
+      {
+        "src": "/assets/tejes/services/materials-1280.webp",
+        "width": 1280,
+        "height": 853
+      },
+      {
+        "src": "/assets/tejes/services/materials-1536.webp",
+        "width": 1536,
+        "height": 1024
+      }
+    ]
+  },
+  "visualization": {
+    "src": "/assets/tejes/services/visualization-1536.webp",
+    "srcSet": "/assets/tejes/services/visualization-480.webp 480w, /assets/tejes/services/visualization-768.webp 768w, /assets/tejes/services/visualization-1024.webp 1024w, /assets/tejes/services/visualization-1280.webp 1280w, /assets/tejes/services/visualization-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024,
+    "focalPoint": "50% 50%",
+    "status": "Generated illustrative visual; not Tejes client work or staff",
+    "variants": [
+      {
+        "src": "/assets/tejes/services/visualization-480.webp",
+        "width": 480,
+        "height": 320
+      },
+      {
+        "src": "/assets/tejes/services/visualization-768.webp",
+        "width": 768,
+        "height": 512
+      },
+      {
+        "src": "/assets/tejes/services/visualization-1024.webp",
+        "width": 1024,
+        "height": 683
+      },
+      {
+        "src": "/assets/tejes/services/visualization-1280.webp",
+        "width": 1280,
+        "height": 853
+      },
+      {
+        "src": "/assets/tejes/services/visualization-1536.webp",
+        "width": 1536,
+        "height": 1024
+      }
+    ]
+  },
+  "process": {
+    "src": "/assets/tejes/services/process-1536.webp",
+    "srcSet": "/assets/tejes/services/process-480.webp 480w, /assets/tejes/services/process-768.webp 768w, /assets/tejes/services/process-1024.webp 1024w, /assets/tejes/services/process-1280.webp 1280w, /assets/tejes/services/process-1536.webp 1536w",
+    "width": 1536,
+    "height": 1024,
+    "focalPoint": "50% 50%",
+    "status": "Generated illustrative visual; not Tejes client work or staff",
+    "variants": [
+      {
+        "src": "/assets/tejes/services/process-480.webp",
+        "width": 480,
+        "height": 320
+      },
+      {
+        "src": "/assets/tejes/services/process-768.webp",
+        "width": 768,
+        "height": 512
+      },
+      {
+        "src": "/assets/tejes/services/process-1024.webp",
+        "width": 1024,
+        "height": 683
+      },
+      {
+        "src": "/assets/tejes/services/process-1280.webp",
+        "width": 1280,
+        "height": 853
+      },
+      {
+        "src": "/assets/tejes/services/process-1536.webp",
+        "width": 1536,
+        "height": 1024
+      }
+    ]
+  },
+  "closing": {
+    "src": "/assets/tejes/services/closing-1672.webp",
+    "srcSet": "/assets/tejes/services/closing-480.webp 480w, /assets/tejes/services/closing-768.webp 768w, /assets/tejes/services/closing-1024.webp 1024w, /assets/tejes/services/closing-1280.webp 1280w, /assets/tejes/services/closing-1600.webp 1600w, /assets/tejes/services/closing-1672.webp 1672w",
+    "width": 1672,
+    "height": 941,
+    "focalPoint": "50% 50%",
+    "status": "Generated illustrative visual; not Tejes client work or staff",
+    "variants": [
+      {
+        "src": "/assets/tejes/services/closing-480.webp",
+        "width": 480,
+        "height": 270
+      },
+      {
+        "src": "/assets/tejes/services/closing-768.webp",
+        "width": 768,
+        "height": 432
+      },
+      {
+        "src": "/assets/tejes/services/closing-1024.webp",
+        "width": 1024,
+        "height": 576
+      },
+      {
+        "src": "/assets/tejes/services/closing-1280.webp",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "src": "/assets/tejes/services/closing-1600.webp",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "src": "/assets/tejes/services/closing-1672.webp",
+        "width": 1672,
+        "height": 941
+      }
+    ]
+  }
+}
