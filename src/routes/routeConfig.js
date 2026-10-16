@@ -1,5 +1,6 @@
 import CivilConstructionPage from '../pages/spoorthi/CivilConstructionPage.jsx'
 import SpoorthiContactPage from '../pages/spoorthi/ContactPage.jsx'
+import SpoorthiAdminPage from '../pages/spoorthi/AdminPage.jsx'
 import SpoorthiDesign3DPage from '../pages/spoorthi/Design3DPage.jsx'
 import SpoorthiHomePage from '../pages/spoorthi/SpoorthiHomePage.jsx'
 import SpoorthiProjectsPage from '../pages/spoorthi/ProjectsPage.jsx'
@@ -29,6 +30,7 @@ export const brandRouteConfig = Object.freeze({
       withMetadata(routePaths.spoorthi.design3d, SpoorthiDesign3DPage),
       withMetadata(routePaths.spoorthi.vr, SpoorthiVrPage),
       withMetadata(routePaths.spoorthi.contact, SpoorthiContactPage),
+      withMetadata(routePaths.spoorthi.admin, SpoorthiAdminPage),
     ]),
   }),
   tejes: Object.freeze({

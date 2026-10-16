@@ -1,5 +1,6 @@
 export const routePaths = Object.freeze({
   gateway: '/',
+  admin: '/admin',
   spoorthi: Object.freeze({
     home: '/spoorthi',
     civilConstruction: '/spoorthi/civil-construction',
@@ -8,6 +9,7 @@ export const routePaths = Object.freeze({
     design3d: '/spoorthi/design-3d',
     vr: '/spoorthi/vr',
     contact: '/spoorthi/contact',
+    admin: '/spoorthi/admin',
   }),
   tejes: Object.freeze({
     home: '/tejes',

@@ -3,7 +3,7 @@ import { Menu, X } from 'lucide-react'
 import { IconButton } from '../common/index.js'
 import MobileMenu from './MobileMenu.jsx'
 
-function MobileNav({ brandName, items = [], cta }) {
+function MobileNav({ brandName, items = [], cta, switchBrand, adminLink }) {
   const [isOpen, setIsOpen] = useState(false)
   const menuId = useId()
   const triggerRef = useRef(null)
@@ -41,7 +41,7 @@ function MobileNav({ brandName, items = [], cta }) {
         onClick={() => setIsOpen((value) => !value)}
         icon={isOpen ? <X size={20} /> : <Menu size={20} />}
       />
-      {isOpen && <div ref={menuRef}><MobileMenu id={menuId} brandName={brandName} items={items} cta={cta} onNavigate={closeMenu} /></div>}
+      {isOpen && <div ref={menuRef}><MobileMenu id={menuId} brandName={brandName} items={items} cta={cta} switchBrand={switchBrand} adminLink={adminLink} onNavigate={closeMenu} /></div>}
     </div>
   )
 }
