@@ -1,0 +1,22 @@
+{
+  "source": "spoorthi-logo_black_20260508_232738_0000 (1).png",
+  "sourceDimensions": [
+    12192,
+    6096
+  ],
+  "alphaBounds": [
+    3592,
+    2034,
+    8600,
+    4062
+  ],
+  "palette": {
+    "ink": "#000000",
+    "yellow": "#f6c319",
+    "amber": "#ee9c22",
+    "orange": "#e67926",
+    "red": "#d92927",
+    "deepRed": "#9c2621"
+  },
+  "method": "Representative opaque facet colours sampled from the supplied raster. Alpha-bound crop and lossless downsampling only; no redrawing or recolouring."
+}

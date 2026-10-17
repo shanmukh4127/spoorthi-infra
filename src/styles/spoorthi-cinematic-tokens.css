@@ -1,0 +1,12 @@
+/* Representative opaque logo pixels; see brand/logo-palette.json. Scoped so
+   the gateway, Tejes, and the existing Spoorthi content keep their own tokens. */
+.si-cinematic-header,.si-journey {
+  --si-yellow:#f6c319;
+  --si-amber:#ee9c22;
+  --si-orange:#e67926;
+  --si-red:#d92927;
+  --si-deep-red:#9c2621;
+  --si-ink:#222629;
+  --si-paper:#fff;
+  --si-off-white:#fffdf8;
+}

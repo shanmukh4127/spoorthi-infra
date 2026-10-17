@@ -1,0 +1,32 @@
+/* Only rendered by the Spoorthi homepage. Palette sampled from the official logo. */
+.si-cinematic-header { position:sticky; top:0; z-index:30; height:104px; display:flex; align-items:center; justify-content:space-between; padding:8px 4.4%; background:#fff; border-bottom:1px solid #e8e6e1; }
+.si-official-logo { display:block; flex-shrink:0; width:196px; padding:2px 0; background:white; }
+.si-official-logo img { width:100%; height:auto; }
+.si-menu-trigger { display:inline-flex; align-items:center; justify-content:center; gap:16px; min-height:48px; padding:0; background:transparent; color:#202326; border:0; cursor:pointer; }
+.si-menu-trigger > span { font-size:.65rem; letter-spacing:.18em; text-transform:uppercase; }
+.si-menu-trigger i { display:grid; place-items:center; width:46px; height:46px; border:1px solid #d1cec7; border-radius:50%; transition:background .2s,border-color .2s; }
+.si-menu-trigger:hover i { background:#fff6e6; border-color:var(--si-amber); }
+.si-cinematic-header a:focus-visible,.si-cinematic-header button:focus-visible { outline:2px solid var(--si-deep-red); outline-offset:5px; }
+.si-menu-overlay { position:fixed; inset:0; width:100%; height:100dvh; max-width:none; max-height:none; margin:0; padding:0 4.4%; border:0; background:#fffdf8; color:#202326; overflow-y:auto; overscroll-behavior:contain; }
+.si-menu-overlay::backdrop { background:#fff; }
+.si-menu-overlay[open] { display:flex; flex-direction:column; animation:si-menu-enter .25s ease-out; }
+.si-menu-overlay__head { display:flex; align-items:center; justify-content:space-between; min-height:104px; border-bottom:1px solid #e8e3da; flex-shrink:0; }
+.si-menu-overlay__body { display:grid; grid-template-columns:1fr 1.15fr; align-items:center; gap:8%; width:min(100%,1280px); margin:auto; padding:3rem 0; }
+.si-menu-overlay__intro > p { margin:0 0 2rem; color:var(--si-deep-red); text-transform:uppercase; letter-spacing:.16em; font-size:.65rem; }
+.si-menu-overlay__intro h2 { margin:0; font-size:clamp(3rem,5.4vw,6rem); letter-spacing:-.055em; font-weight:450; line-height:1.03; }
+.si-menu-overlay__intro h2 em { font:italic 1em Georgia,serif; color:var(--si-deep-red); }
+.si-menu-overlay__intro > span { display:block; max-width:35ch; margin-top:2rem; line-height:1.8; color:#64615a; font-size:.7rem; }
+.si-menu-overlay nav { border-top:1px solid #dcd5ca; }
+.si-menu-overlay nav a { display:flex; align-items:center; gap:1.6rem; min-height:clamp(64px,9vh,86px); padding:.7rem .5rem; border-bottom:1px solid #dcd5ca; text-decoration:none; transition:color .2s,background .2s; }
+.si-menu-overlay nav a small { font-size:.6rem; color:var(--si-deep-red); letter-spacing:.08em; }
+.si-menu-overlay nav a > span { font-size:clamp(1.2rem,2.3vw,2rem); letter-spacing:-.03em; }
+.si-menu-overlay nav a svg { margin-left:auto; color:var(--si-deep-red); }
+.si-menu-overlay nav a:hover,.si-menu-overlay nav a[aria-current='page'] { color:var(--si-deep-red); background:#ee9c220a; }
+.si-menu-overlay__foot { display:flex; justify-content:space-between; gap:1rem; padding:1.4rem 0; border-top:1px solid #e8e3da; font-size:.58rem; letter-spacing:.1em; text-transform:uppercase; color:#6c655a; }
+@keyframes si-menu-enter { from { opacity:0; transform:translateY(-8px); } to { opacity:1; transform:none; } }
+@media(max-width:767px) { .si-cinematic-header { height:88px; } .si-official-logo { width:150px; } .si-menu-trigger { gap:10px; } .si-menu-trigger i { width:42px; height:42px; } .si-menu-overlay__head { min-height:88px; } .si-menu-overlay__body { grid-template-columns:1fr; gap:2rem; padding:2rem 0; } .si-menu-overlay__intro h2 { font-size:2.2rem; } .si-menu-overlay__intro h2 br { display:none; } .si-menu-overlay__intro > p { margin-bottom:1rem; } .si-menu-overlay__intro > span { display:none; } .si-menu-overlay nav a { min-height:60px; } .si-menu-overlay__foot { font-size:.5rem; } }
+@media(prefers-reduced-motion:reduce) { .si-menu-overlay[open] { animation:none; } .si-cinematic-header * { transition:none!important; } }
+@media(max-width:767px) {
+  .si-menu-overlay__body { grid-template-columns:minmax(0,1fr); }
+  .si-menu-overlay__intro h2 { max-width:14ch; font-size:2rem; }
+}

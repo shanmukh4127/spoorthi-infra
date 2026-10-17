@@ -29,3 +29,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local source downloads and visual QA for the Spoorthi cinematic scene
+.tmp/civil-assets/
+.tmp/spoorthi*/
+.tmp/spoorthi-logo-inspection.png
+.tmp/spoorthi-logo-on-white.jpg

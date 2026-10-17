@@ -9,7 +9,7 @@ import AppShell from './AppShell.jsx'
 import BrandProvider from './BrandProvider.jsx'
 import PageShell from './PageShell.jsx'
 
-function BrandLayout({ brandId, children }) {
+function BrandLayout({ brandId, children, header }) {
   const { pathname } = useLocation()
   const brand = brands[brandId]
   const navigation = getBrandNavigation(brandId)
@@ -19,7 +19,7 @@ function BrandLayout({ brandId, children }) {
       <AppShell>
         <div className={`brand-layout brand-layout--${brandId}`} data-brand={brand.themeId} data-pathname={pathname}>
           <PageShell
-            header={<Header brand={brand} navigation={navigationWithCta} cta={brand.primaryCta} />}
+            header={header ?? <Header brand={brand} navigation={navigationWithCta} cta={brand.primaryCta} />}
             footer={<Footer brand={brand} navigation={navigation} config={footerConfig[brandId]} />}
           >
             {children ?? <Outlet />}

@@ -1,0 +1,307 @@
+{
+  "purpose": "Illustrative civil construction scene, never a verified Spoorthi project",
+  "assetSources": [
+    {
+      "id": "concrete_slab_wall",
+      "type": "texture",
+      "source": "https://polyhaven.com/a/concrete_slab_wall",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://polyhaven.com/license",
+      "authors": {
+        "Dimitrios Savva": "All"
+      }
+    },
+    {
+      "id": "brown_mud_dry",
+      "type": "texture",
+      "source": "https://polyhaven.com/a/brown_mud_dry",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://polyhaven.com/license",
+      "authors": {
+        "Rob Tuytel": "All"
+      }
+    },
+    {
+      "id": "metal_plate_02",
+      "type": "texture",
+      "source": "https://polyhaven.com/a/metal_plate_02",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://polyhaven.com/license",
+      "authors": {
+        "Rob Tuytel": "All"
+      }
+    },
+    {
+      "id": "brown_planks_03",
+      "type": "texture",
+      "source": "https://polyhaven.com/a/brown_planks_03",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://polyhaven.com/license",
+      "authors": {
+        "Rob Tuytel": "All"
+      }
+    },
+    {
+      "id": "concrete_road_barrier",
+      "type": "model",
+      "source": "https://polyhaven.com/a/concrete_road_barrier",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://polyhaven.com/license",
+      "authors": {
+        "Amal Kumar": "All"
+      }
+    },
+    {
+      "id": "kloofendal_43d_clear_puresky",
+      "type": "hdri",
+      "source": "https://polyhaven.com/a/kloofendal_43d_clear_puresky",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://polyhaven.com/license",
+      "authors": {
+        "Greg Zaal": "All"
+      }
+    },
+    {
+      "id": "cet200",
+      "type": "CAD-derived GLB",
+      "source": "https://github.com/vmc-motion/cet200",
+      "sourceRevision": "8ce4c1428d615079c480185eeef77c54f00d5c6a",
+      "license": "Apache-2.0",
+      "licenseFile": "CET200-LICENSE.txt",
+      "noticeFile": "CET200-NOTICE.txt",
+      "changes": "Render-only mesh groups; manufacturer lettering and collision geometry omitted; warm paint treatment; two complete tracks added; standard KHR_mesh_quantization. No visible mesh decimation."
+    },
+    {
+      "id": "construction-reference",
+      "type": "photograph",
+      "source": "https://unsplash.com/photos/a-crane-is-on-top-of-a-building-under-construction-iYlHshWnCtw",
+      "author": "Kouji Tsuru",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license",
+      "originalDimensions": [
+        5408,
+        3600
+      ],
+      "changes": "Downsampled to responsive WebP files. No enlargement, synthetic content or recolouring."
+    }
+  ],
+  "files": [
+    {
+      "file": "barrier/barrier.gltf",
+      "bytes": 1779,
+      "sha256": "39b4bd3e7cab9b18279e528bc320d05b5c5d9347f69dc8e780f42bae50c98097"
+    },
+    {
+      "file": "barrier/concrete_road_barrier.bin",
+      "bytes": 1374016,
+      "sha256": "64a4f9bc6e4af64d714a252c3c13428c430a60569deba3d52ca6b7dd3aa70d8c"
+    },
+    {
+      "file": "barrier/textures/concrete_road_barrier_arm_1k.webp",
+      "bytes": 181942,
+      "sha256": "45cd52d843cd620a1de4fa99bab780f1b9ff4f52ba63284ff202023f01cd9793",
+      "dimensions": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "file": "barrier/textures/concrete_road_barrier_diff_1k.webp",
+      "bytes": 374390,
+      "sha256": "28a7a140585afad7c6e521b035cbf38dcab7f86e2c38dbdec90335f21335f500",
+      "dimensions": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "file": "barrier/textures/concrete_road_barrier_nor_gl_1k.webp",
+      "bytes": 423896,
+      "sha256": "16ea2d6851f0db57437cbc056336dc71442a371d647c5198fda5d023f79eccf7",
+      "dimensions": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "file": "cet200-excavator.glb",
+      "bytes": 4608284,
+      "sha256": "ce3caae3e5e1f3fdfcff4112cf6b083717ae4e3b189a377327f876961144d68c"
+    },
+    {
+      "file": "CET200-LICENSE.txt",
+      "bytes": 11560,
+      "sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5"
+    },
+    {
+      "file": "CET200-MODIFICATIONS.txt",
+      "bytes": 720,
+      "sha256": "a8b5b34535e8d368154e2e12d892d87f4ef0dc34e94b0b4044c5bdc700e3571b"
+    },
+    {
+      "file": "CET200-NOTICE.txt",
+      "bytes": 141,
+      "sha256": "c752a8cf2d456b9f6de2e6fb506a9e81ea86ac4c21a0d961d762288d037161e9"
+    },
+    {
+      "file": "construction-reference-1600.webp",
+      "bytes": 189360,
+      "sha256": "0e3dbd8b09d524a1c5b2dd88b4655821b3127f20096cc257cd7d41cc7d61b2de",
+      "dimensions": [
+        1600,
+        1065
+      ]
+    },
+    {
+      "file": "construction-reference-2560.webp",
+      "bytes": 444284,
+      "sha256": "23ff12e06de955c02c5d987947bd0f38bdbbf11ddeac60d5a7ba06ccb4be573c",
+      "dimensions": [
+        2560,
+        1704
+      ]
+    },
+    {
+      "file": "construction-reference-640.webp",
+      "bytes": 37430,
+      "sha256": "4a3fa6294d6775e1e3d10b36c71411639a2d777c4f35ea3133feb12e2f6365cc",
+      "dimensions": [
+        640,
+        426
+      ]
+    },
+    {
+      "file": "construction-reference-960.webp",
+      "bytes": 74798,
+      "sha256": "2a595a7c92a8f4920955fc41a0687875fdaa0a4e6634381eb5c9e697e14e036f",
+      "dimensions": [
+        960,
+        639
+      ]
+    },
+    {
+      "file": "daylight-1k.hdr",
+      "bytes": 1184531,
+      "sha256": "de7ba9d0b070470dbb70d0144294c8708068df353537b26ab59c394707e84377"
+    },
+    {
+      "file": "daylight-background.webp",
+      "bytes": 98494,
+      "sha256": "c0ad719f2c08c40d31744961c21065f79711951f38e0c1562c0d2d68b0ffbfbe",
+      "dimensions": [
+        4096,
+        2048
+      ]
+    },
+    {
+      "file": "textures/concrete-arm.webp",
+      "bytes": 121134,
+      "sha256": "b85d965c05dc3796df6621dd19b414c67cccfa5589d0eada64a843189ef11426",
+      "dimensions": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "file": "textures/concrete-color.webp",
+      "bytes": 696408,
+      "sha256": "515ac0236ec8984f7fd6b84fdaa19b921d23c9ecfd47c72bb37bc627f5b01a3a",
+      "dimensions": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "file": "textures/concrete-normal.webp",
+      "bytes": 315690,
+      "sha256": "26c153ae2b4927c0a5cfc15f9188b4dd62815151b179580605e4285735f70150",
+      "dimensions": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "file": "textures/soil-arm.webp",
+      "bytes": 301050,
+      "sha256": "9acc8f02ed0dd30e5451f338b37ac8e91c0bccf5c71b71794d024c4573f73a0d",
+      "dimensions": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "file": "textures/soil-color.webp",
+      "bytes": 628094,
+      "sha256": "cdb022cd5bcaf85f903fb38d7435dd5c20795f50127ed6b154eda4129fae6b64",
+      "dimensions": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "file": "textures/soil-normal.webp",
+      "bytes": 727792,
+      "sha256": "33a9ff1bb8b1a1f553b0ccef2649bc35a7ce7996ed364a9b0c59eed2d52bb0df",
+      "dimensions": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "file": "textures/steel-arm.webp",
+      "bytes": 473886,
+      "sha256": "542c5174ff2027b24bba4806e993dbff47c51959ba598d32c0641dec9385905e",
+      "dimensions": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "file": "textures/steel-color.webp",
+      "bytes": 246340,
+      "sha256": "3264ac6f693c6a920ac4f82ca72227879197328c8578ec39677b80d898077bb7",
+      "dimensions": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "file": "textures/steel-normal.webp",
+      "bytes": 34928,
+      "sha256": "082910d91662b16e42829da34e1d5c47494c0b5b44809f2c4fe7d9f4b35ce5f1",
+      "dimensions": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "file": "textures/wood-arm.webp",
+      "bytes": 132342,
+      "sha256": "8e6585d6858564654a303f6e248513841ff77b6fa4783e20b5f517498b8db818",
+      "dimensions": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "file": "textures/wood-color.webp",
+      "bytes": 386174,
+      "sha256": "5f3012c699ffba7b94f574d9f776a5413f2de942700363d6ae03d77b55ed1e38",
+      "dimensions": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "file": "textures/wood-normal.webp",
+      "bytes": 258024,
+      "sha256": "c6118b623586e89ebae29da85b86bbd54552fa6ac6c5ba5a73929a2500ef6ed1",
+      "dimensions": [
+        1024,
+        1024
+      ]
+    }
+  ],
+  "totalBytes": 13327487,
+  "cameraPathSha256": "E330D26A1FEA93B071F907E79DFD656FA03607AB6BAA468C11134328C4755219"
+}

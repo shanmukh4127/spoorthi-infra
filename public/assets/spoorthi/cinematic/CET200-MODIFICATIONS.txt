@@ -1,0 +1,13 @@
+Modified render asset derived from vmc-motion/cet200.
+Copyright 2026 VMC Motion Technologies Co., Ltd. Apache-2.0.
+
+Changes in this distribution:
+- Render-only static meshes are grouped by material to reduce draw calls.
+- Non-render collision geometry and manufacturer lettering are omitted.
+- The original detailed crawler belt is placed on both sides of the machine.
+- Paint and surface treatments are adapted for the illustrative environment.
+- Positions and normals use standard KHR_mesh_quantization. Visible mechanical
+  geometry is retained without triangle decimation.
+
+See CET200-LICENSE.txt and CET200-NOTICE.txt for the original license and notice.
+Preparation script: scripts/prepare-spoorthi-excavator.mjs.

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { PageContainer, SectionWrapper } from '../../components/layout/index.js'
 import { routePaths } from '../../data/routePaths.js'
 import { spoorthiProjectCollection } from '../../data/spoorthi/projectsPage.js'
+import SpoorthiHomeJourney from '../../components/spoorthi/SpoorthiHomeJourney.jsx'
 import '../../styles/spoorthi-home-structure.css'
 
 const paths = routePaths.spoorthi
@@ -34,14 +35,15 @@ function HomeLink({ to, children, secondary = false, className = '' }) {
 
 function SpoorthiHomePage() {
   return <div className="spoorthi-home">
-    <section className="sh-hero" aria-labelledby="home-title">
+    <SpoorthiHomeJourney />
+    <section id="spoorthi-home-content" tabIndex="-1" className="sh-hero" aria-labelledby="home-title">
       <PageContainer>
         <div className="sh-hero__intro">
           <div><Eyebrow>Architecture. Construction. Possibility.</Eyebrow><h1 id="home-title">Great spaces.<br /><em>Start with vision.</em></h1></div>
           <div className="sh-hero__aside"><p>From the first idea to the final detail, we bring design and construction together to create spaces with purpose.</p><HomeLink to={paths.contact}>Let’s build something</HomeLink></div>
         </div>
         <div className="sh-hero__image">
-          <img src="/assets/spoorthi/architecture.webp" alt="Architectural concept of a contemporary home with concrete planes, warm timber screens, and landscaped gardens at sunset" width="1536" height="1024" fetchPriority="high" loading="eager" />
+          <img src="/assets/spoorthi/architecture.webp" alt="Architectural concept of a contemporary home with concrete planes, warm timber screens, and landscaped gardens at sunset" width="1536" height="1024" loading="lazy" />
           <div className="sh-hero__image-caption"><span className="sh-image-label">A vision of considered living</span><span>Residential architecture · Concept study</span></div>
           <Link className="sh-hero__image-link" to={paths.design3d} aria-label="Explore our architectural design approach"><ArrowUpRight size={27} aria-hidden="true" /></Link>
           <span className="sh-hero__image-index" aria-hidden="true">01 — THE POSSIBILITIES</span>
