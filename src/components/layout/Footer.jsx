@@ -1,16 +1,18 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import PageContainer from './PageContainer.jsx'
 import BrandIdentity from './BrandIdentity.jsx'
 import { ArrowUpRight, ArrowUp } from 'lucide-react'
 import { contactPlaceholder } from '../../data/shared/contact.js'
 
 function Footer({ brand, navigation = [], config }) {
+  const { pathname } = useLocation()
+  const cinematicHome = brand.id === 'spoorthi' && pathname.replace(/\/$/, '') === '/spoorthi'
   const primaryCta = brand.primaryCta
   const exploreLinks = navigation.filter((item) => item.path !== primaryCta?.path)
 
   if (brand.id === 'spoorthi') return <footer className="spoorthi-footer"><PageContainer>
     <div className="spoorthi-footer__grid">
-      <div className="spoorthi-footer__about"><NavLink to={brand.routeBase} aria-label="Spoorthi Infra home"><BrandIdentity brand={brand} /></NavLink><p>Thoughtful architecture.<br />Purposeful construction.<br />Spaces for what comes next.</p></div>
+      <div className="spoorthi-footer__about"><NavLink to={brand.routeBase} aria-label="Spoorthi Infra home">{cinematicHome ? <img className="spoorthi-footer__official-logo" src="/assets/spoorthi/brand/official-logo-600.webp" alt="Spoorthi Infra" width="600" height="243" loading="lazy" /> : <BrandIdentity brand={brand} />}</NavLink><p>Thoughtful architecture.<br />Purposeful construction.<br />Spaces for what comes next.</p></div>
       <nav aria-label="Spoorthi Infra footer navigation"><h2>Explore Spoorthi</h2>{exploreLinks.map(item => <NavLink key={item.path} to={item.path} end={item.end}>{item.label}</NavLink>)}</nav>
       <div className="spoorthi-footer__contact"><h2>Let’s start a conversation</h2><p>Your next great space starts with an idea.</p>{contactPlaceholder.email && <a className="spoorthi-footer__email" href={`mailto:${contactPlaceholder.email}`}>{contactPlaceholder.email}</a>}<br /><NavLink className="spoorthi-footer__project" to={primaryCta.path}>Discuss your project <ArrowUpRight size={15} aria-hidden="true" /></NavLink></div>
     </div>

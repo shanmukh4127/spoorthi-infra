@@ -1,44 +1,45 @@
-import { ArrowDown, ArrowRight, ArrowUpRight, Building2, Check, Compass, Cuboid, Layers3 } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, Image as ImageIcon } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { PageContainer, SectionWrapper } from '../../components/layout/index.js'
 import { routePaths } from '../../data/routePaths.js'
 import { spoorthiProjectCollection } from '../../data/spoorthi/projectsPage.js'
+import { companyStory } from '../../data/spoorthi/companyStory.js'
 import SpoorthiHomeJourney from '../../components/spoorthi/SpoorthiHomeJourney.jsx'
 import '../../styles/spoorthi-home-structure.css'
 
 const paths = routePaths.spoorthi
 const ADMIN_STORAGE_KEY = 'spoorthi-admin-demo-v1'
 const services = [
-  { number: '01', icon: Building2, title: 'Civil construction', description: 'Bring your plans to life with a considered approach to structure, materials, and execution.', details: ['Residential & commercial', 'Structural planning', 'Construction coordination'], path: paths.civilConstruction },
-  { number: '02', icon: Compass, title: 'Architecture & planning', description: 'Thoughtful layouts that balance the way you live with the possibilities of your site.', details: ['Architectural concepts', '2D plans & layouts', 'Design development'], path: paths.design3d },
-  { number: '03', icon: Cuboid, title: '3D & spatial experiences', description: 'See the bigger picture. Explore form, finishes, and light before you move into construction.', details: ['3D visualization', 'Material exploration', 'Interactive spatial studies'], path: paths.vr },
+  { number: '01', title: 'Civil construction', description: 'Connect the layout, structure and architectural details with the space you want to create.', path: paths.civilConstruction },
+  { number: '02', title: 'Architecture & planning', description: 'Explore layouts, circulation, proportion and the relationships between spaces.', path: paths.design3d },
+  { number: '03', title: '3D & spatial experiences', description: 'Review form, material and light through visualization and an interactive concept study.', path: paths.vr },
 ]
 const process = [
-  { title: 'Listen & discover', description: 'We begin with your vision, your site, and what matters most to you.' },
-  { title: 'Plan & design', description: 'Translate the brief into practical plans and considered architectural ideas.' },
-  { title: 'Visualize & refine', description: 'Explore the space in 3D, review the details, and shape a shared direction.' },
-  { title: 'Build with clarity', description: 'Carry the design forward with coordinated drawings and clear execution intent.' },
+  ['Listen & discover', 'Begin with your vision, your site and what matters most to you.'],
+  ['Plan & design', 'Translate the brief into layouts and architectural ideas.'],
+  ['Visualize & refine', 'Explore scale, light and materials before the next decision.'],
+  ['Build with clarity', 'Connect the design direction with the physical structure.'],
 ]
 const faqs = [
-  { question: 'Where do I start with a new project?', answer: 'Start with a project brief. Share the project type, location, approximate area, and your priorities through our contact page. You can prepare a brief and email it directly to Spoorthi.' },
-  { question: 'Can I explore the design before construction?', answer: 'Yes. Our design journey connects 2D planning with 3D visualization so you can review layouts, proportions, and materials. The spatial experience page also includes an interactive concept study you can explore in your browser.' },
-  { question: 'How is the project cost determined?', answer: 'Cost depends on the location, area, scope, materials, and finish level. Use the project planner to organize your requirements, then request a quotation based on your specific brief.' },
-  { question: 'Are the images on this website completed projects?', answer: 'The current collection contains clearly labeled architectural concept studies and illustrative images. They demonstrate design ideas and are not presented as completed client projects.' },
+  ['Where do I start?', 'Share the project type, location, approximate area and your priorities through our contact page. You can prepare a brief and email it directly to Spoorthi.'],
+  ['Can I explore a design before construction?', 'The design pages connect 2D planning with 3D visualization. The spatial experience also includes an interactive concept study you can explore in your browser.'],
+  ['How is project cost determined?', 'Cost depends on location, area, scope, materials and finish level. Use the project planner to organize your requirements, then request a quotation based on your brief.'],
+  ['Are these completed client projects?', 'The current illustrated collection contains architectural concept studies. They demonstrate design ideas and are not presented as completed client projects.'],
 ]
 
 function Eyebrow({ children, number }) {
   return <p className="sh-eyebrow">{number && <span>{number} /</span>}{children}</p>
 }
-
-function HomeLink({ to, children, secondary = false, className = '' }) {
-  return <Link to={to} className={['sh-button', secondary ? 'sh-button--secondary' : '', className].filter(Boolean).join(' ')}>{children}<ArrowUpRight size={17} aria-hidden="true" /></Link>
+function HomeLink({ to, children }) {
+  return <Link to={to} className="sh-button">{children}<ArrowUpRight size={18} aria-hidden="true" /></Link>
 }
-
+function Pending({ children = 'Pending client confirmation' }) {
+  return <span className="sh-pending">{children}</span>
+}
 function readBrowserProjects() {
   try { return JSON.parse(window.localStorage.getItem(ADMIN_STORAGE_KEY))?.projects ?? [] } catch { return [] }
 }
-
 function mergeProjects(savedProjects) {
   const saved = savedProjects.filter((project) => project?.brand === 'Spoorthi Infra')
   const savedById = new Map(saved.map((project) => [project.id, project]))
@@ -48,7 +49,6 @@ function mergeProjects(savedProjects) {
 
 function SpoorthiHomePage() {
   const [savedProjects, setSavedProjects] = useState(() => readBrowserProjects())
-
   useEffect(() => {
     const syncBrowserProjects = () => setSavedProjects(readBrowserProjects())
     fetch('/api/admin/database')
@@ -58,60 +58,51 @@ function SpoorthiHomePage() {
     window.addEventListener('storage', syncBrowserProjects)
     return () => window.removeEventListener('storage', syncBrowserProjects)
   }, [])
-
   const projects = useMemo(() => mergeProjects(savedProjects), [savedProjects])
+  const founder = companyStory.founder
+  const founderReady = founder.approved && founder.name && founder.role && founder.biography
+  const milestones = companyStory.milestones.filter(item => item.approved && item.title)
 
   return <div className="spoorthi-home">
     <SpoorthiHomeJourney />
-    <section id="spoorthi-home-content" tabIndex="-1" className="sh-hero" aria-labelledby="home-title">
-      <PageContainer>
-        <div className="sh-hero__intro">
-          <div><Eyebrow>Architecture. Construction. Possibility.</Eyebrow><h1 id="home-title">Great spaces.<br /><em>Start with vision.</em></h1></div>
-          <div className="sh-hero__aside"><p>From the first idea to the final detail, we bring design and construction together to create spaces with purpose.</p><HomeLink to={paths.contact}>Let’s build something</HomeLink></div>
-        </div>
-        <div className="sh-hero__image">
-          <img src="/assets/spoorthi/architecture.webp" alt="Architectural concept of a contemporary home with concrete planes, warm timber screens, and landscaped gardens at sunset" width="1536" height="1024" loading="lazy" />
-          <div className="sh-hero__image-caption"><span className="sh-image-label">A vision of considered living</span><span>Residential architecture · Concept study</span></div>
-          <Link className="sh-hero__image-link" to={paths.design3d} aria-label="Explore our architectural design approach"><ArrowUpRight size={27} aria-hidden="true" /></Link>
-          <span className="sh-hero__image-index" aria-hidden="true">01 — THE POSSIBILITIES</span>
-        </div>
-        <div className="sh-hero__foot"><p><span className="sh-status-dot" />Thoughtfully designed. Purposefully built.</p><a href="#our-approach">Discover Spoorthi <ArrowDown size={14} aria-hidden="true" /></a></div>
-      </PageContainer>
-    </section>
+    <div className="sh-story">
+      <section id="spoorthi-home-content" tabIndex="-1" className="sh-founder" data-story-section="leadership" aria-labelledby="leadership-title">
+        <PageContainer>
+          <div className="sh-story-opening"><span>Spoorthi Infra / The company story</span><a href="#our-approach">From vision to built form <ArrowRight size={14} aria-hidden="true" /></a></div>
+          <div className="sh-founder__grid">
+            <figure className="sh-founder__portrait">
+              {founderReady && founder.portrait ? <img src={founder.portrait} alt={founder.portraitAlt || founder.name} width="800" height="1000" loading="lazy" /> : <div className="sh-portrait-pending"><ImageIcon size={30} strokeWidth={1} aria-hidden="true" /><span>Leadership portrait</span><small>Approved photograph pending</small></div>}
+              <figcaption>{founderReady ? founder.name : 'Founder & leadership'}<span>{founderReady ? founder.role : 'Profile awaiting client approval'}</span></figcaption>
+            </figure>
+            <div className="sh-founder__copy"><Eyebrow number="01">Founder & leadership</Eyebrow><h1 id="leadership-title">{founderReady ? founder.name : <>The people behind<br /><em>the vision.</em></>}</h1>
+              {founderReady ? <><p className="sh-lead">{founder.role}</p><p>{founder.biography}</p></> : <><p className="sh-lead">Every company story begins with its people.</p><p>The founder’s name, role and biography will be introduced here following client confirmation, alongside an approved portrait.</p><Pending /></>}
+              <a className="sh-text-link" href="#our-approach">Discover the Spoorthi approach <ArrowRight size={17} aria-hidden="true" /></a>
+            </div>
+          </div>
+        </PageContainer>
+      </section>
 
-    <SectionWrapper id="our-approach" className="sh-about">
-      <PageContainer><div className="sh-about__grid">
-        <div className="sh-about__visual"><img src="/assets/spoorthi/design-studio.webp" alt="Architectural model, drawings, and material samples on a design studio worktable" width="1536" height="1024" loading="lazy" /><div className="sh-about__visual-note"><Layers3 size={25} strokeWidth={1.3} aria-hidden="true" /><span>One vision.<br /><strong>Every detail connected.</strong></span></div></div>
-        <div className="sh-about__copy"><Eyebrow number="01">The Spoorthi approach</Eyebrow><h2>Good design is only<br />the <em>beginning.</em></h2><p>It takes clear planning, thoughtful decisions, and careful execution to turn an idea into a place that feels right.</p><p>At Spoorthi Infra, we connect architecture, visualization, and construction in one continuous journey. So the space you imagine stays at the heart of the space you build.</p><ul className="sh-checks">{['Design that responds to your life', 'Clarity before construction begins', 'A connected view from plan to built form'].map(item => <li key={item}><Check size={16} aria-hidden="true" />{item}</li>)}</ul><Link className="sh-text-link" to={paths.civilConstruction}>Get to know our approach <ArrowUpRight size={18} aria-hidden="true" /></Link></div>
-      </div></PageContainer>
-    </SectionWrapper>
+      <SectionWrapper id="our-approach" className="sh-about"><PageContainer>
+        <div data-story-section="about" className="sh-about__grid"><div><Eyebrow number="02">About Spoorthi</Eyebrow><h2>One idea.<br /><em>Every detail connected.</em></h2></div><div className="sh-about__copy"><p className="sh-lead">Architecture, visualization and construction in one continuous conversation.</p><p>Spoorthi Infra brings together planning, design exploration and civil construction. From a line on paper to the experience of a space, the focus is on understanding how form, structure and materials work together.</p><p>Explore the design studies, review the construction approach, or bring a project brief to begin a conversation.</p></div></div>
+        <figure className="sh-about__image"><img src="/assets/spoorthi/design-studio.webp" alt="Illustrative architectural model, drawings and material samples on a studio worktable" width="1536" height="1024" loading="lazy" /><figcaption>Plan / Form / Material / Space<span>Design process illustration</span></figcaption></figure>
+        <ol className="sh-process-grid">{process.map(([title, description], index) => <li key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{description}</p></li>)}</ol>
+      </PageContainer></SectionWrapper>
 
-    <SectionWrapper id="services" className="sh-services">
-      <PageContainer><div className="sh-section-head"><div><Eyebrow number="02">What we do</Eyebrow><h2>From a blank page.<br />To a <em>better place.</em></h2></div><p>Connected expertise for every stage of your project. Thoughtful in design. Practical in delivery.</p></div>
-        <div className="sh-service-grid">{services.map(({ icon: Icon, ...service }) => <Link className="sh-service" key={service.number} to={service.path}><div className="sh-service__top"><Icon size={31} strokeWidth={1.2} aria-hidden="true" /><span>{service.number}</span></div><h3>{service.title}</h3><p>{service.description}</p><ul>{service.details.map(detail => <li key={detail}>{detail}</li>)}</ul><span className="sh-service__link">Explore service <ArrowUpRight size={18} aria-hidden="true" /></span></Link>)}</div>
-      </PageContainer>
-    </SectionWrapper>
+      <SectionWrapper id="vision-mission" className="sh-purpose"><PageContainer><div data-story-section="purpose"><Eyebrow number="03">Vision & mission</Eyebrow><div className="sh-purpose__grid">{['vision', 'mission'].map((key, index) => <article key={key}><span className="sh-purpose__index">0{index + 1}</span><h2>Our <em>{key}.</em></h2>{companyStory[key].approved && companyStory[key].text ? <p>{companyStory[key].text}</p> : <><p>The official {key} statement will be published here once approved by the client.</p><Pending /></>}</article>)}</div></div></PageContainer></SectionWrapper>
 
-    <SectionWrapper id="projects" className="sh-projects">
-      <PageContainer><div className="sh-section-head"><div><Eyebrow number="03">Ideas taking shape</Eyebrow><h2>A closer look at<br />the <em>possibilities.</em></h2></div><Link to={paths.projects} className="sh-text-link">Explore the collection <ArrowUpRight size={18} aria-hidden="true" /></Link></div><p className="sh-projects__note">Architectural concept studies exploring structure, space, and the way we live.</p>
-        <div className="sh-project-grid">{projects.slice(0, 3).map((project, index) => <Link className="sh-project" key={project.id} to={paths.projects + '/' + project.id}><div className="sh-project__image"><img src={project.coverImage} alt={project.coverAlt || `${project.title} concept study`} width="1536" height="1024" loading="lazy" /><span className="sh-project__badge">Concept study</span><span className="sh-project__arrow"><ArrowUpRight size={23} aria-hidden="true" /></span></div><div className="sh-project__meta"><span>0{index + 1} / {project.category}</span><span>Spoorthi Infra</span></div><h3>{project.title}</h3></Link>)}</div>
-      </PageContainer>
-    </SectionWrapper>
+      <SectionWrapper id="milestones" className="sh-milestones"><PageContainer><div className="sh-milestones__grid" data-story-section="milestones"><div><Eyebrow number="04">Achievements & milestones</Eyebrow><h2>A story recorded<br /><em>with care.</em></h2></div><div className="sh-timeline">{milestones.length ? milestones.map((item, index) => <article key={`${item.title}-${index}`}><span>{item.date}</span><h3>{item.title}</h3><p>{item.description}</p></article>) : <article><Pending /><h3>Milestone record pending.</h3><p>Verified company milestones, credentials and achievements are awaiting client confirmation. Approved records will appear here with their dates and context.</p></article>}</div></div></PageContainer></SectionWrapper>
 
-    <SectionWrapper id="process" className="sh-process">
-      <PageContainer><div className="sh-section-head"><div><Eyebrow number="04">A clear way forward</Eyebrow><h2>Your vision.<br />A <em>considered journey.</em></h2></div><p>Great outcomes begin with a clear process. Here’s how an idea moves from conversation to construction.</p></div><ol className="sh-process-grid">{process.map((step, index) => <li key={step.title}><div className="sh-process__number"><span>0{index + 1}</span>{index < process.length - 1 && <ArrowRight size={18} aria-hidden="true" />}</div><h3>{step.title}</h3><p>{step.description}</p></li>)}</ol></PageContainer>
-    </SectionWrapper>
+      <SectionWrapper id="projects" className="sh-projects"><PageContainer><div data-story-section="projects"><div className="sh-section-head"><div><Eyebrow number="05">Featured projects & studies</Eyebrow><h2>Ideas with<br /><em>architectural presence.</em></h2></div><Link to={paths.projects} className="sh-text-link">View the collection <ArrowUpRight size={18} aria-hidden="true" /></Link></div><p className="sh-projects__note">The current featured collection is illustrative. These concept studies explore design possibilities and are not completed Spoorthi client projects.</p>
+        <div className="sh-project-grid">{projects.slice(0, 3).map((project, index) => <Link className="sh-project" key={project.id} to={paths.projects + '/' + project.id}><div className="sh-project__image"><img src={project.coverImage} alt={project.coverAlt || project.title} width="1536" height="1024" loading="lazy" /><span className="sh-project__badge">{project.isConcept ? 'Concept study' : 'Project record'}</span><span className="sh-project__arrow"><ArrowUpRight size={23} aria-hidden="true" /></span></div><div className="sh-project__meta"><span>0{index + 1} / {project.category}</span></div><h3>{project.title}</h3><p>{project.summary || project.description}</p></Link>)}</div></div>
+      </PageContainer></SectionWrapper>
 
-    <SectionWrapper className="sh-spatial">
-      <PageContainer><div className="sh-spatial__grid"><div className="sh-spatial__copy"><Eyebrow number="05">See it before you build it</Eyebrow><h2>Don’t just imagine<br />the space.<br /><em>Explore it.</em></h2><p>A drawing tells one part of the story. A spatial study helps you explore scale, light, and materials, bringing your future space into clearer view.</p><HomeLink to={paths.vr}>Explore the spatial experience</HomeLink><span className="sh-spatial__note">Interactive concept study · No headset needed</span></div><Link className="sh-spatial__image" to={paths.vr} aria-label="Open the interactive interior concept study"><img src="/assets/spoorthi/spatial.webp" alt="Warm contemporary interior concept with natural stone, timber, and a framed view into a light-filled room" width="1536" height="1024" loading="lazy" /><span><Cuboid size={18} aria-hidden="true" />Step into the details<ArrowUpRight size={21} aria-hidden="true" /></span></Link></div></PageContainer>
-    </SectionWrapper>
+      <SectionWrapper id="services" className="sh-capabilities"><PageContainer><div data-story-section="capabilities"><div className="sh-section-head"><div><Eyebrow number="06">Construction capabilities</Eyebrow><h2>From the plan.<br /><em>Into perspective.</em></h2></div><p>Explore the services presented across Spoorthi’s construction, design and spatial experience pages.</p></div><div className="sh-service-list">{services.map(service => <Link key={service.number} to={service.path}><span>{service.number}</span><h3>{service.title}</h3><p>{service.description}</p><ArrowUpRight size={24} strokeWidth={1.2} aria-hidden="true" /></Link>)}</div>
+        <div className="sh-spatial"><Link to={paths.vr} className="sh-spatial__image" aria-label="Explore the interactive spatial concept"><img src="/assets/spoorthi/spatial.webp" alt="Illustrative stone and timber interior framing a naturally lit room" width="1536" height="1024" loading="lazy" /></Link><div><Eyebrow>See it before you build it</Eyebrow><h3>Step into the details.</h3><p>Explore scale, light and materials in an interactive spatial concept. No headset needed.</p><Link to={paths.vr} className="sh-text-link">Explore the spatial experience <ArrowUpRight size={18} aria-hidden="true" /></Link></div></div>
+        <div className="sh-faq"><h3>Before we begin.</h3><div>{faqs.map(([question, answer]) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div></div></div>
+      </PageContainer></SectionWrapper>
 
-    <SectionWrapper id="questions" className="sh-faq">
-      <PageContainer><div className="sh-faq__grid"><div><Eyebrow number="06">A little more clarity</Eyebrow><h2>Big ideas.<br /><em>Practical questions.</em></h2><p>Every project begins with a conversation. Here are a few helpful places to start.</p><Link className="sh-text-link" to={paths.contact}>Talk through your project <ArrowUpRight size={18} aria-hidden="true" /></Link></div><div className="sh-faq__list">{faqs.map(faq => <details key={faq.question}><summary>{faq.question}<span aria-hidden="true" /></summary><p>{faq.answer}</p></details>)}</div></div></PageContainer>
-    </SectionWrapper>
-
-    <section className="sh-cta" aria-labelledby="cta-title"><PageContainer><div className="sh-cta__grid"><div><Eyebrow>A place to begin</Eyebrow><h2 id="cta-title">Your next chapter.<br /><em>Let’s build it together.</em></h2></div><div><p>A home, a workspace, or something entirely new. Bring your idea. We’ll help you find the way forward.</p><HomeLink to={paths.contact}>Start your project</HomeLink></div></div><div className="sh-cta__line" aria-hidden="true"><span /><span /><span /></div></PageContainer></section>
+      <section className="sh-contact" id="start-a-conversation" data-story-section="contact" aria-labelledby="contact-title"><PageContainer><Eyebrow number="07">A conversation is the first step</Eyebrow><div className="sh-contact__grid"><h2 id="contact-title">Space for<br /><em>your next idea.</em></h2><div><p>A site, a brief, or a question. Tell us what you have in mind and explore the next step with Spoorthi.</p><HomeLink to={paths.contact}>Discuss your project</HomeLink><span>Architecture / Construction / Spatial experience</span></div></div><div className="sh-brand-rule" aria-hidden="true"><i /><i /><i /><i /></div></PageContainer></section>
+    </div>
   </div>
 }
-
 export default SpoorthiHomePage

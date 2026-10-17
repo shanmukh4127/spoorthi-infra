@@ -83,6 +83,48 @@
         3600
       ],
       "changes": "Downsampled to responsive WebP files. No enlargement, synthetic content or recolouring."
+    },
+    {
+      "id": "beige_wall_001",
+      "type": "texture",
+      "source": "https://polyhaven.com/a/beige_wall_001",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://polyhaven.com/license",
+      "authors": {
+        "Dimitrios Savva": "Photography",
+        "Rico Cilliers": "Processing"
+      }
+    },
+    {
+      "id": "marble_01",
+      "type": "texture",
+      "source": "https://polyhaven.com/a/marble_01",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://polyhaven.com/license",
+      "authors": {
+        "Rob Tuytel": "All"
+      }
+    },
+    {
+      "id": "asphalt_02",
+      "type": "texture",
+      "source": "https://polyhaven.com/a/asphalt_02",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://polyhaven.com/license",
+      "authors": {
+        "Rob Tuytel": "All"
+      }
+    },
+    {
+      "id": "concrete_floor_worn_001",
+      "type": "texture",
+      "source": "https://polyhaven.com/a/concrete_floor_worn_001",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://polyhaven.com/license",
+      "authors": {
+        "Dimitrios Savva": "Photography",
+        "Rico Cilliers": "Processing"
+      }
     }
   ],
   "files": [
@@ -300,8 +342,264 @@
         1024,
         1024
       ]
+    },
+    {
+      "file": "barrier/barrier-optimized.bin",
+      "bytes": 175892,
+      "sha256": "4590fab92daf020741ff83dee48fc4d49068cffb8677cd7766ae7bab6a8e1e03"
+    },
+    {
+      "file": "barrier/barrier-optimized.gltf",
+      "bytes": 1796,
+      "sha256": "f060197e9a346af22245c2d9330e22e26660b2f14f95724c9caee5713a112c43"
+    },
+    {
+      "file": "textures/plaster-color.webp",
+      "bytes": 7028,
+      "sha256": "1db2150e210b28642acae764223b05fb37f3b364b10da1d575fd8be9b7294eae",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/beige_wall_001/beige_wall_001_diff_1k.jpg"
+    },
+    {
+      "file": "textures/plaster-color-512.webp",
+      "bytes": 1512,
+      "sha256": "43107102fc5bc4a5d1cfe3c308b5b9cf52c8c06199631aa6cb6988bacefb5180",
+      "dimensions": [
+        512,
+        512
+      ],
+      "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/beige_wall_001/beige_wall_001_diff_1k.jpg"
+    },
+    {
+      "file": "textures/plaster-normal.webp",
+      "bytes": 224260,
+      "sha256": "e2c09bca2386cb320f750225e38e6c8d6ac41b0c488a2333384eee2cd2fbedf1",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/beige_wall_001/beige_wall_001_nor_gl_1k.jpg"
+    },
+    {
+      "file": "textures/plaster-normal-512.webp",
+      "bytes": 36506,
+      "sha256": "072103acb7cdd0c2aad75ff40680436ea6532fbfe7a15264a22741423edf9c06",
+      "dimensions": [
+        512,
+        512
+      ],
+      "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/beige_wall_001/beige_wall_001_nor_gl_1k.jpg"
+    },
+    {
+      "file": "textures/plaster-arm.webp",
+      "bytes": 43852,
+      "sha256": "5408fde1517ec4d6c5289975922067e13385023cb9215631f5b8daf6e296bb2f",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/beige_wall_001/beige_wall_001_arm_1k.jpg"
+    },
+    {
+      "file": "textures/plaster-arm-512.webp",
+      "bytes": 10254,
+      "sha256": "db52be350339a68add2d9a75dc8ac9d3681d5503907d199077a565a167f2cdb3",
+      "dimensions": [
+        512,
+        512
+      ],
+      "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/beige_wall_001/beige_wall_001_arm_1k.jpg"
+    },
+    {
+      "file": "textures/stone-color.webp",
+      "bytes": 110556,
+      "sha256": "49b3b89932254dc703d84f3b2865bfcee7b65ce69192d9846c10582af5021f51",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/marble_01/marble_01_diff_1k.jpg"
+    },
+    {
+      "file": "textures/stone-color-512.webp",
+      "bytes": 23328,
+      "sha256": "f676a82800363af4154360d5f5e15e46631e60419d2e893441fd37ac0fec2bcb",
+      "dimensions": [
+        512,
+        512
+      ],
+      "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/marble_01/marble_01_diff_1k.jpg"
+    },
+    {
+      "file": "textures/stone-normal.webp",
+      "bytes": 25932,
+      "sha256": "f29e72849e289bf7470ee358e79db47fca03210de741edb1bbc60122391b6e93",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/marble_01/marble_01_nor_gl_1k.jpg"
+    },
+    {
+      "file": "textures/stone-normal-512.webp",
+      "bytes": 5498,
+      "sha256": "474cbb2bf7b8dd3ff35e9966a7bd92eab0047db523c7a6afe5004064d9cfae0c",
+      "dimensions": [
+        512,
+        512
+      ],
+      "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/marble_01/marble_01_nor_gl_1k.jpg"
+    },
+    {
+      "file": "textures/stone-arm.webp",
+      "bytes": 29864,
+      "sha256": "f00164d5e9088ec759773d02fb5186f123d8766dd4d7f80c8968d3a80c4ab5a0",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/marble_01/marble_01_arm_1k.jpg"
+    },
+    {
+      "file": "textures/stone-arm-512.webp",
+      "bytes": 11912,
+      "sha256": "46aa52269401f4fe6ea8d8067ab3337eb8f5fe218e3954a2ea62e44fc8e9672a",
+      "dimensions": [
+        512,
+        512
+      ],
+      "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/marble_01/marble_01_arm_1k.jpg"
+    },
+    {
+      "file": "textures/asphalt-color.webp",
+      "bytes": 490792,
+      "sha256": "b7bbb86e1179f3d2791005e477ca7602d022a051c49387f2359548f00e91abf1",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/asphalt_02/asphalt_02_diff_1k.jpg"
+    },
+    {
+      "file": "textures/asphalt-color-512.webp",
+      "bytes": 110112,
+      "sha256": "054f3b0c2956cbf0afe7c8668da2860d6621851baa2ab6dced3ab76babdc4c7d",
+      "dimensions": [
+        512,
+        512
+      ],
+      "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/asphalt_02/asphalt_02_diff_1k.jpg"
+    },
+    {
+      "file": "textures/asphalt-normal.webp",
+      "bytes": 593200,
+      "sha256": "a2e6dfd73f7c097e62dd793f17715b7937858edbd68353ec42b0c12389a43ce6",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/asphalt_02/asphalt_02_nor_gl_1k.jpg"
+    },
+    {
+      "file": "textures/asphalt-normal-512.webp",
+      "bytes": 127658,
+      "sha256": "3a17279382baef650c99c1f053857737a9554eecd6fbf7d45370a6156dce43cb",
+      "dimensions": [
+        512,
+        512
+      ],
+      "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/asphalt_02/asphalt_02_nor_gl_1k.jpg"
+    },
+    {
+      "file": "textures/asphalt-arm.webp",
+      "bytes": 351358,
+      "sha256": "c2271e8e2bb12b1e87c9220efdea50e3bbe9384839603e2c8b16e3722d3948de",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/asphalt_02/asphalt_02_arm_1k.jpg"
+    },
+    {
+      "file": "textures/asphalt-arm-512.webp",
+      "bytes": 98130,
+      "sha256": "943cbeb482e12109c70f59f3534914b641813e7afecf4f050c0a58ca75aaefbd",
+      "dimensions": [
+        512,
+        512
+      ],
+      "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/asphalt_02/asphalt_02_arm_1k.jpg"
+    },
+    {
+      "file": "textures/floor-color.webp",
+      "bytes": 83616,
+      "sha256": "b50a27bfcd63e786526c7fc03fccb6f285c02d9568cad7c1f7ed52f05d0857af",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/concrete_floor_worn_001/concrete_floor_worn_001_diff_1k.jpg"
+    },
+    {
+      "file": "textures/floor-color-512.webp",
+      "bytes": 22364,
+      "sha256": "d4f5b8367978f74d19f7cbe722b26e45f958d029f54a39f97377ef7bba0367f4",
+      "dimensions": [
+        512,
+        512
+      ],
+      "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/concrete_floor_worn_001/concrete_floor_worn_001_diff_1k.jpg"
+    },
+    {
+      "file": "textures/floor-normal.webp",
+      "bytes": 143584,
+      "sha256": "a6031a6a2268c5eab32065ed74882a37f2c6c610d358b4109e11f5fa4ecd71f2",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/concrete_floor_worn_001/concrete_floor_worn_001_nor_gl_1k.jpg"
+    },
+    {
+      "file": "textures/floor-normal-512.webp",
+      "bytes": 17764,
+      "sha256": "1bafff5940d452abf3177eb62070d3c5b44ab28d481cd802507f279c841bcf11",
+      "dimensions": [
+        512,
+        512
+      ],
+      "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/concrete_floor_worn_001/concrete_floor_worn_001_nor_gl_1k.jpg"
+    },
+    {
+      "file": "textures/floor-arm.webp",
+      "bytes": 122228,
+      "sha256": "9c03f51a9b1a2614c65467041de67b17094e1cee56140556e9655e17a51cdf50",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/concrete_floor_worn_001/concrete_floor_worn_001_arm_1k.jpg"
+    },
+    {
+      "file": "textures/floor-arm-512.webp",
+      "bytes": 36704,
+      "sha256": "14b8623472d9f6895c51703e1f8f476a0ae41bea043508d76ebaee3efc9b5ca8",
+      "dimensions": [
+        512,
+        512
+      ],
+      "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/concrete_floor_worn_001/concrete_floor_worn_001_arm_1k.jpg"
     }
   ],
-  "totalBytes": 13327487,
-  "cameraPathSha256": "E330D26A1FEA93B071F907E79DFD656FA03607AB6BAA468C11134328C4755219"
+  "totalBytes": 16233187,
+  "cameraPathSha256": "AAC26A32ED304294E008350C89879B2BC87D7146D06E82CE7C6A35BC508EFC59",
+  "barrierOptimization": {
+    "source": "concrete_road_barrier",
+    "originalTriangles": 60928,
+    "triangles": 7310,
+    "method": "Offline meshoptimizer with UV and normal preservation; original scan retained"
+  }
 }

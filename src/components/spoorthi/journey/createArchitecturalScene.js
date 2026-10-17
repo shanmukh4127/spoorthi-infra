@@ -4,29 +4,37 @@ import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js'
 import { RenderPass } from 'three/addons/postprocessing/RenderPass.js'
 import { GTAOPass } from 'three/addons/postprocessing/GTAOPass.js'
 import { OutputPass } from 'three/addons/postprocessing/OutputPass.js'
-import { applyJourneyCamera } from './cameraPath.js'
+import { applyJourneyCamera, originalJourneyEnd } from './cameraPath.js'
+import { homeJourney } from '../../../data/spoorthi/homeJourney.js'
 import { constructionLayout as site } from './constructionLayout.js'
 import { loadCinematicAssets } from './loadCinematicAssets.js'
 import { pbrProperties, applyWorldUv } from './physicalMaterials.js'
+import { extendConstruction } from './extendedConstruction.js'
+import { createFoliageTexture } from './foliageTexture.js'
+import { addFinalConstructionStages } from './finalConstructionStages.js'
 
 // One continuous civil-construction environment, in metres. This remains an
 // illustrative model, not a representation of a verified Spoorthi client site.
 // The existing renderer, on-demand drawing and scroll camera architecture stay.
-export async function createArchitecturalScene(host) {
-  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false, powerPreference: 'high-performance' })
+export async function createArchitecturalScene(host, onProgress, { signal } = {}) {
+  const compact = window.matchMedia('(max-width: 767px)').matches
+  const useScreenAo = !compact || ((navigator.deviceMemory ?? 0) >= 6 && navigator.hardwareConcurrency >= 6)
+  const renderer = new THREE.WebGLRenderer({ antialias: !compact, alpha: false, powerPreference: compact ? 'low-power' : 'high-performance' })
   const scene = new THREE.Scene()
-  const camera = new THREE.PerspectiveCamera(43, 1, .1, 280)
+  const camera = new THREE.PerspectiveCamera(43, 1, .1, compact ? 85 : 280)
   const resources = new Set()
   let disposed = false
+  let dirty = true
+  let lastProgress = -1
   const own = resource => { if (disposed) resource.dispose(); else resources.add(resource); return resource }
   const boxGeometry = own(new THREE.BoxGeometry(1, 1, 1))
-  const rodGeometry = own(new THREE.CylinderGeometry(1, 1, 1, 16))
+  const rodGeometry = own(new THREE.CylinderGeometry(1, 1, 1, compact ? 6 : 10))
   const batches = new Map()
   const matrix = new THREE.Object3D()
   const modelOrigin = new THREE.Vector3()
   const up = new THREE.Vector3(0, 1, 0)
   let environment
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.25))
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, compact ? 1 : 1.25))
   renderer.shadowMap.enabled = true
   renderer.shadowMap.type = THREE.PCFShadowMap
   renderer.shadowMap.autoUpdate = false
@@ -39,40 +47,85 @@ export async function createArchitecturalScene(host) {
   const dispose = () => {
     if (disposed) return
     disposed = true
+    signal?.removeEventListener('abort', dispose)
     resources.forEach(resource => resource.dispose())
     environment?.dispose()
     renderer.dispose()
     renderer.forceContextLoss()
     renderer.domElement.remove()
   }
+  signal?.addEventListener('abort', dispose, { once: true })
 
   try {
-    const assets = await loadCinematicAssets(own)
+    const assets = await loadCinematicAssets(own, progress => onProgress?.(progress * .8), { compact })
+    if (signal?.aborted) throw new DOMException('Scene cancelled', 'AbortError')
     const material = properties => own(new THREE.MeshStandardMaterial(properties))
-    const concrete = applyWorldUv(material({ color: '#ffffff', ...pbrProperties(assets.concrete, renderer, .7), roughness: .95 }), 3)
-    const cutConcrete = applyWorldUv(material({ color: '#e8e7e0', ...pbrProperties(assets.concrete, renderer, .45), roughness: .92 }), 3)
-    const white = material({ color: '#f5f4ef', roughness: .63 })
-    const soil = applyWorldUv(material({ color: '#e4dbc9', ...pbrProperties(assets.soil, renderer, .8), roughness: 1 }), 3.5)
-    const metalMaps = pbrProperties(assets.steel, renderer, .3)
-    const steel = applyWorldUv(material({ ...metalMaps, map: null, color: '#adb1b1', metalness: .9, roughness: .65 }), 1.8)
-    const rebar = applyWorldUv(material({ ...metalMaps, color: '#c5a58d', metalness: .72, roughness: .88 }), 1.8)
+    const concrete = applyWorldUv(material({ color: '#d5d2c9', ...pbrProperties(assets.concrete, renderer, .43), roughness: .96, metalness: 0 }), 3, { variation: .09, grain: .02, weathering: .19, minRoughness: .76 })
+    const cutConcrete = applyWorldUv(material({ ...pbrProperties(assets.floor, renderer, .28), map: null, color: '#c5c4bc', roughness: .95, metalness: 0 }), 3.2, { variation: .07, grain: .02, weathering: .13, minRoughness: .74 })
+    const white = applyWorldUv(material({ color: '#f5f2e9', ...pbrProperties(assets.plaster, renderer, .18), roughness: .94, metalness: 0 }), 2.5, { variation: .025, grain: .01, weathering: .03, minRoughness: .77 })
+    const soil = applyWorldUv(material({ color: '#e4d5be', ...pbrProperties(assets.soil, renderer, .65), roughness: 1, metalness: 0 }), 4.5, { variation: .15, grain: .025, minRoughness: .9 })
+    const brick = applyWorldUv(material({ color: '#b58365', ...pbrProperties(assets.plaster, renderer, .5), roughness: 1, metalness: 0 }), .7, { variation: .12, grain: .025, weathering: .12, minRoughness: .85 })
+    const metalMaps = pbrProperties(assets.steel, renderer, .16)
+    const servicePipe = applyWorldUv(material({ ...metalMaps, map: null, color: '#718489', metalness: .28, roughness: .58 }), .65, { variation: .025, grain: .015, minRoughness: .42 })
+    const steel = applyWorldUv(material({ ...metalMaps, map: null, color: '#929d9e', metalness: .94, roughness: .5 }), 1.3, { variation: .04, grain: .015, minRoughness: .32 })
+    const rebar = applyWorldUv(material({ ...metalMaps, color: '#9e8c77', metalness: .68, roughness: .88 }), 1.2, { variation: .09, grain: .02, weathering: .2, minRoughness: .66 })
     // Facet colours sampled from the official supplied Spoorthi logo.
-    const amber = material({ color: '#ee9c22', metalness: .25, roughness: .45 })
-    const orange = material({ color: '#e67926', metalness: .15, roughness: .53 })
+    const amber = applyWorldUv(material({ ...metalMaps, map: null, color: '#c99539', metalness: .07, roughness: .58 }), .8, { variation: .04, grain: .015, weathering: .14, minRoughness: .46 })
+    const orange = applyWorldUv(material({ ...metalMaps, map: null, color: '#bc783f', metalness: .06, roughness: .66 }), .8, { variation: .04, grain: .015, weathering: .15, minRoughness: .5 })
     const red = material({ color: '#d92927', roughness: .65 })
-    const formwork = applyWorldUv(material({ color: '#d1c5af', ...pbrProperties(assets.wood, renderer, .55), roughness: .95 }), .65)
-    const glazing = own(new THREE.MeshPhysicalMaterial({ color: '#b7ced5', metalness: .25, roughness: .085, clearcoat: 1, clearcoatRoughness: .08, envMapIntensity: 1.25, transparent: true, opacity: .63, depthWrite: false, side: THREE.DoubleSide }))
-    const deepGlazing = material({ color: '#34464e', metalness: .4, roughness: .28 })
-    const paving = material({ color: '#dedbd0', roughness: .9 })
-    const facadeStone = applyWorldUv(material({ color: '#e9e2d6', ...pbrProperties(assets.concrete, renderer, .16), roughness: .72 }), 2.4)
-    const facadeMetal = material({ color: '#555b5d', metalness: .78, roughness: .3 })
+    const formwork = applyWorldUv(material({ color: '#c6b293', ...pbrProperties(assets.wood, renderer, .4), roughness: .95 }), .65, { variation: .08, weathering: .2, minRoughness: .75 })
+    const timber = applyWorldUv(material({ color: '#d7ad76', ...pbrProperties(assets.wood, renderer, .24), roughness: .72 }), .8, { variation: .055, grain: .012, weathering: .035, minRoughness: .5 })
+    const glazing = own(new THREE.MeshPhysicalMaterial({ color: '#adc0bf', metalness: 0, roughness: .11, ior: 1.52, clearcoat: .4, clearcoatRoughness: .09, envMapIntensity: 1.05, transparent: true, opacity: .74, depthWrite: false, side: THREE.FrontSide }))
+    const finalGlazing = own(glazing.clone())
+    const deepGlazing = material({ color: '#263131', metalness: .04, roughness: .78 })
+    const paving = applyWorldUv(material({ color: '#e3dfd3', ...pbrProperties(assets.floor, renderer, .21), roughness: .95, metalness: 0 }), 3, { variation: .055, grain: .015, weathering: .06, minRoughness: .77 })
+    const asphalt = applyWorldUv(material({ color: '#a6aaa7', ...pbrProperties(assets.asphalt, renderer, .4), roughness: 1, metalness: 0 }), 3, { variation: .09, grain: .018, minRoughness: .88 })
+    const facadeStone = applyWorldUv(material({ color: '#e5decc', ...pbrProperties(assets.stone, renderer, .18), roughness: .85, metalness: 0 }), 2.8, { variation: .035, grain: .009, weathering: .025, minRoughness: .52 })
+    const facadeMetal = applyWorldUv(material({ ...metalMaps, map: null, color: '#424a49', metalness: .62, roughness: .45 }), .8, { variation: .025, grain: .012, minRoughness: .3 })
     const joint = material({ color: '#595952', roughness: .9 })
+    const rubber = material({ color: '#292b29', roughness: .96 })
+    const bark = applyWorldUv(material({ color: '#947c58', ...pbrProperties(assets.wood, renderer, .5), roughness: 1 }), .45, { variation: .12, grain: .02, minRoughness: .88 })
+    const foliageMap = own(createFoliageTexture())
+    const leaf = ['#e0ddc4', '#f0eed9', '#bdc5ab'].map(color => material({ color, map: foliageMap, roughness: .85, metalness: 0, alphaTest: .4, side: THREE.DoubleSide }))
     const rounded = new Map()
+    // Keep the scanned/CAD material assignments and authored UVs. Painted
+    // machinery is a dielectric coating; exposed rams remain polished metal.
+    assets.crane.traverse(mesh => {
+      if (!mesh.isMesh) return
+      for (const mat of Array.isArray(mesh.material) ? mesh.material : [mesh.material]) {
+        if (/paint/i.test(mat.name)) {
+          mat.color.set('#e4d3a7'); mat.metalness = .035; mat.roughness = .52
+        }
+        mat.envMapIntensity = .95
+      }
+    })
+
+    function batchModel(source, placements) {
+      const bounds = new THREE.Box3().setFromObject(source)
+      const center = bounds.getCenter(new THREE.Vector3())
+      for (const { at, angle = 0 } of placements) {
+        const placed = new THREE.Group()
+        const copy = source.clone(true)
+        copy.position.sub(new THREE.Vector3(center.x, bounds.min.y, center.z))
+        placed.add(copy); placed.position.set(...at); placed.rotation.y = angle
+        placed.updateMatrixWorld(true)
+        placed.traverse(mesh => {
+          if (!mesh.isMesh) return
+          const materials = Array.isArray(mesh.material) ? mesh.material : [mesh.material]
+          for (const mat of materials) for (const value of Object.values(mat)) if (value?.isTexture) value.anisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy())
+          const key = `${mesh.geometry.id}/${materials.map(mat => mat.id).join('_')}/true/${Math.floor(at[0] / 24)}/${Math.floor(at[2] / 24)}`
+          if (!batches.has(key)) batches.set(key, { geometry: mesh.geometry, mat: mesh.material, shadows: true, transforms: [] })
+          batches.get(key).transforms.push(mesh.matrixWorld.clone())
+        })
+      }
+    }
 
     // Static construction parts are instanced by geometry and material: detailed
     // reinforcement and scaffold tubes do not become hundreds of draw calls.
     function instance(geometry, mat, shadows = true) {
-      const key = `${geometry.id}/${mat.id}/${shadows}`
+      // Spatial batches allow the renderer to cull distant work areas rather
+      // than drawing every scaffold and steel tie for the entire itinerary.
+      const key = `${geometry.id}/${mat.id}/${shadows}/${Math.floor((matrix.position.x + modelOrigin.x) / 24)}/${Math.floor((matrix.position.z + modelOrigin.z) / 24)}`
       if (!batches.has(key)) batches.set(key, { geometry, mat, shadows, transforms: [] })
       matrix.position.add(modelOrigin)
       matrix.updateMatrix()
@@ -97,6 +150,10 @@ export async function createArchitecturalScene(host) {
       matrix.quaternion.setFromUnitVectors(up, direction.normalize())
       instance(rodGeometry, mat)
     }
+    function shape(geometry, size, at, mat, rotation = [0, 0, 0]) {
+      matrix.position.set(...at); matrix.scale.set(...size); matrix.rotation.set(...rotation)
+      instance(geometry, mat)
+    }
     const ribGeometry = own(new THREE.TorusGeometry(1, .07, 4, 12))
     function cage(x, z, bottom, top, width = .52) {
       const half = width / 2
@@ -113,32 +170,41 @@ export async function createArchitecturalScene(host) {
       }
     }
 
-    const pmrem = new THREE.PMREMGenerator(renderer)
+    const pmrem = own(new THREE.PMREMGenerator(renderer))
     environment = pmrem.fromEquirectangular(assets.hdr)
-    scene.environment = environment.texture; scene.environmentIntensity = .65
+    scene.environment = environment.texture; scene.environmentIntensity = .78
     scene.background = assets.background
     scene.backgroundRotation.y = scene.environmentRotation.y = Math.PI
     scene.backgroundIntensity = .95
-    pmrem.dispose()
-    scene.fog = new THREE.Fog('#e4e6df', 95, 230)
-    scene.add(new THREE.HemisphereLight('#d5e8f0', '#baa98e', .18))
+    // Mobile draws the current work area; natural haze conceals its shorter
+    // distance limit before detailed machines would enter the far clip plane.
+    scene.fog = new THREE.Fog('#dce2df', compact ? 55 : 125, compact ? 85 : 260)
+    scene.add(new THREE.HemisphereLight('#dce8ec', '#a28e73', .24))
     // Direction measured from the HDRI's brightest pixel, rotated with the map.
     const sunDirection = new THREE.Vector3(-.5904, .6851, .4267).normalize()
-    const sun = new THREE.DirectionalLight('#fff4e0', 2.2)
+    const sun = new THREE.DirectionalLight('#fff4e5', 1.85)
     sun.position.copy(sunDirection).multiplyScalar(65)
-    sun.target.position.set(-8, 0, -5)
-    sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048)
-    Object.assign(sun.shadow.camera, { left: -48, right: 48, top: 40, bottom: -40, near: 1, far: 160 })
-    sun.shadow.normalBias = .035; sun.shadow.bias = -.0002
+    sun.target.position.set(-16, 0, -12)
+    sun.position.add(sun.target.position)
+    sun.castShadow = true; sun.shadow.mapSize.set(compact ? 1024 : 2048, compact ? 1024 : 2048)
+    Object.assign(sun.shadow.camera, { left: -85, right: 85, top: 85, bottom: -85, near: .1, far: 210 })
+    sun.shadow.normalBias = .025; sun.shadow.bias = -.00015; sun.shadow.radius = 1.6
     scene.add(sun, sun.target); own(sun)
 
     // Excavation: the ground is divided around the opening, so the foundations
     // are genuinely below grade and visible rather than buried inside a plane.
     box([360, .4, 360], [0, -1.85, 0], soil, 0, false)
     box([163, 1.45, 360], [-98.5, -.92, 0], soil, 0, false)
-    box([163, 1.45, 360], [98.5, -.92, 0], soil, 0, false)
+    // Retain the original ground around the new open utilities corridor.
+    box([18, 1.45, 360], [26, -.92, 0], soil, 0, false)
+    box([124, 1.45, 360], [118, -.92, 0], soil, 0, false)
+    box([21, 1.45, 197], [45.5, -.92, -81.5], soil, 0, false)
+    box([21, 1.45, 157], [45.5, -.92, 101.5], soil, 0, false)
     box([34, 1.45, 163], [0, -.92, -97.5], soil, 0, false)
-    box([34, 1.45, 163], [0, -.92, 99.5], soil, 0, false)
+    // Cut out a second genuine excavation on the approach (x -3..17, z 23..43).
+    box([34, 1.45, 139], [0, -.92, 112.5], soil, 0, false)
+    box([14, 1.45, 26], [-10, -.92, 30], soil, 0, false)
+    box([20, 1.45, 6], [7, -.92, 20], soil, 0, false)
     box([26.4, .25, 20.4], [0, -.13, -3], concrete)
     for (const x of site.columnsX) for (const z of [...site.structuralRowsZ, 9]) {
       box([2.7, .42, 2.7], [x, -1.4, z], cutConcrete)
@@ -193,47 +259,42 @@ export async function createArchitecturalScene(host) {
       for (const offset of [.6, 1.1]) rod([15.1, y + offset, -11], [15.1, y + offset, 5], .024, steel)
     }
 
-    // Tower crane: lattice mast, counterweight, jib, trolley, cable and load.
-    const craneX = -19; const craneZ = 10
-    box([3.8, .9, 3.8], [craneX, -.1, craneZ], concrete)
-    for (const dx of [-.55, .55]) for (const dz of [-.55, .55]) rod([craneX + dx, .3, craneZ + dz], [craneX + dx, 24, craneZ + dz], .085, amber)
-    for (let y = 1; y < 24; y += 2) {
-      for (const dz of [-.55, .55]) {
-        rod([craneX - .55, y, craneZ + dz], [craneX + .55, y + 2, craneZ + dz], .045, amber)
-        rod([craneX - .55, y + 2, craneZ + dz], [craneX + .55, y, craneZ + dz], .045, amber)
-      }
-      for (const dx of [-.55, .55]) rod([craneX + dx, y, craneZ - .55], [craneX + dx, y + 2, craneZ + .55], .045, amber)
-    }
-    box([38, .32, 1.15], [-9, 24.1, craneZ], amber)
-    rod([-28, 25.1, craneZ], [10, 25.1, craneZ], .06, amber)
-    for (let x = -28; x < 10; x += 2) {
-      rod([x, 24.2, craneZ], [x + 1, 25.1, craneZ], .04, amber)
-      rod([x + 1, 25.1, craneZ], [x + 2, 24.2, craneZ], .04, amber)
-    }
-    box([3.2, 1.1, 1.8], [-26, 24.5, craneZ], concrete)
-    box([1.3, 1.35, 1.35], [-17.8, 23.7, craneZ], white)
-    box([.04, .85, 1.1], [-17.12, 23.8, craneZ], deepGlazing)
-    rod([-19, 28.2, craneZ], [-19, 24.3, craneZ], .09, amber)
-    rod([-19, 28.2, craneZ], [8, 24.3, craneZ], .035, steel)
-    rod([-19, 28.2, craneZ], [-27, 24.3, craneZ], .035, steel)
-    rod([-6, 24, craneZ], [-6, 13.3, craneZ], .023, steel)
-    box([.45, .55, .35], [-6, 13.2, craneZ], orange)
-    rod([-6, 13, craneZ], [-7.5, 11.8, craneZ], .024, steel)
-    rod([-6, 13, craneZ], [-4.5, 11.8, craneZ], .024, steel)
-    box([4.2, .9, 1.3], [-6, 11.3, craneZ], concrete)
+    // Downloaded CC0 crane: lattice, ladders, slew ring, cab, winches,
+    // handrails, counterweights, trolley and hoist. No mesh decimation.
+    batchModel(assets.crane, [{ at: [-8, -.2, 10] }])
 
+    // Scanned site props retain their original metre scale; repeated bags
+    // and perimeter panels share geometry/materials through instancing.
+    const cementPlacements = []
+    for (let layer = 0; layer < 4; layer++) for (let x = 0; x < 3; x++) for (let z = 0; z < 2; z++) cementPlacements.push({ at: [-10.5 + x * .48, .01 + layer * .175, 5 + z * .7], angle: layer % 2 ? Math.PI : 0 })
+    batchModel(assets.cement, cementPlacements)
+    batchModel(assets.generator, [{ at: [11, .02, 5.3], angle: -.4 }])
+    const fencePanel = assets.fence.getObjectByName('modular_chainlink_fence_double')
+    const fencePost = assets.fence.getObjectByName('modular_chainlink_fence_post')
+    const panels = []; const posts = []
+    for (let z = -18; z <= 18; z += 1.95) {
+      panels.push({ at: [30, -.14, z], angle: Math.PI / 2 })
+      posts.push({ at: [30, -.2, z - .975] })
+    }
+    batchModel(fencePanel, panels); batchModel(fencePost, posts)
     // Licensed CAD-derived machine replaces every box-built excavator part.
     // Full tracks, hydraulic rams, pivots, cab, counterweight and bucket retained.
     assets.excavator.traverse(mesh => {
       if (!mesh.isMesh) return
-      const mat = mesh.material
+      let mat = mesh.material
       if (mesh.name === 'glass') {
-        mesh.material = own(new THREE.MeshPhysicalMaterial({ color: '#7c969f', metalness: .22, roughness: .1, clearcoat: 1, envMapIntensity: 1.2 }))
+        mesh.material = own(new THREE.MeshPhysicalMaterial({ color: '#61797d', metalness: .04, roughness: .12, ior: 1.52, clearcoat: .4, envMapIntensity: 1.05 }))
+      } else if (mesh.name === 'chrome') {
+        mat.color.set('#bcc4c4'); mat.metalness = 1; mat.roughness = .18; mat.envMapIntensity = 1.1
       } else {
+        if (mesh.name === 'paint') {
+          mat = own(new THREE.MeshPhysicalMaterial({ color: '#d1a13d', metalness: .06, roughness: .56, clearcoat: .22, clearcoatRoughness: .35 }))
+          mesh.material = mat
+        }
         mat.roughnessMap = assets.steel.arm
         mat.normalMap = assets.steel.normal
-        mat.normalScale = new THREE.Vector2(.13, .13)
-        applyWorldUv(mat, .85)
+        mat.normalScale = new THREE.Vector2(.1, .1)
+        applyWorldUv(mat, .85, { variation: .045, grain: .018, weathering: .35, minRoughness: mesh.name === 'paint' ? .46 : .52 })
       }
       if (!mesh.geometry.attributes.uv) mesh.geometry.setAttribute('uv', new THREE.BufferAttribute(new Float32Array(mesh.geometry.attributes.position.count * 2), 2))
     })
@@ -312,11 +373,18 @@ export async function createArchitecturalScene(host) {
     }
     box([3.4, .07, .15], [-28, 3.05, -16.12], facadeMetal)
     for (const x of [-31.3, -24.7]) box([.19, 3.7, .19], [x, 1.85, -13.7], cutConcrete)
-    for (let x = -37; x < -33; x += .55) box([.1, 11.7, .42], [x, 6, -16.1], amber)
+    for (let x = -37; x < -33; x += .55) box([.1, 11.7, .42], [x, 6, -16.1], timber)
     box([9, .06, 8.5], [buildingX, -.07, -12], paving)
     for (let z = -15; z < -7; z += 1.5) box([9, .009, .018], [buildingX, -.03, z], steel, 0, false)
     for (let i = 0; i < 3; i++) box([8.5, .11, .45], [buildingX, -.15 + i * .1, -12.6 - i * .45], cutConcrete)
     modelOrigin.set(0, 0, 0)
+
+    extendConstruction({ box, rod, cage, batchModel, shape, own, assets, compact,
+      materials: { concrete, cutConcrete, soil, steel, rebar, formwork, timber, asphalt, amber, orange, white, glazing, facadeMetal, facadeStone, paving, joint, rubber, leaf, bark },
+    })
+    addFinalConstructionStages({ box, rod, shape, batchModel, own, assets, compact,
+      materials: { concrete, cutConcrete, steel, formwork, timber, amber, orange, white, glazing: finalGlazing, deepGlazing, facadeStone, facadeMetal, paving, joint, soil, brick, servicePipe, rubber, leaf, bark },
+    })
 
     // A photographed clear-day sky supplies coherent light and distant context,
     // rather than unrelated apartment imagery or block-shaped city placeholders.
@@ -327,25 +395,63 @@ export async function createArchitecturalScene(host) {
       mesh.castShadow = shadows; mesh.receiveShadow = true
       mesh.computeBoundingSphere(); scene.add(mesh)
     }
-    const renderTarget = new THREE.WebGLRenderTarget(1, 1, { type: THREE.HalfFloatType, samples: Math.min(2, renderer.capabilities.maxSamples) })
+    // Two static reflection probes capture the actual neighbouring architecture,
+    // ground, trees and equipment. Bake once while loading, never during scroll.
+    const shadowEnabled = renderer.shadowMap.enabled
+    renderer.shadowMap.enabled = false
+    glazing.visible = finalGlazing.visible = false
+    try {
+      for (const [index, [glass, at]] of [[glazing, [-42, 6, -21]], [finalGlazing, [35.5, 6, -25]]].entries()) {
+        const target = own(new THREE.WebGLCubeRenderTarget(compact ? 64 : 128, { type: THREE.HalfFloatType, generateMipmaps: true, minFilter: THREE.LinearMipmapLinearFilter }))
+        const probe = new THREE.CubeCamera(.3, 70, target)
+        probe.position.set(...at)
+        probe.update(renderer, scene)
+        const reflection = own(pmrem.fromCubemap(target.texture))
+        glass.envMap = reflection.texture
+        glass.needsUpdate = true
+        onProgress?.(.8 + (index + 1) * .025)
+      }
+    } finally {
+      glazing.visible = finalGlazing.visible = true
+      renderer.shadowMap.enabled = shadowEnabled
+    }
+    const renderTarget = new THREE.WebGLRenderTarget(1, 1, { type: THREE.HalfFloatType, samples: compact ? 0 : Math.min(2, renderer.capabilities.maxSamples) })
     const composer = own(new EffectComposer(renderer, renderTarget))
     composer.addPass(own(new RenderPass(scene, camera)))
-    const ambientOcclusion = own(new GTAOPass(scene, camera, 1, 1, undefined, { radius: .65, thickness: .75, distanceFallOff: 1, samples: 8 }, { radius: 4, samples: 8 }))
-    ambientOcclusion.blendIntensity = .42
-    composer.addPass(ambientOcclusion)
+    const ambientOcclusion = own(new GTAOPass(scene, camera, 1, 1, undefined, { radius: .45, thickness: .6, distanceFallOff: 1, samples: compact ? 4 : 8 }, { radius: 4, samples: compact ? 4 : 8 }))
+    ambientOcclusion.blendIntensity = compact ? .28 : .48
+    if (useScreenAo) composer.addPass(ambientOcclusion)
     composer.addPass(own(new OutputPass()))
     function resize() {
       if (disposed) return
+      dirty = true
       const { width, height } = host.getBoundingClientRect()
       renderer.setSize(Math.max(1, width), Math.max(1, height), false)
       camera.aspect = width / Math.max(1, height); camera.updateProjectionMatrix()
       composer.setSize(Math.max(1, width), Math.max(1, height))
       const ratio = renderer.getPixelRatio()
-      ambientOcclusion.setSize(Math.max(1, Math.round(width * ratio * .65)), Math.max(1, Math.round(height * ratio * .65)))
+      const aoScale = compact ? .35 : .65
+      ambientOcclusion.setSize(Math.max(1, Math.round(width * ratio * aoScale)), Math.max(1, Math.round(height * ratio * aoScale)))
     }
     function update(progress) {
-      if (disposed) return
+      if (disposed || (!dirty && progress === lastProgress)) return
+      dirty = false
+      lastProgress = progress
       applyJourneyCamera(camera, progress)
+      // A subtle late-afternoon warmth develops toward the final reveal.
+      // All lighting is a function of scroll, so reverse travel is identical.
+      const finish = THREE.MathUtils.smoothstep(Math.min(1, progress / originalJourneyEnd), .7, 1)
+      renderer.toneMappingExposure = .9 + finish * .045
+      sun.color.setRGB(1, .94 - finish * .035, .84 - finish * .07)
+      // Original lighting stays unchanged through chapter 12. The same sun
+      // follows the added campus with its direction and shadow quality intact.
+      const shadowX = -16 + THREE.MathUtils.smoothstep(progress, originalJourneyEnd, .7) * 66
+      if (sun.target.position.x !== shadowX) {
+        sun.target.position.x = shadowX
+        sun.position.copy(sunDirection).multiplyScalar(65).add(sun.target.position)
+        sun.target.updateMatrixWorld()
+        renderer.shadowMap.needsUpdate = true
+      }
       const started = performance.now()
       renderer.info.reset()
       composer.render()
@@ -357,10 +463,24 @@ export async function createArchitecturalScene(host) {
       canvas.dataset.drawCalls = renderer.info.render.calls
       canvas.dataset.triangles = renderer.info.render.triangles
       canvas.dataset.renderMs = (performance.now() - started).toFixed(2)
+      canvas.dataset.quality = compact ? 'mobile' : 'desktop'
+      canvas.dataset.materialProfile = 'architectural-pbr-v2'
+      canvas.dataset.reflectionProbes = '2'
+      canvas.dataset.ambientOcclusion = useScreenAo ? 'gtao-and-material' : 'material'
     }
     resize(); applyJourneyCamera(camera, 0)
     await renderer.compileAsync(scene, camera)
+    if (disposed) throw new DOMException('Scene cancelled', 'AbortError')
     renderer.shadowMap.needsUpdate = true
+    // Upload distant geometry and warm material/postprocessing variants while
+    // the poster is visible. Entering a new area must not stall the first frame.
+    const chapters = homeJourney.stages.length
+    for (let chapter = 0; chapter < chapters; chapter++) {
+      if (disposed) throw new DOMException('Scene cancelled', 'AbortError')
+      update((chapter + .5) / chapters)
+      onProgress?.(.85 + (chapter + 1) / chapters * .15)
+      await new Promise(resolve => requestAnimationFrame(resolve))
+    }
     update(0)
     return { resize, update, dispose }
   } catch (error) {

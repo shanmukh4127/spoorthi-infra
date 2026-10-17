@@ -7,14 +7,34 @@ import '../../styles/spoorthi-cinematic-tokens.css'
 import '../../styles/spoorthi-cinematic-header.css'
 
 function OfficialLogo() {
-  return <img src="/assets/spoorthi/brand/official-logo-600.webp" srcSet="/assets/spoorthi/brand/official-logo-600.webp 600w, /assets/spoorthi/brand/official-logo-1200.webp 1200w" sizes="(max-width: 540px) 150px, 196px" alt="Spoorthi Infra" width="600" height="243" />
+  return <img src="/assets/spoorthi/brand/official-logo-600.webp" srcSet="/assets/spoorthi/brand/official-logo-600.webp 600w, /assets/spoorthi/brand/official-logo-1200.webp 1200w" sizes="(max-width: 767px) 110px, 136px" alt="Spoorthi Infra" width="600" height="243" />
 }
 
 export default function SpoorthiCinematicHeader() {
   const [open, setOpen] = useState(false)
+  const [overScene, setOverScene] = useState(true)
   const dialog = useRef(null)
   const trigger = useRef(null)
+  const header = useRef(null)
   const id = useId()
+  useEffect(() => {
+    const journey = document.querySelector('.si-journey')
+    if (!journey) return
+    const update = () => {
+      // A queued observer/scroll callback can arrive during route teardown.
+      if (!header.current || !journey.isConnected) return
+      setOverScene(!journey.classList.contains('si-journey--static') && journey.getBoundingClientRect().bottom > header.current.getBoundingClientRect().height)
+    }
+    const observer = new IntersectionObserver(update, { rootMargin: '-76px 0px 0px 0px' })
+    const mode = new MutationObserver(update)
+    observer.observe(journey)
+    mode.observe(journey, { attributes: true, attributeFilter: ['class'] })
+    // Native scrolling also covers the small mobile/desktop header-height difference.
+    window.addEventListener('scroll', update, { passive: true })
+    window.addEventListener('resize', update)
+    update()
+    return () => { observer.disconnect(); mode.disconnect(); window.removeEventListener('scroll', update); window.removeEventListener('resize', update) }
+  }, [])
   useEffect(() => {
     if (!open) return
     const panel = dialog.current
@@ -29,7 +49,7 @@ export default function SpoorthiCinematicHeader() {
       menuTrigger?.focus({ preventScroll: true })
     }
   }, [open])
-  return <header className="si-cinematic-header">
+  return <header ref={header} className={`si-cinematic-header${overScene ? ' si-cinematic-header--over-scene' : ''}`}>
     <Link className="si-official-logo" to={routePaths.spoorthi.home} aria-label="Spoorthi Infra home"><OfficialLogo /></Link>
     <button className="si-menu-trigger" ref={trigger} type="button" onClick={() => setOpen(true)} aria-label="Open Spoorthi navigation" aria-expanded={open} aria-controls={id}><span>Menu</span><i><Menu size={20} strokeWidth={1.5} aria-hidden="true" /></i></button>
     <dialog id={id} ref={dialog} className="si-menu-overlay" aria-labelledby={`${id}-title`} onCancel={() => setOpen(false)} onClose={() => setOpen(false)}>
