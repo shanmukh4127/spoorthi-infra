@@ -19,7 +19,10 @@
   --brand-section-standard: clamp(4rem, 7.5vw, 7.5rem);
 }
 [data-brand='spoorthi'] .brand-header { background: #f8f8f2f0; border-color: #dce0d3; }
-[data-brand='spoorthi'] .brand-header__inner { min-height: 5.3rem; max-width: 1440px; }
+[data-brand='spoorthi'] .brand-header { transition: background-color .35s ease, border-color .35s ease, box-shadow .35s ease; }
+[data-brand='spoorthi'] .brand-header__inner { min-height: 5.3rem; max-width: 1440px; transition: min-height .35s ease; }
+[data-brand='spoorthi'] .brand-header.is-scrolled { background: #f8f8f2f8; border-color: #cfd6c5; box-shadow: 0 .55rem 1.5rem #263e3212; }
+[data-brand='spoorthi'] .brand-header.is-scrolled .brand-header__inner { min-height: 4.35rem; }
 .spoorthi-identity { display: inline-flex; align-items: center; gap: .6rem; color: #263e32; }
 .spoorthi-identity__mark { width: 2.4rem; height: 2.4rem; background: #263e32; color: #f3f4e9; }
 .spoorthi-identity__wordmark { display: grid; gap: .15rem; }
@@ -31,6 +34,8 @@
 [data-brand='spoorthi'] .brand-header__navigation .brand-header__cta { color: #fff; background: #263e32; padding: .65rem 1.1rem; margin-left: .3rem; gap: 1.3rem; }
 [data-brand='spoorthi'] .brand-header__navigation .brand-header__cta::after { display: none; }
 [data-brand='spoorthi'] .brand-header__navigation .brand-header__cta:hover { background: #162b20; }
+[data-brand='spoorthi'] .brand-header__admin { color: #657060; }
+[data-brand='spoorthi'] .brand-header__admin:hover, [data-brand='spoorthi'] .brand-header__admin:focus-visible { color: #263e32; }
 [data-brand='spoorthi'] .page-shell__main { background: #f8f8f2; outline: none; }
 [data-brand='spoorthi'] .mobile-navigation__panel { min-width: min(20rem, calc(100vw - 2.5rem)); padding: 1rem; background: #f8f8f2; box-shadow: 0 12px 30px #20372b15; }
 [data-brand='spoorthi'] .mobile-navigation__panel > a { display: flex; align-items: center; padding: .55rem .75rem; min-height: 2.75rem; font-size: .86rem; border-bottom: 1px solid #e4e7da; }

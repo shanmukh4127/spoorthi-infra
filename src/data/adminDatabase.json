@@ -1,0 +1,64 @@
+{
+  "projects": [
+    {
+      "id": "local-1792174663052",
+      "title": "shannu",
+      "category": "residential",
+      "brand": "Spoorthi Infra",
+      "status": "Published",
+      "coverImage": "/assets/spoorthi/architecture.webp"
+    }
+  ],
+  "services": [
+    {
+      "name": "Civil construction",
+      "type": "Core service",
+      "status": "Published",
+      "enquiries": 12,
+      "color": "green"
+    },
+    {
+      "name": "Architecture & planning",
+      "type": "Design service",
+      "status": "Published",
+      "enquiries": 8,
+      "color": "sand"
+    },
+    {
+      "name": "3D & spatial experiences",
+      "type": "Experience",
+      "status": "Published",
+      "enquiries": 5,
+      "color": "blue"
+    }
+  ],
+  "enquiries": [
+    {
+      "name": "Ananya Rao",
+      "subject": "Residential construction",
+      "date": "Today, 10:42 AM",
+      "status": "Replied",
+      "initials": "AR"
+    },
+    {
+      "name": "Kiran Buildworks",
+      "subject": "Commercial planning brief",
+      "date": "Yesterday, 4:18 PM",
+      "status": "Replied",
+      "initials": "KB"
+    },
+    {
+      "name": "Meera & Arjun",
+      "subject": "3D visualisation enquiry",
+      "date": "16 Oct, 11:05 AM",
+      "status": "Replied",
+      "initials": "MA"
+    }
+  ],
+  "settings": {
+    "showDemoNotices": true,
+    "compactMode": false,
+    "defaultBrand": "all"
+  },
+  "initialized": true
+}

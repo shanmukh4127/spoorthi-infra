@@ -1,4 +1,5 @@
 import { ArrowDown, ArrowRight, ArrowUpRight, Building2, Check, Compass, Cuboid, Layers3 } from 'lucide-react'
+import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { PageContainer, SectionWrapper } from '../../components/layout/index.js'
 import { routePaths } from '../../data/routePaths.js'
@@ -7,6 +8,7 @@ import SpoorthiHomeJourney from '../../components/spoorthi/SpoorthiHomeJourney.j
 import '../../styles/spoorthi-home-structure.css'
 
 const paths = routePaths.spoorthi
+const ADMIN_STORAGE_KEY = 'spoorthi-admin-demo-v1'
 const services = [
   { number: '01', icon: Building2, title: 'Civil construction', description: 'Bring your plans to life with a considered approach to structure, materials, and execution.', details: ['Residential & commercial', 'Structural planning', 'Construction coordination'], path: paths.civilConstruction },
   { number: '02', icon: Compass, title: 'Architecture & planning', description: 'Thoughtful layouts that balance the way you live with the possibilities of your site.', details: ['Architectural concepts', '2D plans & layouts', 'Design development'], path: paths.design3d },
@@ -33,7 +35,32 @@ function HomeLink({ to, children, secondary = false, className = '' }) {
   return <Link to={to} className={['sh-button', secondary ? 'sh-button--secondary' : '', className].filter(Boolean).join(' ')}>{children}<ArrowUpRight size={17} aria-hidden="true" /></Link>
 }
 
+function readBrowserProjects() {
+  try { return JSON.parse(window.localStorage.getItem(ADMIN_STORAGE_KEY))?.projects ?? [] } catch { return [] }
+}
+
+function mergeProjects(savedProjects) {
+  const saved = savedProjects.filter((project) => project?.brand === 'Spoorthi Infra')
+  const savedById = new Map(saved.map((project) => [project.id, project]))
+  const base = spoorthiProjectCollection.map((project) => ({ ...project, ...savedById.get(project.id) }))
+  return [...base, ...saved.filter((project) => !spoorthiProjectCollection.some((baseProject) => baseProject.id === project.id))]
+}
+
 function SpoorthiHomePage() {
+  const [savedProjects, setSavedProjects] = useState(() => readBrowserProjects())
+
+  useEffect(() => {
+    const syncBrowserProjects = () => setSavedProjects(readBrowserProjects())
+    fetch('/api/admin/database')
+      .then((response) => response.ok ? response.json() : Promise.reject(new Error('Admin data unavailable')))
+      .then((data) => setSavedProjects(Array.isArray(data.projects) ? data.projects : []))
+      .catch(() => setSavedProjects(readBrowserProjects()))
+    window.addEventListener('storage', syncBrowserProjects)
+    return () => window.removeEventListener('storage', syncBrowserProjects)
+  }, [])
+
+  const projects = useMemo(() => mergeProjects(savedProjects), [savedProjects])
+
   return <div className="spoorthi-home">
     <SpoorthiHomeJourney />
     <section id="spoorthi-home-content" tabIndex="-1" className="sh-hero" aria-labelledby="home-title">
@@ -67,7 +94,7 @@ function SpoorthiHomePage() {
 
     <SectionWrapper id="projects" className="sh-projects">
       <PageContainer><div className="sh-section-head"><div><Eyebrow number="03">Ideas taking shape</Eyebrow><h2>A closer look at<br />the <em>possibilities.</em></h2></div><Link to={paths.projects} className="sh-text-link">Explore the collection <ArrowUpRight size={18} aria-hidden="true" /></Link></div><p className="sh-projects__note">Architectural concept studies exploring structure, space, and the way we live.</p>
-        <div className="sh-project-grid">{spoorthiProjectCollection.slice(0, 3).map((project, index) => <Link className="sh-project" key={project.id} to={paths.projects + '/' + project.id}><div className="sh-project__image"><img src={project.coverImage} alt={project.coverAlt} width="1536" height="1024" loading="lazy" /><span className="sh-project__badge">Concept study</span><span className="sh-project__arrow"><ArrowUpRight size={23} aria-hidden="true" /></span></div><div className="sh-project__meta"><span>0{index + 1} / {project.category}</span><span>Spoorthi Infra</span></div><h3>{project.title}</h3></Link>)}</div>
+        <div className="sh-project-grid">{projects.slice(0, 3).map((project, index) => <Link className="sh-project" key={project.id} to={paths.projects + '/' + project.id}><div className="sh-project__image"><img src={project.coverImage} alt={project.coverAlt || `${project.title} concept study`} width="1536" height="1024" loading="lazy" /><span className="sh-project__badge">Concept study</span><span className="sh-project__arrow"><ArrowUpRight size={23} aria-hidden="true" /></span></div><div className="sh-project__meta"><span>0{index + 1} / {project.category}</span><span>Spoorthi Infra</span></div><h3>{project.title}</h3></Link>)}</div>
       </PageContainer>
     </SectionWrapper>
 
