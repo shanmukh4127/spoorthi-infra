@@ -1,0 +1,506 @@
+[
+  {
+    "id": "01-first-impression",
+    "chapter": 1,
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "width": 640,
+        "src": "/assets/tejes/cinematic/photoreal/01-first-impression-640.webp",
+        "bytes": 64400
+      },
+      {
+        "width": 960,
+        "src": "/assets/tejes/cinematic/photoreal/01-first-impression-960.webp",
+        "bytes": 143020
+      },
+      {
+        "width": 1280,
+        "src": "/assets/tejes/cinematic/photoreal/01-first-impression-1280.webp",
+        "bytes": 239838
+      },
+      {
+        "width": 1672,
+        "src": "/assets/tejes/cinematic/photoreal/01-first-impression-1672.webp",
+        "bytes": 367868
+      }
+    ],
+    "portrait": [
+      {
+        "width": 480,
+        "src": "/assets/tejes/cinematic/photoreal/01-first-impression-portrait-480.webp",
+        "bytes": 93918
+      },
+      {
+        "width": 640,
+        "src": "/assets/tejes/cinematic/photoreal/01-first-impression-portrait-640.webp",
+        "bytes": 149286
+      }
+    ],
+    "position": "61% 50%",
+    "alt": "Sunlit contemporary living room with linen seating, walnut joinery and sculptural stone"
+  },
+  {
+    "id": "02-design-studio",
+    "chapter": 2,
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "width": 640,
+        "src": "/assets/tejes/cinematic/photoreal/02-design-studio-640.webp",
+        "bytes": 54408
+      },
+      {
+        "width": 960,
+        "src": "/assets/tejes/cinematic/photoreal/02-design-studio-960.webp",
+        "bytes": 113980
+      },
+      {
+        "width": 1280,
+        "src": "/assets/tejes/cinematic/photoreal/02-design-studio-1280.webp",
+        "bytes": 179184
+      },
+      {
+        "width": 1672,
+        "src": "/assets/tejes/cinematic/photoreal/02-design-studio-1672.webp",
+        "bytes": 273544
+      }
+    ],
+    "portrait": [
+      {
+        "width": 480,
+        "src": "/assets/tejes/cinematic/photoreal/02-design-studio-portrait-480.webp",
+        "bytes": 80222
+      },
+      {
+        "width": 640,
+        "src": "/assets/tejes/cinematic/photoreal/02-design-studio-portrait-640.webp",
+        "bytes": 124038
+      }
+    ],
+    "position": "57% 50%",
+    "alt": "Designer studio with sketches, physical samples and a walnut worktable"
+  },
+  {
+    "id": "03-spatial-planning",
+    "chapter": 3,
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "width": 640,
+        "src": "/assets/tejes/cinematic/photoreal/03-spatial-planning-640.webp",
+        "bytes": 52808
+      },
+      {
+        "width": 960,
+        "src": "/assets/tejes/cinematic/photoreal/03-spatial-planning-960.webp",
+        "bytes": 98872
+      },
+      {
+        "width": 1280,
+        "src": "/assets/tejes/cinematic/photoreal/03-spatial-planning-1280.webp",
+        "bytes": 152372
+      },
+      {
+        "width": 1672,
+        "src": "/assets/tejes/cinematic/photoreal/03-spatial-planning-1672.webp",
+        "bytes": 224046
+      }
+    ],
+    "portrait": [
+      {
+        "width": 480,
+        "src": "/assets/tejes/cinematic/photoreal/03-spatial-planning-portrait-480.webp",
+        "bytes": 68854
+      },
+      {
+        "width": 640,
+        "src": "/assets/tejes/cinematic/photoreal/03-spatial-planning-portrait-640.webp",
+        "bytes": 102100
+      }
+    ],
+    "position": "61% 50%",
+    "alt": "Architectural plans, tracing paper and a physical apartment model"
+  },
+  {
+    "id": "04-materials",
+    "chapter": 4,
+    "width": 1536,
+    "height": 1024,
+    "variants": [
+      {
+        "width": 640,
+        "src": "/assets/tejes/cinematic/photoreal/04-materials-640.webp",
+        "bytes": 91952
+      },
+      {
+        "width": 960,
+        "src": "/assets/tejes/cinematic/photoreal/04-materials-960.webp",
+        "bytes": 195440
+      },
+      {
+        "width": 1280,
+        "src": "/assets/tejes/cinematic/photoreal/04-materials-1280.webp",
+        "bytes": 313312
+      },
+      {
+        "width": 1536,
+        "src": "/assets/tejes/cinematic/photoreal/04-materials-1536.webp",
+        "bytes": 438284
+      }
+    ],
+    "portrait": [
+      {
+        "width": 480,
+        "src": "/assets/tejes/cinematic/photoreal/04-materials-portrait-480.webp",
+        "bytes": 96006
+      },
+      {
+        "width": 640,
+        "src": "/assets/tejes/cinematic/photoreal/04-materials-portrait-640.webp",
+        "bytes": 159422
+      }
+    ],
+    "position": "60% 50%",
+    "alt": "Marble, oak, walnut, linen and plum wool material collection"
+  },
+  {
+    "id": "05-kitchen",
+    "chapter": 5,
+    "width": 1536,
+    "height": 1024,
+    "variants": [
+      {
+        "width": 640,
+        "src": "/assets/tejes/cinematic/photoreal/05-kitchen-640.webp",
+        "bytes": 52930
+      },
+      {
+        "width": 960,
+        "src": "/assets/tejes/cinematic/photoreal/05-kitchen-960.webp",
+        "bytes": 107106
+      },
+      {
+        "width": 1280,
+        "src": "/assets/tejes/cinematic/photoreal/05-kitchen-1280.webp",
+        "bytes": 171382
+      },
+      {
+        "width": 1536,
+        "src": "/assets/tejes/cinematic/photoreal/05-kitchen-1536.webp",
+        "bytes": 233846
+      }
+    ],
+    "portrait": [
+      {
+        "width": 480,
+        "src": "/assets/tejes/cinematic/photoreal/05-kitchen-portrait-480.webp",
+        "bytes": 56214
+      },
+      {
+        "width": 640,
+        "src": "/assets/tejes/cinematic/photoreal/05-kitchen-portrait-640.webp",
+        "bytes": 91510
+      }
+    ],
+    "position": "58% 50%",
+    "alt": "Walnut modular kitchen with a marble island and plum upholstered stools"
+  },
+  {
+    "id": "06-bedroom",
+    "chapter": 6,
+    "width": 1536,
+    "height": 1024,
+    "variants": [
+      {
+        "width": 640,
+        "src": "/assets/tejes/cinematic/photoreal/06-bedroom-640.webp",
+        "bytes": 63352
+      },
+      {
+        "width": 960,
+        "src": "/assets/tejes/cinematic/photoreal/06-bedroom-960.webp",
+        "bytes": 132450
+      },
+      {
+        "width": 1280,
+        "src": "/assets/tejes/cinematic/photoreal/06-bedroom-1280.webp",
+        "bytes": 212622
+      },
+      {
+        "width": 1536,
+        "src": "/assets/tejes/cinematic/photoreal/06-bedroom-1536.webp",
+        "bytes": 290114
+      }
+    ],
+    "portrait": [
+      {
+        "width": 480,
+        "src": "/assets/tejes/cinematic/photoreal/06-bedroom-portrait-480.webp",
+        "bytes": 68218
+      },
+      {
+        "width": 640,
+        "src": "/assets/tejes/cinematic/photoreal/06-bedroom-portrait-640.webp",
+        "bytes": 107836
+      }
+    ],
+    "position": "59% 50%",
+    "alt": "Master bedroom with textured ivory bedding, walnut cabinetry and a plum throw"
+  },
+  {
+    "id": "07-living-spaces",
+    "chapter": 7,
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "width": 640,
+        "src": "/assets/tejes/cinematic/photoreal/07-living-spaces-640.webp",
+        "bytes": 49332
+      },
+      {
+        "width": 960,
+        "src": "/assets/tejes/cinematic/photoreal/07-living-spaces-960.webp",
+        "bytes": 102252
+      },
+      {
+        "width": 1280,
+        "src": "/assets/tejes/cinematic/photoreal/07-living-spaces-1280.webp",
+        "bytes": 166398
+      },
+      {
+        "width": 1672,
+        "src": "/assets/tejes/cinematic/photoreal/07-living-spaces-1672.webp",
+        "bytes": 250474
+      }
+    ],
+    "portrait": [
+      {
+        "width": 480,
+        "src": "/assets/tejes/cinematic/photoreal/07-living-spaces-portrait-480.webp",
+        "bytes": 66882
+      },
+      {
+        "width": 640,
+        "src": "/assets/tejes/cinematic/photoreal/07-living-spaces-portrait-640.webp",
+        "bytes": 105242
+      }
+    ],
+    "position": "66% 50%",
+    "alt": "Luxury living area with a curved plum sofa and an ivory architectural arch"
+  },
+  {
+    "id": "08-workspace",
+    "chapter": 8,
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "width": 640,
+        "src": "/assets/tejes/cinematic/photoreal/08-workspace-640.webp",
+        "bytes": 44840
+      },
+      {
+        "width": 960,
+        "src": "/assets/tejes/cinematic/photoreal/08-workspace-960.webp",
+        "bytes": 89510
+      },
+      {
+        "width": 1280,
+        "src": "/assets/tejes/cinematic/photoreal/08-workspace-1280.webp",
+        "bytes": 142870
+      },
+      {
+        "width": 1672,
+        "src": "/assets/tejes/cinematic/photoreal/08-workspace-1672.webp",
+        "bytes": 215618
+      }
+    ],
+    "portrait": [
+      {
+        "width": 480,
+        "src": "/assets/tejes/cinematic/photoreal/08-workspace-portrait-480.webp",
+        "bytes": 61418
+      },
+      {
+        "width": 640,
+        "src": "/assets/tejes/cinematic/photoreal/08-workspace-portrait-640.webp",
+        "bytes": 96630
+      }
+    ],
+    "position": "63% 50%",
+    "alt": "Boutique workspace with oak desks, plum chairs and glazed meeting rooms"
+  },
+  {
+    "id": "09-lighting",
+    "chapter": 9,
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "width": 640,
+        "src": "/assets/tejes/cinematic/photoreal/09-lighting-640.webp",
+        "bytes": 45950
+      },
+      {
+        "width": 960,
+        "src": "/assets/tejes/cinematic/photoreal/09-lighting-960.webp",
+        "bytes": 97284
+      },
+      {
+        "width": 1280,
+        "src": "/assets/tejes/cinematic/photoreal/09-lighting-1280.webp",
+        "bytes": 158962
+      },
+      {
+        "width": 1672,
+        "src": "/assets/tejes/cinematic/photoreal/09-lighting-1672.webp",
+        "bytes": 246564
+      }
+    ],
+    "portrait": [
+      {
+        "width": 480,
+        "src": "/assets/tejes/cinematic/photoreal/09-lighting-portrait-480.webp",
+        "bytes": 66066
+      },
+      {
+        "width": 640,
+        "src": "/assets/tejes/cinematic/photoreal/09-lighting-portrait-640.webp",
+        "bytes": 106250
+      }
+    ],
+    "position": "63% 50%",
+    "alt": "Layered warm architectural lighting against walnut and charcoal stone at dusk"
+  },
+  {
+    "id": "10-visualization",
+    "chapter": 10,
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "width": 640,
+        "src": "/assets/tejes/cinematic/photoreal/10-visualization-640.webp",
+        "bytes": 43378
+      },
+      {
+        "width": 960,
+        "src": "/assets/tejes/cinematic/photoreal/10-visualization-960.webp",
+        "bytes": 87908
+      },
+      {
+        "width": 1280,
+        "src": "/assets/tejes/cinematic/photoreal/10-visualization-1280.webp",
+        "bytes": 145216
+      },
+      {
+        "width": 1672,
+        "src": "/assets/tejes/cinematic/photoreal/10-visualization-1672.webp",
+        "bytes": 224800
+      }
+    ],
+    "portrait": [
+      {
+        "width": 480,
+        "src": "/assets/tejes/cinematic/photoreal/10-visualization-portrait-480.webp",
+        "bytes": 75418
+      },
+      {
+        "width": 640,
+        "src": "/assets/tejes/cinematic/photoreal/10-visualization-portrait-640.webp",
+        "bytes": 119212
+      }
+    ],
+    "position": "63% 50%",
+    "alt": "Photorealistic design concept with a courtyard, oak stair and glass balustrade"
+  },
+  {
+    "id": "11-craftsmanship",
+    "chapter": 11,
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "width": 640,
+        "src": "/assets/tejes/cinematic/photoreal/11-craftsmanship-640.webp",
+        "bytes": 44710
+      },
+      {
+        "width": 960,
+        "src": "/assets/tejes/cinematic/photoreal/11-craftsmanship-960.webp",
+        "bytes": 97130
+      },
+      {
+        "width": 1280,
+        "src": "/assets/tejes/cinematic/photoreal/11-craftsmanship-1280.webp",
+        "bytes": 156854
+      },
+      {
+        "width": 1672,
+        "src": "/assets/tejes/cinematic/photoreal/11-craftsmanship-1672.webp",
+        "bytes": 244626
+      }
+    ],
+    "portrait": [
+      {
+        "width": 480,
+        "src": "/assets/tejes/cinematic/photoreal/11-craftsmanship-portrait-480.webp",
+        "bytes": 75646
+      },
+      {
+        "width": 640,
+        "src": "/assets/tejes/cinematic/photoreal/11-craftsmanship-portrait-640.webp",
+        "bytes": 122724
+      }
+    ],
+    "position": "62% 50%",
+    "alt": "Walnut joinery, aligned grain, brushed brass and honed stone craftsmanship"
+  },
+  {
+    "id": "12-final-reveal",
+    "chapter": 12,
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "width": 640,
+        "src": "/assets/tejes/cinematic/photoreal/12-final-reveal-640.webp",
+        "bytes": 56648
+      },
+      {
+        "width": 960,
+        "src": "/assets/tejes/cinematic/photoreal/12-final-reveal-960.webp",
+        "bytes": 113450
+      },
+      {
+        "width": 1280,
+        "src": "/assets/tejes/cinematic/photoreal/12-final-reveal-1280.webp",
+        "bytes": 184172
+      },
+      {
+        "width": 1672,
+        "src": "/assets/tejes/cinematic/photoreal/12-final-reveal-1672.webp",
+        "bytes": 274092
+      }
+    ],
+    "portrait": [
+      {
+        "width": 480,
+        "src": "/assets/tejes/cinematic/photoreal/12-final-reveal-portrait-480.webp",
+        "bytes": 80832
+      },
+      {
+        "width": 640,
+        "src": "/assets/tejes/cinematic/photoreal/12-final-reveal-portrait-640.webp",
+        "bytes": 126776
+      }
+    ],
+    "position": "62% 50%",
+    "alt": "Completed luxury interior concept with marble, linen seating and a garden view"
+  }
+]

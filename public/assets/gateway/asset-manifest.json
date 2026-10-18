@@ -1,0 +1,51 @@
+{
+  "purpose": "Assets for the approved root gateway only. Brand pages are unchanged.",
+  "background": {
+    "source": "Two Visions, One Journey_ Infra and Interiors.png",
+    "source_sha256": "95f216b4728fb0719c203624cac430ea2c9737a169ca1b62bb176967dcb32c60",
+    "derivation": "User-supplied approved reference, edited with image generation to remove baked-in text, logos, buttons and divider; optimized to WebP. Illustrative imagery, not a claim of actual projects."
+  },
+  "tejes_logo": {
+    "source": "tejas_logo_20260508_232725_0000.png",
+    "source_sha256": "9c24678bc39baef3fd704e0a2c44c16329cf45d55fd67350240107a23b56ff91",
+    "derivation": "Original transparent artwork resized proportionally without cropping, recoloring or recreating lettering; lossless WebP."
+  },
+  "spoorthi_logo": {
+    "source": "Existing official-logo-600.webp / official-logo-1200.webp derived from the supplied Spoorthi original",
+    "derivation": "Reused without alteration."
+  },
+  "files": [
+    {
+      "file": "approved-background-1024.webp",
+      "bytes": 163414,
+      "width": 1024,
+      "height": 683,
+      "mode": "RGB",
+      "sha256": "3e7dd5007f7e64ac5ee42aa55e89b8d6e9b600c00e30ce19068531751d31e7b3"
+    },
+    {
+      "file": "approved-background-1536.webp",
+      "bytes": 322242,
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGB",
+      "sha256": "a1d75b6bb74b0468a9257f9fa097479f479a6f64a429182bcfabcfdfbe233f56"
+    },
+    {
+      "file": "tejes-original-1200.webp",
+      "bytes": 39562,
+      "width": 1200,
+      "height": 502,
+      "mode": "RGBA",
+      "sha256": "fad211d9149d06c5b8f9c1529780b4e79874cb5d9978a663a12579aae0e8da35"
+    },
+    {
+      "file": "tejes-original-600.webp",
+      "bytes": 20490,
+      "width": 600,
+      "height": 251,
+      "mode": "RGBA",
+      "sha256": "3e1aeae8334d981b7122d91228778913ce83ac09da144dcdd4f3d6a9f23194c8"
+    }
+  ]
+}

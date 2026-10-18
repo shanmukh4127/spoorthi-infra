@@ -1,0 +1,10 @@
+{
+  "rooms": [
+    {"id":"main","center":[0,1.6,0],"min":[-5.5,0,-5.5],"max":[5.5,3.2,5.5],"yaw":0,"portals":[{"axis":2,"plane":5.5,"range":[-4.7,-2.5],"height":2.8,"to":"foyer"},{"axis":2,"plane":5.5,"range":[-1.7,0.5],"height":2.8,"to":"bedroom"}]},
+    {"id":"foyer","center":[-3.6,1.6,8.2],"min":[-5.2,0,5.5],"max":[-2,3.2,11],"yaw":0,"portals":[{"axis":2,"plane":5.5,"range":[-4.7,-2.5],"height":2.8,"to":"main"}]},
+    {"id":"bedroom","center":[1.2,1.6,8.5],"min":[-2,0,5.5],"max":[4.4,3.2,11.5],"yaw":-2.865,"portals":[{"axis":2,"plane":5.5,"range":[-1.7,0.5],"height":2.8,"to":"main"},{"axis":0,"plane":4.4,"range":[7.8,9.4],"height":2.75,"to":"bathroom"}]},
+    {"id":"bathroom","center":[6.4,1.6,8.5],"min":[4.4,0,5.5],"max":[8.4,3.2,11.5],"yaw":1.5707963267948966,"portals":[{"axis":0,"plane":4.4,"range":[7.8,9.4],"height":2.75,"to":"bedroom"}]}
+  ],
+  "depthWidth": 321,
+  "depthHeight": 161
+}

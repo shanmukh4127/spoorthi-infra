@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-18",
+  "mode": "built-in image_gen",
+  "prompt": "Create one original high-resolution seamless architectural MATERIAL ALBEDO TEXTURE: premium warm ivory honed marble slab with restrained natural soft charcoal-grey and muted taupe veining. A perfectly flat straight overhead scan, fills every pixel edge to edge, 1:1 square, 2048x2048 if available, highest native resolution. This is only a stone surface texture for a real 3D kitchen island, not a room photograph, material collection, moodboard, sample tile, staged object or render. Sharp natural calcite grain, delicate stone pores and fine mineral veins with rich realistic material depth, evenly diffuse neutral illumination, no perspective, no borders, no casts of objects, no blur or depth of field, no specular highlights, no lighting gradients, no baked shadows, no text, no logos, no watermark. Subtle elegant cream tone, natural restrained vein density, seamless repeat. Output actual image.",
+  "source": "originals/marble-surface.png",
+  "nativeDimensions": [
+    1254,
+    1254
+  ]
+}

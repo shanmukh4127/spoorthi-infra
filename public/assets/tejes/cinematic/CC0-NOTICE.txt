@@ -1,0 +1,5 @@
+# CC0 notice — additional Tejas cinematic assets
+
+SWEEP 160 — Upholstered Sleigh Bed: original Innerscene model, released under CC0. Source page: https://www.innerscene.com/tools/library/3d-parts/sweep-160-upholstered-sleigh-bed-eb63225c . Library terms: https://www.innerscene.com/tools/library/terms . Public domain dedication: https://creativecommons.org/publicdomain/zero/1.0/ . Uniformly scaled and rearranged within this conceptual scene.
+
+Wooden Floor 02: Poly Haven, CC0. Source: https://polyhaven.com/a/wooden_floor_02 . Licence: https://polyhaven.com/license . Public domain dedication: https://creativecommons.org/publicdomain/zero/1.0/ . Local 1K colour, normal and roughness JPEG maps, repeated and tinted at runtime.

@@ -1,0 +1,343 @@
+{
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 1000,
+      "chapters": [
+        {
+          "chapter": 1,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/01-first-impression-1672.webp",
+          "naturalWidth": 1440,
+          "complete": true
+        },
+        {
+          "chapter": 2,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/02-design-studio-1672.webp",
+          "naturalWidth": 1440,
+          "complete": true
+        },
+        {
+          "chapter": 3,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/03-spatial-planning-1672.webp",
+          "naturalWidth": 1440,
+          "complete": true
+        },
+        {
+          "chapter": 4,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/04-materials-1536.webp",
+          "naturalWidth": 1439,
+          "complete": true
+        },
+        {
+          "chapter": 5,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/05-kitchen-1536.webp",
+          "naturalWidth": 1439,
+          "complete": true
+        },
+        {
+          "chapter": 6,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/06-bedroom-1536.webp",
+          "naturalWidth": 1439,
+          "complete": true
+        },
+        {
+          "chapter": 7,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/07-living-spaces-1672.webp",
+          "naturalWidth": 1440,
+          "complete": true
+        },
+        {
+          "chapter": 8,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/08-workspace-1672.webp",
+          "naturalWidth": 1440,
+          "complete": true
+        },
+        {
+          "chapter": 9,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/09-lighting-1672.webp",
+          "naturalWidth": 1440,
+          "complete": true
+        },
+        {
+          "chapter": 10,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/10-visualization-1672.webp",
+          "naturalWidth": 1440,
+          "complete": true
+        },
+        {
+          "chapter": 11,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/11-craftsmanship-1672.webp",
+          "naturalWidth": 1440,
+          "complete": true
+        },
+        {
+          "chapter": 12,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/12-final-reveal-1672.webp",
+          "naturalWidth": 1440,
+          "complete": true
+        }
+      ],
+      "reverse": true,
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "chapters": [
+        {
+          "chapter": 1,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/01-first-impression-1672.webp",
+          "naturalWidth": 1023,
+          "complete": true
+        },
+        {
+          "chapter": 2,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/02-design-studio-1672.webp",
+          "naturalWidth": 1023,
+          "complete": true
+        },
+        {
+          "chapter": 3,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/03-spatial-planning-1672.webp",
+          "naturalWidth": 1023,
+          "complete": true
+        },
+        {
+          "chapter": 4,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/04-materials-1536.webp",
+          "naturalWidth": 1024,
+          "complete": true
+        },
+        {
+          "chapter": 5,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/05-kitchen-1536.webp",
+          "naturalWidth": 1024,
+          "complete": true
+        },
+        {
+          "chapter": 6,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/06-bedroom-1536.webp",
+          "naturalWidth": 1024,
+          "complete": true
+        },
+        {
+          "chapter": 7,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/07-living-spaces-1672.webp",
+          "naturalWidth": 1023,
+          "complete": true
+        },
+        {
+          "chapter": 8,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/08-workspace-1672.webp",
+          "naturalWidth": 1023,
+          "complete": true
+        },
+        {
+          "chapter": 9,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/09-lighting-1672.webp",
+          "naturalWidth": 1023,
+          "complete": true
+        },
+        {
+          "chapter": 10,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/10-visualization-1672.webp",
+          "naturalWidth": 1023,
+          "complete": true
+        },
+        {
+          "chapter": 11,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/11-craftsmanship-1672.webp",
+          "naturalWidth": 1023,
+          "complete": true
+        },
+        {
+          "chapter": 12,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/12-final-reveal-1672.webp",
+          "naturalWidth": 1023,
+          "complete": true
+        }
+      ],
+      "reverse": true,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "chapters": [
+        {
+          "chapter": 1,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/01-first-impression-portrait-480.webp",
+          "naturalWidth": 389,
+          "complete": true
+        },
+        {
+          "chapter": 2,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/02-design-studio-portrait-480.webp",
+          "naturalWidth": 389,
+          "complete": true
+        },
+        {
+          "chapter": 3,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/03-spatial-planning-portrait-480.webp",
+          "naturalWidth": 389,
+          "complete": true
+        },
+        {
+          "chapter": 4,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/04-materials-portrait-480.webp",
+          "naturalWidth": 389,
+          "complete": true
+        },
+        {
+          "chapter": 5,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/05-kitchen-portrait-480.webp",
+          "naturalWidth": 389,
+          "complete": true
+        },
+        {
+          "chapter": 6,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/06-bedroom-portrait-480.webp",
+          "naturalWidth": 389,
+          "complete": true
+        },
+        {
+          "chapter": 7,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/07-living-spaces-portrait-480.webp",
+          "naturalWidth": 389,
+          "complete": true
+        },
+        {
+          "chapter": 8,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/08-workspace-portrait-480.webp",
+          "naturalWidth": 389,
+          "complete": true
+        },
+        {
+          "chapter": 9,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/09-lighting-portrait-480.webp",
+          "naturalWidth": 389,
+          "complete": true
+        },
+        {
+          "chapter": 10,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/10-visualization-portrait-480.webp",
+          "naturalWidth": 389,
+          "complete": true
+        },
+        {
+          "chapter": 11,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/11-craftsmanship-portrait-480.webp",
+          "naturalWidth": 389,
+          "complete": true
+        },
+        {
+          "chapter": 12,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/12-final-reveal-portrait-480.webp",
+          "naturalWidth": 389,
+          "complete": true
+        }
+      ],
+      "reverse": true,
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "chapters": [
+        {
+          "chapter": 1,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/01-first-impression-portrait-480.webp",
+          "naturalWidth": 375,
+          "complete": true
+        },
+        {
+          "chapter": 2,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/02-design-studio-portrait-480.webp",
+          "naturalWidth": 375,
+          "complete": true
+        },
+        {
+          "chapter": 3,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/03-spatial-planning-portrait-480.webp",
+          "naturalWidth": 375,
+          "complete": true
+        },
+        {
+          "chapter": 4,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/04-materials-portrait-480.webp",
+          "naturalWidth": 375,
+          "complete": true
+        },
+        {
+          "chapter": 5,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/05-kitchen-portrait-480.webp",
+          "naturalWidth": 375,
+          "complete": true
+        },
+        {
+          "chapter": 6,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/06-bedroom-portrait-480.webp",
+          "naturalWidth": 375,
+          "complete": true
+        },
+        {
+          "chapter": 7,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/07-living-spaces-portrait-480.webp",
+          "naturalWidth": 375,
+          "complete": true
+        },
+        {
+          "chapter": 8,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/08-workspace-portrait-480.webp",
+          "naturalWidth": 375,
+          "complete": true
+        },
+        {
+          "chapter": 9,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/09-lighting-portrait-480.webp",
+          "naturalWidth": 375,
+          "complete": true
+        },
+        {
+          "chapter": 10,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/10-visualization-portrait-480.webp",
+          "naturalWidth": 375,
+          "complete": true
+        },
+        {
+          "chapter": 11,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/11-craftsmanship-portrait-480.webp",
+          "naturalWidth": 375,
+          "complete": true
+        },
+        {
+          "chapter": 12,
+          "url": "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/12-final-reveal-portrait-480.webp",
+          "naturalWidth": 375,
+          "complete": true
+        }
+      ],
+      "reverse": true,
+      "overflow": false
+    }
+  ],
+  "initialPhotoRequests": [
+    "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/01-first-impression-1672.webp",
+    "http://127.0.0.1:5174/assets/tejes/cinematic/photoreal/02-design-studio-1672.webp"
+  ],
+  "imagesAreLocal": true,
+  "boundedMountedImages": 3,
+  "liveSpatialStudy": true,
+  "idleDraws": 0,
+  "keyboard": true,
+  "menuFocus": true,
+  "contactNavigation": true,
+  "reducedMotion": true,
+  "readingImagesLoaded": 12,
+  "memoryBytes": {
+    "baseline": 30317864,
+    "after": 32508188
+  },
+  "errors": [],
+  "failed": []
+}

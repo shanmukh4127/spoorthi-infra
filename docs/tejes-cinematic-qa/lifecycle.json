@@ -1,0 +1,12 @@
+{
+  "nativeMobile": true,
+  "mountUnmountCycles": 3,
+  "memoryBytes": [
+    29938536,
+    30161880,
+    30193872
+  ],
+  "readingMenuSeek": true,
+  "unexpectedErrors": [],
+  "failedRequests": []
+}

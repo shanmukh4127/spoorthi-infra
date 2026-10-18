@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-17",
+  "images": [
+    {
+      "id": "main-clean",
+      "prompt": "Edit this exact equirectangular panorama into a clean architectural background plate for depth-based reconstruction. Preserve the EXACT camera position, 360-degree projection, framing, all walls, ceiling, windows, doors, fixed walnut cabinetry, stone finishes, lighting, colour and every architectural edge. Remove ONLY all freestanding foreground furniture and movable decor: sofas, chairs, dining tables, coffee tables, console tables, beds, rugs, free-standing baths, the freestanding kitchen island, plants, bowls and vases. Reveal the plausible continuous original oak/stone floor and wall surfaces behind those objects. Keep fixed kitchen wall cabinets, fixed bathroom vanities, wall mirrors and lighting fixtures. Do not move/reshape any doorway, alter perspective, add new architecture or relight. This is a precise inpainting operation on the original panoramic photograph. Output a single panorama in the same 2:1 aspect ratio and dimensions as the input, no text, no labels, no watermark.",
+      "source": "originals/main-clean.png",
+      "reference": "originals/main.png",
+      "mode": "built-in image_gen edit"
+    },
+    {
+      "id": "foyer-clean",
+      "prompt": "Edit this exact equirectangular panorama into a clean architectural background plate for depth-based reconstruction. Preserve the EXACT camera position, 360-degree projection, framing, all walls, ceiling, windows, doors, fixed walnut cabinetry, stone finishes, lighting, colour and every architectural edge. Remove ONLY all freestanding foreground furniture and movable decor: sofas, chairs, dining tables, coffee tables, console tables, beds, rugs, free-standing baths, the freestanding kitchen island, plants, bowls and vases. Reveal the plausible continuous original oak/stone floor and wall surfaces behind those objects. Keep fixed kitchen wall cabinets, fixed bathroom vanities, wall mirrors and lighting fixtures. Do not move/reshape any doorway, alter perspective, add new architecture or relight. This is a precise inpainting operation on the original panoramic photograph. Output a single panorama in the same 2:1 aspect ratio and dimensions as the input, no text, no labels, no watermark.",
+      "source": "originals/foyer-clean.png",
+      "reference": "originals/foyer.png",
+      "mode": "built-in image_gen edit"
+    },
+    {
+      "id": "bedroom-clean",
+      "prompt": "Edit this exact equirectangular panorama into a clean architectural background plate for depth-based reconstruction. Preserve the EXACT camera position, 360-degree projection, framing, all walls, ceiling, windows, doors, fixed walnut cabinetry, stone finishes, lighting, colour and every architectural edge. Remove ONLY all freestanding foreground furniture and movable decor: sofas, chairs, dining tables, coffee tables, console tables, beds, rugs, free-standing baths, the freestanding kitchen island, plants, bowls and vases. Reveal the plausible continuous original oak/stone floor and wall surfaces behind those objects. Keep fixed kitchen wall cabinets, fixed bathroom vanities, wall mirrors and lighting fixtures. Do not move/reshape any doorway, alter perspective, add new architecture or relight. This is a precise inpainting operation on the original panoramic photograph. Output a single panorama in the same 2:1 aspect ratio and dimensions as the input, no text, no labels, no watermark.",
+      "source": "originals/bedroom-clean.png",
+      "reference": "originals/bedroom.png",
+      "mode": "built-in image_gen edit"
+    },
+    {
+      "id": "bathroom-clean",
+      "prompt": "Edit this exact equirectangular panorama into a clean architectural background plate for depth-based reconstruction. Preserve the EXACT camera position, 360-degree projection, framing, all walls, ceiling, windows, doors, fixed walnut cabinetry, stone finishes, lighting, colour and every architectural edge. Remove ONLY all freestanding foreground furniture and movable decor: sofas, chairs, dining tables, coffee tables, console tables, beds, rugs, free-standing baths, the freestanding kitchen island, plants, bowls and vases. Reveal the plausible continuous original oak/stone floor and wall surfaces behind those objects. Keep fixed kitchen wall cabinets, fixed bathroom vanities, wall mirrors and lighting fixtures. Do not move/reshape any doorway, alter perspective, add new architecture or relight. This is a precise inpainting operation on the original panoramic photograph. Output a single panorama in the same 2:1 aspect ratio and dimensions as the input, no text, no labels, no watermark.",
+      "source": "originals/bathroom-clean.png",
+      "reference": "originals/bathroom.png",
+      "mode": "built-in image_gen edit"
+    }
+  ]
+}

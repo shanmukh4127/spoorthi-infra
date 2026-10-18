@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-18",
+  "mode": "built-in image_gen, reference-based original wall assets",
+  "images": [
+    {
+      "id": "kitchen-wall",
+      "prompt": "Use the attached original AI house panorama as architectural and material reference. Create a NEW high-resolution photorealistic image for the FRONT KITCHEN WALL of exactly this house, for a fixed architectural texture. Rectified, perfectly frontal elevation-like architectural PHOTOGRAPH of an 11 metre wide, 3.2 metre tall kitchen wall. Very wide panoramic composition, 3.4:1 aspect ratio, highest available native resolution. The full wall fills the image edge to edge: floor boundary exactly at bottom, ceiling boundary exactly at top, no visible floor, no visible ceiling and no side walls, no perspective convergence, no island or foreground furniture. Rich natural walnut full-height cabinetry across the wall; middle long honed ivory marble backsplash recess, stone worktop, bronze tap and understated ceramics; integrated black-glass oven at right. Warm ivory plaster reveals at far edges. Same walnut cabinet language and ivory marble as the reference. Sharp true wood grain, real stone pores and delicate marble veins, crisp cabinet gaps and brushed metal, plausible diffuse garden daylight from right, gentle realistic contact shadows, professional premium interior photography. Keep cabinet proportions realistic: worktop at 0.9 m and upper cabinetry to ceiling 3.2m. Do not put the backsplash at eye-height or exaggerate the cabinet scale. No arch, curved perspective, fisheye, equirectangular distortion, people, text, logos, watermarks, illustration, plastic surfaces, whitewash or overexposure. Actual image output, not instructions. This wall will receive real geometric furniture in front later.",
+      "source": "originals/kitchen-wall.png",
+      "reference": "originals/main-clean.png"
+    },
+    {
+      "id": "bedroom-wall",
+      "prompt": "Create one original high-resolution architectural texture photograph matching the attached bedroom's exact material identity. A perfectly FRONTAL, RECTIFIED elevation of the bedroom HEADBOARD WALL only: full 6.4 metre width and 3.2 metre height, aspect ratio 2:1. The wall fills the entire image, floor boundary at the bottom and ceiling boundary at the top, no visible floor/ceiling/side walls, no perspective convergence. Large central warm ivory travertine slab panel with precise softly detailed stone pores and natural fossil markings, narrow walnut vertical wood panels at both sides, warm ivory plaster outer margins; two slender brushed bronze reading wall sconces left and right with warm, believable pools of light and two low electrical outlets. No doors, windows, bed, headboard, furniture, rugs, pillows or people. This wall is behind real geometric bed furniture later. Same rich walnut, ivory stone and natural warm garden daylight from the attached house. Native high resolution, pristine crisp professional interior photograph, natural contrast and precise surface details. No text/logos/watermarks/illustration/whitewashing/fisheye/CGI look. Output the actual image.",
+      "source": "originals/bedroom-wall.png",
+      "reference": "originals/bedroom-clean.png"
+    },
+    {
+      "id": "bathroom-wall",
+      "prompt": "Create one original high-resolution architectural texture photograph matching the attached luxury bathroom's exact material identity. A perfectly FRONTAL, RECTIFIED elevation of the full vanity wall: 6 metre wide by 3.2 metre tall, aspect ratio 1.875:1. The wall fills every edge; floor boundary at bottom and ceiling boundary at top, no visible floor, ceiling or side walls, no perspective convergence and no curved perspective. Premium walnut fluted floating double-sink vanity below honed ivory marble worktop, two brushed bronze wall taps and two beautiful bronze-framed mirrors. Bookmatched ivory marble behind mirrors, walnut full-height cabinetry at both sides, understated warm wall sconces. Preserve the attached room's same warm rich material palette. Mirror reflections should be subtle softly out-of-focus warm plaster and natural daylight, no duplicate doors, windows or repeated furniture. No bath tub, no foreground objects, no shower, no people. Sharp wood grain and fluting, crisp marble veining and natural pores, realistic bronze and understated warm architectural light. Professionally photographed real completed luxury interior quality, no whitewashing, no extreme glow, no text/logos/watermarks/illustration/fisheye. Output actual original image at highest native resolution.",
+      "source": "originals/bathroom-wall.png",
+      "reference": "originals/bathroom-clean.png"
+    }
+  ]
+}

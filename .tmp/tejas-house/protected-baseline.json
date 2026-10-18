@@ -1,0 +1,70 @@
+[
+  {
+    "Path": "C:\\Users\\Pardhu\\Downloads\\spoorthi-infra-main\\src\\components\\gateway\\BrandPanel.jsx",
+    "Hash": "72B560C2534076C9BC8CC03ABBC2D2205F13E6A185FCA9D341DC50E0533ED4F3"
+  },
+  {
+    "Path": "C:\\Users\\Pardhu\\Downloads\\spoorthi-infra-main\\src\\components\\gateway\\Gateway.jsx",
+    "Hash": "53AE1344ADB6BA8C1D46FDC9C22B6F5423D49A139CD730D0E8D50751BB8CDDFD"
+  },
+  {
+    "Path": "C:\\Users\\Pardhu\\Downloads\\spoorthi-infra-main\\src\\styles\\gateway.css",
+    "Hash": "036F5F3285A0146074EFD94475E4732FF1F9A41692791F9541848503D73B41EA"
+  },
+  {
+    "Path": "C:\\Users\\Pardhu\\Downloads\\spoorthi-infra-main\\src\\pages\\tejes\\ContactPage.jsx",
+    "Hash": "D1BD8A765F7C0024A7FC402D455465FD4A72C0260301D1C259497CEAA991ABEB"
+  },
+  {
+    "Path": "C:\\Users\\Pardhu\\Downloads\\spoorthi-infra-main\\src\\pages\\tejes\\Design3DPage.jsx",
+    "Hash": "9E95F6B56728B09B195119D12B4D0184ECC861F38DBACCBBD02C4C1FAEFEDC37"
+  },
+  {
+    "Path": "C:\\Users\\Pardhu\\Downloads\\spoorthi-infra-main\\src\\pages\\tejes\\InteriorDesignPage.jsx",
+    "Hash": "5CA62ED2721C12D8D70652C39C926D92AE59267904D0D8CAFB75CD7EC6D33A72"
+  },
+  {
+    "Path": "C:\\Users\\Pardhu\\Downloads\\spoorthi-infra-main\\src\\pages\\tejes\\ProjectDetailPage.jsx",
+    "Hash": "26505259147740BDB638D7531ED28779FD4A1FA8BD04C21C00E5AC7227C2D573"
+  },
+  {
+    "Path": "C:\\Users\\Pardhu\\Downloads\\spoorthi-infra-main\\src\\pages\\tejes\\ProjectsPage.jsx",
+    "Hash": "2830A10B184F642142E80BF38FA6061A5A684D294AD7E83B294B7B6E6DC5D12E"
+  },
+  {
+    "Path": "C:\\Users\\Pardhu\\Downloads\\spoorthi-infra-main\\src\\pages\\tejes\\VrPage.jsx",
+    "Hash": "40DF6CFAD6E6095E08570115B187F9793539D6D5D21D8B059359A4528D9E8B18"
+  },
+  {
+    "Path": "C:\\Users\\Pardhu\\Downloads\\spoorthi-infra-main\\src\\components\\spoorthi\\journey\\cameraPath.js",
+    "Hash": "AAC26A32ED304294E008350C89879B2BC87D7146D06E82CE7C6A35BC508EFC59"
+  },
+  {
+    "Path": "C:\\Users\\Pardhu\\Downloads\\spoorthi-infra-main\\src\\components\\spoorthi\\journey\\constructionLayout.js",
+    "Hash": "839CB5EE8889910CC8D52D95F5F4A5F1AD8612B1E7A1E0ECD6194291907904E8"
+  },
+  {
+    "Path": "C:\\Users\\Pardhu\\Downloads\\spoorthi-infra-main\\src\\components\\spoorthi\\journey\\createArchitecturalScene.js",
+    "Hash": "2C34695280EF35592D1BED1B9BD69BBA36BAADF299876CF1FBD5E30110050FB5"
+  },
+  {
+    "Path": "C:\\Users\\Pardhu\\Downloads\\spoorthi-infra-main\\src\\components\\spoorthi\\journey\\extendedConstruction.js",
+    "Hash": "FFB36E153C6D0622A36594037EE0B0D8DA10C7319CFB8898FBFD64631B212C20"
+  },
+  {
+    "Path": "C:\\Users\\Pardhu\\Downloads\\spoorthi-infra-main\\src\\components\\spoorthi\\journey\\finalConstructionStages.js",
+    "Hash": "811E777A0BDFD3A2BE258587426BD9878B504A543F60DC19FF8D1ECE44C035DE"
+  },
+  {
+    "Path": "C:\\Users\\Pardhu\\Downloads\\spoorthi-infra-main\\src\\components\\spoorthi\\journey\\foliageTexture.js",
+    "Hash": "D90094E025D861C9A278EC9D3274871FB6E00969A6F80DDA4EEC1B6EFBE92E88"
+  },
+  {
+    "Path": "C:\\Users\\Pardhu\\Downloads\\spoorthi-infra-main\\src\\components\\spoorthi\\journey\\loadCinematicAssets.js",
+    "Hash": "B51C39A4C85489A6ABD07B8DBE856318560C5DDD27A17A80291C4879384D9E59"
+  },
+  {
+    "Path": "C:\\Users\\Pardhu\\Downloads\\spoorthi-infra-main\\src\\components\\spoorthi\\journey\\physicalMaterials.js",
+    "Hash": "887401FC71CD9AB22F7D6019399F93B17F13872C42C064B38F1660D28D9E06C8"
+  }
+]

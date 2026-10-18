@@ -1,0 +1,35 @@
+{
+  "reading": {
+    "canvas": 0,
+    "chapters": 12,
+    "broken": [],
+    "overflow": false,
+    "paths": [
+      "http://127.0.0.1:5174/assets/tejes/cinematic/house/stills/01-mobile.webp",
+      "http://127.0.0.1:5174/assets/tejes/cinematic/house/stills/02-mobile.webp",
+      "http://127.0.0.1:5174/assets/tejes/cinematic/house/stills/03-mobile.webp",
+      "http://127.0.0.1:5174/assets/tejes/cinematic/house/stills/04-mobile.webp",
+      "http://127.0.0.1:5174/assets/tejes/cinematic/house/stills/05-mobile.webp",
+      "http://127.0.0.1:5174/assets/tejes/cinematic/house/stills/06-mobile.webp",
+      "http://127.0.0.1:5174/assets/tejes/cinematic/house/stills/07-mobile.webp",
+      "http://127.0.0.1:5174/assets/tejes/cinematic/house/stills/08-mobile.webp",
+      "http://127.0.0.1:5174/assets/tejes/cinematic/house/stills/09-mobile.webp",
+      "http://127.0.0.1:5174/assets/tejes/cinematic/house/stills/10-mobile.webp",
+      "http://127.0.0.1:5174/assets/tejes/cinematic/house/stills/11-mobile.webp",
+      "http://127.0.0.1:5174/assets/tejes/cinematic/house/stills/12-mobile.webp"
+    ]
+  },
+  "menuAndDisposal": {
+    "focusTrap": true,
+    "escape": true,
+    "chapterSeek": true,
+    "creditLinks": true,
+    "canvasRemoved": true,
+    "errors": []
+  },
+  "assetFailure": {
+    "fullReadingFallback": true,
+    "retry": true,
+    "canvasCount": 1
+  }
+}
