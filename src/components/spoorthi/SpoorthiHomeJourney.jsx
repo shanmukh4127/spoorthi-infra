@@ -4,8 +4,8 @@ import { homeJourney } from '../../data/spoorthi/homeJourney.js'
 import '../../styles/spoorthi-cinematic-tokens.css'
 import '../../styles/spoorthi-home-journey.css'
 
-const sceneQuery = '(min-width: 320px) and (min-height: 480px) and (prefers-reduced-motion: no-preference)'
-const canUseScene = () => typeof window !== 'undefined' && window.matchMedia(sceneQuery).matches && !navigator.connection?.saveData
+const sceneQuery = '(prefers-reduced-motion: no-preference)'
+const canUseScene = (allowData = false) => typeof window !== 'undefined' && window.matchMedia(sceneQuery).matches && (allowData || !navigator.connection?.saveData)
 const number = value => String(value).padStart(2, '0')
 
 export default function SpoorthiHomeJourney() {
@@ -19,6 +19,16 @@ export default function SpoorthiHomeJourney() {
   const sceneRef = useRef(null)
   const progressRef = useRef(null)
   const optedOutRef = useRef(false)
+  const optedInRef = useRef(false)
+  const showAnimation = () => {
+    if (!canUseScene(true)) return
+    optedOutRef.current = false
+    optedInRef.current = true
+    setStatus('loading')
+    setRetry(value => value + 1)
+    setInteractive(true)
+    requestAnimationFrame(() => sectionRef.current?.scrollIntoView({ block: 'start', behavior: 'instant' }))
+  }
   const fallback = !interactive || status === 'error'
   const readIntroduction = () => {
     optedOutRef.current = true
@@ -28,7 +38,7 @@ export default function SpoorthiHomeJourney() {
 
   useEffect(() => {
     const media = window.matchMedia(sceneQuery)
-    const change = () => setInteractive(!optedOutRef.current && canUseScene())
+    const change = () => setInteractive(!optedOutRef.current && canUseScene(optedInRef.current))
     media.addEventListener('change', change)
     navigator.connection?.addEventListener('change', change)
     return () => {
@@ -111,7 +121,7 @@ export default function SpoorthiHomeJourney() {
       <div className="si-journey__scene" ref={sceneRef} aria-hidden="true" />
       <div className="si-journey__poster" aria-hidden="true"><img src="/assets/spoorthi/cinematic/construction-reference-1600.webp" srcSet="/assets/spoorthi/cinematic/construction-reference-640.webp 640w, /assets/spoorthi/cinematic/construction-reference-960.webp 960w, /assets/spoorthi/cinematic/construction-reference-1600.webp 1600w, /assets/spoorthi/cinematic/construction-reference-2560.webp 2560w" sizes={fallback ? '90vw' : '100vw'} alt="" width="5408" height="3600" loading="eager" fetchPriority="high" /></div>
       <div className="si-journey__wash" aria-hidden="true" />
-      <div className="si-journey__masthead"><span>{homeJourney.label}</span><div className="si-journey__actions">{!fallback && <button type="button" onClick={readIntroduction}>Read without 3D</button>}<a href="#spoorthi-home-content">Skip introduction <ArrowDownRight size={15} aria-hidden="true" /></a></div></div>
+      <div className="si-journey__masthead"><span>{homeJourney.label}</span><div className="si-journey__actions">{!fallback ? <button type="button" onClick={readIntroduction}>Read without 3D</button> : canUseScene(true) && <button type="button" onClick={showAnimation}>View 3D animation</button>}<a href="#spoorthi-home-content">Skip introduction <ArrowDownRight size={15} aria-hidden="true" /></a></div></div>
       <div className="si-journey__story">
         {homeJourney.stages.map((step, index) => <article className={`si-journey__chapter${index === active ? ' is-active' : ''}`} aria-hidden={!fallback && index !== active ? true : undefined} key={step.label}>
           <p className="si-journey__label"><span>{number(index + 1)}</span>{step.label}</p>
@@ -120,13 +130,14 @@ export default function SpoorthiHomeJourney() {
           {index === homeJourney.stages.length - 1 && <a href="#spoorthi-home-content" tabIndex={!fallback && active !== index ? -1 : undefined} className="si-journey__continue">Discover Spoorthi <ArrowRight size={17} aria-hidden="true" /></a>}
         </article>)}
       </div>
+      {!fallback && <a className="si-journey__mobile-cta" href="#spoorthi-home-content">Discover Spoorthi <ArrowRight size={17} aria-hidden="true" /></a>}
       <div className="si-journey__foot">
         <div className="si-journey__scroll"><ArrowDown size={16} aria-hidden="true" /><span>Scroll to explore<br /><small>Reverse to retrace the journey</small></span></div>
         <p className="si-journey__notice">{fallback ? 'Reference photograph · Not a Spoorthi project' : homeJourney.notice}</p>
         <div className="si-journey__progress" ref={progressRef} aria-label={`Chapter ${active + 1} of ${homeJourney.stages.length}`}><span>{number(active + 1)}</span><i aria-hidden="true"><b /></i><span>{number(homeJourney.stages.length)}</span></div>
       </div>
       {!fallback && status === 'loading' && <div className="si-journey__loading" role="status"><span>Loading construction scene · {loadProgress}%</span><progress aria-label="Construction scene assets" max="100" value={loadProgress} /></div>}
-      {status === 'error' && <div className="si-journey__error" role="status">The interactive view is unavailable. You can read the introduction below. <button type="button" onClick={() => { setStatus('loading'); setRetry(value => value + 1); setInteractive(canUseScene()) }}>Retry 3D view</button></div>}
+      {status === 'error' && <div className="si-journey__error" role="status">The interactive view is unavailable. You can read the introduction below. <button type="button" onClick={showAnimation}>Retry 3D view</button></div>}
     </div>
   </section>
 }

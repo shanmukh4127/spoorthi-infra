@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom'
 import { ArrowDown, ArrowRight } from 'lucide-react'
-import { signatureProject, selectedProjects } from '../../data/tejes/projectArchive.js'
+import { createHomepageStory, getHomepageProjects } from '../../data/shared/homepageProjects.js'
 import usePublicProjects from '../../data/usePublicProjects.js'
 import { publicTejesProject } from '../../data/tejes/publicProjectDetail.js'
 import { routePaths } from '../../data/routePaths.js'
 import ProjectScrollStory from '../common/ProjectScrollStory.jsx'
+import MobileProjectCards from '../common/MobileProjectCards.jsx'
 
 const scrollStoryRevision = import.meta.hot ? (import.meta.hot.data.projectRevision ?? 0) + 1 : 0
 if (import.meta.hot) import.meta.hot.data.projectRevision = scrollStoryRevision
 
-const projects = [signatureProject, ...selectedProjects.slice(0, 2)]
 const stages = [
   { key: 'twoDImages', copyKey: 'twoD', label: '2D design', title: 'First, a sense of space.', note: 'Illustrative planning study · Shared concept plan, not an approved project drawing' },
   { key: 'threeDImages', copyKey: 'threeD', label: '3D design', title: 'An idea takes dimension.', note: 'Illustrative spatial perspective' },
@@ -36,10 +36,15 @@ const featuredCopy = {
 
 export default function TejesFeaturedProjects() {
   const { projects: publicProjects } = usePublicProjects()
-  const visibleProjects = projects.flatMap(project => { const record = publicProjects.find(record => record.id === project.id && record.brand === 'Tejes Interiors'); return record ? [publicTejesProject(record)] : [] })
+  const visibleProjects = getHomepageProjects(publicProjects, 'Tejes Interiors').map(record => {
+    const story = createHomepageStory({ ...publicTejesProject(record), showcaseCopy: record.showcaseCopy || featuredCopy[record.id] })
+    return { ...story.project, homepageCopy: story.copy, homepageStages: featuredCopy[record.id] ? stages : story.stages }
+  })
   return <section className="tfp" id="tejes-featured-projects" aria-labelledby="tejes-featured-title">
     <header className="tfp-intro"><p className="tfp-kicker">Tejes Interiors <span>A closer look</span></p><div><h2 id="tejes-featured-title">From a first line.<br /><em>To a lasting feeling.</em></h2><p>Selected design studies. Follow each space from its planning idea to a three-dimensional view and the final imagined atmosphere.</p></div>{visibleProjects.length > 0 && <a className="tfp-intro-scroll" href={`#featured-${visibleProjects[0].id}`}>Discover the collection <ArrowDown size={17} aria-hidden="true" /></a>}</header>
-    {visibleProjects.map((project, index) => <ProjectScrollStory key={`${project.id}-${scrollStoryRevision}`} project={project} index={index} total={visibleProjects.length} stages={stages} copy={featuredCopy[project.id]} />)}
+    {visibleProjects.length > 0 && <a className="tfp-intro-scroll tfp-intro-scroll--mobile" href="#tejes-project-cards">Swipe through the projects <ArrowDown size={17} aria-hidden="true" /></a>}
+    <MobileProjectCards id="tejes-project-cards" projects={visibleProjects} stages={stages} copyFor={project => project.homepageCopy} floating />
+    <div className="tfp-desktop-projects">{visibleProjects.map((project, index) => <ProjectScrollStory key={`${project.id}-${scrollStoryRevision}`} project={project} index={index} total={visibleProjects.length} stages={project.homepageStages} copy={project.homepageCopy} projectLinkLabel="Explore project" />)}</div>
     <footer className="tfp-closing"><p className="tfp-kicker">Your next chapter</p><h2>A space that feels<br /><em>like you.</em></h2><div><Link className="tfp-link" to={routePaths.tejes.contact}>Start a conversation <ArrowRight size={17} aria-hidden="true" /></Link><Link className="tfp-link" to={routePaths.tejes.projects}>View all projects <ArrowRight size={17} aria-hidden="true" /></Link></div><p className="tfp-concept">Tejes Interiors · Interior design & spatial storytelling</p></footer>
   </section>
 }

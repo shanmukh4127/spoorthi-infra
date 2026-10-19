@@ -1,5 +1,6 @@
 import { spoorthiProjectCollection } from './projectsPage.js'
 import { signatureProject, selectedProjects } from '../tejes/projectArchive.js'
+import { isHomepageProject } from '../shared/homepageProjects.js'
 
 // Legacy static studies have no publication status; saved Draft records must
 // override them before filtering, rather than allowing a static fallback through.
@@ -14,7 +15,7 @@ export function getWorkspaceProjects(savedProjects = []) {
   return [
     ...catalog.map(project => ({ ...project, ...savedById.get(project.id) })),
     ...saved.filter(project => !staticIds.has(project.id)),
-  ]
+  ].map(project => ({ ...project, showOnHomepage: isHomepageProject(project) }))
 }
 
 export function getPublicProjects(savedProjects = []) {

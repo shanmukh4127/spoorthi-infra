@@ -13,14 +13,20 @@
 .spoorthi-featured-projects .tfp-card { box-shadow: 0 30px 65px -25px #34322645; }
 .spoorthi-featured-projects .tfp-description-title { max-width: 16ch; }
 .spoorthi-featured-projects .sfp-status { margin-top: 1.5rem; color: var(--tfp-muted); }
-.sfp-continuation { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding: 2.5rem 0 4rem; }
-.sfp-continuation > p { color: var(--tfp-muted); font-size: .65rem; letter-spacing: .08em; text-transform: uppercase; }
 @media (max-width: 767px) {
   .tfp.spoorthi-featured-projects { --tfp-header-offset: 68px; scroll-margin-top: 68px; }
-  .sfp-continuation { align-items: flex-start; flex-direction: column; gap: 1rem; }
   .spoorthi-featured-projects .tfp-project-pin { padding-top: 20px; padding-bottom: 45px; gap: 14px; }
   .spoorthi-featured-projects .tfp-description-title { font-size: clamp(25px, 7vw, 30px); margin-bottom: 10px; }
   .spoorthi-featured-projects .tfp-description { font-size: 13px; line-height: 1.65; }
   .spoorthi-featured-projects .tfp-project-link { margin-top: 8px; }
   .spoorthi-featured-projects .tfp-card figcaption { padding-block: 12px; }
+}
+
+/* Compact the introduction after removing its redundant label and footer. */
+.spoorthi-featured-projects .tfp-intro { padding:64px 0 32px; }
+.spoorthi-featured-projects .tfp-intro>div { margin:0 0 24px; }
+@media(max-width:600px) {
+  .spoorthi-featured-projects .tfp-intro { padding:40px 0 22px; }
+  .spoorthi-featured-projects .tfp-intro>div { margin:0; }
+  .spoorthi-featured-projects .tfp-intro>div>p { margin-top:18px; }
 }

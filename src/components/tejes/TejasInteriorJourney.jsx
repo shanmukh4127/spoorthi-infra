@@ -64,6 +64,7 @@ export default function TejasInteriorJourney() {
     let disposed = false, runtime, frame = 0, previous = -1, displayed = NaN, lastTime = 0
     const controller = new AbortController()
     const container = host.current
+    const mobileViewport = window.matchMedia('(max-width: 600px)')
     const update = (now = performance.now()) => {
       frame = 0
       if (disposed || document.hidden || !root.current || !viewport.current) return
@@ -73,7 +74,7 @@ export default function TejasInteriorJourney() {
       const dt = lastTime ? Math.min(.05, (now - lastTime) / 1000) : 1 / 60
       lastTime = now
       if (!Number.isFinite(displayed) || !runtime) displayed = target
-      else displayed += (target - displayed) * (1 - Math.exp(-dt / .085))
+      else displayed += (target - displayed) * (1 - Math.exp(-dt / (mobileViewport.matches ? .18 : .085)))
       if (Math.abs(target - displayed) < .000012) displayed = target
       const p = displayed
       runtime?.update(p)
@@ -125,7 +126,6 @@ export default function TejasInteriorJourney() {
     <div className="tj-viewport" ref={viewport}>
       <div className="tj-scene" ref={host} aria-hidden="true" />
       {!reading && status === 'loading' && <div className="tj-poster" aria-hidden="true"><TejasHouseStill index={0} priority decorative /></div>}
-      <div className="tj-wash" aria-hidden="true" />
       <header className="tj-header">
         <Link to={routePaths.tejes.home} className="tj-logo" aria-label="Tejas Interiors home"><img src="/assets/tejes/brand/wordmark.svg" width="700" height="300" alt="Tejas Interiors" /></Link>
         <span className="tj-edition">The interior collection <i /> A spatial journey</span>
@@ -142,6 +142,7 @@ export default function TejasInteriorJourney() {
           </div>
         </article>)}
       </div>
+      {!reading && <Link className="tj-mobile-contact" to={routePaths.tejes.contact}>Discuss your space <ArrowRight size={16} /></Link>}
       {!reading && <aside className="tj-chapter-rail" aria-label="Choose a chapter">{tejasChapters.map((c, i) => <button key={c.label} aria-label={`${num(i + 1)} — ${c.label}`} aria-current={active === i ? 'step' : undefined} onClick={() => go(i)}><span>{num(i + 1)}</span><i /></button>)}</aside>}
       <footer className="tj-foot">
         <button className="tj-explore" onClick={() => reading ? go(0) : go(Math.min(11, active + 1))}><ArrowDown size={18} strokeWidth={1} /><span>{reading ? 'Back to the beginning' : 'Scroll to feel the space'}<small>{reading ? 'Twelve chapters of interior inspiration' : 'Twelve chapters. One continuous story.'}</small></span></button>

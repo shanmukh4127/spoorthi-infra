@@ -33,6 +33,7 @@ function validateDatabase(value) {
   for (const project of value.projects) {
     if (!project || typeof project.id !== 'string' || !/^[a-z0-9-]{1,100}$/i.test(project.id) || ids.has(project.id) || typeof project.title !== 'string' || !project.title.trim() || project.title.length > 200 || typeof project.category !== 'string' || project.category.length > 200 || !allowedBrands.includes(project.brand) || !['Published', 'Draft'].includes(project.status || 'Published')) throw new Error('Invalid project record.')
     for (const key of ['description', 'location', 'serviceNeeded', 'area']) if (project[key] != null && (typeof project[key] !== 'string' || project[key].length > 4000)) throw new Error('Invalid project details.')
+    if (project.showOnHomepage != null && typeof project.showOnHomepage !== 'boolean') throw new Error('Homepage selection must be true or false.')
     ids.add(project.id)
     for (const key of ['coverImage', 'twoDImage', 'threeDImage', 'finalOutputImage', 'vrArUrl']) {
       if (project[key] && (typeof project[key] !== 'string' || project[key].length > 2048 || !/^(\/(?!\/)|https?:\/\/)/i.test(project[key]))) throw new Error('Project media must use a local path or an HTTP(S) URL.')

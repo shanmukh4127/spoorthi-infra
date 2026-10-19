@@ -36,10 +36,9 @@ html:has(.tj-home){scroll-behavior:auto}
 .tj-home button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}
 .tj-home :is(a,button,[tabindex]):focus-visible{outline:2px solid var(--tj-plum);outline-offset:6px}
 .tj-viewport{position:sticky;top:0;height:100svh;min-height:520px;overflow:hidden}
-.tj-scene,.tj-poster,.tj-wash{position:absolute;inset:0;width:100%;height:100%}
+.tj-scene,.tj-poster{position:absolute;inset:0;width:100%;height:100%}
 .tj-scene canvas{width:100%;height:100%;max-width:none}
 .tj-poster{object-fit:cover}
-.tj-wash{pointer-events:none;background:linear-gradient(90deg,rgba(76,38,77,.96) 0%,rgba(76,38,77,.82) 21%,rgba(76,38,77,.4) 39%,transparent 65%),linear-gradient(0deg,rgba(76,38,77,.9),transparent 22%,transparent 83%,rgba(76,38,77,.75));z-index:1}
 .tj-header{position:absolute;top:28px;left:4.5%;right:4.5%;display:flex;align-items:center;justify-content:space-between;z-index:6}
 .tj-logo{width:133px;display:block}
 .tj-logo img{width:100%;height:auto;filter:brightness(0) invert(1)}
@@ -111,7 +110,6 @@ html:has(.tj-home){scroll-behavior:auto}
 @media(max-width:1050px){.tj-edition{display:none}.tj-chapter-copy{padding-left:6%;width:48%}.tj-home :is(h1,h2){font-size:clamp(44px,5.6vw,64px)}.tj-foot{gap:12px}.tj-disclosure{max-width:190px}.tj-disclosure button{margin-left:0}.tj-explore small{font-size:8px}}
 @media(max-width:600px){
  .tj-viewport{min-height:560px}.tj-header{top:17px;left:6%;right:6%}.tj-logo{width:108px}.tj-menu-trigger{gap:12px}
- .tj-wash{background:linear-gradient(0deg,var(--tejes-home-background) 0%,#4c264deb 18%,#4c264dc9 42%,#4c264d20 70%),linear-gradient(180deg,#4c264db0,transparent 25%)}
  .tj-chapter{align-items:flex-end}.tj-chapter-copy{padding:0 9% 169px 7%;width:100%}.tj-home :is(h1,h2){font-size:46px;line-height:1.02;margin:17px 0}.tj-home .tj-eyebrow{font-size:8px;gap:12px}.tj-eyebrow span{padding-right:12px}.tj-home .tj-description{font-size:12px;line-height:1.7;max-width:285px}.tj-home .tj-detail{margin-top:18px;font-size:8px;letter-spacing:.08em}.tj-chapter-rail{right:3%;top:30%}.tj-chapter-rail button{height:22px;width:28px}.tj-chapter-rail span{display:none}.tj-chapter-rail button[aria-current] i{width:17px}
  .tj-foot{left:7%;right:7%;bottom:20px;flex-wrap:wrap;gap:17px}.tj-explore{font-size:9px!important}.tj-explore small{display:none}.tj-explore>svg{height:31px;width:31px;padding:7px}.tj-progress{margin-left:auto;gap:10px;font-size:9px}.tj-progress i{width:53px}.tj-disclosure{order:3;max-width:none;width:100%;font-size:8px;display:flex;justify-content:space-between;text-align:left}.tj-disclosure button{font-size:8px;padding:0}.tj-tools{right:7%;bottom:111px}.tj-tools button{font-size:8px;padding:8px}.tj-loading{right:7%;bottom:auto;top:110px;width:210px;padding:15px}
  .tj-menu{grid-template-columns:1fr;gap:45px;padding:75px 9% 40px}.tj-close{top:20px;right:5%}.tj-menu-main nav{margin:20px 0}.tj-menu-main nav a{font-size:28px;padding:10px 0}.tj-menu-chapters{gap:0}.tj-menu-chapters button{min-height:40px}
@@ -133,5 +131,19 @@ html:has(.tj-home){scroll-behavior:auto}
    environment. There are no chapter background images or image crossfades. */
 .tj-home--house .tj-poster img{width:100%;height:100%;object-fit:cover}
 .tj-home--house .tj-poster picture{display:block;width:100%;height:100%}
-.tj-home--house:not(.tj-home--reading) .tj-wash{background:linear-gradient(90deg,#4c264de8 0%,#4c264dad 20%,#4c264d45 40%,transparent 61%),linear-gradient(0deg,#4c264dc2,transparent 19%,transparent 87%,#4c264d9e)}
-@media(max-width:600px){.tj-home--house:not(.tj-home--reading) .tj-wash{background:linear-gradient(0deg,var(--tejes-home-background) 0%,#4c264ded 20%,#4c264db3 39%,#4c264d1a 64%,transparent 78%),linear-gradient(180deg,#4c264da6,transparent 23%)}}
+/* Keep the room unobscured; contrast is local to the text, without an edge wash. */
+.tj-home--house:not(.tj-home--reading) :is(.tj-chapter-copy,.tj-header,.tj-foot,.tj-chapter-rail){text-shadow:0 1px 4px #000,0 2px 12px #0009}
+.tj-mobile-contact{display:none}
+@media(max-width:600px){
+ .tj-home--house:not(.tj-home--reading) .tj-viewport{min-height:0}
+ .tj-home--house:not(.tj-home--reading) .tj-chapter-copy{width:100%;padding:0 7% 190px;pointer-events:none}
+ .tj-home--house:not(.tj-home--reading) :is(h1,h2){font-size:clamp(27px,7.5vw,34px);line-height:1.08;margin:0;max-width:17ch}
+ .tj-home--house:not(.tj-home--reading) .tj-chapter{transition:opacity .65s ease,visibility .65s}
+ .tj-home--house:not(.tj-home--reading) :is(.tj-eyebrow,.tj-description,.tj-detail,.tj-contact,.tj-chapter-rail,.tj-explore){display:none}
+ .tj-mobile-contact{position:absolute;left:7%;bottom:130px;z-index:5;display:inline-flex;align-items:center;gap:20px;padding:11px 17px;min-height:44px;background:var(--tejes-home-surface);border:1px solid var(--tejes-home-border-strong);font-size:12px}
+ .tj-home--house:not(.tj-home--reading) .tj-tools{bottom:72px;left:7%;right:7%;justify-content:flex-end}
+ .tj-home--house:not(.tj-home--reading) .tj-tools button{min-height:44px}
+ .tj-home--house:not(.tj-home--reading) .tj-tools button:first-child{margin-right:auto}
+ .tj-home--house:not(.tj-home--reading) .tj-foot{bottom:14px;gap:8px}
+ .tj-home--house:not(.tj-home--reading) .tj-progress{display:none}
+}
