@@ -18,19 +18,21 @@
 .spoorthi-project-collection__filters button { min-height: 44px; padding: .6rem 1.05rem; border: 1px solid var(--brand-border); border-radius: 2rem; background: transparent; color: var(--brand-text-secondary); font: inherit; font-size: .8rem; cursor: pointer; transition: background-color .2s ease, color .2s ease, border-color .2s ease; }
 .spoorthi-project-collection__filters button[aria-pressed='true'] { border-color: var(--brand-text-primary); background: var(--brand-text-primary); color: var(--brand-bg-primary); }
 .spoorthi-project-collection__filters button:hover { border-color: var(--brand-text-primary); }
-.spoorthi-project-collection__previews { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.25rem, 2.5vw, 2.5rem); align-items: start; }
-.spoorthi-project-preview { min-width: 0; }
-.spoorthi-project-preview__visual { position: relative; display: block; overflow: hidden; color: inherit; }
+.spoorthi-project-collection__previews { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.25rem, 2.5vw, 2.5rem); align-items: stretch; grid-auto-rows: 1fr; }
+.spoorthi-project-preview { min-width: 0; display: flex; flex-direction: column; border-bottom: 1px solid var(--brand-border); padding-bottom: .5rem; }
+.spoorthi-project-preview:focus-within { border-color: var(--brand-accent); }
+.spoorthi-project-preview__missing { display: grid; place-items: center; aspect-ratio: 4 / 3; padding: 2rem; background: var(--brand-bg-secondary); color: var(--brand-text-secondary); text-align: center; }
+.spoorthi-project-preview__visual { position: relative; display: block; overflow: hidden; color: inherit; flex-shrink: 0; }
 .spoorthi-project-preview__visual .media__frame { border: 0; box-shadow: none; aspect-ratio: 4 / 3; }
 .spoorthi-project-preview__visual .media__image { transition: transform .65s ease; }
 .spoorthi-project-preview__badge { position: absolute; left: 1rem; top: 1rem; padding: .45rem .65rem; border: 1px solid rgba(255,255,255,.35); border-radius: 2px; background: rgba(20,25,24,.7); backdrop-filter: blur(6px); color: #fff; font: .62rem var(--brand-font-technical); letter-spacing: .04em; text-transform: uppercase; }
 .spoorthi-project-preview__image-arrow { position: absolute; display: grid; place-items: center; bottom: 1rem; right: 1rem; width: 2.75rem; height: 2.75rem; border-radius: 50%; background: var(--brand-bg-primary); color: var(--brand-text-primary); transition: transform .25s ease; }
-.spoorthi-project-preview__copy { padding: 1.25rem 0 .25rem; }
+.spoorthi-project-preview__copy { padding: 1.25rem 0 .25rem; display: flex; flex-direction: column; flex: 1; }
 .spoorthi-project-preview__category { display: flex; justify-content: space-between; gap: 1rem; margin: 0 0 .8rem; }
-.spoorthi-project-preview__copy h3 { margin: 0 0 .8rem; font-size: clamp(1.5rem, 2vw, 2rem); line-height: 1.2; }
+.spoorthi-project-preview__copy h3 { margin: 0 0 1rem; min-height: 2.4em; font-size: clamp(1.5rem, 2vw, 2rem); line-height: 1.2; overflow-wrap: anywhere; }
 .spoorthi-project-preview__copy h3 a { color: inherit; text-decoration: none; }
 .spoorthi-project-preview__copy > p:not(.type-label) { min-height: 3.3em; margin: 0; color: var(--brand-text-secondary); font-size: .95rem; line-height: 1.65; }
-.spoorthi-project-preview__link { display: inline-flex; align-items: center; gap: .6rem; min-height: 44px; margin-top: .7rem; color: var(--brand-text-primary); text-decoration: none; font-size: .85rem; }
+.spoorthi-project-preview__link { display: inline-flex; align-items: center; align-self: flex-start; gap: .6rem; min-height: 44px; margin-top: auto; padding-top: .7rem; color: var(--brand-text-primary); text-decoration: none; font-size: .85rem; }
 .spoorthi-project-preview__link:hover, .spoorthi-project-preview__copy h3 a:hover { color: var(--brand-accent); }
 .spoorthi-projects-page a:focus-visible, .spoorthi-projects-page button:focus-visible { outline: 2px solid var(--brand-focus); outline-offset: 5px; }
 .spoorthi-project-collection__empty { margin-top: 2rem; padding: 2rem; border: 1px solid var(--brand-border); }
@@ -43,9 +45,11 @@
 .spoorthi-projects-closing__actions .ui-link { justify-content: space-between; gap: 2rem; color: inherit; border-bottom: 1px solid rgba(244,241,235,.3); padding-block: .6rem; min-height: 44px; }
 .spoorthi-projects-closing a:focus-visible { outline-color: #d0baa0; }
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .spoorthi-project-preview:hover { border-color: var(--brand-accent); }
   .spoorthi-project-preview__visual:hover .media__image { transform: scale(1.045); }
   .spoorthi-project-preview__visual:hover .spoorthi-project-preview__image-arrow { transform: rotate(45deg); }
 }
+@media (min-width: 1440px) { .spoorthi-project-collection__previews { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 @media (max-width: 1024px) { .spoorthi-project-collection__previews { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 768px) {
   .spoorthi-projects-intro__layout { grid-template-columns: 1fr; gap: 2rem; }
@@ -56,9 +60,9 @@
   .spoorthi-projects-closing__actions { width: min(100%, 22rem); }
 }
 @media (max-width: 600px) {
-  .spoorthi-project-collection__previews { grid-template-columns: 1fr; gap: 2.5rem; }
+  .spoorthi-project-collection__previews { grid-template-columns: 1fr; grid-auto-rows: auto; gap: 2.5rem; }
   .spoorthi-project-collection__toolbar { align-items: start; flex-direction: column; gap: 1rem; }
-  .spoorthi-project-preview__copy h3 { font-size: 1.85rem; }
+  .spoorthi-project-preview__copy h3 { font-size: 1.85rem; min-height: 0; }
   .spoorthi-project-preview__copy > p:not(.type-label) { min-height: 0; }
 }
 @media (prefers-reduced-motion: reduce) {

@@ -1,43 +1,22 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import { PageContainer, SectionWrapper } from '../../components/layout/index.js'
 import TextLink from '../../components/common/TextLink.jsx'
 import SpoorthiProjectCollection from '../../components/spoorthi/SpoorthiProjectCollection.jsx'
-import { spoorthiProjectCollection, spoorthiProjectsPage } from '../../data/spoorthi/index.js'
+import { spoorthiProjectsPage } from '../../data/spoorthi/index.js'
+import usePublicProjects from '../../data/usePublicProjects.js'
+import ErrorState from '../../components/states/ErrorState.jsx'
+import LoadingState from '../../components/states/LoadingState.jsx'
 import { routePaths } from '../../data/routePaths.js'
 import '../../styles/spoorthi-projects.css'
 
-const ADMIN_STORAGE_KEY = 'spoorthi-admin-demo-v1'
-
-function readBrowserProjects() {
-  try {
-    return JSON.parse(window.localStorage.getItem(ADMIN_STORAGE_KEY))?.projects ?? []
-  } catch {
-    return []
-  }
-}
-
-function mergeProjects(savedProjects) {
-  const savedSpoorthiProjects = savedProjects.filter((project) => project?.brand === 'Spoorthi Infra')
-  const savedById = new Map(savedSpoorthiProjects.map((project) => [project.id, project]))
-  const baseProjects = spoorthiProjectCollection.map((project) => ({ ...project, ...savedById.get(project.id) }))
-  const newProjects = savedSpoorthiProjects.filter((project) => !spoorthiProjectCollection.some((baseProject) => baseProject.id === project.id))
-  return [...baseProjects, ...newProjects]
-}
-
 function ProjectsPage() {
   const { intro, collection, closing, approvedProjectIds, presentationById } = spoorthiProjectsPage
-  const [savedProjects, setSavedProjects] = useState(() => readBrowserProjects())
-
-  useEffect(() => {
-    fetch('/api/admin/database')
-      .then((response) => response.ok ? response.json() : Promise.reject(new Error('Admin data unavailable')))
-      .then((data) => setSavedProjects(Array.isArray(data.projects) ? data.projects : []))
-      .catch(() => setSavedProjects(readBrowserProjects()))
-  }, [])
-
-  const projects = useMemo(() => mergeProjects(savedProjects), [savedProjects])
+  const { projects: allProjects, status } = usePublicProjects()
+  const projects = useMemo(() => allProjects.filter(project => project.brand === 'Spoorthi Infra'), [allProjects])
   const publicApprovedIds = useMemo(() => [...new Set([...approvedProjectIds, ...projects.map((project) => project.id)])], [approvedProjectIds, projects])
   const publicPresentation = useMemo(() => Object.fromEntries(projects.map((project) => [project.id, presentationById[project.id] ?? { cover: { alt: project.coverAlt ?? `${project.title} concept study` } }])), [presentationById, projects])
+
+  if (status !== 'ready') return <SectionWrapper><PageContainer>{status === 'loading' ? <LoadingState label="Loading project collection" /> : <ErrorState title="Project collection unavailable" message="The project service could not be reached. Please try again shortly." onRetry={() => window.location.reload()} />}</PageContainer></SectionWrapper>
 
   return (
     <div className="spoorthi-projects-page">
@@ -56,7 +35,7 @@ function ProjectsPage() {
         </PageContainer>
       </SectionWrapper>
 
-      <SpoorthiProjectCollection projects={projects} approvedIds={publicApprovedIds} presentationById={publicPresentation} content={collection} />
+      <SpoorthiProjectCollection projects={projects} approvedIds={publicApprovedIds} presentationById={publicPresentation} content={{ ...collection, label: 'Explore projects', title: 'Projects and design studies', description: 'Published projects and illustrative concepts. Open a project to follow its 2D drawing, 3D view and final image.' }} />
 
       <SectionWrapper className="spoorthi-projects-closing">
         <PageContainer>

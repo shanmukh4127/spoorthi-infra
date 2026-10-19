@@ -56,6 +56,9 @@
 .spoorthi-project-detail__next-link:hover .spoorthi-project-detail__next-label { color: var(--brand-accent); }
 .spoorthi-project-detail a:focus-visible, .spoorthi-project-gallery:focus-visible, .spoorthi-project-gallery button:focus-visible { outline: 2px solid var(--brand-focus); outline-offset: 5px; }
 .spoorthi-project-detail--not-found { min-height: 65vh; }
+.spoorthi-project-detail__story-heading { padding-block: 3rem 1rem; }
+.spoorthi-project-detail__story-heading > p:last-child { max-width: 48ch; color: var(--tfp-muted); }
+.spoorthi-project-detail .tfp-description-title { font-weight: 400; letter-spacing: -.025em; }
 .spoorthi-project-detail--not-found .section-heading { margin-bottom: 2rem; }
 @media (max-width: 768px) {
   .spoorthi-project-detail__opening-grid, .spoorthi-project-detail__overview-grid { grid-template-columns: 1fr; gap: 2rem; }

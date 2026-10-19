@@ -1,3 +1,5 @@
+import { spoorthiDemoProjects } from './demoShowcase.js'
+
 const residentialImage = '/assets/spoorthi/architecture.webp'
 const spatialImage = '/assets/spoorthi/spatial.webp'
 const planningImage = '/assets/spoorthi/design-studio.webp'
@@ -71,6 +73,7 @@ export const spoorthiProjectCollection = Object.freeze([
     ]),
     relatedService: Object.freeze({ label: 'Explore spatial experiences', path: '/spoorthi/vr' }),
   }),
+  ...spoorthiDemoProjects,
 ])
 
 export const spoorthiProjectsPage = Object.freeze({

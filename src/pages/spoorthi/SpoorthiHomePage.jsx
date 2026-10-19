@@ -1,15 +1,15 @@
 import { ArrowRight, ArrowUpRight, Image as ImageIcon } from 'lucide-react'
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { PageContainer, SectionWrapper } from '../../components/layout/index.js'
 import { routePaths } from '../../data/routePaths.js'
-import { spoorthiProjectCollection } from '../../data/spoorthi/projectsPage.js'
+import usePublicProjects from '../../data/usePublicProjects.js'
 import { companyStory } from '../../data/spoorthi/companyStory.js'
 import SpoorthiHomeJourney from '../../components/spoorthi/SpoorthiHomeJourney.jsx'
+import SpoorthiFeaturedProjects from '../../components/spoorthi/SpoorthiFeaturedProjects.jsx'
 import '../../styles/spoorthi-home-structure.css'
 
 const paths = routePaths.spoorthi
-const ADMIN_STORAGE_KEY = 'spoorthi-admin-demo-v1'
 const services = [
   { number: '01', title: 'Civil construction', description: 'Connect the layout, structure and architectural details with the space you want to create.', path: paths.civilConstruction },
   { number: '02', title: 'Architecture & planning', description: 'Explore layouts, circulation, proportion and the relationships between spaces.', path: paths.design3d },
@@ -37,28 +37,10 @@ function HomeLink({ to, children }) {
 function Pending({ children = 'Pending client confirmation' }) {
   return <span className="sh-pending">{children}</span>
 }
-function readBrowserProjects() {
-  try { return JSON.parse(window.localStorage.getItem(ADMIN_STORAGE_KEY))?.projects ?? [] } catch { return [] }
-}
-function mergeProjects(savedProjects) {
-  const saved = savedProjects.filter((project) => project?.brand === 'Spoorthi Infra')
-  const savedById = new Map(saved.map((project) => [project.id, project]))
-  const base = spoorthiProjectCollection.map((project) => ({ ...project, ...savedById.get(project.id) }))
-  return [...base, ...saved.filter((project) => !spoorthiProjectCollection.some((baseProject) => baseProject.id === project.id))]
-}
-
 function SpoorthiHomePage() {
-  const [savedProjects, setSavedProjects] = useState(() => readBrowserProjects())
-  useEffect(() => {
-    const syncBrowserProjects = () => setSavedProjects(readBrowserProjects())
-    fetch('/api/admin/database')
-      .then((response) => response.ok ? response.json() : Promise.reject(new Error('Admin data unavailable')))
-      .then((data) => setSavedProjects(Array.isArray(data.projects) ? data.projects : []))
-      .catch(() => setSavedProjects(readBrowserProjects()))
-    window.addEventListener('storage', syncBrowserProjects)
-    return () => window.removeEventListener('storage', syncBrowserProjects)
-  }, [])
-  const projects = useMemo(() => mergeProjects(savedProjects), [savedProjects])
+  const { projects: allProjects, services: publishedServices, status } = usePublicProjects()
+  const projects = useMemo(() => allProjects.filter(project => project.brand === 'Spoorthi Infra' && !project.isShowcaseDemo), [allProjects])
+  const visibleServices = status === 'ready' ? services.filter(service => publishedServices.some(saved => saved.name.toLowerCase() === service.title.toLowerCase())) : []
   const founder = companyStory.founder
   const founderReady = founder.approved && founder.name && founder.role && founder.biography
   const milestones = companyStory.milestones.filter(item => item.approved && item.title)
@@ -82,6 +64,9 @@ function SpoorthiHomePage() {
         </PageContainer>
       </section>
 
+    </div>
+    <SpoorthiFeaturedProjects projects={allProjects} status={status} />
+    <div className="sh-story">
       <SectionWrapper id="our-approach" className="sh-about"><PageContainer>
         <div data-story-section="about" className="sh-about__grid"><div><Eyebrow number="02">About Spoorthi</Eyebrow><h2>One idea.<br /><em>Every detail connected.</em></h2></div><div className="sh-about__copy"><p className="sh-lead">Architecture, visualization and construction in one continuous conversation.</p><p>Spoorthi Infra brings together planning, design exploration and civil construction. From a line on paper to the experience of a space, the focus is on understanding how form, structure and materials work together.</p><p>Explore the design studies, review the construction approach, or bring a project brief to begin a conversation.</p></div></div>
         <figure className="sh-about__image"><img src="/assets/spoorthi/design-studio.webp" alt="Illustrative architectural model, drawings and material samples on a studio worktable" width="1536" height="1024" loading="lazy" /><figcaption>Plan / Form / Material / Space<span>Design process illustration</span></figcaption></figure>
@@ -93,10 +78,10 @@ function SpoorthiHomePage() {
       <SectionWrapper id="milestones" className="sh-milestones"><PageContainer><div className="sh-milestones__grid" data-story-section="milestones"><div><Eyebrow number="04">Achievements & milestones</Eyebrow><h2>A story recorded<br /><em>with care.</em></h2></div><div className="sh-timeline">{milestones.length ? milestones.map((item, index) => <article key={`${item.title}-${index}`}><span>{item.date}</span><h3>{item.title}</h3><p>{item.description}</p></article>) : <article><Pending /><h3>Milestone record pending.</h3><p>Verified company milestones, credentials and achievements are awaiting client confirmation. Approved records will appear here with their dates and context.</p></article>}</div></div></PageContainer></SectionWrapper>
 
       <SectionWrapper id="projects" className="sh-projects"><PageContainer><div data-story-section="projects"><div className="sh-section-head"><div><Eyebrow number="05">Featured projects & studies</Eyebrow><h2>Ideas with<br /><em>architectural presence.</em></h2></div><Link to={paths.projects} className="sh-text-link">View the collection <ArrowUpRight size={18} aria-hidden="true" /></Link></div><p className="sh-projects__note">The current featured collection is illustrative. These concept studies explore design possibilities and are not completed Spoorthi client projects.</p>
-        <div className="sh-project-grid">{projects.slice(0, 3).map((project, index) => <Link className="sh-project" key={project.id} to={paths.projects + '/' + project.id}><div className="sh-project__image"><img src={project.coverImage} alt={project.coverAlt || project.title} width="1536" height="1024" loading="lazy" /><span className="sh-project__badge">{project.isConcept ? 'Concept study' : 'Project record'}</span><span className="sh-project__arrow"><ArrowUpRight size={23} aria-hidden="true" /></span></div><div className="sh-project__meta"><span>0{index + 1} / {project.category}</span></div><h3>{project.title}</h3><p>{project.summary || project.description}</p></Link>)}</div></div>
+        {status === 'error' && <p role="status">The project collection is temporarily unavailable. Please try again shortly.</p>}<div className="sh-project-grid">{projects.slice(0, 3).map((project, index) => <Link className="sh-project" key={project.id} to={paths.projects + '/' + project.id}><div className="sh-project__image"><img src={project.coverImage} alt={project.coverAlt || project.title} width="1536" height="1024" loading="lazy" /><span className="sh-project__badge">{project.isConcept ? 'Concept study' : 'Project record'}</span><span className="sh-project__arrow"><ArrowUpRight size={23} aria-hidden="true" /></span></div><div className="sh-project__meta"><span>0{index + 1} / {project.category}</span></div><h3>{project.title}</h3><p>{project.summary || project.description}</p></Link>)}</div></div>
       </PageContainer></SectionWrapper>
 
-      <SectionWrapper id="services" className="sh-capabilities"><PageContainer><div data-story-section="capabilities"><div className="sh-section-head"><div><Eyebrow number="06">Construction capabilities</Eyebrow><h2>From the plan.<br /><em>Into perspective.</em></h2></div><p>Explore the services presented across Spoorthi’s construction, design and spatial experience pages.</p></div><div className="sh-service-list">{services.map(service => <Link key={service.number} to={service.path}><span>{service.number}</span><h3>{service.title}</h3><p>{service.description}</p><ArrowUpRight size={24} strokeWidth={1.2} aria-hidden="true" /></Link>)}</div>
+      <SectionWrapper id="services" className="sh-capabilities"><PageContainer><div data-story-section="capabilities"><div className="sh-section-head"><div><Eyebrow number="06">Construction capabilities</Eyebrow><h2>From the plan.<br /><em>Into perspective.</em></h2></div><p>Explore the services presented across Spoorthi’s construction, design and spatial experience pages.</p></div><div className="sh-service-list">{visibleServices.map(service => <Link key={service.number} to={service.path}><span>{service.number}</span><h3>{service.title}</h3><p>{service.description}</p><ArrowUpRight size={24} strokeWidth={1.2} aria-hidden="true" /></Link>)}</div>
         <div className="sh-spatial"><Link to={paths.vr} className="sh-spatial__image" aria-label="Explore the interactive spatial concept"><img src="/assets/spoorthi/spatial.webp" alt="Illustrative stone and timber interior framing a naturally lit room" width="1536" height="1024" loading="lazy" /></Link><div><Eyebrow>See it before you build it</Eyebrow><h3>Step into the details.</h3><p>Explore scale, light and materials in an interactive spatial concept. No headset needed.</p><Link to={paths.vr} className="sh-text-link">Explore the spatial experience <ArrowUpRight size={18} aria-hidden="true" /></Link></div></div>
         <div className="sh-faq"><h3>Before we begin.</h3><div>{faqs.map(([question, answer]) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div></div></div>
       </PageContainer></SectionWrapper>

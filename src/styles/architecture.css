@@ -60,4 +60,11 @@
 .mobile-navigation__switch { margin-top: .45rem; border-top: 1px solid var(--brand-border); color: var(--brand-text-primary) !important; font-weight: 600; }
 .mobile-navigation__admin { color: var(--brand-text-primary) !important; font-weight: 600; }
 @media(max-width:1050px) { .brand-header__switch { margin-left: auto; margin-right: .8rem; } }
-@media(max-width:480px) { .brand-header__switch span { display: none; }.brand-header__switch { margin-right: .55rem; } }
+.brand-header__admin, .brand-header__switch { min-width: 44px; min-height: 44px; justify-content: center; }
+@media(max-width:600px) {
+  .brand-header__inner { gap: .5rem; }
+  .brand-header__identity { min-width: 0; margin-right: auto; }
+  .brand-header__admin, .brand-header__switch, .mobile-navigation { flex-shrink: 0; }
+  .brand-header__switch { margin: 0; }
+  .brand-header__admin span, .brand-header__switch span { display: none; }
+}

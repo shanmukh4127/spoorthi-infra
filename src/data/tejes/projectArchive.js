@@ -1,5 +1,5 @@
 import { routePaths } from '../routePaths.js'
-import images from './projectsEditorialAssets.json'
+import images from './projectsEditorialAssets.json' with { type: 'json' }
 
 const planStudy = { src: '/assets/tejes/projects/detail/illustrative-plan.svg', width: 1600, height: 1000, focalPoint: '50% 50%' }
 const flowStudy = { src: '/assets/tejes/projects/detail/illustrative-flow.svg', width: 1600, height: 1000, focalPoint: '50% 50%' }

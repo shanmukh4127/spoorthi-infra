@@ -22,8 +22,8 @@ function Header({ brand, navigation = [], cta }) {
         <NavLink className="brand-header__identity" to={brand.routeBase} aria-label={`${brand.name} home`}>
           <BrandIdentity brand={brand} />
         </NavLink>
-        {adminLink && <NavLink className="brand-header__admin" to={adminLink.path}><LogIn size={14} aria-hidden="true" /><span>{adminLink.label}</span></NavLink>}
-        <NavLink className="brand-header__switch" to={otherBrand.path}><ArrowRightLeft size={14} aria-hidden="true" /><span>Switch to {otherBrand.label}</span></NavLink>
+        {adminLink && <NavLink className="brand-header__admin" to={adminLink.path} aria-label={adminLink.label}><LogIn size={14} aria-hidden="true" /><span>{adminLink.label}</span></NavLink>}
+        <NavLink className="brand-header__switch" to={otherBrand.path} aria-label={`Switch to ${otherBrand.label}`}><ArrowRightLeft size={14} aria-hidden="true" /><span>Switch to {otherBrand.label}</span></NavLink>
         <DesktopNav brandName={brand.name} items={navigation} cta={cta} />
         <MobileNav brandName={brand.name} items={navigation} cta={cta} switchBrand={otherBrand} adminLink={adminLink} />
       </div>

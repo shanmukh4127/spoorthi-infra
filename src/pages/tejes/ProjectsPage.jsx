@@ -2,11 +2,14 @@ import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import TejesHomeMenu, { TejesWordmark } from '../../components/tejes/TejesHomeMenu.jsx'
 import { routePaths } from '../../data/routePaths.js'
-import { projectsPage, selectedProjects, signatureProject } from '../../data/tejes/projectArchive.js'
+import { projectsPage } from '../../data/tejes/projectArchive.js'
+import usePublicProjects from '../../data/usePublicProjects.js'
+import { publicTejesProject } from '../../data/tejes/publicProjectDetail.js'
 import '../../styles/tejes-home-reference.css'
 import '../../styles/tejes-projects-archive.css'
 
 export function ProjectPhoto({ image, alt, className = '', eager = false, sizes = '(max-width: 600px) 100vw, 50vw' }) {
+  if (!image?.src) return <div className={`tp-photo tp-photo--missing ${className}`} role="img" aria-label="Project image not yet added">Project image not yet added</div>
   return <img className={`tp-photo ${className}`} src={image.src} srcSet={image.srcSet} sizes={sizes}
     width={image.width} height={image.height} style={{ objectPosition: image.focalPoint }} alt={alt}
     loading={eager ? 'eager' : 'lazy'} fetchPriority={eager ? 'high' : undefined} decoding="async" />
@@ -35,14 +38,16 @@ export function TejesProjectsFooter({ activePage = 'projects' }) {
   </footer>
 }
 
-function SelectedProject({ project, index }) {
-  return <article className={`tp-selected-project tp-selected-project--${index % 2 ? 'image-first' : 'text-first'}`} aria-labelledby={`${project.id}-title`}>
-    <div className="tp-selected-copy"><span className="tp-selected-number" aria-hidden="true">{project.number}</span><div className="tp-selected-content"><p className="tp-kicker">{project.label}</p><h3 id={`${project.id}-title`}>{project.title}</h3><p className="tp-description">{project.description}</p><ProjectFacts project={project} /><ProjectLink project={project} /></div></div>
-    <Link className="tp-selected-image" to={project.detailRoute} aria-label={`View ${project.title} study`}><ProjectPhoto image={project.image} alt={project.alt} sizes="(max-width: 600px) 100vw, 48vw" /></Link>
+function ProjectCard({ project }) {
+  return <article className="tp-grid-card" aria-labelledby={`${project.id}-title`}>
+    <Link className="tp-grid-image" to={project.detailRoute} aria-label={`View ${project.title}`}><ProjectPhoto image={project.image} alt={project.alt} sizes="(max-width: 600px) 88vw, (max-width: 1024px) 44vw, (min-width: 1440px) 22vw, 29vw" /></Link>
+    <p className="tp-kicker">{project.category}</p><h3 id={`${project.id}-title`}><Link to={project.detailRoute}>{project.title}</Link></h3><p className="tp-description">{project.description}</p><ProjectFacts project={project} /><ProjectLink project={project} />
   </article>
 }
 
 export default function ProjectsPage() {
+  const { projects, status } = usePublicProjects()
+  const visible = projects.filter(project => project.brand === 'Tejes Interiors').map(record => publicTejesProject({ ...record, coverImage: record.coverImage || record.finalOutputImage || record.threeDImage || record.twoDImage }))
   return <div className="th-home tp-page">
     <TejesHomeMenu initialOpen={false} navigationItems={projectsPage.menu} navigationLabel="Tejes projects navigation" />
 
@@ -52,16 +57,10 @@ export default function ProjectsPage() {
       <div className="tp-hero-copy"><p className="tp-kicker">{projectsPage.hero.eyebrow}</p><h1 id="projects-title">{projectsPage.hero.title}</h1><p>{projectsPage.hero.introduction}</p><div className="tp-hero-meta"><span>Selected work</span><span>Tejes Interiors</span></div></div>
     </section>
 
-    <section className="tp-signature" aria-labelledby="signature-title">
-      <div className="tp-signature-rail"><span className="tp-rail-zero">0</span><span className="tp-signature-number" aria-hidden="true">{signatureProject.number}</span><span className="tp-vertical-label">Signature project</span></div>
-      <Link className="tp-signature-image" to={signatureProject.detailRoute} aria-label="View The Signature Residence study"><ProjectPhoto image={signatureProject.image} alt={signatureProject.alt} sizes="(max-width: 600px) 100vw, 44vw" /></Link>
-      <div className="tp-signature-copy"><p className="tp-kicker">Featured work</p><h2 id="signature-title">{signatureProject.title}</h2><p className="tp-description">{signatureProject.description}</p><ProjectFacts project={signatureProject} /><ProjectLink project={signatureProject} /></div>
-      <div className="tp-signature-aside" aria-hidden="true"><span className="tp-aside-rule" /><span>01</span><span>—</span><span>05</span></div>
-    </section>
-
+    {status !== 'ready' && <section className="tp-selected"><p role="status">{status === 'loading' ? 'Loading saved project collection…' : 'The project collection is temporarily unavailable. Please try again shortly.'}</p></section>}
     <section className="tp-selected" aria-labelledby="selected-heading">
       <div className="tp-selected-heading"><div><p className="tp-kicker">Selected work</p><h2 id="selected-heading">{projectsPage.selectedHeading}</h2></div><span aria-hidden="true" /></div>
-      <div className="tp-selected-list">{selectedProjects.map((project, index) => <SelectedProject key={project.id} project={project} index={index} />)}</div>
+      <div className="tp-project-grid">{visible.map(project => <ProjectCard key={project.id} project={project} />)}</div>{status === 'ready' && !visible.length && <p role="status">No published projects are available yet.</p>}
       <p className="tp-evidence">{projectsPage.evidenceNote}</p>
     </section>
 

@@ -1,10 +1,14 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight, Play, X } from 'lucide-react'
 import TejesHomeMenu from '../../components/tejes/TejesHomeMenu.jsx'
 import { routePaths } from '../../data/routePaths.js'
-import { projectById, projectsPage } from '../../data/tejes/projectArchive.js'
+import { projectsPage } from '../../data/tejes/projectArchive.js'
+import { publicTejesProject } from '../../data/tejes/publicProjectDetail.js'
+import usePublicProjects from '../../data/usePublicProjects.js'
 import { ProjectPhoto, TejesProjectsFooter } from './ProjectsPage.jsx'
+import ProjectScrollStory from '../../components/common/ProjectScrollStory.jsx'
+import { createProjectStory } from '../../data/shared/projectStory.js'
 import '../../styles/tejes-project-detail.css'
 
 const journey = [
@@ -20,7 +24,7 @@ function StageMarker({ number, eyebrow, title, id }) {
 }
 
 function MediaImage({ media, className = '', sizes, eager = false }) {
-  if (!media?.image) return <div className={`${className} td-missing-media`}>Approved project imagery to be supplied</div>
+  if (!media?.image?.src) return <div className={`${className} td-missing-media`}>Approved project imagery to be supplied</div>
   return <ProjectPhoto image={media.image} alt={media.alt} className={className} eager={eager} sizes={sizes} />
 }
 
@@ -69,7 +73,8 @@ function MediaViewer({ viewer, onClose, onStep, closeRef, dialogRef }) {
 
 export default function ProjectDetailPage() {
   const { projectId } = useParams()
-  const project = projectById[projectId]
+  const { projects, status } = usePublicProjects()
+  const project = useMemo(() => { const record = projects.find(item => item.id === projectId && item.brand === 'Tejes Interiors'); return record ? publicTejesProject({ ...record, coverImage: record.coverImage || record.finalOutputImage || record.threeDImage || record.twoDImage }) : null }, [projects, projectId])
   const [activeStage, setActiveStage] = useState('stage-2d')
   const [viewer, setViewer] = useState(null)
   const closeRef = useRef(null)
@@ -82,7 +87,7 @@ export default function ProjectDetailPage() {
     const updateStage = () => {
       const readingLine = window.scrollY + window.innerHeight * .45
       let current = journey[0].id
-      journey.forEach(stage => { const element = document.getElementById(stage.id); if (element && element.offsetTop <= readingLine) current = stage.id })
+      journey.forEach((stage, index) => { const id = index < 3 ? `featured-${project.id}-${index}` : stage.id; const element = document.getElementById(id); if (element && element.getBoundingClientRect().top + window.scrollY <= readingLine) current = stage.id })
       setActiveStage(current)
     }
     updateStage()
@@ -117,8 +122,10 @@ export default function ProjectDetailPage() {
   const openVideo = () => { openerRef.current = document.activeElement; setViewer({ kind: 'video', url: project.videoUrl, poster: project.videoThumbnail?.image?.src, title: `${project.title} project video` }) }
   const stepViewer = direction => setViewer(current => current?.items?.length > 1 ? ({ ...current, index: (current.index + direction + current.items.length) % current.items.length }) : current)
 
+  if (status !== 'ready') return <div className="th-home tp-page td-page"><main className="td-not-found"><p role="status">{status === 'loading' ? 'Loading project…' : 'The project service is temporarily unavailable.'}</p></main></div>
   if (!project) return <div className="th-home tp-page td-page"><TejesHomeMenu initialOpen={false} navigationItems={projectsPage.menu} navigationLabel="Tejes project navigation" /><main className="td-not-found"><p className="tp-kicker">Project archive</p><h1>Project not found.</h1><p>The requested study is not in the selected work archive.</p><Link to={routePaths.tejes.projects} className="td-text-link"><ArrowLeft size={14} /> Back to projects</Link></main><TejesProjectsFooter /></div>
 
+  const story = createProjectStory(project)
   const info = Object.entries(project.projectInfo || {}).filter(([, value]) => value)
   const vrAvailable = isUsableUrl(project.vrExperienceUrl)
   const videoAvailable = isUsableUrl(project.videoUrl)
@@ -129,11 +136,16 @@ export default function ProjectDetailPage() {
       <section className="td-overview" aria-labelledby="project-title">
         <Link className="td-back" to={routePaths.tejes.projects}><ArrowLeft size={13} aria-hidden="true" /> Back to projects</Link>
         <span className="td-overview-number" aria-hidden="true">{project.number}</span>
-        <div className="td-overview-copy"><p className="td-micro-label">Project overview</p><p className="tp-kicker">{project.category}</p><h1 id="project-title">{project.title}</h1><p className="td-lede">{project.description}</p>{info.length > 0 && <dl className="td-project-info">{info.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>}<p className="td-media-note">Illustrative design study · Project details to be verified</p></div>
+        <div className="td-overview-copy"><p className="td-micro-label">Project overview</p><p className="tp-kicker">{project.category}</p><h1 id="project-title">{project.title}</h1><p className="td-lede">{project.description}</p>{info.length > 0 && <dl className="td-project-info">{info.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>}<p className="td-media-note">{project.isConcept ? 'Illustrative design study · Project details to be verified' : 'Project media supplied through the workspace'}</p></div>
         <div className="td-overview-media"><MediaImage media={project.heroImage} eager sizes="(max-width: 700px) 100vw, 61vw" /><span className="td-photo-quote">Modern spaces.<br />Timeless comfort.</span></div>
       </section>
 
-      <nav className="td-journey" aria-label="Project journey">{journey.map(stage => <a key={stage.id} href={`#${stage.id}`} className={activeStage === stage.id ? 'is-active' : ''} onClick={() => setActiveStage(stage.id)}><span>{stage.number}</span>{stage.label}</a>)}</nav>
+      <nav className="td-journey" aria-label="Project journey">{journey.map((stage, index) => <a key={stage.id} href={index < 3 ? `#featured-${project.id}-${index}` : `#${stage.id}`} className={activeStage === stage.id ? 'is-active' : ''} onClick={() => setActiveStage(stage.id)}><span>{stage.number}</span>{stage.label}</a>)}</nav>
+
+      <section className="tfp td-project-story" aria-labelledby="project-story-title">
+        <header className="td-project-story-heading"><p className="tfp-kicker">Project journey</p><h2 id="project-story-title">From plan to perspective.</h2><p>Follow {project.title} through its 2D drawing, 3D view and final image.</p></header>
+        <ProjectScrollStory key={project.id} {...story} index={0} total={1} />
+      </section>
 
       <section id="stage-2d" className="td-stage td-planning" aria-labelledby="stage-2d-title">
         <div className="td-planning-copy"><StageMarker number="01" eyebrow="2D design" title="Thoughtful layouts. Better living." id="stage-2d-title" /><p>{project.stageCopy.twoD}</p></div>

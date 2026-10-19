@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Spoorthi Infra is a React-based project for the Spoorthi Infra and Tejes Interiors experiences.
+Spoorthi Infra is a React website with a self-hosted Node administrator server for the Spoorthi Infra and Tejes Interiors experiences.
 
 ## Tech stack
 
@@ -31,6 +31,8 @@ Spoorthi enquiry drafts use session storage when available and remain within the
 
 ## Development
 
+`npm run dev` starts the website and its local public-data service together. The Spoorthi home page's three featured project cards work without administrator setup. To enable admin edits, see [server setup and deployment](docs/deployment.md) and `.env.example`. Admin access requires your own configured credentials; no demo password is enabled.
+
 ```bash
 npm run dev
 ```
@@ -49,4 +51,4 @@ npm run build
 npm run preview
 ```
 
-For static hosting, configure an SPA fallback to `index.html` so direct visits to nested routes work. The website uses local compressed WebP illustrations, accessible navigation and controls, and reduced-motion styles.
+`npm run preview` serves the built frontend with the local public-data service. `npm start` runs the standalone Node server; without local credentials it enables public viewing only. Production requires server credentials, HTTPS and persistent storage. Static-only hosting cannot provide the APIs. Vite and the Node server supply the SPA fallback for nested routes.

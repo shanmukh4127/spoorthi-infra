@@ -12,6 +12,8 @@ test('company story preserves section order and publishes only approved leadersh
     const { companyStory } = await server.ssrLoadModule('/src/data/spoorthi/companyStory.js')
     const render = () => renderToStaticMarkup(createElement(MemoryRouter, null, createElement(Home)))
     const baseline = render()
+    assert.ok(baseline.indexOf('id="spoorthi-home-content"') < baseline.indexOf('id="spoorthi-demo-projects"'))
+    assert.ok(baseline.indexOf('id="spoorthi-demo-projects"') < baseline.indexOf('id="our-approach"'))
     assert.deepEqual([...baseline.matchAll(/data-story-section="([^"]+)"/g)].map(m => m[1]), ['leadership', 'about', 'purpose', 'milestones', 'projects', 'capabilities', 'contact'])
     assert.match(baseline, /Pending client confirmation/)
     assert.match(baseline, /not completed Spoorthi client projects/)
