@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { ArrowDown, ArrowDownRight, ArrowRight } from 'lucide-react'
+import SceneLoading from '../common/SceneLoading.jsx'
 import { homeJourney } from '../../data/spoorthi/homeJourney.js'
 import '../../styles/spoorthi-cinematic-tokens.css'
 import '../../styles/spoorthi-home-journey.css'
@@ -136,7 +137,7 @@ export default function SpoorthiHomeJourney() {
         <p className="si-journey__notice">{fallback ? 'Reference photograph · Not a Spoorthi project' : homeJourney.notice}</p>
         <div className="si-journey__progress" ref={progressRef} aria-label={`Chapter ${active + 1} of ${homeJourney.stages.length}`}><span>{number(active + 1)}</span><i aria-hidden="true"><b /></i><span>{number(homeJourney.stages.length)}</span></div>
       </div>
-      {!fallback && status === 'loading' && <div className="si-journey__loading" role="status"><span>Loading construction scene · {loadProgress}%</span><progress aria-label="Construction scene assets" max="100" value={loadProgress} /></div>}
+      {!fallback && status === 'loading' && <SceneLoading brand="spoorthi" progress={loadProgress} onContinue={readIntroduction} />}
       {status === 'error' && <div className="si-journey__error" role="status">The interactive view is unavailable. You can read the introduction below. <button type="button" onClick={showAnimation}>Retry 3D view</button></div>}
     </div>
   </section>

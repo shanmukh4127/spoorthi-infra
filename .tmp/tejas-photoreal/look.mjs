@@ -1,5 +1,4 @@
 import {createRequire} from 'node:module'
-import fs from 'node:fs/promises'
 const {chromium}=createRequire('C:/Users/Pardhu/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/package.json')('playwright')
 const browser=await chromium.launch({headless:true,executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',args:['--enable-webgl','--ignore-gpu-blocklist']})
 const page=await browser.newPage({viewport:{width:1440,height:1000}})

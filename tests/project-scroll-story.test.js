@@ -32,3 +32,21 @@ test('the no-motion reading view exposes every stage and a working detail link',
     assert.equal((html.match(/class="tfp-stage tfp-stage--/g) || []).length, 3)
   } finally { await server.close() }
 })
+
+test('Spoorthi renders one complete homepage story per project, including a newly published project', async () => {
+  const server = await createServer({ configFile: false, plugins: [react()], server: { middlewareMode: true, hmr: false, ws: false }, appType: 'custom' })
+  try {
+    const { default: Featured } = await server.ssrLoadModule('/src/components/spoorthi/SpoorthiFeaturedProjects.jsx')
+    const { spoorthiDemoProjects } = await server.ssrLoadModule('/src/data/spoorthi/demoShowcase.js')
+    const uploaded = { id: 'new-homepage-project', title: 'New homepage project', brand: 'Spoorthi Infra', status: 'Published', showOnHomepage: true, twoDImage: '/uploads/new-plan.png', threeDImage: '/uploads/new-model.png', finalOutputImage: '/uploads/new-final.png' }
+    const html = renderToStaticMarkup(createElement(MemoryRouter, null, createElement(Featured, { projects: [...spoorthiDemoProjects, uploaded], status: 'ready' })))
+    assert.equal((html.match(/class="tfp-project tfp-project--/g) || []).length, 4)
+    assert.equal((html.match(/class="tfp-stage tfp-stage--/g) || []).length, 12)
+    assert.doesNotMatch(html, /tfp-mobile-projects|tfp-desktop-projects/)
+    for (const project of [...spoorthiDemoProjects, uploaded]) {
+      assert.ok(html.includes(`id="featured-${project.id}"`))
+      assert.ok(html.includes(`href="/spoorthi/projects/${project.id}"`))
+      for (const source of [project.twoDImage, project.threeDImage, project.finalOutputImage]) assert.ok(html.includes(source))
+    }
+  } finally { await server.close() }
+})

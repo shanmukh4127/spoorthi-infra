@@ -30,3 +30,8 @@
   .spoorthi-featured-projects .tfp-intro>div { margin:0; }
   .spoorthi-featured-projects .tfp-intro>div>p { margin-top:18px; }
 }
+
+/* Keep each project's complete scroll story on every screen size. */
+@media (max-width: 900px) {
+  .spoorthi-featured-projects .tfp-intro .tfp-intro-scroll { display: inline-flex; }
+}

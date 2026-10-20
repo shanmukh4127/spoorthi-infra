@@ -4,6 +4,7 @@ import { ArrowDown, ArrowLeft, ArrowRight, Menu, X } from 'lucide-react'
 import { tejasChapters } from '../../data/tejes/cinematicJourney.js'
 import { houseChapterAt as chapterAt, houseChapterProgress } from '../../data/tejes/houseWalkthrough.js'
 import { routePaths } from '../../data/routePaths.js'
+import SceneLoading from '../common/SceneLoading.jsx'
 import TejasHouseStill from './TejasHouseStill.jsx'
 import '../../styles/tejas-cinematic.css'
 
@@ -150,7 +151,7 @@ export default function TejasInteriorJourney() {
         {!reading && <div className="tj-progress" ref={meter} aria-label={`Chapter ${active + 1} of 12`}><span>{num(active + 1)}</span><i><b /></i><span>12</span></div>}
       </footer>
       {!reading && <div className="tj-tools"><button onClick={read}>Read without motion</button><button disabled={active === 0} onClick={() => go(active - 1)} aria-label="Previous chapter"><ArrowLeft size={15} /></button><button disabled={active === 11} onClick={() => go(active + 1)} aria-label="Next chapter"><ArrowRight size={15} /></button></div>}
-      {!reading && status === 'loading' && <div className="tj-loading" role="status"><span>Preparing the house <b>{loaded}%</b></span><progress max="100" value={loaded} aria-label="Interior assets loaded" /><button onClick={read}>Continue with the illustrated story</button></div>}
+      {!reading && status === 'loading' && <SceneLoading brand="tejes" progress={loaded} onContinue={read} />}
       {status === 'error' && <div className="tj-error" role="status">The 3D view is unavailable. Explore the illustrated chapters below. <button onClick={() => { setStatus('loading'); setLoaded(0); setMode('scene'); setRetry(v => v + 1); window.scrollTo({ top: 0, behavior: 'instant' }) }}>Retry 3D</button></div>}
       {credits && <div className="tj-credits"><button onClick={() => setCredits(false)} aria-label="Close credits"><X size={17} /></button><p>Original house imagery generated with OpenAI image generation, combined with textured 3D furnishings and connected architectural surfaces. A conceptual interior, not a Tejas client project. <a href="/assets/tejes/cinematic/house/generation-prompts.json" target="_blank" rel="noreferrer">Generation prompts</a>. <a href="/assets/tejes/cinematic/house/README.md" target="_blank" rel="noreferrer">Asset credits and approach</a>.</p></div>}
     </div>

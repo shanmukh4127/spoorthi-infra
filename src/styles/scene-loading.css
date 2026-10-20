@@ -1,0 +1,7 @@
+.scene-loading { position:fixed; inset:0; z-index:10000; display:grid; grid-template-columns:minmax(0,1fr); place-items:center; padding:32px; background:#f5f1e8; }
+.scene-loading__logo { position:relative; width:clamp(230px,48vw,380px); max-width:100%; overflow:hidden; }
+.scene-loading__logo img { display:block; width:100%; height:auto; }
+.scene-loading__sweep { position:absolute; inset:-25% -50%; pointer-events:none; background:linear-gradient(110deg,transparent 40%,rgba(255,255,255,.08) 46%,rgba(255,255,255,.5) 50%,rgba(255,255,255,.08) 54%,transparent 60%); transform:translateX(-75%); animation:scene-logo-sweep 3.6s ease-in-out infinite; }
+@keyframes scene-logo-sweep { 0%,15% { transform:translateX(-75%); } 75%,100% { transform:translateX(75%); } }
+@media(prefers-reduced-motion:reduce) { .scene-loading__sweep { display:none; animation:none; } }
+
