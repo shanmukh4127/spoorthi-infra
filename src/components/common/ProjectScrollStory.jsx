@@ -5,7 +5,7 @@ import '../../styles/tejes-featured-projects.css'
 
 const scrollStoryRevision = import.meta.hot ? (import.meta.hot.data.scrollStoryRevision ?? 0) + 1 : 0
 if (import.meta.hot) import.meta.hot.data.scrollStoryRevision = scrollStoryRevision
-const motionQuery = '(min-width: 901px) and (min-height: 440px) and (prefers-reduced-motion: no-preference), (max-width: 900px) and (min-height: 651px) and (prefers-reduced-motion: no-preference)'
+const motionQuery = '(min-height: 440px) and (prefers-reduced-motion: no-preference)'
 const stageStops = [0, .48, .9]
 const clamp = value => Math.max(0, Math.min(1, value))
 const ease = value => { const t = clamp(value); return t * t * (3 - 2 * t) }

@@ -54,6 +54,14 @@
 }
 @media(max-width:900px) and (prefers-reduced-motion:reduce){.tfp-mobile-projects,.tfp .tfp-intro-scroll--mobile{display:none}.tfp-desktop-projects{display:block}.tfp-intro .tfp-intro-scroll{display:inline-flex}}
 .tfp-sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+/* Desktop stories use an uninterrupted image surface with softly rounded edges. */
+@media (min-width: 901px) {
+  .tfp-project--animated .tfp-media-sequence { height: auto; aspect-ratio: 8 / 5; max-height: 70svh; }
+  .tfp .tfp-card { padding: 0; border: 0; border-radius: 24px; }
+  .tfp .tfp-card-heading, .tfp .tfp-card figcaption { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .tfp .tfp-image { border-radius: inherit; }
+  .tfp .tfp-image img { padding: 0; object-fit: cover; }
+}
 @media(max-width:900px){
  .tfp-mobile-projects--floating .tfp-mobile-track{padding:24px 0 34px;margin-block:-24px -20px}
  .tfp-mobile-projects--floating .tfp-mobile-slide{perspective:1400px;perspective-origin:50% 45%}

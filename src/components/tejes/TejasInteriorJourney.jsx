@@ -43,21 +43,15 @@ export default function TejasInteriorJourney() {
 
   useEffect(() => {
     if (!menu) return
-    const previousOverflow = document.body.style.overflow
     const opener = trigger.current
-    document.body.style.overflow = 'hidden'
     const close = e => {
       if (e.key === 'Escape') { setMenu(false); opener?.focus({ preventScroll: true }) }
-      if (e.key === 'Tab') {
-        const items = [...dialog.current.querySelectorAll('button,a')]
-        const first = items[0], last = items.at(-1)
-        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus() }
-        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus() }
-      }
     }
+    const outside = event => { if (!dialog.current?.contains(event.target) && !opener?.contains(event.target)) setMenu(false) }
     dialog.current.querySelector('button')?.focus()
     document.addEventListener('keydown', close)
-    return () => { document.body.style.overflow = previousOverflow; document.removeEventListener('keydown', close); opener?.focus({ preventScroll: true }) }
+    document.addEventListener('pointerdown', outside)
+    return () => { document.removeEventListener('keydown', close); document.removeEventListener('pointerdown', outside); opener?.focus({ preventScroll: true }) }
   }, [menu])
 
   useEffect(() => {
@@ -130,7 +124,7 @@ export default function TejasInteriorJourney() {
       <header className="tj-header">
         <Link to={routePaths.tejes.home} className="tj-logo" aria-label="Tejas Interiors home"><img src="/assets/tejes/brand/wordmark.svg" width="700" height="300" alt="Tejas Interiors" /></Link>
         <span className="tj-edition">The interior collection <i /> A spatial journey</span>
-        <button className="tj-menu-trigger" ref={trigger} aria-expanded={menu} aria-controls="tejas-menu" onClick={() => setMenu(true)}>Menu <Menu size={18} strokeWidth={1.2} /></button>
+        <button className="tj-menu-trigger" ref={trigger} aria-expanded={menu} aria-controls="tejas-menu" onClick={() => setMenu(value => !value)}>Menu <Menu size={18} strokeWidth={1.2} /></button>
       </header>
       <div className="tj-story" tabIndex={0} aria-label="Interior story. Use arrow keys to explore chapters.">
         {tejasChapters.map((chapter, i) => <article key={chapter.label} id={`tejas-chapter-${i + 1}`} className={`tj-chapter ${i === active ? 'is-active' : ''}`} aria-hidden={!reading && i !== active ? true : undefined}>
@@ -155,10 +149,9 @@ export default function TejasInteriorJourney() {
       {status === 'error' && <div className="tj-error" role="status">The 3D view is unavailable. Explore the illustrated chapters below. <button onClick={() => { setStatus('loading'); setLoaded(0); setMode('scene'); setRetry(v => v + 1); window.scrollTo({ top: 0, behavior: 'instant' }) }}>Retry 3D</button></div>}
       {credits && <div className="tj-credits"><button onClick={() => setCredits(false)} aria-label="Close credits"><X size={17} /></button><p>Original house imagery generated with OpenAI image generation, combined with textured 3D furnishings and connected architectural surfaces. A conceptual interior, not a Tejas client project. <a href="/assets/tejes/cinematic/house/generation-prompts.json" target="_blank" rel="noreferrer">Generation prompts</a>. <a href="/assets/tejes/cinematic/house/README.md" target="_blank" rel="noreferrer">Asset credits and approach</a>.</p></div>}
     </div>
-    {menu && <div className="tj-menu" id="tejas-menu" role="dialog" aria-modal="true" aria-labelledby="tejas-menu-title" ref={dialog}>
+    {menu && <div className="tj-menu" id="tejas-menu" role="dialog" aria-modal="false" aria-labelledby="tejas-menu-title" ref={dialog} onBlur={event => { if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget) && !trigger.current?.contains(event.relatedTarget)) setMenu(false) }}>
       <button className="tj-close" onClick={() => setMenu(false)} aria-label="Close menu"><X size={22} /></button>
-      <div className="tj-menu-main"><p className="tj-eyebrow" id="tejas-menu-title">TEJAS INTERIORS</p><nav aria-label="Tejas navigation"><Link to={routePaths.tejes.projects}>Projects <ArrowRight /></Link><Link to={routePaths.tejes.interiorDesign}>Services <ArrowRight /></Link><Link to={routePaths.tejes.design3d}>Design development <ArrowRight /></Link><Link to={routePaths.tejes.contact}>Get in touch <ArrowRight /></Link></nav><Link className="tj-gateway" to="/">Return to the collection</Link></div>
-      <div className="tj-menu-chapters"><p className="tj-eyebrow">Explore the story</p>{tejasChapters.map((c, i) => <button key={c.label} onClick={() => go(i)}><span>{num(i + 1)}</span>{c.label}</button>)}</div>
+      <div className="tj-menu-main"><p className="tj-eyebrow" id="tejas-menu-title">TEJAS INTERIORS</p><nav aria-label="Tejas navigation"><Link to={routePaths.tejes.projects} onClick={() => setMenu(false)}>Projects <ArrowRight /></Link><Link to={routePaths.tejes.interiorDesign} onClick={() => setMenu(false)}>Services <ArrowRight /></Link><Link to={routePaths.tejes.design3d} onClick={() => setMenu(false)}>Design &amp; development <ArrowRight /></Link><Link to={routePaths.tejes.contact} onClick={() => setMenu(false)}>Get in touch <ArrowRight /></Link></nav></div>
     </div>}
   </div>
 }

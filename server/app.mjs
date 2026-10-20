@@ -4,6 +4,7 @@ import { randomBytes, randomUUID, scryptSync, timingSafeEqual, createHash } from
 import { readFile, mkdir, writeFile, stat } from 'node:fs/promises'
 import path from 'node:path'
 import { getPublicProjects, getWorkspaceProjects } from '../src/data/spoorthi/publicProjects.js'
+import { validateEnquiry, projectTypes } from '../src/data/spoorthi/contactPage.js'
 
 const SESSION_SECONDS = 8 * 60 * 60
 const MAX_IMAGE_BYTES = 8 * 1024 * 1024
@@ -43,13 +44,13 @@ function validateDatabase(value) {
   return { projects: value.projects, services: value.services, enquiries: value.enquiries, settings: value.settings, initialized: true }
 }
 
-async function readJson(request) {
+async function readJson(request, maxBytes = MAX_BODY_BYTES) {
   if (!/^application\/json(?:;|$)/i.test(request.headers['content-type'] || '')) throw Object.assign(new Error('JSON request required.'), { status: 415 })
   const chunks = []
   let size = 0
   for await (const chunk of request) {
     size += chunk.length
-    if (size > MAX_BODY_BYTES) throw Object.assign(new Error('Request is too large.'), { status: 413 })
+    if (size > maxBytes) throw Object.assign(new Error('Request is too large.'), { status: 413 })
     chunks.push(chunk)
   }
   try { return JSON.parse(Buffer.concat(chunks).toString('utf8')) } catch { throw Object.assign(new Error('Invalid JSON.'), { status: 400 }) }
@@ -81,6 +82,7 @@ export async function createApp({ dataDirectory, distDirectory, seedPath, adminU
   // A credential change invalidates sessions from the previous server process.
   database.exec('DELETE FROM sessions')
   const attempts = new Map()
+  const enquiryAttempts = new Map()
   const developmentSessions = new Set()
   const localAccess = request => !secureCookies && localDevelopmentAccess?.(request) === true
   const readWorkspace = () => { const row = database.prepare('SELECT revision,payload FROM workspace WHERE id=1').get(); const payload = JSON.parse(row.payload); return { ...payload, projects: getWorkspaceProjects(payload.projects), revision: row.revision } }
@@ -109,6 +111,28 @@ export async function createApp({ dataDirectory, distDirectory, seedPath, adminU
           const workspace = readWorkspace()
           // Include Draft overrides while merging; never send their content publicly.
           return send(response, 200, { projects: getPublicProjects(workspace.projects), services: workspace.services.filter(service => service.status === 'Published') })
+        }
+        if (pathname === '/api/public/enquiries' && request.method === 'POST') {
+          const body = await readJson(request, 24 * 1024)
+          const limits = { name: 120, email: 254, type: 30, area: 30, message: 4000, context: 500 }
+          if (!body || typeof body !== 'object' || Object.entries(limits).some(([key, limit]) => (key !== 'context' || body[key] != null) && (typeof body[key] !== 'string' || body[key].length > limit)) || typeof body.submissionId !== 'string' || !/^[a-f0-9-]{36}$/i.test(body.submissionId)) return send(response, 400, { error: 'Please check your enquiry details.' })
+          const draft = Object.fromEntries(Object.keys(limits).map(key => [key, (body[key] || '').trim()]))
+          const errors = validateEnquiry(draft)
+          if (Object.keys(errors).length) return send(response, 400, { error: 'Please check the highlighted details.', errors })
+          const workspace = readWorkspace()
+          const id = `enquiry-${body.submissionId}`
+          if (workspace.enquiries.some(item => item.id === id)) return send(response, 200, { ok: true })
+          const now = Date.now()
+          for (const [key, value] of enquiryAttempts) if (value.until <= now) enquiryAttempts.delete(key)
+          const ip = request.socket.remoteAddress || 'unknown'
+          const limit = enquiryAttempts.get(ip)
+          if (limit?.count >= 5) { response.setHeader('Retry-After', String(Math.ceil((limit.until - now) / 1000))); return send(response, 429, { error: 'Too many enquiries. Please try again in a few minutes.' }) }
+          if (workspace.enquiries.length >= 1000) return send(response, 503, { error: 'Enquiries are temporarily unavailable. Please try again later.' })
+          const enquiry = { ...draft, id, brand: 'Spoorthi Infra', subject: `${projectTypes.find(item => item.value === draft.type).label} project enquiry`, status: 'New', initials: draft.name.split(/\s+/).slice(0, 2).map(part => part[0]).join('').toUpperCase(), createdAt: new Date(now).toISOString(), date: new Intl.DateTimeFormat('en-IN', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'Asia/Kolkata' }).format(now) }
+          const payload = validateDatabase({ ...workspace, enquiries: [enquiry, ...workspace.enquiries] })
+          database.prepare('UPDATE workspace SET payload=?, revision=revision+1 WHERE id=1').run(JSON.stringify(payload))
+          enquiryAttempts.set(ip, { count: (limit?.count || 0) + 1, until: limit?.until || now + 10 * 60 * 1000 })
+          return send(response, 201, { ok: true })
         }
         if (!adminConfigured && !localAccess(request)) return send(response, 503, { error: 'Public projects are available. To enable administrator sign-in, configure SPOORTHI_ADMIN_USERNAME and SPOORTHI_ADMIN_PASSWORD_HASH in .env, then restart the local server. No demo password is enabled.' })
         if (pathname === '/api/admin/login' && request.method === 'POST') {

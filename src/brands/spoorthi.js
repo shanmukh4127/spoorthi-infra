@@ -10,7 +10,7 @@ export const spoorthiBrand = createBrandConfig({
   routeBase: routePaths.spoorthi.home,
   logo: null,
   navigationKey: 'spoorthi',
-  primaryCta: { label: 'Let’s talk', path: routePaths.spoorthi.contact },
+  primaryCta: { label: 'Let’s talk', path: `${routePaths.spoorthi.contact}#enquiry` },
   secondaryCta: null,
   socialLinks: [],
   contact: null,

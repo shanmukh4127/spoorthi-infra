@@ -4,9 +4,8 @@ import { Menu, X } from 'lucide-react'
 import { routePaths } from '../../data/routePaths.js'
 
 const items = [
-  ['About Tejes', '#tejes-about'], ['Our Approach', '#tejes-approach'],
-  ['Services', routePaths.tejes.interiorDesign], ['Projects', routePaths.tejes.projects],
-  ['Design Development', routePaths.tejes.design3d], ['Contact', routePaths.tejes.contact],
+  ['Projects', routePaths.tejes.projects], ['Services', routePaths.tejes.interiorDesign],
+  ['Design & Development', routePaths.tejes.design3d], ['Get in touch', routePaths.tejes.contact],
 ]
 
 export function TejesWordmark() {

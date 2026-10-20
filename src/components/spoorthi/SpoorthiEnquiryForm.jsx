@@ -8,13 +8,17 @@ function SpoorthiEnquiryForm({ draft, setDraft, nameRef, estimateContext, onClea
   const source = JSON.stringify([draft, estimateContext])
   const [feedback, setFeedback] = useState({ source: '', message: '' })
   const status = feedback.source === source ? feedback.message : ''
-  const setStatus = message => setFeedback({ source, message })
+  const setStatus = (message, kind = '') => setFeedback({ source, message, kind })
   const [errors, setErrors] = useState({})
   const [checkedDraft, setCheckedDraft] = useState(null)
   const [prepared, setPrepared] = useState(null)
   const brief = prepared?.source === source ? prepared.brief : ''
   const [copying, setCopying] = useState(false)
+  const [sending, setSending] = useState(false)
+  const submission = useRef(null)
+  const pending = useRef(false)
   const briefRef = useRef(null)
+  const successDialog = useRef(null)
   const update = key => event => {
     setDraft(previous => ({ ...previous, [key]: event.target.value }))
     setPrepared(null)
@@ -38,12 +42,24 @@ function SpoorthiEnquiryForm({ draft, setDraft, nameRef, estimateContext, onClea
     return preparedBrief
   }
 
-  function submit(event) {
+  async function submit(event) {
     event.preventDefault()
+    if (pending.current) return
     const preparedBrief = prepareEnquiry(event.currentTarget)
-    if (!preparedBrief || !contactPage.details.email) return
-    setStatus(contactPage.enquiry.checked)
-    window.location.assign(`mailto:${contactPage.details.email}?subject=${encodeURIComponent('Project enquiry — Spoorthi Infra')}&body=${encodeURIComponent(preparedBrief)}`)
+    if (!preparedBrief) return
+    if (submission.current?.source !== source) submission.current = { source, id: crypto.randomUUID() }
+    pending.current = true
+    setSending(true)
+    setStatus('Sending your enquiry…')
+    try {
+      const response = await fetch('/api/public/enquiries', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...draft, context: estimateContext || '', submissionId: submission.current.id }), signal: AbortSignal.timeout(20000) })
+      const result = await response.json()
+      if (!response.ok || result.ok !== true) { if (result.errors) setErrors(result.errors); throw new Error(result.error || 'Your enquiry could not be sent.') }
+      setStatus('Your enquiry has been sent to Spoorthi Infra. The team can now review it in their inbox.', 'success')
+      successDialog.current?.showModal()
+    } catch (error) {
+      setStatus(`${error.name === 'TimeoutError' ? 'The request timed out. Please try again.' : error.message || 'Your enquiry could not be sent. Please try again.'} Your details are still here.`, 'error')
+    } finally { pending.current = false; setSending(false) }
   }
 
   async function copyBrief() {
@@ -98,12 +114,19 @@ function SpoorthiEnquiryForm({ draft, setDraft, nameRef, estimateContext, onClea
         <FormField id="enquiry-message" className="contact-enquiry__message" label="Tell us about the project" name="message" as="textarea" rows={5} placeholder="What are you planning? Include the location, priorities, and timeline if you know them." required maxLength={4000} value={draft.message} onChange={update('message')} error={checkedDraft?.message === draft.message ? errors.message : ''} />
       </div>
       <div className="contact-enquiry__actions">
-        <Button type="submit" aria-describedby="submission-note">{contactPage.details.email ? 'Open email draft' : 'Prepare enquiry'} <ArrowUpRight size={17} aria-hidden="true" /></Button>
-        {contactPage.details.email && <Button variant="secondary" onClick={event => prepareEnquiry(event.currentTarget.form)}>Prepare enquiry</Button>}
+        <Button type="submit" loading={sending} aria-describedby="submission-note">Send enquiry <ArrowUpRight size={17} aria-hidden="true" /></Button>
+        <Button variant="secondary" disabled={sending} onClick={event => prepareEnquiry(event.currentTarget.form)}>Prepare a copy</Button>
         <Button variant="text" onClick={clearDraft} disabled={!Object.values(draft).some(Boolean) && !estimateContext}>Clear draft</Button>
       </div>
       <p className="contact-enquiry__privacy">Your draft stays in this browser tab when storage is available. Download a copy before closing the tab.</p>
-      <p className="contact-enquiry__status" role="status" aria-live="polite">{status}</p>
+      <p className={`contact-enquiry__status${status && feedback.kind ? ` contact-enquiry__status--${feedback.kind}` : ''}`} role={feedback.kind === 'error' ? 'alert' : 'status'} aria-live="polite">{status}</p>
+      <dialog className="enquiry-confirmation" ref={successDialog} aria-labelledby="enquiry-confirmation-title" aria-describedby="enquiry-confirmation-description">
+        <div className="enquiry-confirmation__icon"><Check size={36} strokeWidth={1.8} aria-hidden="true" /></div>
+        <p className="enquiry-confirmation__eyebrow">Spoorthi Infra</p>
+        <h2 id="enquiry-confirmation-title">Enquiry sent successfully</h2>
+        <p id="enquiry-confirmation-description">Thank you for getting in touch. Your project details have been received by the Spoorthi team.</p>
+        <Button onClick={() => successDialog.current?.close()}>Done <Check size={17} aria-hidden="true" /></Button>
+      </dialog>
       {brief && (
         <div className="contact-enquiry__prepared">
           <div className="contact-enquiry__prepared-title"><Check size={18} aria-hidden="true" /><h3>Your enquiry, ready to keep.</h3></div>

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import { ArrowDown, ArrowUpRight, Building2, ClipboardList, PenTool } from 'lucide-react'
 import { PageContainer, SectionWrapper } from '../../components/layout/index.js'
 import SectionHeading from '../../components/content/SectionHeading.jsx'
@@ -25,10 +26,15 @@ function restoreEnquiry() {
 }
 
 function ContactPage() {
+  const { hash } = useLocation()
   const [enquiry, setEnquiry] = useState(restoreEnquiry)
   const nameRef = useRef(null)
   const { draft, context: estimateContext } = enquiry
   const setDraft = updater => setEnquiry(previous => ({ ...previous, draft: typeof updater === 'function' ? updater(previous.draft) : updater }))
+
+  useEffect(() => {
+    if (hash === '#enquiry') nameRef.current?.focus({ preventScroll: true })
+  }, [hash])
 
   useEffect(() => {
     try {
@@ -75,7 +81,7 @@ function ContactPage() {
             <aside className="contact-information">
               <p className="type-label">A considered beginning</p><h2>{contactPage.enquiry.title}</h2><p>{contactPage.enquiry.description}</p>
               {contactReady && <dl>{details.email && <div><dt>Email</dt><dd><a href={`mailto:${details.email}`}>{details.email}</a></dd></div>}{details.phone && <div><dt>Phone</dt><dd><a href={`tel:${details.phone.replace(/[^+\d]/g, '')}`}>{details.phone}</a></dd></div>}{details.address && <div><dt>Address</dt><dd>{details.address}</dd></div>}</dl>}
-              <div className="contact-information__guide"><ClipboardList size={22} strokeWidth={1.4} aria-hidden="true" /><div><h3>Start with a simple brief.</h3><p>{details.email ? 'Open an email with your project details, or keep a copy to share when you are ready.' : 'Keep a copy of your project details, ready to share when the conversation begins.'}</p></div></div>
+              <div className="contact-information__guide"><ClipboardList size={22} strokeWidth={1.4} aria-hidden="true" /><div><h3>Start with a simple brief.</h3><p>Send your project details using the form. Your enquiry goes directly to the Spoorthi team’s inbox.</p></div></div>
               {!contactReady && <p className="contact-information__pending">Direct contact details are currently unavailable. You can still prepare and keep your project enquiry here.</p>}
               <TextLink to={routePaths.spoorthi.projects} variant="arrow">Find inspiration in our work</TextLink>
             </aside>

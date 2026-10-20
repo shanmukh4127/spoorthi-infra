@@ -37,7 +37,8 @@
 .th-menu-panel::before { content:''; position:absolute; left:6%; top:0; width:29%; height:3px; background:#a476a1; }
 .th-menu-panel a { display:block; padding:.63vw 1.7vw; font-size:clamp(10px,.62vw,12px); letter-spacing:.09em; text-transform:uppercase; white-space:nowrap; }
 .th-menu-panel a:first-child { color:var(--th-plum); background:#bb91b517; }
-.th-menu-panel a:hover { background:#d5bed33b; }
+.th-menu-panel a:is(:hover, :focus, :focus-visible, :active) { background:#d5bed380; color:#4c264d; box-shadow:inset 3px 0 #773b78; }
+.th-menu-panel a { -webkit-tap-highlight-color:#d5bed380; }
 .th-menu-panel.is-open { animation:th-menu-in .2s ease-out; }
 .th-hero { min-height:32.55vw; background:#ded0c1; display:flex; align-items:center; }
 .th-hero-photo { position:absolute; inset:0 0 0 auto; width:66%; z-index:0; object-position:55% 55%; }

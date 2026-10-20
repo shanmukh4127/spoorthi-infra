@@ -35,7 +35,16 @@ function SpoorthiHomePage() {
   const milestones = companyStory.milestones.filter(item => item.approved && item.title)
 
   return <div className="spoorthi-home">
-    <SpoorthiHomeJourney />
+    <SpoorthiHomeJourney background />
+    <section className="sh-hero" aria-labelledby="sh-hero-title">
+      <PageContainer>
+        <Eyebrow>Spoorthi Infra / Architecture & construction</Eyebrow>
+        <h1 id="sh-hero-title">A vision for space.<br /><em>Built around you.</em></h1>
+        <p>From the first plan to a new perspective. Explore thoughtful design, construction and spatial possibilities with Spoorthi Infra.</p>
+        <div className="sh-hero__actions"><HomeLink to={paths.contact}>Discuss your project</HomeLink><a href="#spoorthi-demo-projects" className="sh-text-link">Explore projects <ArrowRight size={17} aria-hidden="true" /></a></div>
+        <small>Illustrative construction environment</small>
+      </PageContainer>
+    </section>
     <div className="sh-story">
       <section id="spoorthi-home-content" tabIndex="-1" className="sh-founder" data-story-section="leadership" aria-labelledby="leadership-title">
         <PageContainer>
@@ -45,7 +54,7 @@ function SpoorthiHomePage() {
               {founderReady && founder.portrait ? <img src={founder.portrait} alt={founder.portraitAlt || founder.name} width="800" height="1000" loading="lazy" /> : <div className="sh-portrait-pending"><ImageIcon size={30} strokeWidth={1} aria-hidden="true" /><span>Leadership portrait</span><small>Approved photograph pending</small></div>}
               <figcaption>{founderReady ? founder.name : 'Founder & leadership'}<span>{founderReady ? founder.role : 'Profile awaiting client approval'}</span></figcaption>
             </figure>
-            <div className="sh-founder__copy"><h1 id="leadership-title">{founderReady ? founder.name : <>The people behind<br /><em>the vision.</em></>}</h1>
+            <div className="sh-founder__copy"><h2 id="leadership-title">{founderReady ? founder.name : <>The people behind<br /><em>the vision.</em></>}</h2>
               {founderReady ? <><p className="sh-lead">{founder.role}</p><p>{founder.biography}</p></> : <><p className="sh-lead">Every company story begins with its people.</p><p>The founder’s name, role and biography will be introduced here following client confirmation, alongside an approved portrait.</p></>}
               <a className="sh-text-link" href="#our-approach">Discover the Spoorthi approach <ArrowRight size={17} aria-hidden="true" /></a>
             </div>

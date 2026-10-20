@@ -117,3 +117,14 @@
   .spoorthi-contact-page *, .spoorthi-contact-page *::before { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
   .spoorthi-contact-page .ui-link:hover .ui-link__arrow { transform: none; }
 }
+
+.enquiry-confirmation { position: fixed; inset: 0; margin: auto; width: min(480px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); overflow: auto; padding: clamp(28px, 5vw, 48px); border: 1px solid #d9d5cb; border-radius: 18px; background: #fffdf7; color: #292c2c; text-align: center; box-shadow: 0 24px 100px #18251e40; }
+.enquiry-confirmation::backdrop { background: #18251e99; backdrop-filter: blur(6px); }
+.enquiry-confirmation__icon { display: grid; place-items: center; width: 76px; height: 76px; margin: 0 auto 24px; border-radius: 50%; background: #e3eddf; color: #356342; }
+.enquiry-confirmation .enquiry-confirmation__eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: .16em; color: #a93624; margin: 0 0 14px; }
+.enquiry-confirmation h2 { font: 400 clamp(28px, 6vw, 36px)/1.15 Georgia, serif; letter-spacing: -.03em; margin: 0; }
+.enquiry-confirmation #enquiry-confirmation-description { margin: 18px 0 28px; font-size: 15px; line-height: 1.75; color: #67675f; }
+.enquiry-confirmation .ui-button { width: 100%; justify-content: center; gap: 16px; }
+body:has(.enquiry-confirmation[open]) { overflow: hidden; }
+.contact-enquiry .contact-enquiry__status--success, .contact-enquiry .contact-enquiry__status--error { padding: 16px 20px; border: 1px solid #bed1b6; border-radius: 8px; background: #edf4e8; color: #31563b; font-weight: 500; }
+.contact-enquiry .contact-enquiry__status--error { background: #fff0ec; color: #8b3024; border-color: #e6b9ae; }

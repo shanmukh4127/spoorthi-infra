@@ -84,3 +84,25 @@
 .admin-project-form .admin-project-form__homepage{display:flex;align-items:flex-start;gap:12px;grid-column:1/-1;padding:14px;border:1px solid #ddd6cd;border-radius:8px}
 .admin-project-form .admin-project-form__homepage input{width:18px;height:18px;min-height:18px;margin-top:2px;flex:none;accent-color:#a93624}
 .admin-project-form__homepage small{display:block;margin-top:4px;font-size:12px;font-weight:400;color:#68645e;line-height:1.5}
+
+.admin-enquiry > div { min-width: 0; }
+.admin-enquiry details { margin-top: .5rem; font-size: .78rem; line-height: 1.65; overflow-wrap: anywhere; }
+.admin-enquiry summary { cursor: pointer; color: var(--admin-ink); }
+.admin-enquiry details p { margin: .6rem 0; }
+.admin-enquiry > div > a { font-size: .75rem; overflow-wrap: anywhere; }
+
+.admin-inbox-toolbar { flex-wrap: wrap; gap: .65rem; margin-top: 1rem; }
+.admin-inbox-toolbar .admin-search { flex: 1 1 180px; min-width: 0; }
+.admin-inbox-toolbar .admin-search input { width: 100%; min-width: 0; }
+.admin-enquiry > .admin-inbox-actions { flex: 0 0 auto; display: flex; flex-direction: column; align-items: flex-end; gap: .6rem; }
+.admin-inbox-actions .admin-more { width: 36px; height: 36px; }
+.admin-inbox-count { font-size: .75rem; color: var(--admin-muted); }
+.admin-enquiry-confirm { position: fixed; inset: 0; margin: auto; width: min(440px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); overflow: auto; border: 1px solid var(--admin-line); }
+.admin-enquiry-confirm::backdrop { background: #18251e88; backdrop-filter: blur(3px); }
+.admin-enquiry-confirm:not([open]) { display: none; }
+
+.admin-notification-count { position: absolute; top: -6px; right: -7px; min-width: 20px; height: 20px; padding-inline: 4px; display: grid; place-items: center; border-radius: 12px; background: #a93624; color: #fff; font: 600 10px/1 Arial, sans-serif; border: 2px solid #fff; }
+.admin-notification-list { max-height: min(360px, 55vh); overflow-y: auto; }
+.admin-incoming-notice { position: sticky; top: 12px; z-index: 7; display: flex; align-items: center; flex-wrap: wrap; gap: 12px; padding: 16px; border: 1px solid #bfd4b6; border-radius: 10px; background: #eef5e9; color: #31563b; box-shadow: 0 8px 24px #20372c14; font-size: .85rem; }
+.admin-incoming-notice strong { flex: 1; }
+.admin-incoming-notice button { border: 0; background: none; color: #31563b; cursor: pointer; padding: 8px; text-decoration: underline; }

@@ -40,7 +40,7 @@ export const contactPage = {
   intro: { eyebrow: 'Contact / Spoorthi Infra', title: 'Great spaces begin with a conversation.', description: 'A new home, a commercial space, or an idea taking shape. Tell us what you are planning and prepare a clear brief for the next step.' },
   disciplines: ['Construction', 'Infrastructure', 'Design'],
   details: contactPlaceholder,
-  enquiry: { title: 'Tell us about your next project.', description: 'Start with what you know. The location, approximate size, and the way you want to use the space help bring your idea into focus.', unavailable: 'Open an email draft addressed to Spoorthi Infra and send it from your email app. You can also prepare your enquiry here to copy or download it first.', checked: 'Your email draft is ready. Review and send it from your email app. You can also copy or download the enquiry below.' },
+  enquiry: { title: 'Tell us about your next project.', description: 'Start with what you know. The location, approximate size, and the way you want to use the space help bring your idea into focus.', unavailable: 'Send your project details directly to Spoorthi Infra. You can also keep a copy for your records.' },
   projectInformation: { title: 'A few details make a better beginning.', items: [
     { title: 'Your vision', text: 'Tell us what you want to build and how the space should support you.' },
     { title: 'Your starting point', text: 'Share the location, approximate area, and any drawings or references you have.' },

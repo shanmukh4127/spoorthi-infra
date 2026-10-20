@@ -32,6 +32,25 @@
 }
 
 /* Keep each project's complete scroll story on every screen size. */
+.sfp-mobile-stories { display: none; }
+.sfp-mobile-story .tfp-mobile-slide:first-child .tfp-mobile-card img { object-fit: contain; }
+@media (max-width: 900px) and (prefers-reduced-motion: no-preference) {
+  .sfp-mobile-stories { display: block; scroll-margin-top: 90px; }
+  .sfp-mobile-story { padding-top: 30px; border-bottom: 1px solid var(--tfp-line); }
+  .spoorthi-featured-projects .sfp-mobile-story-title { font: 400 clamp(26px, 7vw, 36px)/1.15 Georgia, serif; letter-spacing: -.03em; }
+}
+@media (max-width: 900px) and (max-height: 650px) {
+  .spoorthi-featured-projects .tfp-project--animated .tfp-project-pin { padding-block: 10px 32px; gap: 8px; }
+  .spoorthi-featured-projects .tfp-project--animated .tfp-description-title { font-size: 22px; margin-bottom: 6px; }
+  .spoorthi-featured-projects .tfp-project--animated .tfp-description { font-size: 12px; line-height: 1.45; }
+  .spoorthi-featured-projects .tfp-project--animated .tfp-project-link { min-height: 44px; margin-top: 0; padding-block: 4px; }
+  .spoorthi-featured-projects .tfp-project--animated .tfp-card-heading { padding-block: 8px; }
+  .spoorthi-featured-projects .tfp-project--animated .tfp-card figcaption { padding-block: 8px; }
+  .spoorthi-featured-projects .tfp-project--animated .tfp-stage-hint { top: calc(100% + 10px); }
+}
 @media (max-width: 900px) {
+  .spoorthi-featured-projects .tfp-intro .tfp-intro-scroll { display: none; }
+}
+@media (max-width: 900px) and (prefers-reduced-motion: reduce) {
   .spoorthi-featured-projects .tfp-intro .tfp-intro-scroll { display: inline-flex; }
 }

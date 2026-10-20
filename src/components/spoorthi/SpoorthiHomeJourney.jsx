@@ -9,7 +9,7 @@ const sceneQuery = '(prefers-reduced-motion: no-preference)'
 const canUseScene = (allowData = false) => typeof window !== 'undefined' && window.matchMedia(sceneQuery).matches && (allowData || !navigator.connection?.saveData)
 const number = value => String(value).padStart(2, '0')
 
-export default function SpoorthiHomeJourney() {
+export default function SpoorthiHomeJourney({ background = false }) {
   const [interactive, setInteractive] = useState(canUseScene)
   const [status, setStatus] = useState('loading')
   const [active, setActive] = useState(0)
@@ -61,11 +61,12 @@ export default function SpoorthiHomeJourney() {
     const update = () => {
       frame = 0
       if (disposed || !runtime || document.hidden) return
-      const rect = section.getBoundingClientRect()
+      const timeline = background ? section.parentElement : section
+      const rect = timeline.getBoundingClientRect()
       if (rect.bottom < 0 || rect.top > window.innerHeight) return
       // Native document scrolling is the only timeline. No wheel interception,
       // elapsed-time interpolation, scroll snapping or accumulated camera state.
-      const progress = Math.max(0, Math.min(1, -rect.top / Math.max(1, section.offsetHeight - viewport.offsetHeight)))
+      const progress = Math.max(0, Math.min(1, -rect.top / Math.max(1, timeline.offsetHeight - viewport.offsetHeight)))
       runtime.update(progress)
       progressRef.current?.style.setProperty('--journey-progress', progress)
       const next = Math.min(homeJourney.stages.length - 1, Math.floor(progress * homeJourney.stages.length))
@@ -81,6 +82,7 @@ export default function SpoorthiHomeJourney() {
     const host = sceneRef.current
     const observer = new ResizeObserver(resize)
     observer.observe(viewport)
+    if (background) observer.observe(section.parentElement)
     window.addEventListener('scroll', schedule, { passive: true })
     document.addEventListener('visibilitychange', schedule)
     const load = () => {
@@ -115,7 +117,15 @@ export default function SpoorthiHomeJourney() {
       document.removeEventListener('visibilitychange', schedule)
       runtime?.dispose()
     }
-  }, [interactive, retry])
+  }, [interactive, retry, background])
+
+  if (background) return <div ref={sectionRef} className="si-journey si-journey--background" aria-hidden="true" data-chapter={active + 1} data-scene-status={fallback ? 'static' : status}>
+    <div className="si-journey__viewport" ref={viewportRef}>
+      <div className="si-journey__scene" ref={sceneRef} />
+      <div className="si-journey__poster"><img src="/assets/spoorthi/cinematic/construction-reference-960.webp" alt="" width="1442" height="960" /></div>
+      <div className="si-journey__wash" />
+    </div>
+  </div>
 
   return <section ref={sectionRef} style={{ '--journey-chapters': homeJourney.stages.length }} className={`si-journey${fallback ? ' si-journey--static' : ''}`} aria-label="Spoorthi construction journey" data-chapter={active + 1} data-scene-status={fallback ? (status === 'error' ? 'error' : 'static') : status}>
     <div className="si-journey__viewport" ref={viewportRef}>

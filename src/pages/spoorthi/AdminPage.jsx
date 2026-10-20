@@ -6,6 +6,8 @@ import useAdminSession from '../../data/useAdminSession.js'
 import { adminRequest } from '../../data/adminApi.js'
 import { routePaths } from '../../data/routePaths.js'
 import { isHomepageProject } from '../../data/shared/homepageProjects.js'
+import AdminEnquiryInbox from '../../components/spoorthi/AdminEnquiryInbox.jsx'
+import { newEnquiries, workspaceNotifications } from '../../data/adminNotifications.js'
 import '../../styles/spoorthi-admin.css'
 
 
@@ -42,6 +44,10 @@ function AdminPage() {
   const [activeSection, setActiveSection] = useState('overview')
   const [showSettings, setShowSettings] = useState(false)
   const [showNotifications, setShowNotifications] = useState(false)
+  const [readNotifications, setReadNotifications] = useState(() => {
+    try { const saved = JSON.parse(sessionStorage.getItem('spoorthi-read-notifications-v1')); return Array.isArray(saved) ? saved.filter(id => typeof id === 'string').slice(-1000) : [] } catch { return [] }
+  })
+  const [incomingNotice, setIncomingNotice] = useState('')
   const [deleteCandidate, setDeleteCandidate] = useState(null)
   const [uploadField, setUploadField] = useState('coverImage')
   const [uploadingImage, setUploadingImage] = useState(false)
@@ -64,10 +70,17 @@ function AdminPage() {
   const [databaseStatus, setDatabaseStatus] = useState('Connecting to shared workspace…')
   const [databaseError, setDatabaseError] = useState('')
   const visibleProjects = useMemo(() => projectItems.filter((project) => !project.deleted && (activeBrand === 'all' || project.brand === activeBrand) && (projectStatus === 'all' || (project.status || 'Published') === projectStatus) && (project.title.toLowerCase().includes(query.toLowerCase()) || project.category.toLowerCase().includes(query.toLowerCase()))), [activeBrand, projectItems, projectStatus, query])
-  const notifications = useMemo(() => [
-    ...enquiryItems.filter((enquiry) => enquiry.status !== 'Replied').map((enquiry) => ({ id: `enquiry-${enquiry.name}`, label: 'Enquiry needs attention', detail: `${enquiry.name} · ${enquiry.status}`, target: 'enquiries' })),
-    ...projectItems.filter((project) => !project.deleted && (project.status || 'Published') === 'Draft').map((project) => ({ id: `project-${project.id}`, label: 'Project is still a draft', detail: project.title, target: 'projects' })),
-  ].slice(0, 5), [enquiryItems, projectItems])
+  const notifications = useMemo(() => workspaceNotifications(enquiryItems, projectItems), [enquiryItems, projectItems])
+  const unreadCount = notifications.filter(item => !readNotifications.includes(item.id)).length
+  function toggleNotifications() {
+    setShowNotifications(!showNotifications)
+    if (!showNotifications) {
+      const read = [...new Set([...readNotifications, ...notifications.map(item => item.id)])].slice(-1000)
+      setReadNotifications(read)
+      setIncomingNotice('')
+      try { sessionStorage.setItem('spoorthi-read-notifications-v1', JSON.stringify(read)) } catch { /* Reading notifications still works when storage is restricted. */ }
+    }
+  }
 
   useEffect(() => {
     if (!isAuthenticated) return
@@ -112,6 +125,33 @@ function AdminPage() {
         }
     })
   }, [adminSettings, databaseReady, enquiryItems, projectItems, serviceItems, session])
+
+  useEffect(() => {
+    if (!databaseReady || !session || databaseError) return
+    const controller = new AbortController()
+    const serialized = JSON.stringify({ projects: projectItems, services: serviceItems, enquiries: enquiryItems, settings: adminSettings })
+    const refresh = async () => {
+      await saveQueue.current
+      if (controller.signal.aborted || writeBlocked.current || serialized !== lastSavedPayload.current) return
+      try {
+        const data = await adminRequest('database', { signal: controller.signal })
+        if (controller.signal.aborted || serialized !== lastSavedPayload.current || data.revision === revision.current) return
+        const incoming = newEnquiries(enquiryItems, data.enquiries)
+        if (incoming.length) setIncomingNotice(incoming.length === 1 ? `New enquiry from ${incoming[0].name}` : `${incoming.length} new enquiries received`)
+        const projects = dedupeProjects(data.projects)
+        const settings = { showDemoNotices: true, compactMode: false, defaultBrand: 'all', ...data.settings }
+        revision.current = data.revision
+        lastSavedPayload.current = JSON.stringify({ projects, services: data.services, enquiries: data.enquiries, settings })
+        setProjectItems(projects)
+        setServiceItems(data.services)
+        setEnquiryItems(data.enquiries)
+        setAdminSettings(settings)
+      } catch { /* A transient refresh failure leaves the current inbox available. */ }
+    }
+    const timer = window.setInterval(refresh, 15000)
+    window.addEventListener('focus', refresh)
+    return () => { controller.abort(); clearInterval(timer); window.removeEventListener('focus', refresh) }
+  }, [adminSettings, databaseError, databaseReady, enquiryItems, projectItems, serviceItems, session])
 
   useEffect(() => {
     if (!databaseReady || !session) return
@@ -209,7 +249,7 @@ function AdminPage() {
   }
   function toggleProjectStatus(id) { setProjectItems(projectItems.map((project) => project.id === id ? { ...project, status: (project.status || 'Published') === 'Published' ? 'Draft' : 'Published' } : project)) }
   function toggleService(name) { setServiceItems(serviceItems.map((service) => service.name === name ? { ...service, status: service.status === 'Published' ? 'Draft' : 'Published' } : service)) }
-  function cycleEnquiryStatus(name) { const statuses = ['New', 'In review', 'Replied']; setEnquiryItems(enquiryItems.map((enquiry) => { if (enquiry.name !== name) return enquiry; const next = statuses[(statuses.indexOf(enquiry.status) + 1) % statuses.length]; return { ...enquiry, status: next } })) }
+  function cycleEnquiryStatus(identity) { const statuses = ['New', 'In review', 'Replied']; setEnquiryItems(enquiryItems.map((enquiry) => { if ((enquiry.id || enquiry.name) !== identity) return enquiry; const next = statuses[(statuses.indexOf(enquiry.status) + 1) % statuses.length]; return { ...enquiry, status: next } })) }
 
   if (checking) return <div className="spoorthi-admin"><PageContainer><p role="status">Checking administrator session…</p></PageContainer></div>
 
@@ -231,8 +271,9 @@ function AdminPage() {
         </aside>
 
         <main className={`admin-main ${adminSettings.compactMode ? 'admin-main--compact' : ''}`} id="admin-overview">
-          <header className="admin-topbar"><div className="admin-topbar__identity"><span className="admin-sidebar__mark">SI</span><div><p className="admin-kicker">Overall website workspace</p><h1>Workspace overview</h1><p className="admin-intro">A single view across Spoorthi Infra and Tejes Interiors.</p></div></div><div className="admin-topbar__actions"><div className="admin-notification-wrap"><button type="button" className="admin-icon-button" aria-label="Notifications" aria-expanded={showNotifications} onClick={() => setShowNotifications(!showNotifications)}><Bell size={19} aria-hidden="true" />{notifications.length > 0 && <span />}</button>{showNotifications && <div className="admin-notification-panel" role="dialog" aria-label="Workspace activity"><div className="admin-notification-panel__head"><div><p className="admin-kicker">Workspace activity</p><h2>Notifications</h2></div><button type="button" className="admin-notification-panel__close" onClick={() => setShowNotifications(false)} aria-label="Close notifications">×</button></div>{notifications.length ? <div className="admin-notification-list">{notifications.map((notification) => <button type="button" className="admin-notification-item" key={notification.id} onClick={() => { setShowNotifications(false); jumpTo(notification.target) }}><strong>{notification.label}</strong><span>{notification.detail}</span></button>)}</div> : <p className="admin-notification-empty">No new workspace activity.</p>}<p className="admin-notification-panel__note">Activity is derived from saved workspace records.</p></div>}</div><div className="admin-avatar">SS</div></div></header>
+          <header className="admin-topbar"><div className="admin-topbar__identity"><span className="admin-sidebar__mark">SI</span><div><p className="admin-kicker">Overall website workspace</p><h1>Workspace overview</h1><p className="admin-intro">A single view across Spoorthi Infra and Tejes Interiors.</p></div></div><div className="admin-topbar__actions"><div className="admin-notification-wrap"><button type="button" className="admin-icon-button" aria-label={`Notifications, ${unreadCount} unread`} aria-expanded={showNotifications} onClick={toggleNotifications}><Bell size={19} aria-hidden="true" />{unreadCount > 0 && <b className="admin-notification-count">{unreadCount > 99 ? '99+' : unreadCount}</b>}</button>{showNotifications && <div className="admin-notification-panel" role="dialog" aria-label="Workspace activity"><div className="admin-notification-panel__head"><div><p className="admin-kicker">Workspace activity</p><h2>Notifications</h2></div><button type="button" className="admin-notification-panel__close" onClick={() => setShowNotifications(false)} aria-label="Close notifications">×</button></div>{notifications.length ? <div className="admin-notification-list">{notifications.map((notification) => <button type="button" className="admin-notification-item" key={notification.id} onClick={() => { setShowNotifications(false); jumpTo(notification.target) }}><strong>{notification.label}</strong><span>{notification.detail}</span></button>)}</div> : <p className="admin-notification-empty">No new workspace activity.</p>}<p className="admin-notification-panel__note">Checks for new enquiries every 15 seconds while the workspace has no pending edits.</p></div>}</div><div className="admin-avatar">SS</div></div></header>
 
+          {incomingNotice && <div className="admin-incoming-notice" role="status" aria-live="polite"><Bell size={18} aria-hidden="true" /><strong>{incomingNotice}</strong><button type="button" onClick={() => { setIncomingNotice(''); jumpTo('enquiries') }}>View inbox</button><button type="button" aria-label="Dismiss enquiry notification" onClick={() => setIncomingNotice('')}>×</button></div>}
           {sessionError && <p role="alert">{sessionError}</p>}
           <p className="admin-save-status" role="status" aria-live="polite">{databaseStatus}</p>
           {adminSettings.showDemoNotices && <div className="admin-preview-note"><span><CheckCircle2 size={17} aria-hidden="true" /></span><p><strong>{databaseStatus}</strong> This overall workspace covers both brands. Project records and images are stored on the shared server. Save failures are shown explicitly.</p></div>}
@@ -258,7 +299,7 @@ function AdminPage() {
           <div className="admin-content-grid">
             <section className="admin-section admin-section--compact" id="admin-services" aria-labelledby="admin-services-title"><div className="admin-section__head"><div><p className="admin-kicker">Offerings</p><h2 id="admin-services-title">Services</h2></div><button type="button" className="admin-link-button" onClick={() => jumpTo('services')}>Manage all <ChevronRight size={15} aria-hidden="true" /></button></div><div className="admin-service-list">{serviceItems.map((service) => <article className="admin-service-row" key={service.name}><span className={`admin-service-row__icon admin-service-row__icon--${service.color}`}><BriefcaseBusiness size={16} aria-hidden="true" /></span><div><strong>{service.name}</strong><span>{service.type} · {service.enquiries} enquiries</span></div><button type="button" className={`admin-status ${service.status === 'Draft' ? 'admin-status--draft' : 'admin-status--published'}`} onClick={() => toggleService(service.name)}>{service.status}</button><button type="button" className="admin-more" aria-label={`Toggle ${service.name} status`} onClick={() => toggleService(service.name)}><MoreHorizontal size={18} aria-hidden="true" /></button></article>)}</div></section>
 
-            <section className="admin-section admin-section--compact" id="admin-enquiries" aria-labelledby="admin-enquiries-title"><div className="admin-section__head"><div><p className="admin-kicker">Inbox preview</p><h2 id="admin-enquiries-title">Recent enquiries</h2></div><button type="button" className="admin-link-button" onClick={() => jumpTo('enquiries')}>View inbox <ChevronRight size={15} aria-hidden="true" /></button></div><div className="admin-enquiry-list">{enquiryItems.map((enquiry) => <article className="admin-enquiry" key={enquiry.name}><span className="admin-enquiry__avatar">{enquiry.initials}</span><div><strong>{enquiry.name}</strong><span>{enquiry.subject}</span><small>{enquiry.date}</small></div><button type="button" className={`admin-status admin-status--${enquiry.status === 'New' ? 'new' : enquiry.status === 'In review' ? 'review' : 'replied'}`} onClick={() => cycleEnquiryStatus(enquiry.name)}>{enquiry.status}</button></article>)}</div></section>
+            <AdminEnquiryInbox enquiries={enquiryItems} onStatusChange={cycleEnquiryStatus} onDelete={identity => setEnquiryItems(previous => previous.filter(item => (item.id || item.name) !== identity))} />
           </div>
 
           <section className="admin-quick-actions" aria-label="Quick actions"><div><UsersRound size={22} aria-hidden="true" /><div><strong>Keep the workspace moving</strong><span>Review new enquiries, refresh the project library, or prepare your next service story.</span></div></div><div className="admin-quick-actions__actions"><button type="button" className="admin-secondary-button" onClick={() => jumpTo('enquiries')}>Review enquiries</button><button type="button" className="admin-primary-button" onClick={() => jumpTo('projects')}>Open project library</button><Link className="admin-secondary-button" to={routePaths.spoorthi.projects}>View public library</Link></div></section>
