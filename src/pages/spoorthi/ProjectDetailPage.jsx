@@ -75,7 +75,7 @@ function ProjectDetailPage() {
                 {project.area && <div><dt>Approx. area</dt><dd>{project.area} sq.ft</dd></div>}
                 {project.location && <div><dt>Location</dt><dd>{project.location}</dd></div>}
                 <div><dt>Collection</dt><dd>{project.isConcept ? 'Illustrative concepts' : 'Spoorthi projects'}</dd></div>
-              </dl>
+              </dl><Link className="project-contact-cta" to={routePaths.spoorthi.contact}>Discuss this project <ArrowUpRight size={16} aria-hidden="true" /></Link>
             </div>
           </div>
           {project.heroImage.src && <Media className="spoorthi-project-detail__hero" src={project.heroImage.src} alt={project.heroImage.alt} aspect="wide" loading="eager" caption={project.isConcept ? 'Illustrative concept imagery. This study is not a completed client project.' : 'Project image supplied through the workspace.'} />}

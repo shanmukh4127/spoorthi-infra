@@ -1,0 +1,133 @@
+/* Graphite and slate architectural palette; bronze is reserved for details. */
+.brand-layout--spoorthi[data-brand] {
+  --spoorthi-bg-primary:#171c21;
+  --spoorthi-bg-secondary:#20272e;
+  --spoorthi-surface:#293139;
+  --spoorthi-text-primary:#f0f2f3;
+  --spoorthi-text-secondary:#bac2c8;
+  --spoorthi-text-muted:#aeb7bf;
+  --spoorthi-border:#414b54;
+  --spoorthi-accent:#c9a56d;
+  --spoorthi-accent-hover:#ddbc87;
+  --spoorthi-accent-soft:#303940;
+  --spoorthi-focus:#c9a56d;
+  --spoorthi-bg-dark:#11171c;
+  --spoorthi-surface-dark:#242d35;
+  --spoorthi-text-on-dark:#f0f2f3;
+  --brand-text-on-accent:#171c21;
+  --spoorthi-border-on-dark:#52606b;
+  --brand-surface-hover:#303940;
+  --brand-border-hover:#a98b60;
+}
+.brand-layout--spoorthi .page-shell__main { background:#171c21; }
+.brand-layout--spoorthi .si-cinematic-header {
+  background:#171c21;
+  border-bottom:1px solid #414b54;
+  box-shadow:0 4px 24px #00000020;
+}
+.brand-layout--spoorthi .si-menu-trigger i { border-color:#64717b; border-top-color:#d92927; background:#242d35; }
+.brand-layout--spoorthi .si-menu-panel { background:#242d35; border-color:#414b54; box-shadow:0 16px 40px #00000040; }
+.brand-layout--spoorthi .si-menu-panel a[aria-current='page'] { background:#35404a; color:#e5c18c; }
+.brand-layout--spoorthi .si-menu-panel a:is(:hover,:focus-visible) { background:#35404a; color:#e5c18c; }
+.brand-layout--spoorthi .spoorthi-home {
+  --sh-ink:#f0f2f3;
+  --sh-muted:#bac2c8;
+  --sh-rule:#414b54;
+  --sh-accent:#c9a56d;
+  background:#1b2228;
+}
+.brand-layout--spoorthi .sh-story { background:#1b2228; }
+.brand-layout--spoorthi .sh-hero {
+  position:relative;
+  background:linear-gradient(115deg,#171c21 10%,#202831 65%,#2c3741);
+  border-color:#414b54;
+  overflow:hidden;
+}
+.brand-layout--spoorthi .sh-hero::before {
+  content:''; position:absolute; inset:76px 0 0 55%; pointer-events:none;
+  background:repeating-linear-gradient(90deg,transparent 0,transparent calc(25% - 1px),#a6b3bd0d calc(25% - 1px),#a6b3bd0d 25%);
+}
+.brand-layout--spoorthi .sh-hero__grid { position:relative; }
+.brand-layout--spoorthi .sh-hero h1 { font-size:clamp(46px,5.1vw,77px); }
+.brand-layout--spoorthi .sh-hero__visual { padding:14px 0 0 14px; }
+.brand-layout--spoorthi .sh-hero__visual::before { border-color:#8f795a; width:58%; height:58%; }
+.brand-layout--spoorthi .sh-hero__image { border-radius:2px 58px 2px 2px; box-shadow:0 24px 50px -24px #00000060; }
+.brand-layout--spoorthi .sh-hero__visual figcaption { border-color:#49545e; }
+.brand-layout--spoorthi .sh-button {
+  background:#c9a56d; color:#171c21; border:1px solid #c9a56d;
+  font-weight:600; border-radius:3px; box-shadow:0 5px 0 #00000020;
+  transition:background .2s,box-shadow .2s;
+}
+.brand-layout--spoorthi .sh-button:hover { background:#ddbc87; box-shadow:0 7px 16px #00000040; }
+.brand-layout--spoorthi .sh-founder { background:#1b2228; }
+.brand-layout--spoorthi .sh-story-opening { color:#aeb7bf; }
+.brand-layout--spoorthi .sh-founder__portrait { background:#242d35; border-color:#414b54; box-shadow:16px 16px 0 #b79c6b12; }
+.brand-layout--spoorthi .sh-portrait-pending { background:linear-gradient(145deg,#2b353e,#303b45); border-color:#4c5964; color:#aeb7bf; }
+.brand-layout--spoorthi .sh-portrait-pending::before,.brand-layout--spoorthi .sh-portrait-pending::after { border-color:#8494a444; }
+.brand-layout--spoorthi .sh-portrait-pending>span,.brand-layout--spoorthi .sh-founder__portrait figcaption { color:#bac2c8; }
+.brand-layout--spoorthi .sh-founder__portrait figcaption span { color:#aeb7bf; }
+.brand-layout--spoorthi .tfp.spoorthi-featured-projects {
+  --tfp-paper:#20272e; --tfp-ink:#f0f2f3; --tfp-plum:#c9a56d;
+  --tfp-muted:#bac2c8; --tfp-line:#46515c; --tfp-strong:#8f795a;
+  --tfp-surface:#242d35; --tfp-alternate:#303b45;
+  background:#20272e;
+}
+.brand-layout--spoorthi .sh-about { background:#171c21; border-color:#414b54; }
+.brand-layout--spoorthi .sh-about__image img { border-radius:4px 4px 36px 4px; }
+.brand-layout--spoorthi .sh-about__image figcaption { color:#aeb7bf; }
+.brand-layout--spoorthi .sh-milestones { background:#252e36; }
+.brand-layout--spoorthi .sh-timeline { border-color:#6f7c85; }
+.brand-layout--spoorthi .sh-timeline article::before { background:#d92927; border-color:#c9a56d; border-radius:50%; }
+.brand-layout--spoorthi .sh-capabilities { background:#20282f; }
+.brand-layout--spoorthi .sh-service-list,.brand-layout--spoorthi .sh-service-list a,.brand-layout--spoorthi .sh-faq,.brand-layout--spoorthi .sh-faq details { border-color:#46515c; }
+.brand-layout--spoorthi .sh-service-list a { padding-inline:12px; border-radius:3px; transition:background .2s; }
+.brand-layout--spoorthi .sh-service-list a:hover { background:#74828e20; }
+.brand-layout--spoorthi .sh-service-list a>span { color:#c9a56d; }
+.brand-layout--spoorthi .sh-spatial { padding:clamp(18px,3vw,40px); gap:6%; background:#252e36; border:1px solid #414b54; border-radius:5px; }
+.brand-layout--spoorthi .sh-spatial__image img { border-radius:3px; }
+.brand-layout--spoorthi .sh-contact {
+  background:#303b45; border-top:1px solid #53606b;
+  color:#f0f2f3; --sh-ink:#f0f2f3; --sh-muted:#bac2c8; --sh-accent:#c9a56d;
+}
+.brand-layout--spoorthi .sh-contact .sh-eyebrow,.brand-layout--spoorthi .sh-contact .sh-eyebrow>span { color:#c9a56d; }
+.brand-layout--spoorthi .sh-contact h2 em { color:#c9a56d; }
+.brand-layout--spoorthi .sh-contact__grid p,.brand-layout--spoorthi .sh-contact__grid>div>span { color:#bac2c8; }
+.brand-layout--spoorthi .sh-contact .sh-button { border-color:#c9a56d; }
+.brand-layout--spoorthi .sh-brand-rule { height:2px; opacity:.65; }
+.brand-layout--spoorthi .spoorthi-footer,
+.brand-layout--spoorthi[data-brand]:has(.sh-story) .spoorthi-footer { background:#1b2228; color:#f0f2f3; border-top:1px solid #414b54; }
+.brand-layout--spoorthi .spoorthi-footer h2,
+.brand-layout--spoorthi[data-brand]:has(.sh-story) .spoorthi-footer h2 { color:#c9a56d; }
+.brand-layout--spoorthi .spoorthi-footer p,.brand-layout--spoorthi .spoorthi-footer__bottom,
+.brand-layout--spoorthi[data-brand]:has(.sh-story) .spoorthi-footer p,.brand-layout--spoorthi[data-brand]:has(.sh-story) .spoorthi-footer__bottom { color:#bac2c8; }
+.brand-layout--spoorthi .spoorthi-footer__bottom { border-color:#414b54; }
+.brand-layout--spoorthi .spoorthi-footer a:hover { color:#c9a56d; }
+.brand-layout--spoorthi :is(a,button,summary):focus-visible { outline:2px solid #c9a56d; outline-offset:5px; }
+.brand-layout--spoorthi .sh-contact a:focus-visible { outline-color:#c9a56d; }
+@media(max-width:800px) {
+  .brand-layout--spoorthi .sh-hero h1 { font-size:clamp(42px,7.8vw,64px); }
+  .brand-layout--spoorthi .sh-hero::before { inset:68px 0 0 30%; }
+  .brand-layout--spoorthi .sh-hero__image { border-top-right-radius:36px; }
+  .brand-layout--spoorthi .sh-spatial { padding:20px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .brand-layout--spoorthi .sh-button,.brand-layout--spoorthi .sh-service-list a { transition:none; }
+}
+/* Small neutral logo mounts preserve the original black wordmark artwork. */
+.brand-layout--spoorthi .si-official-logo { background:transparent; padding:0; border:0; border-radius:0; box-shadow:none; }
+.brand-layout--spoorthi .spoorthi-footer__official-logo { background:#edf0f2; padding:8px; border-radius:2px; }
+.brand-layout--spoorthi .si-menu-trigger { color:#edf0f2; }
+.brand-layout--spoorthi .si-menu-panel { color:#edf0f2; }
+.brand-layout--spoorthi .si-menu-panel a svg { color:#c9a56d; }
+.brand-layout--spoorthi .sh-text-link { color:#edf0f2; border-color:#67737c; }
+.brand-layout--spoorthi .sh-text-link svg { color:#c9a56d; }
+.brand-layout--spoorthi .sh-eyebrow>span { color:#aeb7bf; }
+.brand-layout--spoorthi .sh-story .sh-lead { color:#edf0f2; }
+.brand-layout--spoorthi .sh-about__image figcaption { border-color:#414b54; }
+.brand-layout--spoorthi .sh-service-list a:hover { color:#e5c18c; }
+.brand-layout--spoorthi .sh-faq summary { color:#edf0f2; }
+.brand-layout--spoorthi .sh-hero__image { border-radius:3px; }
+.brand-layout--spoorthi .sh-about__image img { border-radius:3px; }
+.brand-layout--spoorthi .project-contact-cta { background:#c9a56d; color:#171c21; }
+.brand-layout--spoorthi .project-contact-cta:hover { background:#ddbc87; }
+.brand-layout--spoorthi .sh-brand-rule { opacity:.8; }

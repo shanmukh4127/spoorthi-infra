@@ -1,9 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ArrowLeft, ArrowRight, Clock3, Mail, MapPin, Phone } from 'lucide-react'
-import TejesHomeMenu from '../../components/tejes/TejesHomeMenu.jsx'
 import TejesContactEnquiryForm from '../../components/tejes/TejesContactEnquiryForm.jsx'
 import { routePaths } from '../../data/routePaths.js'
-import { projectsPage } from '../../data/tejes/projectArchive.js'
 import { contactPageMedia, tejesContactDetails } from '../../data/tejes/contactPage.js'
 import { ProjectPhoto, TejesProjectsFooter } from './ProjectsPage.jsx'
 import '../../styles/tejes-contact.css'
@@ -25,7 +23,7 @@ export default function ContactPage() {
   const mapUrl = details.address ? safeExternalUrl(details.mapUrl) : null
   const socials = details.socialLinks.filter(item => safeExternalUrl(item.url))
   return <div className="th-home tp-page tc-page">
-    <TejesHomeMenu initialOpen={false} navigationItems={projectsPage.menu} navigationLabel="Tejes navigation" />
+    
     <section className="tc-hero" aria-labelledby="contact-title">
       <ContactPhoto media={contactPageMedia.hero} className="tc-hero-photo" eager sizes="(max-width: 600px) 100vw, 76vw" />
       <svg className="tc-hero-shape" viewBox="0 0 1440 590" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0H420C450 85 491 170 520 260C578 439 616 573 838 590H0Z" fill="#f3ede2" /><path d="M0 575C213 543 275 589 420 547C605 493 659 591 866 590" fill="none" stroke="#fff9ec" strokeWidth="2" /></svg>

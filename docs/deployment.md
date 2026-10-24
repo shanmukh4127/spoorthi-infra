@@ -62,3 +62,30 @@ Sessions last eight hours and expire on a server restart. Restart after changing
 Run `npm run lint`, `npm run build`, and `npm run test:server`. Tests use isolated temporary databases and cover authentication, CSRF/origin, throttling, publication, uploads, concurrent revisions and restart persistence. The saved seed is checked for changes.
 
 Contact forms still prepare email/download drafts; delivery is not connected to the admin inbox. Analytics are unconnected and labeled accordingly. No mail/analytics vendor, paid account, public deployment or live administrator credential was created.
+
+## Vercel frontend with the existing persistent Node backend
+
+The frontend can be served by Vercel, but `server/start.mjs` must run separately on a Node-capable host with persistent storage. Vercel's static Vite output does not run the local Vite API plugin. Without a backend connection, `/api/public/projects` returns an error and the public project lists correctly remain unavailable. Do not replace that response with a static catalog: it would bypass saved Draft/deleted publication overrides.
+
+The committed `vercel.json` restores direct links under `/spoorthi`, `/tejes`, and `/admin`. It intentionally does not rewrite `/api`, `/uploads`, or missing assets to HTML. The backend HTTPS address has not been supplied, so API/upload proxy rules are not yet configured.
+
+Once the real backend is hosted, prepare its connection **before** committing or deploying. In PowerShell, set `SPOORTHI_BACKEND_ORIGIN` to that backend's actual HTTPS origin (no path, credentials, query, or fragment), then run:
+
+```powershell
+node scripts/configure-vercel-backend.mjs
+```
+
+Alternatively pass the real HTTPS origin as the script's first argument. The script writes explicit external rewrites for `/api/:path*` and `/uploads/:path*` ahead of SPA routes. Review the resulting `vercel.json`; no push or deployment is performed by the script. Vercel reads this configuration before its build, so running the script inside `npm run build` would be too late. Setting an environment variable on Vercel alone does not generate those rewrites.
+
+Use Vercel's Vite preset, build command `npm run build`, and output `dist`. On the separate Node host, configure production credentials, persistent `SPOORTHI_DATA_DIR`, and `PUBLIC_ORIGIN` to the exact public Vercel frontend origin. Keep the existing Origin and CSRF checks enabled. API calls and uploads stay on the frontend origin through external rewrites; the existing host-only Secure session cookies do not require browser CORS changes. Preserve request Origin, cookies, CSRF headers, and response Set-Cookie in any additional backend reverse proxy. The backend must send its existing `Cache-Control: no-store` on public project and admin responses so publication changes are not served from a stale cache.
+
+Migrate the local SQLite workspace and `uploads/` together if existing locally added projects must appear online. Do not commit storage or copy administrator/enquiry data into a public JSON snapshot. Keep required legacy `public/assets/projects/` assets with the frontend build. The initial source seed is used only for a new empty backend database; it is not the same as the current local SQLite workspace.
+
+After a separately approved deployment, verify:
+
+- Direct navigation and refresh on a project detail route return the SPA, while nonexistent API/assets remain errors.
+- `/api/public/projects` returns JSON with the intended published records; Draft/deleted and homepage-disabled projects stay excluded from their intended surfaces.
+- Every selected homepage project has its own 2D, 3D, and final-output scroll story at phone and desktop widths. Reduced-motion mode exposes the reading view.
+- Uploaded images load through `/uploads`, and admin login/save/upload/logout retain session, CSRF, and publication behavior.
+
+No backend address, hosting account, persistent disk, credentials, push, or deployment has been created by this preparation.

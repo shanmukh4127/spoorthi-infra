@@ -1,0 +1,1 @@
+Transparent dark-header vector traced from the supplied Spoorthi raster. Lettering uses outlined source contours, reversed to #f0f2f3; no font substitution or embedded raster. Warm facets use simplified flat source colors. This is a traced derivative, not an original vector master. Original raster assets remain available.

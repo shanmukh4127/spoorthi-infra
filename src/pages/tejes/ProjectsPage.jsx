@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
-import TejesHomeMenu, { TejesWordmark } from '../../components/tejes/TejesHomeMenu.jsx'
+import { TejesWordmark } from '../../components/tejes/TejesHomeMenu.jsx'
 import { routePaths } from '../../data/routePaths.js'
 import { projectsPage } from '../../data/tejes/projectArchive.js'
 import usePublicProjects from '../../data/usePublicProjects.js'
@@ -49,7 +49,7 @@ export default function ProjectsPage() {
   const { projects, status } = usePublicProjects()
   const visible = projects.filter(project => project.brand === 'Tejes Interiors').map(record => publicTejesProject({ ...record, coverImage: record.coverImage || record.finalOutputImage || record.threeDImage || record.twoDImage }))
   return <div className="th-home tp-page">
-    <TejesHomeMenu initialOpen={false} navigationItems={projectsPage.menu} navigationLabel="Tejes projects navigation" />
+    
 
     <section className="tp-hero" aria-labelledby="projects-title">
       <ProjectPhoto image={projectsPage.hero.image} alt={projectsPage.hero.alt} className="tp-hero-photo" eager sizes="(max-width: 600px) 100vw, 67vw" />

@@ -1,0 +1,32 @@
+.tejes-static-home { --tejes-home-background:#773b78; --tejes-home-secondary:#e4d8e4; --tejes-home-surface:#5f2f60; --tejes-home-alternate:#6b356c; --tejes-home-border-strong:#e4d8e473; --tejes-home-ink:#f8f5f8; --tejes-home-accent:#e4d8e4; --tejes-home-border:#e4d8e440; background:var(--tejes-home-background); color:var(--tejes-home-ink); }
+.tsh-hero { display:grid; grid-template-columns:.95fr 1.05fr; align-items:center; gap:clamp(36px,7vw,100px); max-width:1440px; margin:auto; padding:clamp(48px,6vw,86px) 5.4% 72px; }
+.tsh-hero__copy { min-width:0; }
+.tejes-static-home .tsh-eyebrow { margin:0 0 26px; color:var(--tejes-home-secondary); font:500 10px/1.6 Arial,sans-serif; letter-spacing:.16em; text-transform:uppercase; }
+.tejes-static-home h1 { margin:0; font:400 clamp(46px,5.7vw,82px)/1.06 Georgia,serif; letter-spacing:-.05em; color:var(--tejes-home-ink); }
+.tejes-static-home h1 em { color:var(--tejes-home-accent); font-weight:400; }
+.tsh-hero__copy>p:not(.tsh-eyebrow) { max-width:41ch; margin:28px 0 0; color:var(--tejes-home-secondary); font-size:15px; line-height:1.85; }
+.tsh-actions { display:flex; align-items:center; flex-wrap:wrap; gap:20px 26px; margin-top:32px; }
+.tsh-button,.tsh-link { display:inline-flex; align-items:center; justify-content:space-between; gap:26px; min-height:48px; text-decoration:none; font-size:12px; }
+.tsh-button { padding:13px 20px; background:#e4d8e4; color:#4c264d; border:1px solid #e4d8e4; }
+.tsh-button:hover { background:#fffaf4; }
+.tsh-link { color:var(--tejes-home-accent); border-bottom:1px solid var(--tejes-home-border-strong); }
+.tsh-hero a:focus-visible { outline:2px solid var(--tejes-home-ink); outline-offset:5px; }
+.tsh-hero__visual { min-width:0; margin:0; padding:10px 10px 0 0; border-top:1px solid var(--tejes-home-border-strong); border-right:1px solid var(--tejes-home-border-strong); }
+.tsh-hero__visual picture { display:block; aspect-ratio:4/4.5; overflow:hidden; background:var(--tejes-home-alternate); }
+.tsh-hero__visual img { display:block; width:100%; height:100%; object-fit:cover; }
+.tsh-hero__visual figcaption { display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px 16px; margin-top:16px; padding:15px 16px; background:var(--tejes-home-surface); border-top:1px solid var(--tejes-home-border-strong); color:var(--tejes-home-ink); font:400 10px/1.6 Arial,sans-serif; letter-spacing:.06em; text-transform:uppercase; }
+.tsh-hero__visual small { font-size:10px; color:var(--tejes-home-secondary); }
+.tejes-static-home .tfp { --tfp-header-offset:76px; scroll-margin-top:76px; border-top:1px solid var(--tejes-home-border); }
+.brand-layout--tejes[data-pathname]:has(.tejes-static-home) .brand-footer { display:block; }
+@media(max-width:800px) { .tsh-hero { grid-template-columns:1fr; gap:34px; padding-block:44px; } .tejes-static-home h1 { font-size:clamp(44px,9vw,64px); } .tsh-hero__visual picture { aspect-ratio:1.15; } .tsh-hero__copy>p:not(.tsh-eyebrow) { font-size:14px; margin-top:22px; } }
+@media(max-width:900px) { .tejes-static-home .tfp-intro .tfp-intro-scroll { display:inline-flex; } }
+@media(max-width:767px) { .tejes-static-home .tfp { --tfp-header-offset:68px; scroll-margin-top:68px; } }
+
+/* Restore the original purple identity without bringing back the cinematic scene. */
+.brand-layout--tejes[data-pathname]:has(.tejes-static-home) { --brand-bg-primary:#773b78; --brand-bg-secondary:#6b356c; --brand-surface:#5f2f60; --brand-text-primary:#f8f5f8; --brand-text-secondary:#e4d8e4; --brand-text-muted:#e4d8e4; --brand-border:#e4d8e440; --brand-accent:#e4d8e4; --brand-text-on-accent:#4c264d; background:#773b78; color:#f8f5f8; }
+.tejes-static-home .tfp-card figcaption { background:var(--tejes-home-surface); color:var(--tejes-home-ink); }
+.tejes-static-home .tfp-card figcaption>p { color:var(--tejes-home-secondary); font-size:11px; line-height:1.65; }
+.tejes-static-home .tfp-card-heading { color:var(--tejes-home-ink); font-size:10px; }
+.tejes-static-home .tfp-card-heading>span:last-child { color:var(--tejes-home-secondary); font-size:9px; }
+.tejes-static-home .tfp .tfp-link { color:var(--tejes-home-ink); }
+.tejes-static-home .tfp-intro>div>p,.tejes-static-home .tfp-description { color:var(--tejes-home-secondary); }

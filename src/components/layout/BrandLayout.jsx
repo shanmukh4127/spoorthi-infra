@@ -1,3 +1,4 @@
+import '../../styles/public-page-polish.css'
 import { useLocation } from 'react-router-dom'
 import { Outlet } from 'react-router-dom'
 import { brands } from '../../brands/index.js'

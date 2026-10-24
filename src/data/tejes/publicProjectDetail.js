@@ -12,7 +12,7 @@ export function publicTejesProject(record) {
     alt: record.coverAlt || record.title,
     heroImage: media(record.coverImage, 'Project cover'),
     detailRoute: routePaths.tejes.projectDetail(record.id),
-    projectInfo: { ...original?.projectInfo, ...(record.area ? { Area: `${record.area} sq.ft` } : {}), ...(record.location ? { Location: record.location } : {}) },
+    projectInfo: { ...original?.projectInfo, ...(record.serviceNeeded?.trim() ? { Scope: record.serviceNeeded.trim() } : {}), ...(record.area ? { Area: `${record.area} sq.ft` } : {}), ...(record.location ? { Location: record.location } : {}) },
     twoDImages: record.twoDImage ? [media(record.twoDImage, '2D drawing')] : original?.twoDImages || [],
     threeDImages: record.threeDImage ? [media(record.threeDImage, '3D structure')] : original?.threeDImages || [],
     visualizationImages: record.finalOutputImage ? [media(record.finalOutputImage, 'Final output')] : original?.visualizationImages || [],

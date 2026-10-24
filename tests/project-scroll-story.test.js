@@ -33,20 +33,18 @@ test('the no-motion reading view exposes every stage and a working detail link',
   } finally { await server.close() }
 })
 
-test('Spoorthi renders desktop stories and Tejes-style mobile swipe cards for published projects', async () => {
+test('Spoorthi renders one complete story per published homepage project on every screen', async () => {
   const server = await createServer({ configFile: false, plugins: [react()], server: { middlewareMode: true, hmr: false, ws: false }, appType: 'custom' })
   try {
     const { default: Featured } = await server.ssrLoadModule('/src/components/spoorthi/SpoorthiFeaturedProjects.jsx')
     const { spoorthiDemoProjects } = await server.ssrLoadModule('/src/data/spoorthi/demoShowcase.js')
     const uploaded = { id: 'new-homepage-project', title: 'New homepage project', brand: 'Spoorthi Infra', status: 'Published', showOnHomepage: true, twoDImage: '/uploads/new-plan.png', threeDImage: '/uploads/new-model.png', finalOutputImage: '/uploads/new-final.png' }
-    const html = renderToStaticMarkup(createElement(MemoryRouter, null, createElement(Featured, { projects: [...spoorthiDemoProjects, uploaded], status: 'ready' })))
+    const excluded = [{ ...uploaded, id: 'draft-homepage-project', status: 'Draft' }, { ...uploaded, id: 'homepage-disabled-project', showOnHomepage: false }]
+    const html = renderToStaticMarkup(createElement(MemoryRouter, null, createElement(Featured, { projects: [...spoorthiDemoProjects, uploaded, ...excluded], status: 'ready' })))
+    for (const project of excluded) assert.ok(!html.includes(project.id))
     assert.equal((html.match(/class="tfp-project tfp-project--/g) || []).length, 4)
     assert.equal((html.match(/class="tfp-stage tfp-stage--/g) || []).length, 12)
-    assert.match(html, /tfp-mobile-projects tfp-mobile-projects--floating/)
-    assert.match(html, /sfp-project-stories tfp-desktop-projects/)
-    assert.equal((html.match(/class="tfp-mobile-slide"/g) || []).length, 12)
-    assert.equal((html.match(/class="sfp-mobile-story"/g) || []).length, 4)
-    assert.match(html, /id="spoorthi-project-cards"/)
+    assert.doesNotMatch(html, /tfp-mobile-projects|tfp-desktop-projects|sfp-mobile-story/)
     for (const project of [...spoorthiDemoProjects, uploaded]) {
       assert.ok(html.includes(`id="featured-${project.id}"`))
       assert.ok(html.includes(`href="/spoorthi/projects/${project.id}"`))

@@ -1,9 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight, Play, X } from 'lucide-react'
-import TejesHomeMenu from '../../components/tejes/TejesHomeMenu.jsx'
 import { routePaths } from '../../data/routePaths.js'
-import { projectsPage } from '../../data/tejes/projectArchive.js'
 import { publicTejesProject } from '../../data/tejes/publicProjectDetail.js'
 import usePublicProjects from '../../data/usePublicProjects.js'
 import { ProjectPhoto, TejesProjectsFooter } from './ProjectsPage.jsx'
@@ -123,7 +121,7 @@ export default function ProjectDetailPage() {
   const stepViewer = direction => setViewer(current => current?.items?.length > 1 ? ({ ...current, index: (current.index + direction + current.items.length) % current.items.length }) : current)
 
   if (status !== 'ready') return <div className="th-home tp-page td-page"><main className="td-not-found"><p role="status">{status === 'loading' ? 'Loading project…' : 'The project service is temporarily unavailable.'}</p></main></div>
-  if (!project) return <div className="th-home tp-page td-page"><TejesHomeMenu initialOpen={false} navigationItems={projectsPage.menu} navigationLabel="Tejes project navigation" /><main className="td-not-found"><p className="tp-kicker">Project archive</p><h1>Project not found.</h1><p>The requested study is not in the selected work archive.</p><Link to={routePaths.tejes.projects} className="td-text-link"><ArrowLeft size={14} /> Back to projects</Link></main><TejesProjectsFooter /></div>
+  if (!project) return <div className="th-home tp-page td-page"><main className="td-not-found"><p className="tp-kicker">Project archive</p><h1>Project not found.</h1><p>The requested study is not in the selected work archive.</p><Link to={routePaths.tejes.projects} className="td-text-link"><ArrowLeft size={14} /> Back to projects</Link></main><TejesProjectsFooter /></div>
 
   const story = createProjectStory(project)
   const info = Object.entries(project.projectInfo || {}).filter(([, value]) => value)
@@ -131,12 +129,12 @@ export default function ProjectDetailPage() {
   const videoAvailable = isUsableUrl(project.videoUrl)
 
   return <div className="th-home tp-page td-page">
-    <TejesHomeMenu initialOpen={false} navigationItems={projectsPage.menu} navigationLabel="Tejes project navigation" />
+    
     <main>
       <section className="td-overview" aria-labelledby="project-title">
         <Link className="td-back" to={routePaths.tejes.projects}><ArrowLeft size={13} aria-hidden="true" /> Back to projects</Link>
         <span className="td-overview-number" aria-hidden="true">{project.number}</span>
-        <div className="td-overview-copy"><p className="td-micro-label">Project overview</p><p className="tp-kicker">{project.category}</p><h1 id="project-title">{project.title}</h1><p className="td-lede">{project.description}</p>{info.length > 0 && <dl className="td-project-info">{info.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>}<p className="td-media-note">{project.isConcept ? 'Illustrative design study · Project details to be verified' : 'Project media supplied through the workspace'}</p></div>
+        <div className="td-overview-copy"><p className="td-micro-label">Project overview</p><p className="tp-kicker">{project.category}</p><h1 id="project-title">{project.title}</h1><p className="td-lede">{project.description}</p>{info.length > 0 && <dl className="td-project-info">{info.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>}<Link className="project-contact-cta" to={routePaths.tejes.contact}>Discuss this project <ArrowRight size={16} aria-hidden="true" /></Link><p className="td-media-note">{project.isConcept ? 'Illustrative design study · Project details to be verified' : 'Project media supplied through the workspace'}</p></div>
         <div className="td-overview-media"><MediaImage media={project.heroImage} eager sizes="(max-width: 700px) 100vw, 61vw" /><span className="td-photo-quote">Modern spaces.<br />Timeless comfort.</span></div>
       </section>
 

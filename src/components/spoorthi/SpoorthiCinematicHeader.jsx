@@ -1,19 +1,18 @@
 import { useEffect, useId, useRef, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { ArrowUpRight, Menu, X } from 'lucide-react'
-import { getBrandNavigation } from '../../data/navigation.js'
 import { routePaths } from '../../data/routePaths.js'
 import '../../styles/spoorthi-cinematic-tokens.css'
 import '../../styles/spoorthi-cinematic-header.css'
 
 function OfficialLogo() {
-  return <img src="/assets/spoorthi/brand/official-logo-600.webp" srcSet="/assets/spoorthi/brand/official-logo-600.webp 600w, /assets/spoorthi/brand/official-logo-1200.webp 1200w" sizes="(max-width: 767px) 110px, 136px" alt="Spoorthi Infra" width="600" height="243" />
+  return <img src="/assets/spoorthi/brand/official-logo-dark.svg" alt="Spoorthi Infra" width="2500" height="1012" />
 }
 
-export default function SpoorthiCinematicHeader() {
+export default function SpoorthiCinematicHeader({ inFlow = false }) {
   const [open, setOpen] = useState(false)
-  const [overScene, setOverScene] = useState(true)
-  const dialog = useRef(null)
+  const [overScene, setOverScene] = useState(false)
+  const menu = useRef(null)
   const trigger = useRef(null)
   const header = useRef(null)
   const id = useId()
@@ -37,27 +36,39 @@ export default function SpoorthiCinematicHeader() {
   }, [])
   useEffect(() => {
     if (!open) return
-    const panel = dialog.current
-    const menuTrigger = trigger.current
-    const previousOverflow = document.body.style.overflow
-    panel.showModal()
-    panel.querySelector('button')?.focus({ preventScroll: true })
-    document.body.style.overflow = 'hidden'
+    const onKey = event => {
+      if (event.key === 'Escape') { setOpen(false); trigger.current?.focus({ preventScroll: true }) }
+    }
+    const onPointer = event => { if (!menu.current?.contains(event.target)) setOpen(false) }
+    document.addEventListener('keydown', onKey)
+    document.addEventListener('pointerdown', onPointer)
     return () => {
-      panel.close()
-      document.body.style.overflow = previousOverflow
-      menuTrigger?.focus({ preventScroll: true })
+      document.removeEventListener('keydown', onKey)
+      document.removeEventListener('pointerdown', onPointer)
     }
   }, [open])
-  return <header ref={header} className={`si-cinematic-header${overScene ? ' si-cinematic-header--over-scene' : ''}`}>
+  const moveFocus = event => {
+    if (!['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(event.key)) return
+    const links = [...menu.current.querySelectorAll('nav a')]
+    const current = links.indexOf(document.activeElement)
+    if (!open && event.target !== trigger.current) return
+    event.preventDefault()
+    setOpen(true)
+    const index = event.key === 'Home' ? 0 : event.key === 'End' ? links.length - 1 : event.key === 'ArrowDown' ? (current + 1) % links.length : (current <= 0 ? links.length - 1 : current - 1)
+    requestAnimationFrame(() => links[index]?.focus())
+  }
+  return <header ref={header} className={`si-cinematic-header${inFlow ? ' si-cinematic-header--in-flow' : ''}${overScene ? ' si-cinematic-header--over-scene' : ''}`}>
     <Link className="si-official-logo" to={routePaths.spoorthi.home} aria-label="Spoorthi Infra home"><OfficialLogo /></Link>
-    <button className="si-menu-trigger" ref={trigger} type="button" onClick={() => setOpen(true)} aria-label="Open Spoorthi navigation" aria-expanded={open} aria-controls={id}><span>Menu</span><i><Menu size={20} strokeWidth={1.5} aria-hidden="true" /></i></button>
-    <dialog id={id} ref={dialog} className="si-menu-overlay" aria-labelledby={`${id}-title`} onCancel={() => setOpen(false)} onClose={() => setOpen(false)}>
-      <div className="si-menu-overlay__head"><Link to={routePaths.spoorthi.home} className="si-official-logo" aria-label="Spoorthi Infra home" onClick={() => setOpen(false)}><OfficialLogo /></Link><button autoFocus type="button" className="si-menu-trigger" onClick={() => setOpen(false)} aria-label="Close Spoorthi navigation"><span>Close</span><i><X size={20} strokeWidth={1.5} aria-hidden="true" /></i></button></div>
-      <div className="si-menu-overlay__body"><div className="si-menu-overlay__intro"><p id={`${id}-title`}>Explore Spoorthi</p><h2>Building <br />tomorrow’s <br /><em>spaces.</em></h2><span>Construction / Infrastructure / Engineering</span></div>
-        <nav aria-label="Spoorthi Infra overlay navigation">{getBrandNavigation('spoorthi').map((item, index) => <NavLink to={item.path} end={item.end} key={item.path} onClick={() => setOpen(false)}><small>0{index + 1}</small><span>{item.label}</span><ArrowUpRight size={22} strokeWidth={1.3} aria-hidden="true" /></NavLink>)}</nav>
-      </div>
-      <div className="si-menu-overlay__foot"><span>Spoorthi Infra</span><span>From vision to built form.</span></div>
-    </dialog>
+    <div className="si-menu" ref={menu} onKeyDown={moveFocus} onBlur={event => { if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget)) setOpen(false) }}>
+      <button className="si-menu-trigger" ref={trigger} type="button" onClick={() => setOpen(value => !value)} aria-label={open ? 'Close Spoorthi navigation' : 'Open Spoorthi navigation'} aria-expanded={open} aria-controls={id}><span>Menu</span><i>{open ? <X size={18} strokeWidth={1.5} aria-hidden="true" /> : <Menu size={18} strokeWidth={1.5} aria-hidden="true" />}</i></button>
+      <nav id={id} className="si-menu-panel" aria-label="Spoorthi navigation" hidden={!open}>
+        {[
+          ['Home', routePaths.spoorthi.home],
+          ['Projects', routePaths.spoorthi.projects],
+          ['Contact', routePaths.spoorthi.contact],
+          ['Shift to Tejes', routePaths.tejes.home],
+        ].map(([label, path]) => <NavLink key={path} to={path} end onClick={() => setOpen(false)}><span>{label}</span><ArrowUpRight size={15} strokeWidth={1.4} aria-hidden="true" /></NavLink>)}
+      </nav>
+    </div>
   </header>
 }

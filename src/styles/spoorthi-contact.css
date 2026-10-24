@@ -128,3 +128,75 @@
 body:has(.enquiry-confirmation[open]) { overflow: hidden; }
 .contact-enquiry .contact-enquiry__status--success, .contact-enquiry .contact-enquiry__status--error { padding: 16px 20px; border: 1px solid #bed1b6; border-radius: 8px; background: #edf4e8; color: #31563b; font-weight: 500; }
 .contact-enquiry .contact-enquiry__status--error { background: #fff0ec; color: #8b3024; border-color: #e6b9ae; }
+
+
+/* Graphite form surfaces, scoped to the public Spoorthi conversation page. */
+.brand-layout--spoorthi .spoorthi-contact-page {
+  --brand-state-error:#ffb1a4;
+  --brand-state-success:#a6d8bc;
+}
+.brand-layout--spoorthi .spoorthi-contact-page .contact-enquiry {
+  background:#242d35; border-color:#46525d;
+  box-shadow:0 20px 48px -26px #0008;
+}
+.brand-layout--spoorthi .spoorthi-contact-page :is(.ui-field__control,.contact-enquiry__brief) {
+  color-scheme:dark; background:#171f26; color:#f0f2f3;
+  border:1px solid #62707c; border-radius:5px;
+  caret-color:#e5c18c; font-size:16px; line-height:1.6;
+}
+.brand-layout--spoorthi .spoorthi-contact-page .ui-field__control {
+  padding:12px 14px; min-height:50px;
+}
+.brand-layout--spoorthi .spoorthi-contact-page .ui-field__control::placeholder {
+  color:#aab5bf; opacity:1;
+}
+.brand-layout--spoorthi .spoorthi-contact-page .ui-field__control option {
+  background:#171f26; color:#f0f2f3;
+}
+.brand-layout--spoorthi .spoorthi-contact-page .ui-field__control:hover:not(:disabled) { border-color:#a4afb8; }
+.brand-layout--spoorthi .spoorthi-contact-page :is(.ui-field__control,.contact-enquiry__brief):focus-visible {
+  background:#1d2831; color:#f0f2f3; border-color:#c9a56d;
+  outline:2px solid #c9a56d; outline-offset:3px;
+}
+.brand-layout--spoorthi .spoorthi-contact-page .ui-field__control:autofill {
+  background:#1d2831; color:#f0f2f3; caret-color:#e5c18c;
+}
+.brand-layout--spoorthi .spoorthi-contact-page .ui-field__control:-webkit-autofill {
+  -webkit-text-fill-color:#f0f2f3; caret-color:#e5c18c;
+  -webkit-box-shadow:0 0 0 1000px #1d2831 inset;
+}
+.brand-layout--spoorthi .spoorthi-contact-page .ui-field__control[aria-invalid='true'] {
+  border-color:#ffb1a4;
+}
+.brand-layout--spoorthi .spoorthi-contact-page .ui-field__label {
+  color:#e4e9ed; font-size:11px; letter-spacing:.06em;
+}
+.brand-layout--spoorthi .spoorthi-contact-page .ui-field__hint { color:#b5bfc7; }
+.brand-layout--spoorthi .spoorthi-contact-page .ui-field__error { color:#ffb1a4; }
+.brand-layout--spoorthi .spoorthi-contact-page .contact-enquiry__fields { gap:24px 20px; }
+.brand-layout--spoorthi .spoorthi-contact-page .contact-enquiry__context,
+.brand-layout--spoorthi .spoorthi-contact-page .contact-enquiry__status--success {
+  background:#203c32; color:#bce6ce; border-color:#547c65;
+}
+.brand-layout--spoorthi .spoorthi-contact-page .contact-enquiry__status--error {
+  background:#402a2a; color:#ffc5bb; border-color:#aa756e;
+}
+.brand-layout--spoorthi .spoorthi-contact-page .enquiry-confirmation {
+  background:#242d35; color:#f0f2f3; border-color:#62707c;
+}
+.brand-layout--spoorthi .spoorthi-contact-page .enquiry-confirmation__icon { background:#203c32; color:#bce6ce; }
+.brand-layout--spoorthi .spoorthi-contact-page .enquiry-confirmation__eyebrow { color:#c9a56d; }
+.brand-layout--spoorthi .spoorthi-contact-page #enquiry-confirmation-description { color:#bac2c8; }
+
+/* Keep labels and controls at the top of each field; helper text must not
+   stretch a neighbouring field's internal grid tracks. */
+.brand-layout--spoorthi .spoorthi-contact-page .ui-field {
+  align-content:start;
+  grid-auto-rows:max-content;
+}
+@media(min-width:521px) and (max-width:600px) {
+  .brand-layout--spoorthi .spoorthi-contact-page .contact-enquiry__fields .ui-field__label {
+    min-block-size:2lh;
+  }
+}
+.brand-layout--spoorthi .spoorthi-contact-page :is(input,select).ui-field__control { height:52px; }

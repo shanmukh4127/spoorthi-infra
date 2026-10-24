@@ -1,0 +1,27 @@
+/* Shared rhythm, with page-specific artwork and brand palettes retained. */
+:is(.brand-layout--spoorthi,.brand-layout--tejes) { --public-section-space:clamp(48px,6vw,88px); }
+.brand-layout--spoorthi :is(.spoorthi-projects-page,.spoorthi-project-detail,.spoorthi-contact-page) .layout-section,
+.brand-layout--tejes .tejes-detail-page .layout-section { padding-block:var(--public-section-space); }
+.brand-layout--tejes .tp-page .tp-selected { padding-block:var(--public-section-space); }
+.brand-layout--tejes .tp-page .tp-selected-heading { padding-bottom:24px; }
+.brand-layout--tejes .tp-page .tp-selected-heading h2 { font-size:clamp(28px,3vw,44px); line-height:1.12; }
+.brand-layout--tejes .tp-selected-project { padding-block:28px; }
+.brand-layout--tejes .tp-selected-content .tp-description { font-size:14px; line-height:1.75; }
+.brand-layout--tejes .tp-selected-content .tp-facts :is(dt,dd),
+.brand-layout--tejes .td-project-info :is(dt,dd) { font-size:12px; line-height:1.7; overflow-wrap:anywhere; }
+.brand-layout--tejes .tp-selected-image { height:auto; aspect-ratio:4/3; }
+.brand-layout--tejes .tp-selected-image .tp-photo { width:100%; height:100%; object-fit:cover; }
+.project-preview-facts { display:grid; gap:8px; margin:20px 0 0; padding-top:16px; border-top:1px solid var(--brand-border); }
+.project-preview-facts>div { display:grid; grid-template-columns:80px minmax(0,1fr); gap:12px; }
+.project-preview-facts dt { color:var(--brand-text-secondary); font-size:10px; letter-spacing:.08em; text-transform:uppercase; }
+.project-preview-facts dd { margin:0; font-size:13px; line-height:1.5; overflow-wrap:anywhere; }
+.project-contact-cta { display:inline-flex; align-items:center; justify-content:space-between; gap:26px; min-height:48px; margin-top:22px; padding:12px 18px; color:#fffaf4; font:500 12px/1.5 Arial,sans-serif; text-decoration:none; border:1px solid transparent; }
+.brand-layout--spoorthi .project-contact-cta { background:#a93624; color:#fffaf4; }
+.brand-layout--tejes .project-contact-cta { background:#773b78; color:#fffaf4; }
+.project-contact-cta:focus-visible { outline:2px solid currentColor; outline-offset:4px; }
+.brand-layout--spoorthi .project-contact-cta:focus-visible { outline-color:#a93624; }
+.brand-layout--tejes .project-contact-cta:focus-visible { outline-color:#773b78; }
+.brand-layout--spoorthi .project-contact-cta:hover { background:#87291b; }
+.brand-layout--tejes .project-contact-cta:hover { background:#5e285f; }
+.tejes-project-status { padding-block:20px; color:var(--tfp-muted); font-size:13px; }
+@media(max-width:700px) { .brand-layout--tejes .tp-selected-project { padding-block:24px; } .project-contact-cta { max-width:100%; } }

@@ -4,9 +4,9 @@ import { PageContainer, SectionWrapper } from '../../components/layout/index.js'
 import { routePaths } from '../../data/routePaths.js'
 import usePublicProjects from '../../data/usePublicProjects.js'
 import { companyStory } from '../../data/spoorthi/companyStory.js'
-import SpoorthiHomeJourney from '../../components/spoorthi/SpoorthiHomeJourney.jsx'
 import SpoorthiFeaturedProjects from '../../components/spoorthi/SpoorthiFeaturedProjects.jsx'
 import '../../styles/spoorthi-home-structure.css'
+import '../../styles/spoorthi-home-hero.css'
 
 const paths = routePaths.spoorthi
 const services = [
@@ -35,14 +35,20 @@ function SpoorthiHomePage() {
   const milestones = companyStory.milestones.filter(item => item.approved && item.title)
 
   return <div className="spoorthi-home">
-    <SpoorthiHomeJourney background />
     <section className="sh-hero" aria-labelledby="sh-hero-title">
       <PageContainer>
-        <Eyebrow>Spoorthi Infra / Architecture & construction</Eyebrow>
-        <h1 id="sh-hero-title">A vision for space.<br /><em>Built around you.</em></h1>
-        <p>From the first plan to a new perspective. Explore thoughtful design, construction and spatial possibilities with Spoorthi Infra.</p>
-        <div className="sh-hero__actions"><HomeLink to={paths.contact}>Discuss your project</HomeLink><a href="#spoorthi-demo-projects" className="sh-text-link">Explore projects <ArrowRight size={17} aria-hidden="true" /></a></div>
-        <small>Illustrative construction environment</small>
+        <div className="sh-hero__grid">
+          <div className="sh-hero__copy">
+            <Eyebrow>Spoorthi Infra / Architecture & construction</Eyebrow>
+            <h1 id="sh-hero-title">A vision for space.<br /><em>Built around you.</em></h1>
+            <p>From the first plan to a new perspective. Explore thoughtful design, construction and spatial possibilities with Spoorthi Infra.</p>
+            <div className="sh-hero__actions"><HomeLink to={paths.contact}>Discuss your project</HomeLink><a href="#spoorthi-demo-projects" className="sh-text-link">Explore projects <ArrowRight size={17} aria-hidden="true" /></a></div>
+          </div>
+          <figure className="sh-hero__visual">
+            <div className="sh-hero__image"><img src="/assets/spoorthi/architecture.webp" width="1536" height="1024" alt="Architectural illustration of a contemporary home with stone, timber and landscaped surroundings" fetchPriority="high" /></div>
+            <figcaption><span>From vision to built form</span><small>Architectural illustration · Not a completed client project</small></figcaption>
+          </figure>
+        </div>
       </PageContainer>
     </section>
     <div className="sh-story">

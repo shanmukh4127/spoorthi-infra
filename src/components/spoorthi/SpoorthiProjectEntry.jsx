@@ -19,6 +19,10 @@ function SpoorthiProjectEntry({ project, presentation = {}, number = 1 }) {
         <p className="spoorthi-project-preview__category type-label"><span>{project.category}</span><span>{String(number).padStart(2, '0')}</span></p>
         <h3 id={`${id}-title`}><Link to={routePaths.spoorthi.projectDetail(project.id)}>{project.title}</Link></h3>
         <p>{project.summary ?? project.description}</p>
+        {(project.location?.trim() || project.serviceNeeded?.trim()) && <dl className="project-preview-facts">
+          {project.location?.trim() && <div><dt>Location</dt><dd>{project.location}</dd></div>}
+          {project.serviceNeeded?.trim() && <div><dt>Scope</dt><dd>{project.serviceNeeded}</dd></div>}
+        </dl>}
         <Link className="spoorthi-project-preview__link" to={routePaths.spoorthi.projectDetail(project.id)} aria-label={`View project: ${project.title}`}>Explore project <ArrowUpRight aria-hidden="true" size={16} /></Link>
       </div>
     </article>

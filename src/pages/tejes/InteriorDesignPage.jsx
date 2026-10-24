@@ -1,9 +1,7 @@
 import { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
-import TejesHomeMenu from '../../components/tejes/TejesHomeMenu.jsx'
 import { routePaths } from '../../data/routePaths.js'
-import { projectsPage } from '../../data/tejes/projectArchive.js'
 import { tejesServicesPage as content } from '../../data/tejes/servicesPage.js'
 import { ProjectPhoto, TejesProjectsFooter } from './ProjectsPage.jsx'
 import '../../styles/tejes-services.css'
@@ -20,7 +18,7 @@ function Botanical({ className = '' }) {
 
 function InteriorDesignPage() {
   return <div className="th-home tp-page ts-page">
-    <TejesHomeMenu initialOpen={false} navigationItems={projectsPage.menu} navigationLabel="Tejes navigation" />
+    
     <section className="ts-hero" aria-labelledby="services-title">
       <Link className="ts-back" to={routePaths.tejes.home}><ArrowLeft size={12} aria-hidden="true" /> Back to home</Link>
       <Botanical className="ts-hero-botanical" />
